@@ -73,8 +73,6 @@ const FAQSection = () => {
 
                 </Grid>
 
-
-
             </Container>
 
         </Box>

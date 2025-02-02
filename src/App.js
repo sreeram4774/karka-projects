@@ -11,7 +11,6 @@ import Program from './components/Program';
 import Footer from './components/Footer';
 import Courses from './components/Courses';
 import Testimonials from './components/Testimonials';
-import Main from './components/Main';
 
 function App() {
 
@@ -35,5 +34,6 @@ function App() {
     </Box>
   );
 }
+
 
 export default App;

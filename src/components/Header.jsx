@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../assets/images/Logo.png';
+import { Link } from '@mui/material';
 
 const pages = ['Internship', 'Our Services', 'Pricing'];
 
@@ -41,6 +42,13 @@ const Header = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    // const handleScrollToPricing = () => {
+    //     const pricingSection = document.getElementById("pricing");
+    //     if (pricingSection) {
+    //         pricingSection.scrollIntoView({ behavior: "smooth" });
+    //     }
+    // };
 
 
     return (
@@ -122,6 +130,16 @@ const Header = () => {
                         >
                             Apply Now
                         </Button>
+
+                        {/* <Button
+                            key="Pricing"
+                            onClick={handleScrollToPricing} // Call the function
+                            sx={{ my: 2, color: 'white', display: 'block', textTransform: "capitalize" }}
+                        >
+                            Pricing
+                        </Button> */}
+
+                        {/* <a href='/#pricing'>Pricing</a> */}
                     </Box>
                 </Toolbar>
             </Container>

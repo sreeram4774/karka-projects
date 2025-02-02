@@ -112,21 +112,47 @@ const Home = () => {
                 </Typography>
 
 
-                <Typography variant="body1" sx={subtitleStyles}>
-                    Virtual Internship Platform where Interns meet Companies.
+                <Typography variant="body1" sx={subtitleStyles} display={{ xs: "none", sm: "block" }}>
+                    Virtual Internship Platform where Interns meet Companies. Completely
                     <Typography component="span"
                         sx={{
                             backgroundColor: "white",
                             color: "black",
                             fontWeight: "400",
+                            fontSize: "13px",
                             padding: "0 5px",
                             borderRadius: "20px",
                             marginLeft: "5px",
                         }}
                     >
-                        Completely Online
+                        Online
                     </Typography>
                 </Typography>
+
+                <Box display={{ xs: "block", sm: "none" }} mt={2} textAlign='center'>
+                    <Typography variant="body3" sx={{ ...subtitleStyles, fontSize: "16px", lineHeight: "auto" }}  >
+                        Virtual Internship Platform where Interns meet Companies.
+                    </Typography>
+                    <Typography component="h6"
+                        sx={{
+                            // backgroundColor: "white",
+                            color: "white",
+                            fontWeight: "400",
+                            fontSize: "15px",
+                            padding: "10px 20px",
+                            borderRadius: "30px",
+                            // marginLeft: "5px",
+                            width: 'fit-content',
+                            marginTop: 2,
+                            border: '1px solid white',
+                            mx: "auto"
+                        }}
+                    >
+                        Completely Online
+                    </Typography>
+                </Box>
+
+
 
                 <Box marginTop={2}>
                     <Button variant="contained" sx={buttonStyles}>
