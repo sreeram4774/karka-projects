@@ -59,6 +59,7 @@ const Home = () => {
         fontSize: "12px", // Increased font size for better readability
         background: "#FFA800",
         borderRadius: "50px",
+        fontWeight:700,
         color: "black",
         display: "flex",
         alignItems: "center",
@@ -130,7 +131,10 @@ const Home = () => {
                 </Typography>
 
                 <Box display={{ xs: "block", sm: "none" }} mt={2} textAlign='center'>
-                    <Typography variant="body3" sx={{ ...subtitleStyles, fontSize: "16px", lineHeight: "auto" }}  >
+                    <Typography variant="body3" sx={{
+                        ...subtitleStyles, fontSize: "16px", fontWeight: "400",
+                        lineHeight: "auto"
+                    }}  >
                         Virtual Internship Platform where Interns meet Companies.
                     </Typography>
                     <Typography component="h6"
@@ -139,7 +143,7 @@ const Home = () => {
                             color: "white",
                             fontWeight: "400",
                             fontSize: "15px",
-                            padding: "10px 20px",
+                            padding: "0px 20px",
                             borderRadius: "30px",
                             // marginLeft: "5px",
                             width: 'fit-content',
@@ -151,8 +155,6 @@ const Home = () => {
                         Completely Online
                     </Typography>
                 </Box>
-
-
 
                 <Box marginTop={2}>
                     <Button variant="contained" sx={buttonStyles}>

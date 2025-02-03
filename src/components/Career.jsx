@@ -21,15 +21,21 @@ const CompanyButton = styled(Button)({
     backgroundColor: "#000",
     color: "#fff",
     border: "1px solid #A1AEBF",
-    padding: "8px 16px",
     borderRadius: "8px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    minWidth: "140px",
-    width: "140px",
-    textTransform: "capitalize"
+    textTransform: "capitalize",
+    width: "100%", // Makes button responsive
+    maxWidth: "200px", // Prevents oversized buttons
+    margin: "8px", // Add margin here for outer spacing
+
+    "@media (min-width: 375px) and (max-width: 425px)": {
+        maxWidth: "200px",
+    },
 });
+
+
 
 const Career = () => {
     return (
@@ -38,28 +44,55 @@ const Career = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={6} sx={{ textAlign: { xs: "center", sm: "left" } }}>
                         <Box>
-                            <Typography variant="h4" gutterBottom sx={{ typography: { xs: "h5", sm: "h4" }, fontWeight: { sm: "bold" } }}>
+                            <Typography
+                                variant="h4"
+                                gutterBottom
+                                sx={{
+                                    typography: { xs: "h6", sm: "h4" },
+                                    fontWeight: {
+                                        xs: "bold", // Default weight for xs
+                                        sm: "bold",   // Bold for sm screens
+                                        md: "bold",   // Bold for md screens
+                                        // Apply font weight 700 for screens between 375px and 425px
+                                        "@media (min-width: 375px) and (max-width: 600px)": {
+                                            fontWeight: 700,
+                                        },
+                                    },
+                                }}
+                            >
                                 Begin your AI Driven Tech <br />
                                 Career with{" "}
                                 <Typography
-                                    component="span" variant="h4"
-                                    sx={{ color: "#ffa800", typography: { xs: "h5", sm: "h4" }, fontWeight: { sm: "bold" } }}
+                                    component="span"
+                                    variant="h4"
+                                    sx={{
+                                        color: "#ffa800",
+                                        typography: { xs: "h6", sm: "h4" },
+                                        fontWeight: {
+                                            xs: "bold",
+                                            sm: "bold",
+                                            md: "bold",
+                                            "@media (min-width: 375px) and (max-width: 425px)": {
+                                                fontWeight: 700, // Apply font weight 700 in this range
+                                            },
+                                        },
+                                    }}
                                 >
                                     TalentTribe
                                 </Typography>
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={6} >
-                        <Box>
+                    <Grid item xs={12} sm={6}  >
+                        <Box >
                             <Typography
                                 component="ul"
                                 sx={{
                                     display: { xs: "block", sm: "none" },
-                                    mb: 2,
-                                    color: "rgba(255, 255, 255, 0.40)",
+                                    mb: 4,
+                                    color: 'rgba(255, 255, 255)',
                                     fontSize: "14px",
-                                    fontWeight: 100,
+                                    fontWeight: 400,
                                     paddingLeft: "0",
                                     listStyle: "none",
                                 }}
@@ -101,9 +134,9 @@ const Career = () => {
                                 variant="body1"
                                 sx={{
                                     mb: 4,
-                                    color: "rgba(255, 255, 255, 0.40)",
+                                    color: "rgba(255, 255, 255, 0.60)",
                                     fontSize: "14px",
-                                    fontWeight: 100,
+                                    fontWeight: 400,
                                     display: { xs: "none", sm: "block" },
                                 }}
                             >
@@ -171,34 +204,30 @@ const Career = () => {
                         </Box>
                     </Grid>
 
-                    <Grid item xs={12} sm={12} sx={{ textAlign: "center" }}>
-                        <Grid container spacing={1} sx={{ justifyContent: "center", alignItems: "center" }}>
-                            {/* Button 1 */}
-                            <Grid item xs={6} sm={3} md={2.5} lg={1.5} xl={1.5}>
+                    <Grid item xs={12} sm={12} sx={{ display: "flex", alignItems: "center", justifyContent: "center", pt: 0, mt: 0 }}>
+                        <Grid container spacing={0} sx={{ display: "flex", alignItems: "center", justifyContent: "center", maxWidth: { xs: "xs", sm: "sm" }, pt: 0, mt: 0 }}>
+                            <Grid item xs={6} sm={3} sx={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
                                 <CompanyButton>
                                     <img src={Logo} alt="logo" style={{ marginRight: 8 }} />
                                     Logoipsum
                                 </CompanyButton>
                             </Grid>
 
-                            {/* Button 2 */}
-                            <Grid item xs={6} sm={3} md={2.5} lg={1.5} xl={1.5}>
+                            <Grid item xs={6} sm={3} sx={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
                                 <CompanyButton>
                                     <img src={Logo} alt="logo" style={{ marginRight: 8 }} />
                                     offmax
                                 </CompanyButton>
                             </Grid>
 
-                            {/* Button 3 */}
-                            <Grid item xs={6} sm={3} md={2.5} lg={1.5} xl={1.5}>
+                            <Grid item xs={6} sm={3} sx={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
                                 <CompanyButton>
                                     <img src={Logo} alt="logo" style={{ marginRight: 8 }} />
                                     offmax
                                 </CompanyButton>
                             </Grid>
 
-                            {/* Button 4 */}
-                            <Grid item xs={6} sm={3} md={2.5} lg={1.5} xl={1.5}>
+                            <Grid item xs={6} sm={3} sx={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
                                 <CompanyButton>
                                     <img src={Logo} alt="logo" style={{ marginRight: 8 }} />
                                     offmax

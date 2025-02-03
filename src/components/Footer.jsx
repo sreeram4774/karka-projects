@@ -6,13 +6,13 @@ const Footer = () => {
             <Container maxWidth="xl" variant="h5" fontWeight="bold">
                 <Grid container spacing={4}>
                     {/* OUR WORLD Section */}
-                    <Grid item xs={6} sm={6} md={2}>
-                        <Typography variant="h6" gutterBottom>
+                    <Grid item xs={4} sm={4} md={2.5}>
+                        <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "16px", sm: "20px" } }}>
                             Follow Us
                         </Typography>
                         <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px" }}>
                             {["Instagram", "Linked In"].map((item) => (
-                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3 }}> {/* Add marginBottom here */}
+                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3, fontSize: { xs: "12px", sm: "14px" } }}> {/* Add marginBottom here */}
                                     <Link href="#" color="inherit" underline="hover">
                                         {item}
                                     </Link>
@@ -20,13 +20,13 @@ const Footer = () => {
                             ))}
                         </Box>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={2}>
-                        <Typography variant="h6" gutterBottom>
+                    <Grid item xs={4} sm={4} md={2.5}>
+                        <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "16px", sm: "20px" } }}>
                             Follow Us
                         </Typography>
                         <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px" }}>
                             {["Instagram", "Linked In"].map((item) => (
-                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3 }}> {/* Add marginBottom here */}
+                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3, fontSize: { xs: "12px", sm: "14px" } }}> {/* Add marginBottom here */}
                                     <Link href="#" color="inherit" underline="hover">
                                         {item}
                                     </Link>
@@ -34,13 +34,13 @@ const Footer = () => {
                             ))}
                         </Box>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={2}>
-                        <Typography variant="h6" gutterBottom>
+                    <Grid item xs={4} sm={4} md={2.5}>
+                        <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "16px", sm: "20px" } }}>
                             Follow Us
                         </Typography>
                         <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px" }}>
                             {["Instagram", "Linked In"].map((item) => (
-                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3 }}> {/* Add marginBottom here */}
+                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3, fontSize: { xs: "12px", sm: "14px" } }}> {/* Add marginBottom here */}
                                     <Link href="#" color="inherit" underline="hover">
                                         {item}
                                     </Link>
@@ -48,13 +48,13 @@ const Footer = () => {
                             ))}
                         </Box>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={2}>
-                        <Typography variant="h6" gutterBottom>
+                    <Grid item xs={4} sm={4} md={2.5}>
+                        <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "16px", sm: "20px" } }}>
                             Follow Us
                         </Typography>
                         <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px" }}>
                             {["Instagram", "Linked In"].map((item) => (
-                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3 }}> {/* Add marginBottom here */}
+                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3, fontSize: { xs: "12px", sm: "14px" } }}> {/* Add marginBottom here */}
                                     <Link href="#" color="inherit" underline="hover">
                                         {item}
                                     </Link>
@@ -63,8 +63,21 @@ const Footer = () => {
                         </Box>
 
                     </Grid>
+                    <Grid item xs={4} sm={4} md={2}>
+                        <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "16px", sm: "20px" } }}>
+                            Follow Us
+                        </Typography>
+                        <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px" }}>
+                            {["Instagram", "Linked In"].map((item) => (
+                                <Box component="li" key={item} sx={{ marginBottom: 3, marginTop: 3, fontSize: { xs: "12px", sm: "14px" } }}> {/* Add marginBottom here */}
+                                    <Link href="#" color="inherit" underline="hover">
+                                        {item}
+                                    </Link>
+                                </Box>
+                            ))}
+                        </Box>
 
-
+                    </Grid>
 
                     {/* Newsletter Section */}
                     <Grid item xs={12} sm={6} md={4}>
@@ -82,7 +95,7 @@ const Footer = () => {
                                 href="#app-bar-with-responsive-menu"
                                 sx={{
                                     display: 'flex',
-                                    fontFamily: 'monospace',
+                                    // fontFamily: 'monospace',
                                     fontWeight: 700,
                                     color: 'inherit',
                                     textDecoration: 'none',

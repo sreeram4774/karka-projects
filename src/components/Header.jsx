@@ -71,11 +71,11 @@ const Header = () => {
                         href="#app-bar-with-responsive-menu"
                         sx={{
                             display: { xs: 'none', sm: 'flex' },
-                            fontFamily: 'monospace',
                             fontWeight: 700,
                             color: 'inherit',
                             textDecoration: 'none',
-                            marginLeft: "10px"
+                            marginLeft: "10px",
+                           
                         }}
                     >
                         Talenttribe
