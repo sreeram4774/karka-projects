@@ -90,7 +90,7 @@ const Footer = () => {
                                         ml: 2,
                                     }}
                                 >
-                                    IginternTribe
+                                    InternTribe
                                 </Typography>
                             </Box>
                             {/* <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 2 }}>
