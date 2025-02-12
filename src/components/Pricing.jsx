@@ -1,5 +1,5 @@
 import { Box, Button, Chip, Container, Grid, Paper, Typography, styled, useMediaQuery, useTheme } from '@mui/material'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import EastIcon from '@mui/icons-material/East';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import CloseIcon from '@mui/icons-material/Close';
@@ -9,140 +9,115 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import '../styles/Pricing.css'
 
-const PricingCardContainer = styled(Paper)(({ bgColor }) => ({
+const PricingCardContainer = styled(Paper)(({ theme, index }) => ({
     textAlign: 'left',
-    backgroundColor: bgColor || '#162B60',
     color: '#FFFFFF',
-    borderRadius: '20px',
-    height: '100%',
-    border: '1px solid #A1AEBF',
+    borderRadius: '15px',
+    // border: '1px solid #A1AEBF',
     padding: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: 'auto',
+    backgroundColor: index === 0 ? '#110f0f' : 'transparent',
+    backgroundImage: index === 1 ? 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)' : index === 2 ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)' : 'none',
+    border: index === 0 ? "1px solid #A1AEBF" : index === 2 ? '1px solid #A1AEBF' : 'none',
+    // marginTop: index === 0 || index === 2 ? '10px' : '0px',
+    [theme.breakpoints.up('xs')]: {
+        height: index === 0 || index === 2 ? '830px' : 'auto',
+    },
+    [theme.breakpoints.up('lg')]: {
+        height: index === 0 || index === 2 ? '870px' : 'auto',
+    },
+    [theme.breakpoints.down(425)]: {
+        height: index === 0 || index === 2 ? '840px' : 'auto',
+    },
+    [theme.breakpoints.down(375)]: {
+        height: index === 0 || index === 2 ? '920px' : 'auto',
+    },
 }));
+
 
 const Pricing = () => {
     const pricingData = [
         {
-            title: 'Self Paced',
-            subtitle: 'First 25 Interns only',
+            title: 'Self',
+            originalPrice: '₹2000',
+            discountedPrice: '₹0',
+            description: 'Ideal for those who can learn things on their own and self-paced',
+            features: [
+                { checked: true, text: 'Online Mode' },
+                { checked: true, text: 'Upto 360 hours in 3 months' },
+                { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
+                { checked: true, text: 'Stipend from companies' },
+                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+            ],
+            internships: [
+                { checked: true, text: 'Pre-assessment' },
+                { checked: true, text: 'Task practice' },
+                { checked: true, text: <HighlightedText>Job simulation</HighlightedText> },
+                { checked: true, text: 'Free learning materials' },
+                { checked: true, text: 'Agile learning process' },
+                { checked: true, text: 'Task completion review' },
+                { checked: true, text: <CertificateText>Portfolio <SubText>(LinkedIn)</SubText></CertificateText> },
+                { checked: true, text: 'Deploy in Github' },
+            ],
+        },
+        {
+            title: 'Pro',
+            originalPrice: '₹4000',
+            discountedPrice: '₹1,999',
+            description: 'Ideal for those who need to gain live skills from a Senior developer',
+            features: [
+                { checked: true, text: 'Online Mode' },
+                { checked: true, text: '360 hours in 3 months' },
+                { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
+                { checked: true, text: 'Stipend from companies' },
+                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+            ],
+            title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> plus :</Title2Text>,
+            internships: [
+                { checked: true, text: 'AI Codegen' },
+                { checked: true, text: 'Program switch' },
+                { checked: true, text: 'Weekly huddle with mentor' },
+                { checked: true, text: <CertificateText>Portfolio <SubText>(Github)</SubText></CertificateText> },
+            ],
+            placements: [
+                { checked: true, text: 'Resume preparation' },
+                { checked: true, text: 'Placement assistance' },
+                { checked: true, text: 'Business English' },
+                { checked: true, text: 'Softskill Training' },
+            ]
+        },
+        {
+            title: 'Prime',
             originalPrice: '₹10000',
-            discountedPrice: '₹2,000',
-            description: 'Ideal for those who can learn things on their own and selfpaced',
+            discountedPrice: '₹4,999',
+            description: 'Unlock your full potential and accelerate your career with expert guidance and placement assistance.',
             features: [
                 { checked: true, text: 'Online Mode' },
-                { checked: true, text: '120 to 360 hours' },
-                { checked: true, text: 'Internship Certificate' },
-                { checked: true, text: 'Stipend upto 15,000' },
-                { checked: true, text: 'Work on real customer projects' },
+                { checked: true, text: '360 hours in 3 months' },
+                { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
+                { checked: true, text: 'Stipend from companies' },
+                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
             ],
+            title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> plus :</Title2Text>,
             internships: [
-                { checked: true, text: '100+ Practice assignments' },
-                { checked: true, text: '20+ Job simulations' },
-                { checked: true, text: 'AI Codegen' },
-                { checked: false, text: 'No project guidance' },
-                { checked: true, text: '100 hours live/recorded lectures' },
-                { checked: false, text: 'No live support & doubt clearance' },
-            ],
-            certifications: [
-                { checked: true, text: 'Internship certificate from real verified software companies' },
-                { checked: true, text: 'Verified completion certificate' },
-                { checked: false, text: 'No code review' },
-            ],
-            placements: [
-                { checked: true, text: 'Resume preparation by experts' },
-                { checked: true, text: 'Portfolio on Linkedin and Github' },
-                { checked: true, text: 'Placement assistance' },
-                { checked: false, text: 'No mock interview' },
-                { checked: true, text: 'Softskill training' },
-                { checked: true, text: 'Business english training' },
-
-            ]
-        },
-        {
-            title: 'With Developer Support',
-            subtitle: 'First 25 Only',
-            originalPrice: '₹20000',
-            discountedPrice: '₹12,000',
-            description: 'Ideal for those who needs to gain live skills from a Senior developer',
-            features: [
-                { checked: true, text: 'Online Mode' },
-                { checked: true, text: '120 to 360 hours' },
-                { checked: true, text: 'Internship Certificate' },
-                { checked: true, text: 'Stipend upto 15,000' },
-                { checked: true, text: 'Work on real customer projects' },
-            ],
-            internships: [
-                { checked: true, text: '100+ Practice assignments' },
-                { checked: true, text: '20+ Job simulations' },
-                { checked: true, text: 'AI Codegen' },
                 { checked: true, text: 'Project guidance' },
-                { checked: true, text: '100 hours live/recorded lectures' },
-                { checked: true, text: 'Live support & doubt clearance' },
-            ],
-            certifications: [
-                { checked: true, text: 'Internship certificate from real verified software companies' },
-                { checked: true, text: 'Verified completion certificate' },
-                { checked: true, text: 'Code review' },
+                { checked: true, text: 'Product Design' },
+                { checked: true, text: 'Live support & Doubt clearance' },
+                { checked: true, text: <CertificateText>Code + Task review <SubText>(Github PR)</SubText></CertificateText> },
             ],
             placements: [
-                { checked: true, text: 'Resume preparation by experts' },
-                { checked: true, text: 'Portfolio on Linkedin and Github' },
-                { checked: true, text: 'Placement assistance' },
-                { checked: true, text: 'Mock interview' },
-                { checked: true, text: 'Softskill training' },
-                { checked: true, text: 'Business english training' },
-            ]
-        },
-        {
-            title: 'With Developer Support',
-            subtitle: 'First 25 Only',
-            originalPrice: '₹20000',
-            discountedPrice: '₹12,000',
-            description: 'Ideal for those who needs to gain live skills from a Senior developer',
-            features: [
-                { checked: true, text: 'Online Mode' },
-                { checked: true, text: '120 to 360 hours' },
-                { checked: true, text: 'Internship Certificate' },
-                { checked: true, text: 'Stipend upto 15,000' },
-                { checked: true, text: 'Work on real customer projects' },
-            ],
-            internships: [
-                { checked: true, text: '100+ Practice assignments' },
-                { checked: true, text: '20+ Job simulations' },
-                { checked: true, text: 'AI Codegen' },
-                { checked: true, text: 'Project guidance' },
-                { checked: true, text: '100 hours live/recorded lectures' },
-                { checked: true, text: 'Live support & doubt clearance' },
-            ],
-            certifications: [
-                { checked: true, text: 'Internship certificate from real verified software companies' },
-                { checked: true, text: 'Verified completion certificate' },
-                { checked: true, text: 'Code review' },
-            ],
-            placements: [
-                { checked: true, text: 'Resume preparation by experts' },
-                { checked: true, text: 'Portfolio on Linkedin and Github' },
-                { checked: true, text: 'Placement assistance' },
-                { checked: true, text: 'Mock interview' },
-                { checked: true, text: 'Softskill training' },
-                { checked: true, text: 'Business english training' },
+                { checked: true, text: 'Mock Interview' },
+                { checked: true, text: 'Dedicated placement officer' },
             ]
         },
     ];
+
     const sliderRef = useRef(null);
-
-    const handleNext = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickNext();
-        }
-    };
-
-    const handleBack = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickPrev();
-        }
-    };
-
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -150,176 +125,190 @@ const Pricing = () => {
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: isMobile ? 1.2 : 2,
+        slidesToShow: isMobile ? 1.2 : 3,
         slidesToScroll: 1,
-        // nextArrow: <></>,
-        // prevArrow: <></>,
-        nextArrow: <CustomNextArrow onClick={handleNext} />,
-        prevArrow: <CustomPrevArrow onClick={handleBack} />,
+        nextArrow: <CustomNextArrow onClick={() => sliderRef.current && sliderRef.current.slickNext()} />,
+        prevArrow: <CustomPrevArrow onClick={() => sliderRef.current && sliderRef.current.slickPrev()} />,
         responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1.2,
-
-                }
-            }
+            { breakpoint: 1200, settings: { slidesToShow: 3 } },
+            { breakpoint: 992, settings: { slidesToShow: 3 } },
+            { breakpoint: 768, settings: { slidesToShow: 2.2 } },
+            { breakpoint: 576, settings: { slidesToShow: 1.15 } }
         ],
     };
 
+
     return (
-        // <div id='pricing'>
-        <Box sx={{ backgroundColor: "#110f0f", color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 8 } }}>
-            <Container maxWidth="md" align="center">
-                <Box >
-                    <Container maxWidth="sm" >
-                        <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', marginBottom: 3 }}>
-                            Some pieces of our solutions
-                        </Typography>
-                        <Typography variant='body1' sx={{ color: 'rgba(255, 255, 255, 0.40)', fontSize: '13px' }}>
-                            We have solved your problem of finding an internship and excelling in your career into these two buckets below
-                        </Typography>
-                    </Container>
-                </Box>
+        <section id="pricing">
+            <Box sx={{
+                backgroundColor: "#110f0f", minHeight: "100vh",
+                color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 2, md: 2 }
+            }}>
+                <Container maxWidth="lg" align="center">
+                    <Box>
+                        <Container maxWidth="md">
+                        
+                            <Typography
+                                variant="h4"
+                                mb={3}
+                                fontWeight="500"
+                                gutterBottom
+                                // align="left"
+                                sx={{
+                                    color: '#FFFFFF',
+                                    fontSize: { xs: "28px", sm: "25px", md: "30px", lg: "40px" },
+                                }}>
+                                Some pieces of our solutions
+                            </Typography>
+                            <Typography variant='body1' sx={{ color: 'rgba(255, 255, 255, 0.40)', fontSize: '13px', maxWidth: { xs: "100%", sm: '70%' } }}>
+                                We have solved your problem of finding an internship and excelling in your career into these two buckets below
+                            </Typography>
+                        </Container>
+                    </Box>
 
-                <Slider ref={sliderRef} {...settings}>
-                    {pricingData.map((card, index) => (
-                        <Box key={index} sx={{ padding: "10px", width: "100%", marginTop: 5 }}>
-                            <PricingCardContainer elevation={3} sx={{ backgroundColor: index === 0 || index === 2 ? '#110f0f' : '#162B60' }}>
-                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, gap: 1 }}>
-                                    <Chip label={card.title} size="small" sx={{ background: 'rgba(255, 255, 255, 0.15)', color: "white", fontSize: "11px" }} />
-                                    <Chip label={card.subtitle} size="small" sx={{ background: '#FFEAEA', color: "#CA3E41", fontSize: "11px" }} />
-                                </Box>
-                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                                    <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
-                                        {card.originalPrice}
-                                    </Typography>
-                                    <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF' }}>
-                                        {card.discountedPrice}
-                                    </Typography>
-                                </Box>
-
-                                <Typography variant="body2" sx={{ color: '#EEEEEE', mb: 3 }}>
-                                    {card.description}
-                                </Typography>
-
-                                <Button variant="contained" sx={{ textTransform: 'none', backgroundColor: "#ffa800", color: 'black', borderRadius: "10px", fontSize: "13px" }}>
-                                    Secure Your February Spot <EastIcon />
-                                </Button>
-
-                                {/* Render features, internships, certifications, placements */}
-                                <Box padding='15px 0px'>
-                                    {card.features.map((feature, index) => (
-                                        <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                                            <Typography variant='body2' sx={{ fontSize: "13px", fontWeight: "100" }} >
-                                                {feature.checked ? <VerifiedIcon sx={{ fontSize: "18px", color: "#3ED37A" }} /> : <CloseIcon sx={{ color: 'red', fontSize: "18px" }} />}
-                                            </Typography>
-                                            <Typography variant='body2' sx={{ fontSize: "14px", fontWeight: "100" }} >
-                                                {feature.text}
-                                            </Typography>
-                                        </Box>
-                                    ))}
-                                    <Typography variant='h6' margin='15px 0px' sx={{ color: "#FFA800" }}>Internship</Typography>
-                                    {card.internships.map((internship, index) => (
-                                        <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                                            <Typography variant='body2' sx={{ fontSize: "13px", fontWeight: "100" }} >
-                                                {internship.checked ? <VerifiedIcon sx={{ fontSize: "18px", color: "#3ED37A" }} /> : <CloseIcon sx={{ color: 'red', fontSize: "18px" }} />}
-                                            </Typography>
-                                            <Typography variant='body2' sx={{ fontSize: "14px", fontWeight: "100" }} >
-                                                {internship.text}
-                                            </Typography>
-                                        </Box>
-                                    ))}
-                                    <Typography variant='h6' margin='15px 0px' sx={{ color: "#FFA800" }}>Certification</Typography>
-                                    {card.certifications.map((certification, index) => (
-                                        <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                                            <Typography variant='body2' sx={{ fontSize: "13px", fontWeight: "100" }} >
-                                                {certification.checked ? <VerifiedIcon sx={{ fontSize: "18px", color: "#3ED37A" }} /> : <CloseIcon sx={{ color: 'red', fontSize: "18px" }} />}
-                                            </Typography>
-                                            <Typography variant='body2' sx={{ fontSize: "14px", fontWeight: "100" }} >
-                                                {certification.text}
-                                            </Typography>
-                                        </Box>
-                                    ))}
-                                    <Typography variant='h6' margin='15px 0px' sx={{ color: "#FFA800" }}>Placement</Typography>
-                                    {card.placements.map((placement, index) => (
-                                        <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                                            <Typography variant='body2' sx={{ fontSize: "13px", fontWeight: "100" }} >
-                                                {placement.checked ? <VerifiedIcon sx={{ fontSize: "18px", color: "#3ED37A" }} /> : <CloseIcon sx={{ color: 'red', fontSize: "18px" }} />}
-                                            </Typography>
-                                            <Typography variant='body2' sx={{ fontSize: "14px", fontWeight: "100" }} >
-                                                {placement.text}
-                                            </Typography>
-                                        </Box>
-                                    ))}
-                                    <Box>
-                                        <Button
-                                            variant='contained'
-                                            fullWidth
-                                            sx={{
-                                                textTransform: "capitalize",
-                                                backgroundColor: index === 0 ? '#162B60' : 'white', // Adjust this color for the blue card
-                                                color: index === 0 ? 'white' : '#162B60' // You might also want to change text color for contrast
-                                            }}
-                                        >
-                                            Choose Plan
-                                        </Button>
+                    <Slider ref={sliderRef} {...settings}>
+                        {pricingData.map((card, index) => (
+                            <Box key={index} sx={{ padding: "10px", width: "100%", marginTop: 5, display: "flex", justifyContent: "center", height: "100%", /* backgroundColor: "pink" */ }}>
+                                <PricingCardContainer elevation={3} index={index}>
+                                    <Box textAlign={"center"}>
+                                        <Typography variant="h4" sx={{ color: "#FFA800", textTransform: "uppercase", fontWeight: 600, marginBottom: "15px" }}>
+                                            {card.title}
+                                        </Typography>
+                                    </Box>
+                                    {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
+                                    Starts From
+                                </Typography> */}
+                                    <Box sx={{ display: 'flex', alignItems: 'end', mb: 1, letterSpacing: "1px", flexDirection: "row" }}>
+                                        <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
+                                            {card.originalPrice}
+                                        </Typography>
+                                        <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
+                                            {index === 1 || index === 2 ? (
+                                                <>
+                                                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
+                                                        Starts From
+                                                    </Typography>
+                                                    {card.discountedPrice}
+                                                </>
+                                            ) : (
+                                                card.discountedPrice
+                                            )}
+                                        </Typography>
                                     </Box>
 
-                                </Box>
-                            </PricingCardContainer>
-                        </Box>
-                    ))}
-                </Slider>
-            </Container>
-        </Box>
-        // </div>
 
+
+                                    <Typography variant="body2" sx={{ color: '#EEEEEE', mb: 3, fontSize: { xs: "12px", md: "12px", lg: "15px" }, fontWeight: "200" }}>
+                                        {card.description}
+                                    </Typography>
+
+                                    <Button variant="contained" sx={{ textTransform: 'uppercase', background: "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)", color: '#fff', borderRadius: "6px", fontSize: { xs: "9px", sm: "9px", lg: "12px" }, fontWeight: "bold", width: { xs: "100%", sm: "80%" }, padding: { xs: '7px', sm: "auto" } }}>
+                                        Secure Your February Spot <EastIcon sx={{ marginLeft: '8px' }} />
+                                    </Button>
+
+                                    <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400' }}>
+                                        {card.features && card.features.length > 0 && (
+                                            <Box padding={{ xs: "5px 18px", md: '5px 24px' }}
+                                            >
+                                                {
+                                                    card.features.map((feature, index) => (
+                                                        <FeatureItem key={index} feature={feature} />
+                                                    ))
+                                                }
+                                            </Box>
+                                        )}
+                                        {card.title2 && <Typography variant='h5' sx={{ fontSize: "16px", textAlign: "center" }}>
+                                            {card.title2}
+                                        </Typography>}
+
+                                        {card.internships && card.internships.length > 0 && (
+                                            <SectionBox index={index} title="Internship" items={card.internships} />
+                                        )}
+
+                                        {card.placements && card.placements.length > 0 && (
+                                            <SectionBox index={index} title="Placement" items={card.placements} />
+                                        )}
+                                    </Box>
+                                </PricingCardContainer>
+                            </Box>
+                        ))
+                        }
+                    </Slider >
+                </Container >
+            </Box >
+        </section >
     );
 };
 
-const CustomNextArrow = (props) => {
-    const { onClick } = props; // Removed className and style as they're not needed here
-    return (
-        <IconButton
-            style={{ display: 'none', position: 'absolute', top: '0', right: '0', transform: 'translateY(-50%)', zIndex: 10, border: "1px solid #ffa800", borderRadius: '0', color: "#ffa800", background: '#110f0f' }}
-            onClick={onClick}
-        >
-            <ArrowForwardIosIcon />
-        </IconButton>
-    );
-};
+const FeatureItem = ({ feature }) => (
+    <Box sx={{ display: 'flex', alignItems: 'start', gap: 1, marginBottom: 1 }}>
+        <Typography variant='body2' sx={{ fontSize: "13px" }}>
+            {feature.checked ? <VerifiedIcon sx={{ fontSize: { xs: "14px", lg: "16px" }, color: "#3ED37A" }} /> : <CloseIcon sx={{ color: 'red', fontSize: "18px" }} />}
+        </Typography>
+        <Typography variant='body2' sx={{ fontSize: { xs: "11px", lg: "14px" }, fontWeight: 200 }}>
+            {feature.text}
+        </Typography>
+    </Box>
+);
+
+const SectionBox = ({ index, title, items }) => (
+    <Box sx={{
+        background: index % 2 === 1 ? 'linear-gradient(180deg, rgba(19, 22, 27, 0.20) 0%, rgba(22, 43, 96, 0.20) 100%)' : 'linear-gradient(180deg, rgba(0, 7, 45, 0.20) 0%, rgba(32, 36, 39, 0.20) 100%)',
+        backdropFilter: 'blur(5.099999904632568px)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        // borderRight: '1px solid rgba(255, 255, 255, 0.1)',
+        padding: { xs: "5px 18px", md: '5px 24px' },
+        mt: 2,
+        borderRadius: '12px',
+    }}>
+        <Typography variant='h6' margin='15px 0px' sx={{ color: "#3ED37A" }}>{title}</Typography>
+        {items.map((item, index) => (
+            <FeatureItem key={index} feature={item} />
+        ))}
+    </Box>
+);
+
+const HighlightedText = ({ children }) => (
+    <span style={{ color: "#1FD7E9", fontWeight: 600 }}>{children}</span>
+);
+const HighlightedText2 = ({ children }) => (
+    <span style={{ color: "#FFA800", fontWeight: 600, textTransform: "uppercase" }}>{children}</span>
+);
+
+const CertificateText = ({ children }) => (
+    <>{children}</>
+
+);
+
+const SubText = ({ children }) => (
+    <Box component='span' sx={{ fontSize: { xs: "11px", sm: "11px" }, color: "#A1AEBF" }}>{children}</Box>
+);
+
+const Title2Text = ({ children }) => (
+    <Typography variant='body1' sx={{
+        fontSize: { xs: "15px", sm: "16px" }, textAlign: "center", whiteSpace: "nowrap"
+    }}>
+        <span>{children}</span>
+    </Typography>
+);
 
 
-const CustomPrevArrow = (props) => {
-    const { onClick } = props; // Removed className and style
-    return (
-        <IconButton
-            sx={{ display: 'none', position: 'absolute', top: '0', right: { xs: '20%', sm: '7%' }, transform: 'translateY(-50%)', zIndex: 10, border: "1px solid #ffa800", borderRadius: '0', color: "#ffa800", background: '#110f0f' }}
-            onClick={onClick}
-        >
-            <ArrowBackIosNewIcon />
-        </IconButton>
-    );
-};
+const CustomNextArrow = ({ onClick }) => (
+    <IconButton
+        style={{ display: 'none', position: 'absolute', top: '0', right: '0', transform: 'translateY(-50%)', zIndex: 10, border: "1px solid #ffa800", borderRadius: '0', color: "#ffa800", background: '#110f0f' }}
+        onClick={onClick}
+    >
+        <ArrowForwardIosIcon />
+    </IconButton>
+);
 
+const CustomPrevArrow = ({ onClick }) => (
+    <IconButton
+        sx={{ display: 'none', position: 'absolute', top: '0', right: { xs: '20%', sm: '7%' }, transform: 'translateY(-50%)', zIndex: 10, border: "1px solid #ffa800", borderRadius: '0', color: "#ffa800", background: '#110f0f' }}
+        onClick={onClick}
+    >
+        <ArrowBackIosNewIcon />
+    </IconButton>
+);
 
 export default Pricing;

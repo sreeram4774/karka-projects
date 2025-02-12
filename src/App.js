@@ -38,7 +38,7 @@ function App() {
           <Pricing />
           <Program />
           {/* <Testimonials /> */}
-          <FAQSection />
+          {/* <FAQSection /> */}
           <Courses />
           <Footer />
         </Stack>

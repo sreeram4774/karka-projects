@@ -1,19 +1,23 @@
-import { Box, Button, Container, Grid, Paper, Typography, styled } from '@mui/material'
+import { Box, Button, Container, Grid, Paper, Typography, styled, useTheme } from '@mui/material'
 import React from 'react'
 import coding from '../assets/programimages/coding.svg'
 import humanresources from '../assets/programimages/hr-human-resources.svg'
 
-const ProgramCard = styled(Paper)({
-    textAlign: 'left',
-    backgroundColor: 'transparent',
-    color: '#FFFFFF',
-    borderRadius: '0',
-    height: '100%',
-    border: '1px solid #A1AEBF',
-    padding: '20px'
-});
+
 
 const Program = () => {
+
+    const theme = useTheme();
+
+    // const ProgramCard = styled(Paper)({
+    //     textAlign: 'left',
+    //     backgroundColor: 'transparent',
+    //     color: '#FFFFFF',
+    //     borderRadius: '0',
+    //     height: '100%',
+    //     border: '1px solid #A1AEBF',
+    //     padding: '20px'
+    // });
 
     const programDataOne = [
         {
@@ -21,7 +25,7 @@ const Program = () => {
             description: '100+ Assignments',
             details: [
                 'Assignments help you practice the concepts you learn',
-                'Master advanced technologies & tools technologies & tools',
+                'Master advanced technologies & tools',
             ],
             image: humanresources,
         },
@@ -30,7 +34,7 @@ const Program = () => {
             description: '1:1 Expert Mentorship',
             details: [
                 '100 hours of free mentorship sessions for doubt clearance & support',
-                'Receive personalized guidance from industry leaders',
+                'eceive personalized guidance from industry leaders',
                 'Accelerate learning with a tailored roadmap to success',
             ],
         },
@@ -57,17 +61,42 @@ const Program = () => {
     ]
 
     return (
-        <Box sx={{ backgroundColor: "#110f0f", color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 8 } }}>
-            <Container maxWidth="xl" variant="h5" fontWeight="bold" >
+        <Box sx={{ backgroundColor: "#110f0f", color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 2, md: 8 } }}>
+            <Container maxWidth="xl"  >
                 <Box>
                     <Grid container spacing={3} >
-                        <Grid item xs={12} sm={4}>
-                            <Typography variant='h4' mb={3}>How does the Virtual Internship Program help you?
+                        <Grid item xs={12} sm={4} sx={{ textAlign: { xs: "center", sm: "left" } }}>
+                            <Typography
+                                variant="h4"
+                                mb={3}
+                                fontWeight="500"
+                                gutterBottom
+                                alignItems={{ xs: "center", sm: "left" }}
+                                sx={{
+                                    color: '#FFFFFF',
+                                    fontSize: { xs: "28px", sm: "25px", md: "30px", lg: "40px" }, [theme.breakpoints.down('425')]: {
+                                        fontSize: "25px",
+                                    },
+                                    [theme.breakpoints.down('375')]: {
+                                        fontSize: "20px",
+                                        lineHeight:"30px"
+                                    },
+                                }}>
+                                How does our Virtual Internship Program works?
                             </Typography>
-                            <Typography variant='body1' mb={3} sx={{
-                                color: 'rgba(255, 255, 255, 0.40)', fontSize: '13px'
-                            }}>Take your skills to the next level with a comprehensive virtual internship experience. Gain hands-on practice, expert mentorship, curated resources, and real-world projects to prepare for the industry.
+
+                            <Typography variant="body1" sx={{
+                                color: '#728095',  // Increased contrast
+                                marginBottom: { xs: 0, sm: 3 },
+                                fontSize: { xs: "12px", sm: "12px", md: "13px", lg: "15px" },
+                                fontWeight: 400,
+                                maxWidth: { md: "100%", lg: "90%" },
+                                letterSpacing: "0.02rem",
+                                lineHeight: "22px"
+                            }}>
+                                Take your skills to the next level with a comprehensive virtual internship experience. Gain hands-on practice, expert mentorship, curated resources, and real-world projects to prepare for the industry.
                             </Typography>
+
                             <Button variant="outlined" sx={{ borderColor: "#ffa800", color: "#ffa800", borderRadius: "50px", display: { xs: 'none', sm: "block" } }}>
                                 Enroll Now
                             </Button>
@@ -86,23 +115,30 @@ const Program = () => {
                                             flexDirection: 'column', // Stack image and content
                                             padding: 2
                                         }}>
-                                            {card.image ? <Box sx={{ backgroundColor: "#8474C4", height: "130px", display: "flex", justifyContent: "center", objectFit: "cover" }}>
+                                            {card.image ? <Box sx={{ backgroundColor: "#8474C4", height: "140px", display: "flex", justifyContent: "center", objectFit: "cover" }}>
                                                 <img
                                                     src={card.image}
                                                     alt={card.title}
-                                                    style={{ height: "100%" }}
+                                                    style={{ height: "100%", overflow: "hidden" }}
                                                 />
                                             </Box> : ""}
                                             <Box sx={{ mt: card.image ? 2 : 0, mb: 2 }}>
-                                                <Button variant='contained' size='small' sx={{ backgroundColor: "#FFA800", color: "#000", fontSize: "12px", fontWeight: "bold" }}>{card.title}</Button>
+                                                <Button variant='contained' size='small' sx={{ backgroundColor: "#FFA800", color: "#1A365D", fontSize: "12px", fontWeight: "600" }}>{card.title}</Button>
                                             </Box>
 
-                                            <Typography variant="h6" mb={2}>{card.description}
+                                            <Typography fontSize={{ md: "20px", lg: '24px' }} fontWeight={500} mb={2}>{card.description}
                                             </Typography>
+
                                             <ul style={{ textAlign: "left", paddingLeft: 20 }}>
                                                 {card.details.map((point, i) => (
-                                                    <li key={i} style={{ color: 'rgba(255, 255, 255, 0.60)' }}>
-                                                        <Typography variant="body2" sx={{ fontSize: "13px", }}>{point}</Typography>
+                                                    <li key={i} style={{ color: '#728095' }}>
+                                                        <Typography variant="body2" sx={{
+                                                            color: '#728095',  // Increased contrast
+                                                            fontSize: { xs: "13px", sm: "12px", md: "13px", lg: "15px" },
+                                                            fontWeight: 400,
+                                                            maxWidth: { md: "100%", lg: "90%" },
+                                                            letterSpacing: "0.02rem",
+                                                        }}>{point}</Typography>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -126,23 +162,29 @@ const Program = () => {
                                             flexDirection: 'column', // Stack image and content
                                             padding: 2
                                         }}>
-                                            {card.image ? <Box sx={{ backgroundColor: "#8474C4", height: "130px", display: "flex", justifyContent: "center", objectFit: "cover" }}>
+                                            {card.image ? <Box sx={{ backgroundColor: "#8474C4", height: "140px", display: "flex", justifyContent: "center", objectFit: "cover" }}>
                                                 <img
                                                     src={card.image}
                                                     alt={card.title}
-                                                    style={{ height: "100%" }}
+                                                    style={{ height: "100%", overflow: "hidden" }}
                                                 />
                                             </Box> : ""}
 
                                             <Box sx={{ mt: card.image ? 2 : 0, mb: 2 }}>
-                                                <Button variant='contained' size='small' sx={{ backgroundColor: "#FFA800", color: "#000", fontSize: "12px", fontWeight: "bold" }}>{card.title}</Button>
+                                                <Button variant='contained' size='small' sx={{ backgroundColor: "#FFA800", color: "#1A365D", fontSize: "12px", fontWeight: "600" }}>{card.title}</Button>
                                             </Box>
-                                            <Typography variant="h6" mb={2}>{card.description}
+                                            <Typography fontSize={{ md: "20px", lg: '24px' }} fontWeight={500} mb={2}>{card.description}
                                             </Typography>
                                             <ul style={{ textAlign: "left", paddingLeft: 20 }}>
                                                 {card.details.map((point, i) => (
-                                                    <li key={i} style={{ color: 'rgba(255, 255, 255, 0.60)' }}>
-                                                        <Typography variant="body2" sx={{ fontSize: "13px", }}>{point}</Typography>
+                                                    <li key={i} style={{ color: '#728095' }}>
+                                                        <Typography variant="body2" sx={{
+                                                            color: '#728095',  // Increased contrast
+                                                            fontSize: { xs: "13px", sm: "12px", md: "13px", lg: "15px" },
+                                                            fontWeight: 400,
+                                                            maxWidth: { md: "100%", lg: "90%" },
+                                                            letterSpacing: "0.02rem",
+                                                        }}>{point}</Typography>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -160,8 +202,8 @@ const Program = () => {
 
                     </Grid>
                 </Box>
-            </Container>
-        </Box>
+            </Container >
+        </Box >
     )
 }
 

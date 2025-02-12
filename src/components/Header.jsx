@@ -7,12 +7,9 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../assets/images/Logo.png';
-import { Link } from '@mui/material';
-
-const pages = ['Internship', 'Our Services', 'Pricing'];
+import { Button } from '@mui/material';
 
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -25,31 +22,22 @@ const Header = () => {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
+
     React.useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
-                setScrolled(true); // Change to black when scrolled more than 50px
+                setScrolled(true);
             } else {
-                setScrolled(false); // Transparent when at the top
+                setScrolled(false);
             }
         };
 
-        // Add scroll event listener
         window.addEventListener('scroll', handleScroll);
 
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
-    // const handleScrollToPricing = () => {
-    //     const pricingSection = document.getElementById("pricing");
-    //     if (pricingSection) {
-    //         pricingSection.scrollIntoView({ behavior: "smooth" });
-    //     }
-    // };
-
 
     return (
         <AppBar
@@ -75,13 +63,11 @@ const Header = () => {
                             color: 'inherit',
                             textDecoration: 'none',
                             marginLeft: "10px",
-                           
                         }}
                     >
-                        Talenttribe
+                        InternTribe
                     </Typography>
 
-                    {/* Mobile menu button on the right */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: 'flex-end' }}>
                         <IconButton
                             size="large"
@@ -103,43 +89,36 @@ const Header = () => {
                             onClose={handleCloseNavMenu}
                             sx={{ display: { xs: 'block', sm: 'none' } }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">
+                                    <a href="#verified-companies" style={{ textDecoration: 'none', color: 'inherit' }}>Verified Companies</a>
+                                </Typography>
+                            </MenuItem>
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">
+                                    <a href="#pricing" style={{ textDecoration: 'none', color: 'inherit' }}>Pricing</a>
+                                </Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
 
-                    {/* Navigation items aligned to the right */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block', textTransform: "capitalize" }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
-                        <Button
-                            variant="contained"
-                            sx={{
-                                ml: 2, background: "#FFA800", borderRadius: "50px", color: "black"
-                            }}
-                        >
-                            Apply Now
-                        </Button>
-
-                        {/* <Button
-                            key="Pricing"
-                            onClick={handleScrollToPricing} // Call the function
-                            sx={{ my: 2, color: 'white', display: 'block', textTransform: "capitalize" }}
-                        >
+                        <a href="#verified-companies" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
+                            Verified Companies
+                        </a>
+                        <a href="#pricing" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
                             Pricing
-                        </Button> */}
-
-                        {/* <a href='/#pricing'>Pricing</a> */}
+                        </a>
+                        <a href="#apply-now" style={{ textDecoration: 'none' }}>
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    ml: 2, background: "#FFA800", borderRadius: "50px", color: "black"
+                                }}
+                            >
+                                Apply Now
+                            </Button>
+                        </a>
                     </Box>
                 </Toolbar>
             </Container>
