@@ -63,7 +63,6 @@ const Courses = () => {
 
 
     const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     const trigger = useScrollTrigger({
         disableHysteresis: true,
@@ -281,22 +280,32 @@ const Courses = () => {
                                     <Box mb={2} sx={{ position: "relative" }}>
                                         <img src={WhatsappLogo} alt="" style={{ width: "100%", height: "100%" }} />
                                         <a
-                                            href="https://wa.me/1234567890?text=I%20want%20to%20enroll%20now"  // Use your actual phone number here
+                                            href="https://wa.me/8903003201?text=I%20want%20to%20enroll%20now"
+                                            target="_blank"
                                             style={{
                                                 position: 'absolute',
                                                 top: '50%',
                                                 left: '50%',
                                                 transform: 'translate(-30%, -60%)',
-                                                fontSize: '20px',
-                                                fontWeight: 700,
-                                                color: 'black',  // Adjust the color based on your image
-                                                textDecoration: 'none', // Remove underline from link
-                                                cursor: 'pointer',
+                                                textDecoration: 'none',
                                             }}
-                                            target="_blank" // Opens WhatsApp in a new tab or app
                                         >
-                                            ENROLL NOW
+                                            <Typography
+                                                sx={{
+                                                    fontSize: '20px',
+                                                    fontWeight: 700,
+                                                    color: 'black',  // Adjust based on your image
+                                                    cursor: 'pointer',
+                                                    transition: 'all 0.3s ease',
+                                                    [theme.breakpoints.down('375')]: {
+                                                        fontSize: "18px",
+                                                    }
+                                                }}
+                                            >
+                                                ENROLL NOW
+                                            </Typography>
                                         </a>
+
                                     </Box>
 
 

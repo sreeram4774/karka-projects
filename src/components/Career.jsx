@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import { Box, Button, Container, Grid, Paper, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Paper, Typography, useMediaQuery } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Typewriter from "typewriter-effect";
+import Divider from '@mui/material/Divider';
 
 
 import Cup from '../assets/images/Cup.png';
@@ -13,22 +14,26 @@ import image2 from '../assets/logos/image2.png';
 import image3 from '../assets/logos/image3.png';
 import image4 from '../assets/logos/image4.png';
 import image5 from '../assets/logos/image5.png';
+import image6 from '../assets/logos/image6.png';
 
 
 const Career = () => {
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     React.useEffect(() => {
         AOS.init({
             duration: 1000,
             easing: "ease-in-out",
             once: false,  // Allow repeated animations
+            offset: 150,
             mirror: true, // Replay animation on scroll-up
-            anchorPlacement: "top-bottom",
+            // anchorPlacement: "top-bottom",
+        
         });
 
         const handleScroll = () => {
-            AOS.refresh(); // Refresh AOS on scroll to track visibility changes
+            AOS.refreshHard(); // Refresh AOS on scroll
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -88,10 +93,14 @@ const Career = () => {
         }
     }));
 
-    const CompanyLogos = [image1, image2, image3, image4, image5];
+    const CompanyLogos = [image1, image2, image3, image4, image5, image6];
+
+    if (isMobile) {
+        [CompanyLogos[2], CompanyLogos[3]] = [CompanyLogos[3], CompanyLogos[2]]; // Swap image3 and image4 in mobile view
+    }
 
     return (
-        <section id="verified-companies">
+        <section id="verified-companies" >
             <Box
                 sx={{
                     backgroundColor: "#000",
@@ -100,12 +109,14 @@ const Career = () => {
                     px: { xs: 2, sm: 4 }
                 }}>
                 <Container maxWidth="xl">
+
                     <Grid container spacing={4}>
                         {/* Title Section */}
                         <Grid item xs={12} sm={12}>
                             <Box sx={{
+
                                 textAlign: { xs: "center", sm: "left" },
-                                mb: 3
+                                mb: 3,
                             }}>
                                 <Typography
                                     variant="h3"
@@ -166,10 +177,17 @@ const Career = () => {
                                     />
                                 </Typography>
                             </Box>
+                            <Divider sx={{
+                                mt: 2, backgroundColor: "rgba(255, 255, 255, 0.2)", display: { xs: "block", sm: "none" }
+                            }} />
+
                         </Grid>
+
+
                         <Grid item xs={12} sm={6}>
                             <Box sx={{ textAlign: { xs: "center", sm: "left" }, mb: 0 }}>
                                 <Typography
+                                    id="ai-career"
                                     variant="h3"
                                     sx={{
                                         fontSize: {
@@ -207,7 +225,7 @@ const Career = () => {
 
                         {/* Description Section */}
                         <Grid item xs={12} sm={6}>
-                            <Box sx={{ display: { xs: "block", sm: "none" }, mb: 3 }}>
+                            <Box sx={{ display: { xs: "block", sm: "none" }, mb: 3, mt: -2 }}>
                                 {[
                                     "Work on real internships with verified companies and gain valuable industry experience.",
                                     "Enhance your resume and unlock new opportunities.",
@@ -240,6 +258,9 @@ const Career = () => {
                                                 width: "100%",
                                                 [theme.breakpoints.down('375')]: {
                                                     fontSize: "12px",
+                                                },
+                                                [theme.breakpoints.down('365')]: {
+                                                    fontSize: "0.7rem"
                                                 },
                                             }}
                                         >
@@ -280,6 +301,9 @@ const Career = () => {
                                         [theme.breakpoints.down('375')]: {
                                             fontSize: "10px",
                                         },
+                                        // [theme.breakpoints.down('365')]: {
+                                        //     fontSize: "8.4px",
+                                        // },
                                     }}>
                                         Get Internship Certificate Directly from the Company
                                     </Typography>
@@ -308,7 +332,7 @@ const Career = () => {
                                         data-aos-delay={index * 200}
                                         data-aos-anchor-placement="top-bottom"
 
-                                        xs={6} sm={2.4} md={2.4} lg={2.4}
+                                        xs={6} sm={2} md={2} lg={2}
                                         key={index}
                                         sx={{
                                             width: "100%",
@@ -334,6 +358,7 @@ const Career = () => {
                                 ))}
                             </Grid>
                         </Grid>
+
                     </Grid>
                 </Container>
             </Box>
@@ -343,233 +368,4 @@ const Career = () => {
 }
 
 export default Career;
-
-// import * as React from 'react';
-// import { styled, useTheme } from '@mui/material/styles';
-// import { Box, Button, Container, Grid, Paper, Typography } from '@mui/material';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-
-// import Cup from '../assets/images/Cup.png';
-// import Star from '../assets/images/star.svg';
-// import image1 from '../assets/logos/image1.png';
-// import image2 from '../assets/logos/image2.png';
-// import image3 from '../assets/logos/image3.png';
-// import image4 from '../assets/logos/image4.png';
-// import image5 from '../assets/logos/image5.png';
-
-// const Career = () => {
-//     const theme = useTheme();
-//     const careerRef = React.useRef(null);
-
-//     React.useEffect(() => {
-//         // Initialize AOS
-//         AOS.init({
-//             duration: 1000,
-//             easing: "ease-in-out",
-//             once: false,
-//             mirror: true,
-//             offset: 50,
-//             disable: false,
-//             disableMutationObserver: false,
-//             startEvent: 'DOMContentLoaded'
-//         });
-
-//         // Function to refresh AOS on scroll
-//         const refreshAOS = () => {
-//             AOS.refresh();
-//         };
-
-//         // Add scroll event listener
-//         window.addEventListener('scroll', refreshAOS);
-
-//         // Clean up
-//         return () => {
-//             window.removeEventListener('scroll', refreshAOS);
-//         };
-//     }, []);
-
-//     // Re-trigger AOS when component updates
-//     React.useEffect(() => {
-//         AOS.refresh();
-//     });
-
-//     const CertificatePaper = styled(Paper)(({ theme }) => ({
-//         padding: "0px 16px",
-//         display: "inline-flex",
-//         alignItems: "center",
-//         backgroundColor: "#ffa800",
-//         color: "#000",
-//         borderRadius: "3px",
-//         boxShadow: "none",
-//         gap: "8px",
-//         width: "fit-content",
-//         [theme.breakpoints.down('md')]: {
-//             width: '100%',
-//             justifyContent: 'center',
-//         }
-//     }));
-
-//     const StyledCup = styled('img')(({ theme }) => ({
-//         width: '32px',
-//         height: '32px',
-//         objectFit: 'contain',
-//         marginTop: '-20px',
-//         [theme.breakpoints.down('md')]: {
-//             width: '30px',
-//             height: '30px',
-//         },
-//     }));
-
-//     const CompanyButton = styled(Button)(({ theme }) => ({
-//         backgroundColor: "transparent",
-//         color: "#fff",
-//         textTransform: "capitalize",
-//         width: "100%",
-//         maxWidth: "fit-content",
-//         display: 'flex',
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         padding: "10px",
-//         gap: '8px',
-//         '&:hover': {
-//             backgroundColor: "rgba(255, 255, 255, 0.05)",
-//             borderColor: "#fff"
-//         },
-//         [theme.breakpoints.down('sm')]: {
-//             maxWidth: "160px",
-//             fontSize: "14px",
-//             padding: "8px 16px"
-//         }
-//     }));
-
-//     const CompanyLogos = [image1, image2, image3, image4, image5];
-
-//     return (
-//         <Box ref={careerRef}
-//             sx={{
-//                 backgroundColor: "#000",
-//                 color: "#fff",
-//                 py: { xs: 4, sm: 8 },
-//                 px: { xs: 2, sm: 4 }
-//             }}>
-//             <Container maxWidth="xl">
-//                 <Grid container spacing={4}>
-//                     {/* Title Section */}
-//                     <Grid
-//                         item
-//                         xs={12}
-//                         sm={6}
-//                         data-aos="fade-up"
-//                         data-aos-anchor-placement="center-bottom"
-//                     >
-//                         <Box sx={{ textAlign: { xs: "center", sm: "left" }, mb: 0 }}>
-//                             <Typography
-//                                 variant="h3"
-//                                 sx={{
-//                                     fontSize: { xs: "28px", sm: "30px", md: "40px" },
-//                                     fontWeight: 500,
-//                                     lineHeight: { xs: "38px", md: "56px" },
-//                                     letterSpacing: "-0.02em"
-//                                 }}
-//                             >
-//                                 Begin your AI Driven Tech<br />
-//                                 Career with{" "}
-//                                 <Typography component="span" variant="inherit" sx={{ color: "#ffa800" }}>
-//                                     InternTribe
-//                                 </Typography>
-//                             </Typography>
-//                         </Box>
-//                     </Grid>
-
-//                     {/* Description Section */}
-//                     <Grid
-//                         item
-//                         xs={12}
-//                         sm={6}
-//                         data-aos="fade-up"
-//                         data-aos-anchor-placement="center-bottom"
-//                         data-aos-delay="100"
-//                     >
-//                         <Typography sx={{
-//                             color: "rgba(255, 255, 255, 0.6)",
-//                             fontSize: { sm: "12px", md: "13px", lg: "15px" },
-//                             fontWeight: 400,
-//                             lineHeight: 1.6,
-//                             mb: 4,
-//                             maxWidth: "90%"
-//                         }}>
-//                             Work on real internships with verified companies and gain valuable industry experience.
-//                             No hidden barriers—hands-on practice & enhance your ability. Enhance your resume and unlock
-//                             new opportunities.
-//                         </Typography>
-
-//                         <Grid item xs={12} sm={12} sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'flex-start' } }}>
-//                             <CertificatePaper>
-//                                 <StyledCup src={Cup} alt="Trophy" />
-//                                 <Typography sx={{ fontSize: { xs: "12px", sm: "14px" }, fontWeight: 500 }}>
-//                                     Get Internship Certificate Directly from the Company
-//                                 </Typography>
-//                             </CertificatePaper>
-//                         </Grid>
-//                     </Grid>
-
-//                     {/* Companies Section */}
-//                     <Grid
-//                         item
-//                         xs={12}
-//                         data-aos="fade-up"
-//                         data-aos-anchor-placement="center-bottom"
-//                         data-aos-delay="200"
-//                         sx={{ mt: { sm: 0, md: 2 } }}
-//                     >
-//                         <Typography sx={{
-//                             textAlign: "center",
-//                             color: 'rgba(255, 255, 255, 0.60)',
-//                             fontSize: "14px",
-//                             fontWeight: 400,
-//                             mb: 2
-//                         }}>
-//                             Companies offering Certificate & Stipend.
-//                         </Typography>
-
-//                         <Grid container spacing={2} sx={{ justifyContent: "center", maxWidth: "100%", mx: "auto" }}>
-//                             {CompanyLogos.map((company, index) => (
-//                                 <Grid
-//                                     item
-//                                     data-aos="fade-up"
-//                                     data-aos-anchor-placement="center-bottom"
-//                                     data-aos-delay={300 + (index * 100)}
-//                                     xs={6} sm={2.4} md={2.4} lg={2.4}
-//                                     key={index}
-//                                     sx={{
-//                                         width: "100%",
-//                                         display: 'flex',
-//                                         justifyContent: 'center',
-//                                         padding: { xs: "16px 16px 0 0!important", sm: "8px 0px 8px 0px!important" }
-//                                     }}
-//                                 >
-//                                     <CompanyButton>
-//                                         <img
-//                                             src={company}
-//                                             alt="Company Logo"
-//                                             style={{
-//                                                 width: '100%',
-//                                                 height: '100%',
-//                                                 objectFit: "contain"
-//                                             }}
-//                                         />
-//                                     </CompanyButton>
-//                                 </Grid>
-//                             ))}
-//                         </Grid>
-//                     </Grid>
-//                 </Grid>
-//             </Container>
-//         </Box>
-//     );
-// }
-
-// export default Career;
-
 

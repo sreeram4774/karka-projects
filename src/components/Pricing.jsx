@@ -1,5 +1,5 @@
 import { Box, Button, Chip, Container, Grid, Paper, Typography, styled, useMediaQuery, useTheme } from '@mui/material'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import EastIcon from '@mui/icons-material/East';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import CloseIcon from '@mui/icons-material/Close';
@@ -11,20 +11,50 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import '../styles/Pricing.css'
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const PricingCardContainer = styled(Paper)(({ theme, index }) => ({
+const PricingCardContainer = styled(Paper)(({ theme, index, isPreview, isMobile }) => ({
     textAlign: 'left',
     color: '#FFFFFF',
     borderRadius: '15px',
-    // border: '1px solid #A1AEBF',
     padding: '20px',
     display: 'flex',
     flexDirection: 'column',
     minHeight: 'auto',
+    position: 'relative', // Required for pseudo-element
+
     backgroundColor: index === 0 ? '#110f0f' : 'transparent',
-    backgroundImage: index === 1 ? 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)' : index === 2 ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)' : 'none',
-    border: index === 0 ? "1px solid #A1AEBF" : index === 2 ? '1px solid #A1AEBF' : 'none',
-    // marginTop: index === 0 || index === 2 ? '10px' : '0px',
+    backgroundImage: index === 1
+        ? 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)'
+        : index === 2
+            ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)'
+            : 'none',
+
+    // backgroundImage: 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)',
+
+    // Apply glow effect only in preview mode
+    ...(isPreview && isMobile && {
+        "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: "-3px", // Expand beyond the card
+            borderRadius: '15px',
+            padding: "3px",
+            background: "linear-gradient(135deg, #FFA800, #3ED37A, #1CFAFC)",
+            filter: "blur(8px)", // Glowing effect
+            zIndex: "-1",
+            animation: "glowEffect 1.5s infinite alternate", // Animation
+        },
+    }),
+
+    "@keyframes glowEffect": {
+        "0%": { filter: "blur(4px) opacity(0.7)" },
+        "50%": { filter: "blur(10px) opacity(1)" },
+        "100%": { filter: "blur(6px) opacity(0.8)" },
+    },
+
+    border: index === 0 || index === 2 ? "1px solid #A1AEBF" : 'none',
+
     [theme.breakpoints.up('xs')]: {
         height: index === 0 || index === 2 ? '830px' : 'auto',
     },
@@ -37,10 +67,16 @@ const PricingCardContainer = styled(Paper)(({ theme, index }) => ({
     [theme.breakpoints.down(375)]: {
         height: index === 0 || index === 2 ? '920px' : 'auto',
     },
+    [theme.breakpoints.down(365)]: {
+        height: index === 0 || index === 2 ? '880px' : 'auto',
+    },
 }));
 
 
+
 const Pricing = () => {
+
+
     const pricingData = [
         {
             title: 'Self',
@@ -55,14 +91,14 @@ const Pricing = () => {
                 { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
             ],
             internships: [
-                { checked: true, text: 'Pre-assessment' },
+                // { checked: true, text: 'Pre-assessment' },
                 { checked: true, text: 'Task practice' },
                 { checked: true, text: <HighlightedText>Job simulation</HighlightedText> },
                 { checked: true, text: 'Free learning materials' },
                 { checked: true, text: 'Agile learning process' },
                 { checked: true, text: 'Task completion review' },
-                { checked: true, text: <CertificateText>Portfolio <SubText>(LinkedIn)</SubText></CertificateText> },
-                { checked: true, text: 'Deploy in Github' },
+                { checked: true, text: <CertificateText>Portfolio <SubText>(<LinkedInIcon /> LinkedIn)</SubText></CertificateText> },
+                { checked: true, text: 'Deploy on Github' },
             ],
         },
         {
@@ -72,7 +108,7 @@ const Pricing = () => {
             description: 'Ideal for those who need to gain live skills from a Senior developer',
             features: [
                 { checked: true, text: 'Online Mode' },
-                { checked: true, text: '360 hours in 3 months' },
+                { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
                 { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
@@ -98,7 +134,7 @@ const Pricing = () => {
             description: 'Unlock your full potential and accelerate your career with expert guidance and placement assistance.',
             features: [
                 { checked: true, text: 'Online Mode' },
-                { checked: true, text: '360 hours in 3 months' },
+                { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
                 { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
@@ -115,11 +151,14 @@ const Pricing = () => {
                 { checked: true, text: 'Dedicated placement officer' },
             ]
         },
+
     ];
 
     const sliderRef = useRef(null);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const [activeIndex, setActiveIndex] = useState(0);
+    // const isPreviewMode = true; // Set this dynamically based on preview mode
 
     const settings = {
         dots: false,
@@ -127,13 +166,29 @@ const Pricing = () => {
         speed: 500,
         slidesToShow: isMobile ? 1.2 : 3,
         slidesToScroll: 1,
+        afterChange: (current) => {
+            let correctedIndex = current;
+            const lastIndex = pricingData.length - (isMobile ? 1 : 2);
+
+            if (current >= lastIndex) {
+                correctedIndex = lastIndex - 1; // Shift focus one step back
+            }
+            if (correctedIndex == 1.85) {
+                correctedIndex = 2
+            }
+            // correctedIndex == 1.85 ? correctedIndex = 2 : null;
+            setActiveIndex(correctedIndex);
+            console.log(correctedIndex)
+        },
+
         nextArrow: <CustomNextArrow onClick={() => sliderRef.current && sliderRef.current.slickNext()} />,
         prevArrow: <CustomPrevArrow onClick={() => sliderRef.current && sliderRef.current.slickPrev()} />,
         responsive: [
             { breakpoint: 1200, settings: { slidesToShow: 3 } },
             { breakpoint: 992, settings: { slidesToShow: 3 } },
             { breakpoint: 768, settings: { slidesToShow: 2.2 } },
-            { breakpoint: 576, settings: { slidesToShow: 1.15 } }
+            { breakpoint: 576, settings: { slidesToShow: 1.15 } },
+            { breakpoint: 375, settings: { slidesToShow: 1.15 } }
         ],
     };
 
@@ -147,7 +202,7 @@ const Pricing = () => {
                 <Container maxWidth="lg" align="center">
                     <Box>
                         <Container maxWidth="md">
-                        
+
                             <Typography
                                 variant="h4"
                                 mb={3}
@@ -160,7 +215,11 @@ const Pricing = () => {
                                 }}>
                                 Some pieces of our solutions
                             </Typography>
-                            <Typography variant='body1' sx={{ color: 'rgba(255, 255, 255, 0.40)', fontSize: '13px', maxWidth: { xs: "100%", sm: '70%' } }}>
+                            <Typography variant='body1' sx={{
+                                color: 'rgba(255, 255, 255, 0.40)', fontSize: '13px', [theme.breakpoints.down('375')]: {
+                                    fontSize: "0.7rem"
+                                }, maxWidth: { xs: "100%", sm: '70%' }
+                            }}>
                                 We have solved your problem of finding an internship and excelling in your career into these two buckets below
                             </Typography>
                         </Container>
@@ -169,7 +228,7 @@ const Pricing = () => {
                     <Slider ref={sliderRef} {...settings}>
                         {pricingData.map((card, index) => (
                             <Box key={index} sx={{ padding: "10px", width: "100%", marginTop: 5, display: "flex", justifyContent: "center", height: "100%", /* backgroundColor: "pink" */ }}>
-                                <PricingCardContainer elevation={3} index={index}>
+                                <PricingCardContainer elevation={3} index={index} isPreview={index !== activeIndex} isMobile={isMobile}>
                                     <Box textAlign={"center"}>
                                         <Typography variant="h4" sx={{ color: "#FFA800", textTransform: "uppercase", fontWeight: 600, marginBottom: "15px" }}>
                                             {card.title}

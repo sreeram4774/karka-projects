@@ -47,12 +47,18 @@ const Header = () => {
                 transition: 'background-color 0.3s ease',
             }}
         >
-            <Container maxWidth="xl" sx={{ background: 'rgba(15, 15, 15, 0.40)', backdropFilter: 'blur(9px)' }}>
+            <Container maxWidth="100%" sx={{ background: 'rgba(15, 15, 15, 0.40)', backdropFilter: 'blur(9px)' }}>
                 <Toolbar disableGutters>
                     {/* Logo */}
-                    <img src={Logo} alt="Logo" style={{ maxWidth: '50px' }} />
-
-                    <Typography
+                    {/* <img src={Logo} alt="Logo" style={{ maxWidth: '50px' }} /> */}
+                    <Box sx={{ width: { xs: "40%", sm: '20%', md: "15%", lg: "15%" }, display:"flex", alignItems:"center"}}>
+                        <img
+                            src={Logo}
+                            alt="Logo"
+                            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                        />
+                    </Box>
+                    {/* <Typography
                         variant="h6"
                         noWrap
                         component="a"
@@ -66,7 +72,7 @@ const Header = () => {
                         }}
                     >
                         InternTribe
-                    </Typography>
+                    </Typography> */}
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: 'flex-end' }}>
                         <IconButton
@@ -91,7 +97,7 @@ const Header = () => {
                         >
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">
-                                    <a href="#verified-companies" style={{ textDecoration: 'none', color: 'inherit' }}>Verified Companies</a>
+                                    <a href="#ai-career" style={{ textDecoration: 'none', color: 'inherit' }}>Verified Companies</a>
                                 </Typography>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>

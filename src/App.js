@@ -14,12 +14,21 @@ import Testimonials from './components/Testimonials';
 import "@fontsource/poppins"; // Defaults to weight 400
 import "@fontsource/poppins/300.css"; // Light
 import "@fontsource/poppins/600.css"; // Semi-bold
+import WhatsAppButton from './components/WhatsAppButton';
+import CssBaseline from "@mui/material/CssBaseline";
+
 
 
 
 const theme = createTheme({
   typography: {
     fontFamily: "Poppins, sans-serif",
+    fontSize: 16, // Default for body text
+    h1: { fontSize: "2.5rem" }, // 40px
+    h2: { fontSize: "2rem" }, // 32px
+    h3: { fontSize: "1.75rem" }, // 28px
+    body1: { fontSize: "1rem" }, // 16px (default)
+    body2: { fontSize: "0.875rem" }, // 14px
   },
 });
 
@@ -27,6 +36,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+       <CssBaseline />
       <Box>
         {/* <Main /> */}
         <Header />
@@ -42,6 +52,7 @@ function App() {
           <Courses />
           <Footer />
         </Stack>
+        <WhatsAppButton />
       </Box>
     </ThemeProvider>
 

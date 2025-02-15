@@ -20,6 +20,7 @@ const Home = () => {
         backgroundImage: `url(${CheckBackground})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+      
     };
 
     const overlayStyles = {
@@ -56,7 +57,10 @@ const Home = () => {
             lg: "4.5rem"
         },
         [theme.breakpoints.down(425)]: {
-            fontSize: "3rem"
+            fontSize: "2.5rem"
+        },
+        [theme.breakpoints.down(375)]: {
+            fontSize: "2rem"
         },
         fontWeight: "500",
         textAlign: "center",
@@ -72,7 +76,10 @@ const Home = () => {
             lg: "4rem"
         },
         [theme.breakpoints.down(425)]: {
-            fontSize: "3rem"
+            fontSize: "2.5rem"
+        },
+        [theme.breakpoints.down(375)]: {
+            fontSize: "2rem"
         },
         fontWeight: "500",
         textAlign: "center",
@@ -107,8 +114,14 @@ const Home = () => {
         textAlign: { xs: "center", md: "left" },
         maxWidth: { xs: "100%", sm: "90%", md: "65%", lg: "70%" },
         [theme.breakpoints.down('375')]: {
-            lineHeight: "20px"
+            lineHeight: "20px",
         },
+        [theme.breakpoints.down('367')]: {
+            fontSize: "0.7rem"
+        },
+        // [theme.breakpoints.down('321')]: {
+        //     fontSize:"0.7rem"
+        // },
     };
 
     const buttonStyles = {
@@ -129,7 +142,7 @@ const Home = () => {
             <Container maxWidth="lg" sx={{ py: { xs: 4, sm: 6, md: 8, lg: 8 } }}>
                 <Box sx={{ textAlign: 'center' }}>
                     <Typography variant="h1" sx={titleStyles}>
-                        <Box sx={{ display: "flex", alignItems: "end", justifyContent: "center", gap: 1 }}>
+                        <Box sx={{ display: "flex", alignItems: { xs: "center", sm: "end" }, justifyContent: "center", gap: 1, flexDirection: { xs: 'column', sm: "row" } }}>
                             <Box component="span" sx={internGradientStyles}>
                                 Internships
                             </Box>
@@ -158,7 +171,7 @@ const Home = () => {
                                 xs: "2rem",
                                 sm: "2.5rem",
                                 md: "3.5rem",
-                                lg: "4rem"
+                                lg: "4rem",
                             },
                         }}>
                             <Box component="span" sx={{

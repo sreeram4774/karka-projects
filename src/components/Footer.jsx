@@ -25,7 +25,7 @@ const Footer = () => {
     const theme = useTheme();
 
     return (
-        <Box sx={{ backgroundColor: "#000", color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 4, sm: 4 } }}>
+        <Box sx={{ backgroundColor: "#000", color: "#fff", py: { xs: 4, sm: 8 }, px: {  xs: 2, sm: 4, md: 8 } }}>
             <Container maxWidth="xl">
                 <Grid container spacing={4}>
                     {/* Reusable Social Links Section */}
@@ -36,7 +36,7 @@ const Footer = () => {
                     <Grid item xs={12} sm={8} md={6}>
                         <Grid container spacing={4}>
                             <Grid item xs={6} sm={4} md={4}>
-                                <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "16px", sm: "20px" } }}>
+                                <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "14px", sm: "20px" } }}>
                                     Follow us
                                 </Typography>
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>
@@ -53,7 +53,7 @@ const Footer = () => {
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={6} md={6}>
-                                <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "16px", sm: "20px" } }}>
+                                <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "14px", sm: "20px" } }}>
                                     Get More Updates
                                 </Typography>
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>
@@ -77,12 +77,18 @@ const Footer = () => {
                     {/* Newsletter Section */}
                     <Grid item xs={12} sm={4} md={6} sx={{ display: "flex", justifyContent: { xs: "flex-start", sm: "flex-end" }, textAlign: { xs: "left", sm: "right" } }}>
                         <Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <img src={Logo} alt="Logo" style={{ maxWidth: "50px" }} />
-                                <Typography
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: "flex-start", sm: "flex-end" }, mb: 2 }}>
+                                <Box sx={{ width: { xs: "50%",sm:"80%", md: "30%" } }}>
+                                    <img
+                                        src={Logo}
+                                        alt="Logo"
+                                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                                    />
+                                </Box>
+                                {/* <Typography
                                     variant="h6"
                                     component="a"
-                                    href="#"
+                                    // href="#"
                                     sx={{
                                         fontWeight: 700,
                                         color: "inherit",
@@ -91,24 +97,21 @@ const Footer = () => {
                                     }}
                                 >
                                     InternTribe
-                                </Typography>
+                                </Typography> */}
                             </Box>
                             {/* <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 2 }}>
                                 Get latest updates
                             </Typography> */}
-
                             <Typography
                                 variant="body2"
                                 sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 3, display: "flex", justifyContent: { xs: "flex-start", sm: 'flex-end' } }}
                             >
                                 <FcPhone style={{ fontSize: "20px", marginRight: "8px", transform: "rotate(270deg)" }} />
-                                89030 03201
+                                <a href="tel:+918903003201" style={{ textDecoration: "none", color: "inherit" }}>
+                                    89030 03201
+                                </a>
                             </Typography>
-
                         </Box>
-
-
-
                         {/* <TextField
                             fullWidth
                             placeholder="Your Email"
@@ -120,7 +123,7 @@ const Footer = () => {
                                         fontWeight: 400,
                                         fontSize: "14px",
                                         opacity: 1, // Ensures visibility in some browsers
-                                        [theme.breakpoints.down(425)]: {
+                                        theme.breakpoints.down(425)]: {
                                             fontSize: "12px", // Apply when screen is xs (below sm)
                                         },
                                     }

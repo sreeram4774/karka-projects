@@ -107,13 +107,23 @@ const FeatureSection = () => {
                                 <Typography variant="h3">
                                     <img src={card.img} alt={card.title} />
                                 </Typography>
-                                <Typography variant="h6" fontWeight="400" gutterBottom>
+                                <Typography variant="h6" fontWeight="400" gutterBottom sx={{
+                                    [theme.breakpoints.down('425')]: {
+                                        fontSize: "1.2rem"
+                                    },
+                                }}>
                                     {card.title}
                                 </Typography>
                                 <ul style={{ textAlign: "left", paddingLeft: 20 }}>
                                     {card.description.map((point, i) => (
                                         <li key={i} style={{ marginBottom: 1, fontWeight: 400, fontSize: "9px", color: 'rgba(255, 255, 255, 0.60)' }}>
-                                            <Typography variant="body2">{point}</Typography>
+                                            <Typography variant="body2"
+                                                sx={{
+                                                    [theme.breakpoints.down('375')]: {
+                                                        fontSize: "0.7rem"
+                                                    },
+                                                }}
+                                            >{point}</Typography>
                                         </li>
                                     ))}
                                 </ul>

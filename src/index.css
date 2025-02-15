@@ -12,6 +12,13 @@ html {
   scroll-behavior: smooth;
 }
 
-#verified-companies, #pricing {
-  scroll-margin-top: 55px; /* Adjust this value based on your AppBar's height */
+#verified-companies,
+#pricing {
+  scroll-margin-top: 55px;
+  /* Adjust this value based on your AppBar's height */
+}
+
+#ai-career {
+  scroll-margin-top: 75px;
+  /* Adjust this value based on your AppBar's height */
 }

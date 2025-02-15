@@ -68,7 +68,11 @@ const ChooseUs = () => {
                         <Typography variant="body1" sx={{
                             color: 'rgba(255, 255, 255, 0.60)',  // Increased contrast
                             marginBottom: 3,
-                            fontSize: { xs: "12px", sm: "12px", md: "13px", lg: "15px" },
+                            fontSize: {
+                                xs: "12px", sm: "12px", md: "13px", lg: "15px", [theme.breakpoints.down('375')]: {
+                                    fontSize: "0.7rem"
+                                },
+                            },
                             fontWeight: 400,
                             maxWidth: { md: "100%", lg: "90%" },
                             letterSpacing: "0.02rem",
