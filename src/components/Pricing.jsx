@@ -220,11 +220,11 @@ const Pricing = () => {
 
         // Customize message based on the selected card
         if (card.title === "Self") {
-            message = "Hello! I'm interested in enrolling for the internship program.";
+            message = "Hello! I'm interested in enrolling for the InternTribe's internship program.";
         } else if (card.title === "Pro") {
-            message = "Hi! I'm excited about the internship opportunity! I'd like to inquire about applying for a scholarship to participate.";
+            message = "Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.";
         } else if (card.title === "Prime") {
-            message = "Hi! I'm excited about the internship opportunity! I'd like to inquire about applying for a scholarship to participate.";
+            message = "Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.";
         }
 
         // Encode the message to make it URL-safe

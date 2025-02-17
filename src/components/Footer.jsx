@@ -23,7 +23,7 @@ const Footer = () => {
 
     const handleClick = () => {
         const phoneNumber = "918903003201";
-        const message = encodeURIComponent("Hello! I'm interested in enrolling for the internship program.");
+        const message = encodeURIComponent("Hello! I'm interested in enrolling for the InternTribe's internship program.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
@@ -69,27 +69,30 @@ const Footer = () => {
 
                     {/* Newsletter Section */}
                     <Grid item xs={12} sm={4} md={6} sx={{ display: "flex", justifyContent: { xs: "flex-start", sm: "flex-end" }, textAlign: { xs: "left", sm: "right" } }}>
-                        <Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: "flex-start", sm: "flex-end" }, mb: 2 }}>
-                                <Box sx={{ width: { xs: "50%", sm: "80%", md: "30%" } }}>
-                                    <img
-                                        src={Logo}
-                                        alt="Logo"
-                                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                                    />
+                        <Box sx={{display:"flex", alignItems:"flex-start", flexDirection:{xs:"row",sm:"column"}}}>
+                            <Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: "flex-start", sm: "flex-end" }, mb: 2 }}>
+                                    <Box sx={{ width: { xs: "50%", sm: "80%", md: "30%" } }}>
+                                        <img
+                                            src={Logo}
+                                            alt="Logo"
+                                            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                                        />
+                                    </Box>
+
                                 </Box>
 
+                                <Typography
+                                    variant="body2"
+                                    sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 2, display: "flex", justifyContent: { xs: "flex-start", sm: 'flex-end' } }}
+                                >
+                                    <FcPhone style={{ fontSize: "20px", marginRight: "8px", transform: "rotate(270deg)" }} />
+                                    <a href="tel:+918903003201" style={{ textDecoration: "none", color: "inherit" }}>
+                                        89030 03201
+                                    </a>
+                                </Typography>
                             </Box>
 
-                            <Typography
-                                variant="body2"
-                                sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 2, display: "flex", justifyContent: { xs: "flex-start", sm: 'flex-end' } }}
-                            >
-                                <FcPhone style={{ fontSize: "20px", marginRight: "8px", transform: "rotate(270deg)" }} />
-                                <a href="tel:+918903003201" style={{ textDecoration: "none", color: "inherit" }}>
-                                    89030 03201
-                                </a>
-                            </Typography>
                             <Box onClick={handleClick} sx={{ width: '100%', display: "flex", justifyContent: { xs: "flex-start", sm: "flex-end" }, boxSizing: "border-box" }}>
                                 <img
                                     src={whatsappLogo}

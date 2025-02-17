@@ -2,11 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import whatsappAnimation from "../assets/json/whatsapp-animation.json"; // Add your animation file
-
 const WhatsAppButton = () => {
     const handleClick = () => {
         const phoneNumber = "918903003201";
-        const message = encodeURIComponent("Hello! I'm interested in enrolling for the internship program.");
+        const message = encodeURIComponent("Hello! I'm interested in enrolling for the InternTribe's internship program.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
