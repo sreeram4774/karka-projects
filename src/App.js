@@ -16,9 +16,7 @@ import "@fontsource/poppins/300.css"; // Light
 import "@fontsource/poppins/600.css"; // Semi-bold
 import WhatsAppButton from './components/WhatsAppButton';
 import CssBaseline from "@mui/material/CssBaseline";
-
-
-
+import { useState, useEffect } from 'react';
 
 const theme = createTheme({
   typography: {
@@ -32,13 +30,38 @@ const theme = createTheme({
   },
 });
 
-
 function App() {
+  const [showButton, setShowButton] = useState(true);
+
+  // Detect when the user reaches the footer
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.getElementById("footer");
+      
+      if (footer) {
+        const footerPosition = footer.getBoundingClientRect();
+        // If footer is near the bottom of the screen, hide the button
+        if (footerPosition.top <= window.innerHeight) {
+          setShowButton(false);
+        } else {
+          setShowButton(true);
+        }
+      }
+    };
+
+    // Set up the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-       <CssBaseline />
+      <CssBaseline />
       <Box>
-        {/* <Main /> */}
         <Header />
         <Stack>
           <Home />
@@ -47,17 +70,14 @@ function App() {
           <ChooseUs />
           <Pricing />
           <Program />
-          {/* <Testimonials /> */}
-          {/* <FAQSection /> */}
           <Courses />
-          <Footer />
+          <Footer id="footer" />
         </Stack>
-        <WhatsAppButton />
       </Box>
+      {/* Conditionally render the WhatsApp Button */}
+      {showButton && <WhatsAppButton />}
     </ThemeProvider>
-
   );
 }
-
 
 export default App;

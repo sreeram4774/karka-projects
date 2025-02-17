@@ -39,6 +39,13 @@ const Header = () => {
         };
     }, []);
 
+    const handleClick = () => {
+        const phoneNumber = "918903003201";
+        const message = encodeURIComponent("Hello! I'm interested in enrolling for the internship program.");
+        const url = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(url, "_blank");
+    };
+
     return (
         <AppBar
             position="fixed"
@@ -51,7 +58,7 @@ const Header = () => {
                 <Toolbar disableGutters>
                     {/* Logo */}
                     {/* <img src={Logo} alt="Logo" style={{ maxWidth: '50px' }} /> */}
-                    <Box sx={{ width: { xs: "40%", sm: '20%', md: "15%", lg: "15%" }, display:"flex", alignItems:"center"}}>
+                    <Box sx={{ width: { xs: "40%", sm: '20%', md: "15%", lg: "14%" }, display: "flex", alignItems: "center" }}>
                         <img
                             src={Logo}
                             alt="Logo"
@@ -108,21 +115,21 @@ const Header = () => {
                         </Menu>
                     </Box>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', fontSize:"15px" }}>
                         <a href="#verified-companies" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
                             Verified Companies
                         </a>
                         <a href="#pricing" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
                             Pricing
                         </a>
-                        <a href="#apply-now" style={{ textDecoration: 'none' }}>
+                        <a href="#apply-now" style={{ textDecoration: 'none' }} onClick={handleClick}>
                             <Button
                                 variant="contained"
                                 sx={{
-                                    ml: 2, background: "#FFA800", borderRadius: "50px", color: "black"
+                                    ml: 2, background: "#FFA800", borderRadius: "50px", color: "black", fontSize:"15px"
                                 }}
                             >
-                                Apply Now
+                                Enroll Now
                             </Button>
                         </a>
                     </Box>

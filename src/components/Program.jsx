@@ -79,10 +79,10 @@ const Program = () => {
                                     },
                                     [theme.breakpoints.down('375')]: {
                                         fontSize: "20px",
-                                        lineHeight:"30px"
+                                        lineHeight: "30px"
                                     },
                                 }}>
-                                How does our Virtual Internship Program works?
+                                How does our Virtual Internship Program work?
                             </Typography>
 
                             <Typography variant="body1" sx={{
@@ -104,7 +104,7 @@ const Program = () => {
                         <Grid item sm={4} m={0} p={0}>
                             <Grid container spacing={1}>
                                 {programDataOne.map((card, index) => (
-                                    <Grid item key={index} sm={12}>
+                                    <Grid item key={index} xs={12} sm={12}>
                                         <Box sx={{
                                             width: '100%',
                                             overflow: 'hidden',
@@ -151,7 +151,7 @@ const Program = () => {
                         <Grid item sm={4} m={0} p={0}>
                             <Grid container spacing={1}>
                                 {programDataTwo.map((card, index) => (
-                                    <Grid item key={index} sm={12}>
+                                    <Grid item key={index} xs={12} sm={12}>
                                         <Box sx={{
                                             width: '100%',
                                             overflow: 'hidden',

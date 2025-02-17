@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import { Box, Button, Container, Grid, Paper, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Container, Paper, Typography, useMediaQuery } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Typewriter from "typewriter-effect";
 import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
 
 
 import Cup from '../assets/images/Cup.png';
@@ -29,12 +30,20 @@ const Career = () => {
             offset: 150,
             mirror: true, // Replay animation on scroll-up
             // anchorPlacement: "top-bottom",
-        
+
         });
 
+        // const handleScroll = () => {
+        //     AOS.refreshHard(); // Refresh AOS on scroll
+        // };
+
         const handleScroll = () => {
-            AOS.refreshHard(); // Refresh AOS on scroll
+            clearTimeout(window.AOSRefreshTimer);
+            window.AOSRefreshTimer = setTimeout(() => {
+                AOS.refresh();
+            }, 200);
         };
+
 
         window.addEventListener("scroll", handleScroll);
 

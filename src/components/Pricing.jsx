@@ -1,4 +1,4 @@
-import { Box, Button, Chip, Container, Grid, Paper, Typography, styled, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button, Chip, Container, Grid, Paper, Typography, keyframes, styled, useMediaQuery, useTheme } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 import EastIcon from '@mui/icons-material/East';
 import VerifiedIcon from '@mui/icons-material/Verified';
@@ -12,8 +12,16 @@ import "slick-carousel/slick/slick-theme.css";
 // import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import '../styles/Pricing.css'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
-const PricingCardContainer = styled(Paper)(({ theme, index, isPreview, isMobile }) => ({
+
+const glowEffect = keyframes`
+    0% { filter: blur(4px) opacity(0.7); }
+    50% { filter: blur(10px) opacity(1); }
+    100% { filter: blur(6px) opacity(0.8); }
+`;
+
+const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper {...rest} />)(({ theme, index, isPreview, isMobile }) => ({
     textAlign: 'left',
     color: '#FFFFFF',
     borderRadius: '15px',
@@ -30,8 +38,6 @@ const PricingCardContainer = styled(Paper)(({ theme, index, isPreview, isMobile 
             ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)'
             : 'none',
 
-    // backgroundImage: 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)',
-
     // Apply glow effect only in preview mode
     ...(isPreview && isMobile && {
         "&::before": {
@@ -40,35 +46,38 @@ const PricingCardContainer = styled(Paper)(({ theme, index, isPreview, isMobile 
             inset: "-3px", // Expand beyond the card
             borderRadius: '15px',
             padding: "3px",
-            background: "linear-gradient(135deg, #FFA800, #3ED37A, #1CFAFC)",
+            background: "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)",
             filter: "blur(8px)", // Glowing effect
             zIndex: "-1",
-            animation: "glowEffect 1.5s infinite alternate", // Animation
+            animation: `${glowEffect} 1.5s infinite alternate`, // Fix
         },
     }),
 
-    "@keyframes glowEffect": {
-        "0%": { filter: "blur(4px) opacity(0.7)" },
-        "50%": { filter: "blur(10px) opacity(1)" },
-        "100%": { filter: "blur(6px) opacity(0.8)" },
-    },
-
     border: index === 0 || index === 2 ? "1px solid #A1AEBF" : 'none',
 
-    [theme.breakpoints.up('xs')]: {
-        height: index === 0 || index === 2 ? '830px' : 'auto',
-    },
-    [theme.breakpoints.up('lg')]: {
-        height: index === 0 || index === 2 ? '870px' : 'auto',
+    [theme.breakpoints.down(575)]: {
+        minHeight: index === 0 || index === 2 ? '850px' : 'auto',
     },
     [theme.breakpoints.down(425)]: {
-        height: index === 0 || index === 2 ? '840px' : 'auto',
+        minHeight: index === 0 || index === 2 ? '870px' : 'auto',
     },
     [theme.breakpoints.down(375)]: {
-        height: index === 0 || index === 2 ? '920px' : 'auto',
+        height: index === 0 || index === 2 ? '850px' : 'auto',
     },
     [theme.breakpoints.down(365)]: {
         height: index === 0 || index === 2 ? '880px' : 'auto',
+    },
+    [theme.breakpoints.down(356)]: {
+        height: index === 0 || index === 2 ? '900px' : 'auto',
+    },
+    [theme.breakpoints.down(321)]: {
+        height: index === 0 || index === 2 ? '940px' : 'auto',
+    },
+    [theme.breakpoints.between(577, 600)]: {
+        height: index === 0 || index === 2 ? '930px' : 'auto',
+    },
+    [theme.breakpoints.up('lg')]: {
+        height: index === 0 || index === 2 ? '870px' : 'auto',
     },
 }));
 
@@ -76,6 +85,7 @@ const PricingCardContainer = styled(Paper)(({ theme, index, isPreview, isMobile 
 
 const Pricing = () => {
 
+    const [selectedCard, setSelectedCard] = useState(null);
 
     const pricingData = [
         {
@@ -83,6 +93,7 @@ const Pricing = () => {
             originalPrice: '₹2000',
             discountedPrice: '₹0',
             description: 'Ideal for those who can learn things on their own and self-paced',
+            applyText: 'Secure Your February Spot',
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
@@ -93,11 +104,20 @@ const Pricing = () => {
             internships: [
                 // { checked: true, text: 'Pre-assessment' },
                 { checked: true, text: 'Task practice' },
-                { checked: true, text: <HighlightedText>Job simulation</HighlightedText> },
+                { checked: true, text: <HighlightedText>Job Simulation</HighlightedText> },
                 { checked: true, text: 'Free learning materials' },
                 { checked: true, text: 'Agile learning process' },
                 { checked: true, text: 'Task completion review' },
-                { checked: true, text: <CertificateText>Portfolio <SubText>(<LinkedInIcon /> LinkedIn)</SubText></CertificateText> },
+                {
+                    checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span>
+                        <SubPortText>(
+                            <LinkedInIcon sx={{ fontSize: "16px", color: "#006eab", marginRight: .5 }} />
+                            {/* <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}> */}
+                            <span>LinkedIn</span>
+                            {/* </a> */}
+                            )</SubPortText>
+                    </CertificatePortText>
+                },
                 { checked: true, text: 'Deploy on Github' },
             ],
         },
@@ -106,6 +126,7 @@ const Pricing = () => {
             originalPrice: '₹4000',
             discountedPrice: '₹1,999',
             description: 'Ideal for those who need to gain live skills from a Senior developer',
+            applyText: 'Apply for Sponsorship',
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
@@ -115,15 +136,15 @@ const Pricing = () => {
             ],
             title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> plus :</Title2Text>,
             internships: [
-                { checked: true, text: 'AI Codegen' },
-                { checked: true, text: 'Program switch' },
                 { checked: true, text: 'Weekly huddle with mentor' },
-                { checked: true, text: <CertificateText>Portfolio <SubText>(Github)</SubText></CertificateText> },
+                { checked: true, text: 'AI Codegen' },
+                { checked: true, text: 'Program switch' },/*  */
+                { checked: true, text: <CertificatePortText>Portfolio <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
             ],
             placements: [
                 { checked: true, text: 'Resume preparation' },
                 { checked: true, text: 'Placement assistance' },
-                { checked: true, text: 'Business English' },
+                { checked: true, text: 'Business English Training' },
                 { checked: true, text: 'Softskill Training' },
             ]
         },
@@ -132,6 +153,7 @@ const Pricing = () => {
             originalPrice: '₹10000',
             discountedPrice: '₹4,999',
             description: 'Unlock your full potential and accelerate your career with expert guidance and placement assistance.',
+            applyText: 'Apply for Sponsorship',
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
@@ -178,7 +200,7 @@ const Pricing = () => {
             }
             // correctedIndex == 1.85 ? correctedIndex = 2 : null;
             setActiveIndex(correctedIndex);
-            console.log(correctedIndex)
+            // console.log(correctedIndex)
         },
 
         nextArrow: <CustomNextArrow onClick={() => sliderRef.current && sliderRef.current.slickNext()} />,
@@ -191,6 +213,33 @@ const Pricing = () => {
             { breakpoint: 375, settings: { slidesToShow: 1.15 } }
         ],
     };
+
+    const handleApplyClick = (card) => {
+        setSelectedCard(card);
+        let message = "";
+
+        // Customize message based on the selected card
+        if (card.title === "Self") {
+            message = "Hello! I'm interested in enrolling for the internship program.";
+        } else if (card.title === "Pro") {
+            message = "Hi! I'm excited about the internship opportunity! I'd like to inquire about applying for a scholarship to participate.";
+        } else if (card.title === "Prime") {
+            message = "Hi! I'm excited about the internship opportunity! I'd like to inquire about applying for a scholarship to participate.";
+        }
+
+        // Encode the message to make it URL-safe
+        const encodedMessage = encodeURIComponent(message);
+
+        // Replace with the actual phone number you'd like the message to be sent to
+        const phoneNumber = "918903003201";
+
+        // Construct the WhatsApp URL
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        // Open WhatsApp in a new window or tab
+        window.open(whatsappURL, "_blank");
+    };
+
 
 
     return (
@@ -244,7 +293,7 @@ const Pricing = () => {
                                         <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
                                             {index === 1 || index === 2 ? (
                                                 <>
-                                                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
+                                                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "13px", textAlign: "center" }}>
                                                         Starts From
                                                     </Typography>
                                                     {card.discountedPrice}
@@ -255,14 +304,12 @@ const Pricing = () => {
                                         </Typography>
                                     </Box>
 
-
-
                                     <Typography variant="body2" sx={{ color: '#EEEEEE', mb: 3, fontSize: { xs: "12px", md: "12px", lg: "15px" }, fontWeight: "200" }}>
                                         {card.description}
                                     </Typography>
 
-                                    <Button variant="contained" sx={{ textTransform: 'uppercase', background: "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)", color: '#fff', borderRadius: "6px", fontSize: { xs: "9px", sm: "9px", lg: "12px" }, fontWeight: "bold", width: { xs: "100%", sm: "80%" }, padding: { xs: '7px', sm: "auto" } }}>
-                                        Secure Your February Spot <EastIcon sx={{ marginLeft: '8px' }} />
+                                    <Button variant="contained" onClick={() => handleApplyClick(card)} sx={{ textTransform: 'uppercase', background: "linear-gradient(68deg, rgba(46, 51, 147, 0.6) -1.82%, rgba(28, 250, 252, 0.6) 106.59%)", color: '#fff', borderRadius: "6px", fontSize: { xs: "9px", sm: "9px", lg: "13px" }, fontWeight: "bold", width: { xs: "100%", sm: "80%" }, padding: { xs: '7px', sm: "auto" } }}>
+                                        {card.applyText} <EastIcon sx={{ marginLeft: '8px' }} />
                                     </Button>
 
                                     <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400' }}>
@@ -336,11 +383,17 @@ const HighlightedText2 = ({ children }) => (
 
 const CertificateText = ({ children }) => (
     <>{children}</>
-
 );
 
 const SubText = ({ children }) => (
-    <Box component='span' sx={{ fontSize: { xs: "11px", sm: "11px" }, color: "#A1AEBF" }}>{children}</Box>
+    <Box component='span' sx={{ fontSize: { xs: "11px", sm: "11px" }, color: "#A1AEBF", }}>{children}</Box>
+);
+
+const CertificatePortText = ({ children }) => (
+    <Box component='span' sx={{ display: "flex" }}>{children}</Box>
+);
+const SubPortText = ({ children }) => (
+    <Box component='span' sx={{ fontSize: { xs: "11px", sm: "11px" }, display: "flex", alignItems: "center", justifyContent: "center", color: "#A1AEBF" }}>{children}</Box>
 );
 
 const Title2Text = ({ children }) => (

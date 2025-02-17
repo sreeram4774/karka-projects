@@ -20,7 +20,7 @@ const Home = () => {
         backgroundImage: `url(${CheckBackground})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-      
+
     };
 
     const overlayStyles = {
@@ -105,7 +105,7 @@ const Home = () => {
     const subtitleStyles = {
         color: "rgba(255, 255, 255, 0.60)",
         fontSize: {
-            xs: "0.8rem",
+            xs: "0.7rem",
             sm: ".8rem",
             md: ".8rem",
             lg: ".9rem",
@@ -135,6 +135,14 @@ const Home = () => {
             backgroundColor: "#FF9500",
         },
         whiteSpace: 'nowrap',
+    };
+
+
+    const handleClick = () => {
+        const phoneNumber = "918903003201";
+        const message = encodeURIComponent("Hello! I'm interested in enrolling for the internship program.");
+        const url = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(url, "_blank");
     };
 
     return (
@@ -208,8 +216,9 @@ const Home = () => {
                             variant="contained"
                             sx={buttonStyles}
                             endIcon={<EastIcon />}
+                            onClick={handleClick}
                         >
-                            APPLY NOW
+                            ENROLL NOW
                         </Button>
                     </Box>
                 </Box>

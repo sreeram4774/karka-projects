@@ -31,6 +31,14 @@ const ChooseUs = () => {
         },
     });
 
+
+    const handleClick = () => {
+        const phoneNumber = "918903003201";
+        const message = encodeURIComponent("Hello! I'm interested in enrolling for the internship program.");
+        const url = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(url, "_blank");
+    };
+    
     return (
         <Box sx={{ backgroundColor: "#000", color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 8 } }}>
             <Container maxWidth="xl">
@@ -81,7 +89,7 @@ const ChooseUs = () => {
                             Join InternTribe's beginner-friendly internship program to kickstart your career with no prior coding knowledge required. Experience personalized learning paths, live classes with industry experts, real-world projects, and dedicated career guidance. Gain hands-on experience, deploy live projects, and earn a valuable completion certificate!
                         </Typography>
                         <Box sx={{ display: 'flex', justifyContent: 'left' }}>
-                            <EnrollButton variant="outlined">ENROLL NOW</EnrollButton>
+                            <EnrollButton variant="outlined" onClick={handleClick}>ENROLL NOW</EnrollButton>
                         </Box>
                     </Grid>
                 </Grid>

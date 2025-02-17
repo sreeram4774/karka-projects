@@ -73,6 +73,13 @@ const Courses = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
+    const handleClick = () => {
+        const phoneNumber = "918903003201";
+        const message = encodeURIComponent("Hello! I'm interested in enrolling for the internship program.");
+        const url = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(url, "_blank");
+    };
+
     return (
         <Box sx={{ backgroundColor: "#110f0f", py: { xs: 4, sm: 8 }, px: { xs: 2, sm: 4, md: 8 }, }}>
             <Container maxWidth="xl">
@@ -90,7 +97,8 @@ const Courses = () => {
                                 color: "#FFA800",
                                 "&:hover": {
                                     background: "transparent",
-                                }
+                                },
+                                zIndex: 0
                             }}>
                                 Go To Top
                             </Fab>
@@ -277,36 +285,36 @@ const Courses = () => {
                                             sx={{ marginBottom: { xs: 1, lg: 2 }, marginTop: { xs: '-8px', lg: 0 } }}
                                         />
                                     </Box> */}
-                                    <Box mb={2} sx={{ position: "relative" }}>
-                                        <img src={WhatsappLogo} alt="" style={{ width: "100%", height: "100%" }} />
-                                        <a
-                                            href="https://wa.me/8903003201?text=I%20want%20to%20enroll%20now"
-                                            target="_blank"
-                                            style={{
+                                    {/* <a
+                                        href="https://wa.me/8903003201?text=Hello!%20I'm%20interested%20in%20enrolling%20for%20the%20internship%20program."
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ textDecoration: 'none' }}
+                                    > */}
+                                    <Box mb={2} onClick={handleClick} sx={{ position: "relative", cursor: "pointer" }}>
+                                        <img src={WhatsappLogo} alt="WhatsApp" style={{ width: "100%", height: "100%" }} />
+                                        <Typography
+                                            sx={{
                                                 position: 'absolute',
                                                 top: '50%',
                                                 left: '50%',
                                                 transform: 'translate(-30%, -60%)',
-                                                textDecoration: 'none',
+                                                fontSize: '20px',
+                                                fontWeight: 700,
+                                                color: 'black',
+                                                transition: 'all 0.3s ease',
+                                                [theme.breakpoints.down('375')]: {
+                                                    fontSize: "18px",
+                                                },
+                                                [theme.breakpoints.down('321')]: {
+                                                    fontSize: "15px",
+                                                }
                                             }}
                                         >
-                                            <Typography
-                                                sx={{
-                                                    fontSize: '20px',
-                                                    fontWeight: 700,
-                                                    color: 'black',  // Adjust based on your image
-                                                    cursor: 'pointer',
-                                                    transition: 'all 0.3s ease',
-                                                    [theme.breakpoints.down('375')]: {
-                                                        fontSize: "18px",
-                                                    }
-                                                }}
-                                            >
-                                                ENROLL NOW
-                                            </Typography>
-                                        </a>
-
+                                            ENROLL NOW
+                                        </Typography>
                                     </Box>
+                                    {/* </a> */}
 
 
                                     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
@@ -320,7 +328,6 @@ const Courses = () => {
                                     </Box>
 
                                 </Box>
-
                             </Grid>
                         </Grid>
                     </Box>
@@ -339,7 +346,8 @@ const Courses = () => {
                                 color: "#FFA800",
                                 "&:hover": {
                                     background: "transparent",
-                                }
+                                },
+                                zIndex: 0
                             }}>
                                 Go To Top
                             </Fab>
