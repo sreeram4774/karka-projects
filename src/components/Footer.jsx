@@ -22,7 +22,7 @@ const Footer = () => {
     const theme = useTheme();
 
     const handleClick = () => {
-        const phoneNumber = "918903003201";
+        const phoneNumber = "919385647154";
         const message = encodeURIComponent("Hello! I'm interested in enrolling for the InternTribe's internship program.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
@@ -55,7 +55,7 @@ const Footer = () => {
                                 </Typography>
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>
                                     <Box component="li" sx={{ fontSize: { xs: "12px", sm: "14px" }, mb: 2, mt: 2 }}>
-                                        <Link href="https://www.instagram.com" color="inherit" underline="hover">
+                                        <Link href="https://www.instagram.com/interntribe?igsh=YmgyMndjZXdham9o" color="inherit" underline="hover">
                                             Instagram
                                         </Link>
                                     </Box>
@@ -87,8 +87,8 @@ const Footer = () => {
                                     sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 2, display: "flex", justifyContent: { xs: "flex-start", sm: 'flex-end' } }}
                                 >
                                     <FcPhone style={{ fontSize: "20px", marginRight: "8px", transform: "rotate(270deg)" }} />
-                                    <a href="tel:+918903003201" style={{ textDecoration: "none", color: "inherit" }}>
-                                        89030 03201
+                                    <a href="tel:+919385647154" style={{ textDecoration: "none", color: "inherit" }}>
+                                    93856 47154
                                     </a>
                                 </Typography>
                             </Box>

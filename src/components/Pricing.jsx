@@ -233,7 +233,7 @@ const Pricing = () => {
 
         const encodedMessage = encodeURIComponent(message);
 
-        const phoneNumber = "918903003201";
+        const phoneNumber = "919385647154";
 
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 

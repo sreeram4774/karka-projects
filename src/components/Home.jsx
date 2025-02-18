@@ -139,7 +139,7 @@ const Home = () => {
 
 
     const handleClick = () => {
-        const phoneNumber = "918903003201";
+        const phoneNumber = "919385647154";
         const message = encodeURIComponent("Hello! I'm interested in enrolling for the InternTribe's internship program.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
