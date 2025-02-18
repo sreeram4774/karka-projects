@@ -43,7 +43,7 @@ const Footer = () => {
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>
 
                                     <Box component="li" sx={{ fontSize: { xs: "12px", sm: "14px" }, mb: 2, mt: 2 }}>
-                                        <Link href="https://www.linkedin.com" color="inherit" underline="hover">
+                                        <Link href="https://www.linkedin.com" color="inherit" >
                                             LinkedIn
                                         </Link>
                                     </Box>
@@ -55,7 +55,7 @@ const Footer = () => {
                                 </Typography>
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>
                                     <Box component="li" sx={{ fontSize: { xs: "12px", sm: "14px" }, mb: 2, mt: 2 }}>
-                                        <Link href="https://www.instagram.com/interntribe?igsh=YmgyMndjZXdham9o" color="inherit" underline="hover">
+                                        <Link href="https://www.instagram.com/interntribe?igsh=YmgyMndjZXdham9o" color="inherit" >
                                             Instagram
                                         </Link>
                                     </Box>
