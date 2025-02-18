@@ -50,7 +50,7 @@ const Footer = () => {
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={6} md={6}>
-                                <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "14px", sm: "20px" } }}>
+                                <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: "12px", sm: "20px" } }}>
                                     Get More Updates
                                 </Typography>
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>

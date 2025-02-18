@@ -21,12 +21,6 @@ import { useState, useEffect } from 'react';
 const theme = createTheme({
   typography: {
     fontFamily: "Poppins, sans-serif",
-    fontSize: 16, // Default for body text
-    h1: { fontSize: "2.5rem" }, // 40px
-    h2: { fontSize: "2rem" }, // 32px
-    h3: { fontSize: "1.75rem" }, // 28px
-    body1: { fontSize: "1rem" }, // 16px (default)
-    body2: { fontSize: "0.875rem" }, // 14px
   },
 });
 
@@ -40,7 +34,7 @@ function App() {
       
       if (footer) {
         const footerPosition = footer.getBoundingClientRect();
-        // If footer is near the bottom of the screen, hide the button
+
         if (footerPosition.top <= window.innerHeight) {
           setShowButton(false);
         } else {
@@ -49,10 +43,8 @@ function App() {
       }
     };
 
-    // Set up the scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -74,7 +66,7 @@ function App() {
           <Footer id="footer" />
         </Stack>
       </Box>
-      {/* Conditionally render the WhatsApp Button */}
+
       {showButton && <WhatsAppButton />}
     </ThemeProvider>
   );

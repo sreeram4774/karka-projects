@@ -9,7 +9,6 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import '../styles/Pricing.css'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -29,7 +28,7 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
     display: 'flex',
     flexDirection: 'column',
     minHeight: 'auto',
-    position: 'relative', // Required for pseudo-element
+    position: 'relative',
 
     backgroundColor: index === 0 ? '#110f0f' : 'transparent',
     backgroundImage: index === 1
@@ -38,18 +37,17 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
             ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)'
             : 'none',
 
-    // Apply glow effect only in preview mode
     ...(isPreview && isMobile && {
         "&::before": {
             content: '""',
             position: "absolute",
-            inset: "-3px", // Expand beyond the card
+            inset: "-3px",
             borderRadius: '15px',
             padding: "3px",
             background: "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)",
-            filter: "blur(8px)", // Glowing effect
+            filter: "blur(8px)",
             zIndex: "-1",
-            animation: `${glowEffect} 1.5s infinite alternate`, // Fix
+            animation: `${glowEffect} 1.5s infinite alternate`,
         },
     }),
 
@@ -58,8 +56,8 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
     [theme.breakpoints.down(575)]: {
         minHeight: index === 0 || index === 2 ? '850px' : 'auto',
     },
-    [theme.breakpoints.down(425)]: {
-        minHeight: index === 0 || index === 2 ? '870px' : 'auto',
+    [theme.breakpoints.down(426)]: {
+        minHeight: index === 0 || index === 2 ? '830px' : 'auto',
     },
     [theme.breakpoints.down(375)]: {
         height: index === 0 || index === 2 ? '850px' : 'auto',
@@ -76,6 +74,12 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
     [theme.breakpoints.between(577, 600)]: {
         height: index === 0 || index === 2 ? '930px' : 'auto',
     },
+    [theme.breakpoints.up('sm')]: {
+        height: index === 0 || index === 2 ? '850px' : 'auto',
+    },
+    [theme.breakpoints.up('md')]: {
+        height: index === 0 || index === 2 ? '850px' : 'auto',
+    },
     [theme.breakpoints.up('lg')]: {
         height: index === 0 || index === 2 ? '870px' : 'auto',
     },
@@ -86,6 +90,7 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
 const Pricing = () => {
 
     const [selectedCard, setSelectedCard] = useState(null);
+    const currentMonth = new Date().toLocaleString('en-US', { month: 'long' });
 
     const pricingData = [
         {
@@ -93,7 +98,7 @@ const Pricing = () => {
             originalPrice: '₹2000',
             discountedPrice: '₹0',
             description: 'Ideal for those who can learn things on their own and self-paced',
-            applyText: 'Secure Your February Spot',
+            applyText: `Secure Your ${currentMonth} Spot`,
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
@@ -125,7 +130,7 @@ const Pricing = () => {
             title: 'Pro',
             originalPrice: '₹4000',
             discountedPrice: '₹1,999',
-            description: 'Ideal for those who need to gain live skills from a Senior developer',
+            description: 'Ideal those who need a accountability partner to track & provide feedback on your progress',
             applyText: 'Apply for Sponsorship',
             features: [
                 { checked: true, text: 'Online Mode' },
@@ -134,7 +139,7 @@ const Pricing = () => {
                 { checked: true, text: 'Stipend from companies' },
                 { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
             ],
-            title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> plus :</Title2Text>,
+            title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
             internships: [
                 { checked: true, text: 'Weekly huddle with mentor' },
                 { checked: true, text: 'AI Codegen' },
@@ -161,7 +166,7 @@ const Pricing = () => {
                 { checked: true, text: 'Stipend from companies' },
                 { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
             ],
-            title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> plus :</Title2Text>,
+            title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> and . . . .</Title2Text>,
             internships: [
                 { checked: true, text: 'Project guidance' },
                 { checked: true, text: 'Product Design' },
@@ -218,7 +223,6 @@ const Pricing = () => {
         setSelectedCard(card);
         let message = "";
 
-        // Customize message based on the selected card
         if (card.title === "Self") {
             message = "Hello! I'm interested in enrolling for the InternTribe's internship program.";
         } else if (card.title === "Pro") {
@@ -227,16 +231,12 @@ const Pricing = () => {
             message = "Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.";
         }
 
-        // Encode the message to make it URL-safe
         const encodedMessage = encodeURIComponent(message);
 
-        // Replace with the actual phone number you'd like the message to be sent to
         const phoneNumber = "918903003201";
 
-        // Construct the WhatsApp URL
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-        // Open WhatsApp in a new window or tab
         window.open(whatsappURL, "_blank");
     };
 
@@ -250,8 +250,7 @@ const Pricing = () => {
             }}>
                 <Container maxWidth="lg" align="center">
                     <Box>
-                        <Container maxWidth="md">
-
+                        <Container maxWidth="lg">
                             <Typography
                                 variant="h4"
                                 mb={3}
@@ -262,14 +261,14 @@ const Pricing = () => {
                                     color: '#FFFFFF',
                                     fontSize: { xs: "28px", sm: "25px", md: "30px", lg: "40px" },
                                 }}>
-                                Some pieces of our solutions
+                                Tailored Programmes for Your Career Growth
                             </Typography>
                             <Typography variant='body1' sx={{
                                 color: 'rgba(255, 255, 255, 0.40)', fontSize: '13px', [theme.breakpoints.down('375')]: {
                                     fontSize: "0.7rem"
                                 }, maxWidth: { xs: "100%", sm: '70%' }
                             }}>
-                                We have solved your problem of finding an internship and excelling in your career into these two buckets below
+                                We have solved your problem of finding an internship and excelling in your career into these three buckets below
                             </Typography>
                         </Container>
                     </Box>
@@ -293,7 +292,7 @@ const Pricing = () => {
                                         <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
                                             {index === 1 || index === 2 ? (
                                                 <>
-                                                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "13px", textAlign: "center" }}>
+                                                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "15px", fontSize: "13px", textAlign: "center" }}>
                                                         Starts From
                                                     </Typography>
                                                     {card.discountedPrice}
@@ -308,7 +307,18 @@ const Pricing = () => {
                                         {card.description}
                                     </Typography>
 
-                                    <Button variant="contained" onClick={() => handleApplyClick(card)} sx={{ textTransform: 'uppercase', background: "linear-gradient(68deg, rgba(46, 51, 147, 0.6) -1.82%, rgba(28, 250, 252, 0.6) 106.59%)", color: '#fff', borderRadius: "6px", fontSize: { xs: "9px", sm: "9px", lg: "13px" }, fontWeight: "bold", width: { xs: "100%", sm: "80%" }, padding: { xs: '7px', sm: "auto" } }}>
+                                    <Button variant="contained" onClick={() => handleApplyClick(card)} sx={{
+                                        textTransform: 'uppercase',
+                                        // background: "linear-gradient(68deg, rgba(46, 51, 147, 0.6) -1.82%, rgba(28, 250, 252, 0.6) 106.59%)",
+                                        background: index === 0
+                                            ? 'linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)' // Gradient for index 0
+                                            : index === 1 || index === 2
+                                                ? 'linear-gradient(225.92deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)' // Gradient for index 1 and 2
+                                                : 'none',
+
+                                        borderRadius: "6px", fontSize: { xs: "9px", sm: "9px", lg: "13px" },
+                                        fontWeight: "bold", width: { xs: "100%", sm: "80%" }, padding: { xs: '7px', sm: "auto" }
+                                    }}>
                                         {card.applyText} <EastIcon sx={{ marginLeft: '8px' }} />
                                     </Button>
 

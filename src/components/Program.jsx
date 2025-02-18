@@ -86,7 +86,7 @@ const Program = () => {
                             </Typography>
 
                             <Typography variant="body1" sx={{
-                                color: '#728095',  // Increased contrast
+                                color: '#728095', 
                                 marginBottom: { xs: 0, sm: 3 },
                                 fontSize: { xs: "12px", sm: "12px", md: "13px", lg: "15px" },
                                 fontWeight: 400,
@@ -112,7 +112,7 @@ const Program = () => {
                                             border: '1px solid white',
                                             mb: 2,
                                             display: 'flex',
-                                            flexDirection: 'column', // Stack image and content
+                                            flexDirection: 'column', 
                                             padding: 2
                                         }}>
                                             {card.image ? <Box sx={{ backgroundColor: "#8474C4", height: "140px", display: "flex", justifyContent: "center", objectFit: "cover" }}>
@@ -133,7 +133,7 @@ const Program = () => {
                                                 {card.details.map((point, i) => (
                                                     <li key={i} style={{ color: '#728095' }}>
                                                         <Typography variant="body2" sx={{
-                                                            color: '#728095',  // Increased contrast
+                                                            color: '#728095',  
                                                             fontSize: { xs: "13px", sm: "12px", md: "13px", lg: "15px" },
                                                             fontWeight: 400,
                                                             maxWidth: { md: "100%", lg: "90%" },
@@ -159,7 +159,7 @@ const Program = () => {
                                             border: '1px solid white',
                                             mb: 2,
                                             display: 'flex',
-                                            flexDirection: 'column', // Stack image and content
+                                            flexDirection: 'column', 
                                             padding: 2
                                         }}>
                                             {card.image ? <Box sx={{ backgroundColor: "#8474C4", height: "140px", display: "flex", justifyContent: "center", objectFit: "cover" }}>
@@ -179,7 +179,7 @@ const Program = () => {
                                                 {card.details.map((point, i) => (
                                                     <li key={i} style={{ color: '#728095' }}>
                                                         <Typography variant="body2" sx={{
-                                                            color: '#728095',  // Increased contrast
+                                                            color: '#728095', 
                                                             fontSize: { xs: "13px", sm: "12px", md: "13px", lg: "15px" },
                                                             fontWeight: 400,
                                                             maxWidth: { md: "100%", lg: "90%" },

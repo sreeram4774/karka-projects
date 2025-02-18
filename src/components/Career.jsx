@@ -16,19 +16,23 @@ import image3 from '../assets/logos/image3.png';
 import image4 from '../assets/logos/image4.png';
 import image5 from '../assets/logos/image5.png';
 import image6 from '../assets/logos/image6.png';
+import { useState } from 'react';
 
 
 const Career = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const [cycle, setCycle] = useState(0); 
+    // const [typingFinished, setTypingFinished] = useState(false); // Track if typing has finished
+
 
     React.useEffect(() => {
         AOS.init({
             duration: 1000,
             easing: "ease-in-out",
-            once: false,  // Allow repeated animations
+            once: false,  
             offset: 150,
-            mirror: true, // Replay animation on scroll-up
+            mirror: true, 
             // anchorPlacement: "top-bottom",
 
         });
@@ -105,8 +109,10 @@ const Career = () => {
     const CompanyLogos = [image1, image2, image3, image4, image5, image6];
 
     if (isMobile) {
-        [CompanyLogos[2], CompanyLogos[3]] = [CompanyLogos[3], CompanyLogos[2]]; // Swap image3 and image4 in mobile view
+        [CompanyLogos[2], CompanyLogos[3]] = [CompanyLogos[3], CompanyLogos[2]]; 
     }
+
+
 
     return (
         <section id="verified-companies" >
@@ -184,6 +190,44 @@ const Career = () => {
                                             delay: 75,
                                         }}
                                     />
+                                    {/* <Box sx={{ fontSize: "2.3rem", color: "#ffa800" }}>
+                                        {cycle === 0 ? (
+                                            // First cycle: Only "Startup Engineer" typed with typewriter effect
+                                            <Typewriter
+                                                options={{
+                                                    strings: ["Startup Engineer"],
+                                                    autoStart: true,
+                                                    loop: false,
+                                                    delay: 75,
+                                                }}
+                                                onInit={(typewriter) => {
+                                                    typewriter
+                                                        .callFunction(() => setCycle(1)) // Move to second cycle after finishing first one
+                                                        .start();
+                                                }}
+                                            />
+                                        ) : (
+                                            // Second cycle: Typewriter effect for all titles
+                                            <Box sx={{ fontSize: "2.3rem", color: "white" }}>
+                                                <Typewriter
+                                                    options={{
+                                                        strings: [
+                                                            "<span style='color: #ffa800'>Startup Engineer</span> · <span style='color: #00b4d8'>Freelancer</span> · <span style='color: #ffa800'>Open Source Contributor</span> · <span style='color: #00b4d8'>Junior Engineer</span>",
+                                                        ],
+                                                        autoStart: true,
+                                                        loop: false,
+                                                        delay: 75,
+                                                    }}
+                                                    onInit={(typewriter) => {
+                                                        typewriter
+                                                            .callFunction(() => setCycle(2)) // After typing, stay on the second cycle
+                                                            .start();
+                                                    }}
+                                                />
+                                            </Box>
+                                        )}
+                                    </Box> */}
+
                                 </Typography>
                             </Box>
                             <Divider sx={{

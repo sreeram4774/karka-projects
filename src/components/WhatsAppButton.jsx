@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import whatsappAnimation from "../assets/json/whatsapp-animation.json"; // Add your animation file
+import whatsappAnimation from "../assets/json/whatsapp-animation.json"; 
 const WhatsAppButton = () => {
     const handleClick = () => {
         const phoneNumber = "918903003201";
@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
             onClick={handleClick}
             style={{
                 position: "fixed",
-                bottom: 20, // Adjust to avoid overlap with footer
+                bottom: 20, 
                 right: 10,
                 zIndex: 1000,
                 cursor: "pointer",

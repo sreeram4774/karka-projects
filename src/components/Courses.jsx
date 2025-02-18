@@ -8,8 +8,8 @@ import {
     FormControlLabel,
     styled,
 } from '@mui/material';
-import Group from '../assets/images/Group.svg'; // Correct path to your image
-import CheckBg from '../assets/images/CheckBackground.png'; // Correct path to your image
+import Group from '../assets/images/Group.svg'; 
+import CheckBg from '../assets/images/CheckBackground.png'; 
 import { Fab, Zoom, useMediaQuery, useTheme } from "@mui/material";
 import { useScrollTrigger } from "@mui/material";
 import Shadow3 from '../assets/images/shadow3.png'
@@ -21,7 +21,7 @@ const Courses = () => {
 
     const CourseContainer = styled(Container)(({ theme }) => ({
         backgroundColor: "#FFB219",
-        padding: "32px", // Default padding for sm and above
+        padding: "32px", 
         backgroundImage: `url(${CheckBg})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -30,7 +30,7 @@ const Courses = () => {
         position: "relative",
         overflow: 'hidden',
         [theme.breakpoints.down("sm")]: {
-            padding: "25px", // Apply when screen is xs (below sm)
+            padding: "25px", 
         },
     }));
 
@@ -176,14 +176,14 @@ const Courses = () => {
                                                 sx={{
                                                     display: "flex",
                                                     alignItems: "flex-start",
-                                                    gap: "8px", // Adjust spacing between index and text
+                                                    gap: "8px", 
                                                     fontSize: { xs: "12px", sm: "12px", md: "13px", lg: "15px" },
                                                     fontWeight: "500",
                                                     lineHeight: '1.7',
                                                     color: "#0D0E14",
                                                     margin: 0,
                                                     [theme.breakpoints.down(425)]: {
-                                                        fontSize: "11px", // Apply when screen is xs (below sm)
+                                                        fontSize: "11px", 
                                                     },
                                                 }}
                                             >
@@ -199,7 +199,7 @@ const Courses = () => {
                             </Grid>
 
                             <Grid item xs={12} md={5} lg={4} >
-                                <Box >
+                                <Box sx={{display:"flex", flexDirection:"column"}}>
                                     {/* <TextField
                                         fullWidth
                                         placeholder="Your Name"
@@ -320,7 +320,7 @@ const Courses = () => {
                                     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                                         <Button variant="contained" sx={{
                                             borderRadius: "12px", backgroundColor: "black", padding: " 10px 22px", fontWeight: '500', [theme.breakpoints.down(425)]: {
-                                                fontSize: "12px", // Apply when screen is xs (below sm)
+                                                fontSize: "12px", 
                                             },
                                         }}>
                                             DOWNLOAD BROCHURE

@@ -26,7 +26,7 @@ const ChooseUs = () => {
         padding: { md: "10px 22px", lg: "10px 22px" },
         whiteSpace: 'nowrap',
         '&:hover': {
-            backgroundColor: '#FFA000', // Added hover effect
+            backgroundColor: '#FFA000', 
             color: '#000',
         },
     });
@@ -74,7 +74,7 @@ const ChooseUs = () => {
                         </Typography>
 
                         <Typography variant="body1" sx={{
-                            color: 'rgba(255, 255, 255, 0.60)',  // Increased contrast
+                            color: 'rgba(255, 255, 255, 0.60)',  
                             marginBottom: 3,
                             fontSize: {
                                 xs: "12px", sm: "12px", md: "13px", lg: "15px", [theme.breakpoints.down('375')]: {

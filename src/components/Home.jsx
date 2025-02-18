@@ -39,7 +39,7 @@ const Home = () => {
             content: '""',
             position: 'absolute',
             bottom: 0,
-            left: { xs: -200, sm: -100, md: -200, lg: 0 },
+            left: { xs: -200, sm: -280, md: -280, lg: -180 },
             width: { xs: '500px', sm: '500px', md: '500px' },
             height: { xs: '400px', sm: '450px', md: '500px' },
             background: `url(${Shadow2}) no-repeat`,
@@ -117,7 +117,7 @@ const Home = () => {
             lineHeight: "20px",
         },
         [theme.breakpoints.down('367')]: {
-            fontSize: "0.7rem"
+            fontSize: "0.65rem"
         },
         // [theme.breakpoints.down('321')]: {
         //     fontSize:"0.7rem"
@@ -206,10 +206,11 @@ const Home = () => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: 2,
+                        mt: 2,
                         px: { xs: 2, sm: 4, lg: 4 }
                     }}>
                         <Typography sx={subtitleStyles}>
-                            InternTribe is a Virtual Internship Platform where Interns meet Companies. Online / Hybrid
+                            <BoldText>InternTribe</BoldText> is a <BoldText>Virtual Internship</BoldText> Platform where <BoldText>Interns meet Companies</BoldText>. Online / Hybrid
                         </Typography>
 
                         <Button
@@ -226,5 +227,9 @@ const Home = () => {
         </Box>
     );
 };
+
+const BoldText = ({ children }) => (
+    <Box component='span' sx={{ fontWeight: "bold", fontSize: { md: "13px", lg: "15px" }, color: "#9de8ee" }}>{children}</Box>
+);
 
 export default Home;

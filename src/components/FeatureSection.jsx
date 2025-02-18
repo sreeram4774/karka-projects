@@ -6,6 +6,7 @@ import FeatureImage3 from '../assets/featureimages/3.svg';
 import FeatureImage4 from '../assets/featureimages/4.svg';
 import FeatureImage5 from '../assets/featureimages/5.svg';
 import FeatureImage6 from '../assets/featureimages/6.svg';
+import FeatureImage7 from '../assets/featureimages/7.svg';
 
 const FeatureSection = () => {
 
@@ -48,6 +49,14 @@ const FeatureSection = () => {
             ]
         },
         {
+            img: FeatureImage7,
+            title: 'Job Simulation',
+            description: [
+                "Gain hands-on experience with practical simulations.",
+                "Tackle diverse projects to enhance your skills."
+            ]
+        },
+        {
             img: FeatureImage4,
             title: 'AI Code Generation',
             description: [
@@ -63,14 +72,7 @@ const FeatureSection = () => {
                 "Work with experienced mentors to refine your code."
             ]
         },
-        {
-            img: FeatureImage6,
-            title: 'Dedicated Placement Officer',
-            description: [
-                "Maximize your chances of landing your dream role.",
-                "We handle the search, so you can focus on learning."
-            ]
-        }
+
     ];
 
     return (
@@ -134,23 +136,24 @@ const FeatureSection = () => {
                 <Typography
                     variant="h4"
                     align="center"
-                    sx={(theme) => ({ // Ensure theme is accessible
+                    sx={(theme) => ({
                         mt: 4,
                         color: '#FFFFFF',
                         typography: {
-                            xs: 'h5', // Smaller heading on extra-small screens
-                            sm: 'h4', // h4 on small screens and up
+                            xs: 'h5',
+                            sm: 'h4',
                         },
                         fontSize: {
-                            xs: "20px", // Font size for extra-small screens
-                            sm: "25px", // Font size for small screens and up
+                            xs: "20px",
+                            sm: "25px",
                         },
-                        [theme.breakpoints.down(425)]: { // Proper way to define a media query
+                        [theme.breakpoints.down(425)]: {
                             fontSize: "18px",
                         },
                     })}
                 >
-                    After internship <span style={{ color: "#ffa800" }}>FREE</span> placement training & assistance
+                    {/* After internship <span style={{ color: "#ffa800" }}>FREE</span> placement training & assistance */}
+                    Get placement assistance from <span style={{ color: "#ffa800" }}>Dedicated Placement Officer</span>
                 </Typography>
             </Container>
         </Box>
