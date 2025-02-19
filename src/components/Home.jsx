@@ -4,6 +4,7 @@ import EastIcon from '@mui/icons-material/East';
 import CheckBackground from '../assets/images/CheckBackground.png';
 import Shadow1 from '../assets/images/shadow1.png'
 import Shadow2 from '../assets/images/shadow2.png'
+import '../styles/Home.css'
 
 const Home = () => {
     const theme = useTheme();
@@ -112,7 +113,7 @@ const Home = () => {
         },
         fontWeight: 400,
         textAlign: { xs: "center", md: "left" },
-        maxWidth: { xs: "100%", sm: "90%", md: "65%", lg: "70%" },
+        maxWidth: { xs: "100%", sm: "90%", md: "70%", lg: "70%" },
         [theme.breakpoints.down('375')]: {
             lineHeight: "20px",
         },
@@ -126,7 +127,7 @@ const Home = () => {
 
     const buttonStyles = {
         backgroundColor: "#FFA800",
-        borderRadius: "50px",
+        borderRadius: "6px",
         color: "black",
         textTransform: "none",
         fontSize: { xs: "0.8rem", sm: ".8rem", md: "12px", lg: "12px" },
@@ -210,18 +211,25 @@ const Home = () => {
                         px: { xs: 2, sm: 4, lg: 4 }
                     }}>
                         <Typography sx={subtitleStyles}>
-                            <BoldText>InternTribe</BoldText> is a <BoldText>Virtual Internship</BoldText> Platform where <BoldText>Interns meet Companies</BoldText>. Online / Hybrid
+                            <BoldText>InternTribe</BoldText> is a <BoldText>Virtual Internship Platform</BoldText> where <BoldText>Interns</BoldText> meet <BoldText>Companies</BoldText>. Online / Hybrid
                         </Typography>
-
-                        <Button
+                        {/* <Button
                             variant="contained"
                             sx={buttonStyles}
                             endIcon={<EastIcon />}
                             onClick={handleClick}
                         >
                             ENROLL NOW
-                        </Button>
+                        </Button> */}
                     </Box>
+              
+                    <a onClick={handleClick} target="_blank" className="animation" style={{ marginTop: "20px", cursor:"pointer" }}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        ENROLL NOW
+                    </a>
                 </Box>
             </Container>
         </Box>

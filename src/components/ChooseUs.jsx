@@ -17,19 +17,24 @@ const ChooseUs = () => {
 
     const theme = useTheme();
 
-    const EnrollButton = styled(Button)({
+    const EnrollButton = styled(Button)(({ theme }) => ({
         border: '1px solid #FFA000',
         color: '#FFA000',
         borderRadius: '50px',
-        fontWeight: '500',
+        fontWeight: 500,
         fontSize: { xs: "0.8rem", sm: ".8rem", md: "12px", lg: "12px" },
         padding: { md: "10px 22px", lg: "10px 22px" },
         whiteSpace: 'nowrap',
+        transition: "all 0.3s ease", // Corrected transition
         '&:hover': {
-            backgroundColor: '#FFA000', 
+            backgroundColor: '#FFA000',
             color: '#000',
+            borderColor: "#FFA000", // Ensure border changes as well
+            boxShadow: "2px 2px 3px #FFA800"
+
         },
-    });
+    }));
+
 
 
     const handleClick = () => {
@@ -38,7 +43,7 @@ const ChooseUs = () => {
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
-    
+
     return (
         <Box sx={{ backgroundColor: "#000", color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 8 } }}>
             <Container maxWidth="xl">
@@ -74,7 +79,7 @@ const ChooseUs = () => {
                         </Typography>
 
                         <Typography variant="body1" sx={{
-                            color: 'rgba(255, 255, 255, 0.60)',  
+                            color: 'rgba(255, 255, 255, 0.60)',
                             marginBottom: 3,
                             fontSize: {
                                 xs: "12px", sm: "12px", md: "13px", lg: "15px", [theme.breakpoints.down('375')]: {

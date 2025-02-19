@@ -115,7 +115,7 @@ const Header = () => {
                         </Menu>
                     </Box>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', fontSize:"15px" }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', fontSize: "15px" }}>
                         <a href="#verified-companies" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
                             Verified Companies
                         </a>
@@ -126,11 +126,23 @@ const Header = () => {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    ml: 2, background: "#FFA800", borderRadius: "50px", color: "black", fontSize:"15px"
+                                    ml: 2,
+                                    background: "#FFA800",
+                                    borderRadius: "50px",
+                                    color: "black",
+                                    fontSize: "15px",
+                                    border: "1px solid transparent", // Initial transparent border
+                                    transition: "all 0.3s ease-in-out",
+                                    "&:hover": {
+                                        backgroundColor: "#000",
+                                        color: "#FFA800",
+                                        border: "1px solid #FFA800", // Same border size to prevent movement
+                                    }
                                 }}
                             >
                                 Enroll Now
                             </Button>
+
                         </a>
                     </Box>
                 </Toolbar>

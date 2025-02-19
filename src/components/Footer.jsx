@@ -87,7 +87,7 @@ const Footer = () => {
                                     sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 2, display: "flex", justifyContent: { xs: "flex-start", sm: 'flex-end' } }}
                                 >
                                     <FcPhone style={{ fontSize: "20px", marginRight: "8px", transform: "rotate(270deg)" }} />
-                                    <a href="tel:+919385647154" style={{ textDecoration: "none", color: "inherit" }}>
+                                    <a href="tel:+919385647154" style={{ textDecoration: "underline", color: "inherit" }}>
                                     93856 47154
                                     </a>
                                 </Typography>

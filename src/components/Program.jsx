@@ -34,7 +34,7 @@ const Program = () => {
             description: '1:1 Expert Mentorship',
             details: [
                 '100 hours of free mentorship sessions for doubt clearance & support',
-                'eceive personalized guidance from industry leaders',
+                'Receive personalized guidance from industry leaders',
                 'Accelerate learning with a tailored roadmap to success',
             ],
         },
@@ -104,9 +104,34 @@ const Program = () => {
                                 Take your skills to the next level with a comprehensive virtual internship experience. Gain hands-on practice, expert mentorship, curated resources, and real-world projects to prepare for the industry.
                             </Typography>
 
-                            <Button variant="outlined" onClick={handleClick} sx={{ borderColor: "#ffa800", color: "#ffa800", borderRadius: "50px", display: { xs: 'none', sm: "block" } }}>
+                            {/* <Button variant="outlined" sx={{ borderColor: "#ffa800", color: "#ffa800", borderRadius: "50px", display: { xs: 'none', sm: "block" } }}>
+                                Enroll Now
+                            </Button> */}
+
+                            <Button
+                                variant="outlined"
+                                onClick={handleClick}
+                                sx={{
+                                    borderColor: "#FFA800",
+                                    color: "#FFA800",
+                                    borderRadius: "50px",
+                                    display: { xs: "none", sm: "block" },
+                                    // padding: { md: "10px 22px", lg: "10px 22px" },
+                                    fontWeight: 500,
+                                    // fontSize: { xs: "0.8rem", sm: ".8rem", md: "12px", lg: "12px" },
+                                    whiteSpace: "nowrap",
+                                    transition: "all 0.3s ease", // Smooth transition for hover effect
+                                    "&:hover": {
+                                        backgroundColor: "#FFA800",
+                                        color: "#000",
+                                        borderColor: "#FFA800", // Ensure border changes along with the background
+                                        boxShadow: "2px 2px 3px #FFA800"
+                                    },
+                                }}
+                            >
                                 Enroll Now
                             </Button>
+
                         </Grid>
                         <Grid item sm={4} m={0} p={0}>
                             <Grid container spacing={1}>
@@ -202,7 +227,28 @@ const Program = () => {
                             </Grid>
                         </Grid>
                         <Grid item xs={12} sm={4} display={{ xs: 'block', sm: "none" }} textAlign={'center'} >
-                            <Button variant="outlined" sx={{ borderColor: "#ffa800", color: "#ffa800", borderRadius: "50px" }}>
+                            {/* <Button variant="outlined" sx={{ borderColor: "#ffa800", color: "#ffa800", borderRadius: "50px" }}>
+                                Enroll Now
+                            </Button> */}
+                            <Button
+                                variant="outlined"
+                                sx={{
+                                    borderColor: "#FFA800",
+                                    color: "#FFA800",
+                                    borderRadius: "50px",
+                                    // display: { xs: "none", sm: "block" },
+                                    padding: { md: "10px 22px", lg: "10px 22px" },
+                                    fontWeight: 500,
+                                    fontSize: { xs: "0.8rem", sm: ".8rem", md: "12px", lg: "12px" },
+                                    whiteSpace: "nowrap",
+                                    transition: "all 0.3s ease", // Smooth transition for hover effect
+                                    "&:hover": {
+                                        backgroundColor: "#FFA800",
+                                        color: "#000",
+                                        borderColor: "#FFA800", // Ensure border changes along with the background
+                                    },
+                                }}
+                            >
                                 Enroll Now
                             </Button>
                         </Grid>

@@ -22,7 +22,7 @@ import { useState } from 'react';
 const Career = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const [cycle, setCycle] = useState(0); 
+    const [cycle, setCycle] = useState(0);
     // const [typingFinished, setTypingFinished] = useState(false); // Track if typing has finished
 
 
@@ -30,9 +30,9 @@ const Career = () => {
         AOS.init({
             duration: 1000,
             easing: "ease-in-out",
-            once: false,  
+            once: false,
             offset: 150,
-            mirror: true, 
+            mirror: true,
             // anchorPlacement: "top-bottom",
 
         });
@@ -109,9 +109,15 @@ const Career = () => {
     const CompanyLogos = [image1, image2, image3, image4, image5, image6];
 
     if (isMobile) {
-        [CompanyLogos[2], CompanyLogos[3]] = [CompanyLogos[3], CompanyLogos[2]]; 
+        [CompanyLogos[2], CompanyLogos[3]] = [CompanyLogos[3], CompanyLogos[2]];
     }
 
+    const handleClick = () => {
+        const phoneNumber = "919385647154";
+        const message = encodeURIComponent("Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.");
+        const url = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(url, "_blank");
+    };
 
 
     return (
@@ -262,16 +268,35 @@ const Career = () => {
                                     }}
                                 >
                                     Begin your AI Driven Tech<br />
-                                    Career with{" "}
-                                    <Typography component="span"
-                                        variant="inherit"
-                                        sx={{
-                                            color: "#fff",
-                                            fontWeight: "inherit",
-                                            fontSize: "inherit"
-                                        }}>
-                                        InternTribe
-                                    </Typography>
+                                    Career with InternTribe
+                                    <Box sx={{ mt: 2, display: { xs: "none", sm: "block" } }}>
+                                        <Button
+                                            variant="contained"
+                                            onClick={handleClick}
+                                            sx={{
+                                                borderRadius: "6px",
+                                                background: "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)",
+                                                padding: "10px 15px",
+                                                fontWeight: 500,
+                                                color: "white",
+                                                transition: "all 0.3s ease", // Smooth transition
+                                                [theme.breakpoints.down(425)]: {
+                                                    fontSize: "12px",
+                                                },
+                                                "&:hover": {
+                                                    boxShadow: `
+                                                        2px 2px 5px rgba(51, 210, 255, 0.6), /* Light blue */
+                                                        2px 2px 10px rgba(61, 104, 222, 0.5), /* Medium blue */
+                                                        2px 2px 15px rgba(152, 69, 232, 0.4)  /* Purple */
+                                                    `,
+                                                }
+
+                                            }}
+                                        >
+                                            Apply for Sponsorship
+                                        </Button>
+                                    </Box>
+
                                 </Typography>
                             </Box>
                         </Grid>
@@ -410,6 +435,18 @@ const Career = () => {
                                     </Grid>
                                 ))}
                             </Grid>
+                            <Box sx={{ mt: 3, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                <Button variant="contained" onClick={handleClick} sx={{
+                                    borderRadius: "6px", background: "linear-gradient(47deg, #6E6CD8 5.72%, #40A0EF 48.21%, #77E1EE 94.27%)", padding: " 10px 15px", fontWeight: '500', color: "white", [theme.breakpoints.down(425)]: {
+                                        fontSize: "12px",
+                                    },
+                                    display: { xs: "block", sm: "none" },
+                                    width: "100%"
+                                }}>
+                                    Apply for Sponsorship
+                                </Button>
+                            </Box>
+
                         </Grid>
 
                     </Grid>

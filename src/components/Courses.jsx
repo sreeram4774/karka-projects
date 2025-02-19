@@ -8,8 +8,8 @@ import {
     FormControlLabel,
     styled,
 } from '@mui/material';
-import Group from '../assets/images/Group.svg'; 
-import CheckBg from '../assets/images/CheckBackground.png'; 
+import Group from '../assets/images/Group.svg';
+import CheckBg from '../assets/images/CheckBackground.png';
 import { Fab, Zoom, useMediaQuery, useTheme } from "@mui/material";
 import { useScrollTrigger } from "@mui/material";
 import Shadow3 from '../assets/images/shadow3.png'
@@ -21,7 +21,7 @@ const Courses = () => {
 
     const CourseContainer = styled(Container)(({ theme }) => ({
         backgroundColor: "#FFB219",
-        padding: "32px", 
+        padding: "32px",
         backgroundImage: `url(${CheckBg})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -30,7 +30,7 @@ const Courses = () => {
         position: "relative",
         overflow: 'hidden',
         [theme.breakpoints.down("sm")]: {
-            padding: "25px", 
+            padding: "25px",
         },
     }));
 
@@ -87,21 +87,34 @@ const Courses = () => {
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
                     <Box display="flex" justifyContent='end'>
                         <Zoom in={trigger}>
-                            <Fab onClick={handleScrollTop} sx={{
-                                borderRadius: '50px',
-                                width: "auto",
-                                height: "auto",
-                                padding: '0 20px',
-                                background: 'transparent',
-                                border: "1px solid #FFA800",
-                                color: "#FFA800",
-                                "&:hover": {
-                                    background: "transparent",
-                                },
-                                zIndex: 0
-                            }}>
-                                Go To Top
-                            </Fab>
+                            <Zoom in={trigger}>
+                                <Fab
+                                    onClick={handleScrollTop}
+                                    sx={{
+                                        borderRadius: "50px",
+                                        width: "auto",
+                                        height: "auto",
+                                        padding: "0 20px",
+                                        backgroundColor: "transparent",
+                                        border: "1px solid #FFA800",
+                                        color: "#FFA800",
+                                        transition: "all 0.3s ease", // Smooth transition effect
+
+                                        "&:hover": {
+                                            backgroundColor: "#FFA800",
+                                            color: "#000",
+                                            borderColor: "#FFA800",
+                                            boxShadow:"2px 2px 3px #FFA800"
+
+                                        },
+
+                                        zIndex: 10, // Ensures it stays above other elements
+                                    }}
+                                >
+                                    Go To Top
+                                </Fab>
+                            </Zoom>
+
                         </Zoom>
                     </Box>
                 </Box>
@@ -176,14 +189,14 @@ const Courses = () => {
                                                 sx={{
                                                     display: "flex",
                                                     alignItems: "flex-start",
-                                                    gap: "8px", 
+                                                    gap: "8px",
                                                     fontSize: { xs: "12px", sm: "12px", md: "13px", lg: "15px" },
                                                     fontWeight: "500",
                                                     lineHeight: '1.7',
                                                     color: "#0D0E14",
                                                     margin: 0,
                                                     [theme.breakpoints.down(425)]: {
-                                                        fontSize: "11px", 
+                                                        fontSize: "11px",
                                                     },
                                                 }}
                                             >
@@ -199,7 +212,7 @@ const Courses = () => {
                             </Grid>
 
                             <Grid item xs={12} md={5} lg={4} >
-                                <Box sx={{display:"flex", flexDirection:"column"}}>
+                                <Box sx={{ display: "flex", flexDirection: "column" }}>
                                     {/* <TextField
                                         fullWidth
                                         placeholder="Your Name"
@@ -318,13 +331,41 @@ const Courses = () => {
 
 
                                     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                                        <Button variant="contained" sx={{
+                                        {/* <Button variant="contained" sx={{
                                             borderRadius: "12px", backgroundColor: "black", padding: " 10px 22px", fontWeight: '500', [theme.breakpoints.down(425)]: {
-                                                fontSize: "12px", 
+                                                fontSize: "12px",
                                             },
                                         }}>
                                             DOWNLOAD BROCHURE
+                                        </Button> */}
+                                        <Button
+                                            variant="contained"
+                                            sx={{
+                                                borderRadius: "12px",
+                                                backgroundColor: "black",
+                                                // border: "1px solid transparet",
+                                                color: "white",
+                                                padding: "10px 22px",
+                                                fontWeight: 500,
+                                                fontSize: "14px", // Default font size
+                                                transition: "all 0.3s ease", // Smooth hover effect
+
+                                                "&:hover": {
+                                                    // backgroundColor: "#FFA800",
+                                                    color: "#FFA800",
+                                                    // border: "1px solid #FFA800"
+                                                    boxShadow :"2px 2px 3px black"
+                                                },
+
+                                                // Responsive styles for smaller screens
+                                                "@media (max-width: 425px)": {
+                                                    fontSize: "12px",
+                                                },
+                                            }}
+                                        >
+                                            DOWNLOAD BROCHURE
                                         </Button>
+
                                     </Box>
 
                                 </Box>
@@ -336,22 +377,32 @@ const Courses = () => {
                 <Box sx={{ display: { xs: "block", sm: "none" }, marginTop: 2 }}>
                     <Box display="flex" justifyContent='end'>
                         <Zoom in={trigger}>
-                            <Fab onClick={handleScrollTop} sx={{
-                                borderRadius: '50px',
-                                width: "auto",
-                                height: "auto",
-                                padding: '0 20px',
-                                background: 'transparent',
-                                border: "1px solid #FFA800",
-                                color: "#FFA800",
-                                "&:hover": {
-                                    background: "transparent",
-                                },
-                                zIndex: 0
-                            }}>
+                            <Fab
+                                onClick={handleScrollTop}
+                                sx={{
+                                    borderRadius: "50px",
+                                    width: "auto",
+                                    height: "auto",
+                                    padding: "0 20px",
+                                    backgroundColor: "transparent",
+                                    border: "1px solid #FFA800",
+                                    color: "#FFA800",
+                                    transition: "all 0.3s ease", // Smooth transition effect
+
+                                    "&:hover": {
+                                        backgroundColor: "#FFA800",
+                                        color: "#000",
+                                        borderColor: "#FFA800",
+                                        boxShadow:"2px 2px 3px #FFA800"
+                                    },
+
+                                    zIndex: 10, // Ensures it stays above other elements
+                                }}
+                            >
                                 Go To Top
                             </Fab>
                         </Zoom>
+
                     </Box>
                 </Box>
 
