@@ -81,7 +81,7 @@ const Header = () => {
                         InternTribe
                     </Typography> */}
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: 'flex-end' }}>
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: 'flex-end' }}>
                         <IconButton
                             size="large"
                             aria-label="menu"
@@ -113,15 +113,15 @@ const Header = () => {
                                 </Typography>
                             </MenuItem>
                         </Menu>
-                    </Box>
+                    </Box> */}
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', fontSize: "15px" }}>
-                        <a href="#verified-companies" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', fontSize: "15px" }}>
+                        {/* <a href="#verified-companies" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
                             Verified Companies
                         </a>
                         <a href="#pricing" style={{ margin: '0 10px', textDecoration: 'none', color: 'white' }}>
                             Pricing
-                        </a>
+                        </a> */}
                         <a href="#apply-now" style={{ textDecoration: 'none' }} onClick={handleClick}>
                             <Button
                                 variant="contained"
@@ -130,7 +130,7 @@ const Header = () => {
                                     background: "#FFA800",
                                     borderRadius: "50px",
                                     color: "black",
-                                    fontSize: "15px",
+                                    fontSize: "13px",
                                     border: "1px solid transparent", // Initial transparent border
                                     transition: "all 0.3s ease-in-out",
                                     "&:hover": {

@@ -141,7 +141,7 @@ const Home = () => {
 
     const handleClick = () => {
         const phoneNumber = "919385647154";
-        const message = encodeURIComponent("Hello! I'm interested in enrolling for the InternTribe's internship program.");
+        const message = encodeURIComponent("Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
@@ -213,22 +213,19 @@ const Home = () => {
                         <Typography sx={subtitleStyles}>
                             <BoldText>InternTribe</BoldText> is a <BoldText>Virtual Internship Platform</BoldText> where <BoldText>Interns</BoldText> meet <BoldText>Companies</BoldText>. Online / Hybrid
                         </Typography>
-                        {/* <Button
-                            variant="contained"
-                            sx={buttonStyles}
-                            endIcon={<EastIcon />}
-                            onClick={handleClick}
-                        >
-                            ENROLL NOW
-                        </Button> */}
+
                     </Box>
-              
-                    <a onClick={handleClick} target="_blank" className="animation" style={{ marginTop: "20px", cursor:"pointer" }}>
+
+                    <a onClick={handleClick} target="_blank" className="animation" style={{ marginTop: "20px", cursor: "pointer", fontSize: "14px" }}>
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        ENROLL NOW
+                        {/* Apply for Sponsorship */}
+                        <div style={{ display: "flex", gap: "6px" }}>
+                            <div>APPLY FOR</div>
+                            <div className='sponsorship'/*  style={{ color: "#FFA800" }} */>SPONSORSHIP</div>
+                        </div>
                     </a>
                 </Box>
             </Container>

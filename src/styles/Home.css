@@ -12,7 +12,16 @@
 
 .animation:hover {
     background: #FFA800;
-    color: #000;
+    color: #000 !important;
+}
+
+.animation .sponsorship {
+    color: #FFA800;
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.animation:hover .sponsorship {
+    color: #000 !important;
 }
 
 /* Common styling for spans */

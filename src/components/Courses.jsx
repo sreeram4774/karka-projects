@@ -330,14 +330,8 @@ const Courses = () => {
                                     {/* </a> */}
 
 
-                                    <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                                        {/* <Button variant="contained" sx={{
-                                            borderRadius: "12px", backgroundColor: "black", padding: " 10px 22px", fontWeight: '500', [theme.breakpoints.down(425)]: {
-                                                fontSize: "12px",
-                                            },
-                                        }}>
-                                            DOWNLOAD BROCHURE
-                                        </Button> */}
+                                    {/* <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                                 
                                         <Button
                                             variant="contained"
                                             sx={{
@@ -366,7 +360,7 @@ const Courses = () => {
                                             DOWNLOAD BROCHURE
                                         </Button>
 
-                                    </Box>
+                                    </Box> */}
 
                                 </Box>
                             </Grid>
