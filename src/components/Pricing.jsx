@@ -1,4 +1,4 @@
-import { Box, Button, Chip, Container, Grid, Paper, Typography, keyframes, styled, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button, Chip, Container, Grid, Paper, Tooltip, Typography, keyframes, styled, useMediaQuery, useTheme } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 import EastIcon from '@mui/icons-material/East';
 import VerifiedIcon from '@mui/icons-material/Verified';
@@ -12,7 +12,8 @@ import "slick-carousel/slick/slick-theme.css";
 import '../styles/Pricing.css'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import timer from '../assets/images/timer.png'
 
 const glowEffect = keyframes`
     0% { filter: blur(4px) opacity(0.7); }
@@ -92,11 +93,13 @@ const Pricing = () => {
     const [selectedCard, setSelectedCard] = useState(null);
     const currentMonth = new Date().toLocaleString('en-US', { month: 'long' });
 
+
+
     const pricingData = [
         {
             title: 'Self',
-            originalPrice: '₹2000',
-            discountedPrice: '₹0',
+            originalPrice: '1000',
+            discountedPrice: '₹199',
             description: 'Ideal for those who can learn things on their own and self-paced',
             applyText: `Secure Your ${currentMonth} Spot`,
             features: [
@@ -104,12 +107,28 @@ const Pricing = () => {
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+                // { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
             ],
             internships: [
                 // { checked: true, text: 'Pre-assessment' },
                 { checked: true, text: 'Task practice' },
-                { checked: true, text: <HighlightedText>Job Simulation</HighlightedText> },
+                {
+                    checked: true,
+                    text:
+                        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
+                            <HighlightedText>Job Simulation </HighlightedText>
+                            <Tooltip
+                                title="This is an info tooltip"
+                                arrow
+                                placement="top-start"
+                                enterTouchDelay={0}
+                                leaveTouchDelay={3000}
+                                disableInteractive
+                            >
+                                <InfoOutlinedIcon fontSize='14px' />
+                            </Tooltip>
+                        </Box>
+                },
                 { checked: true, text: 'Free learning materials' },
                 { checked: true, text: 'Agile learning process' },
                 { checked: true, text: 'Task completion review' },
@@ -137,12 +156,46 @@ const Pricing = () => {
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+                { checked: true, text: <CertificateText>Internship Certificate <br />{/* <SubText>(Directly from verified companies)</SubText> */}</CertificateText> }
             ],
             title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
             internships: [
-                { checked: true, text: 'Weekly huddle with mentor' },
-                { checked: true, text: 'AI Codegen' },
+                {
+                    checked: true,
+                    //  text: 'Weekly huddle with mentor'
+                    text:
+                        < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+                            <Box>Weekly huddle with mentor </Box>
+                            <Tooltip
+                                title="This is an info tooltip"
+                                arrow
+                                placement="top"
+                                enterTouchDelay={0}
+                                leaveTouchDelay={3000}
+                                disableInteractive
+                            >
+                                <InfoOutlinedIcon fontSize="14px" />
+                            </Tooltip>
+                        </Box >
+                },
+                {
+                    checked: true,
+                    // text: 'AI Codegen' 
+                    text:
+                        < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+                            <Box>AI Codegen </Box>
+                            <Tooltip
+                                title="This is an info tooltip"
+                                arrow
+                                placement="right-end"
+                                enterTouchDelay={0}
+                                leaveTouchDelay={3000}
+                                disableInteractive
+                            >
+                                <InfoOutlinedIcon fontSize='14px' />
+                            </Tooltip>
+                        </Box >
+                },
                 { checked: true, text: 'Program switch' },/*  */
                 { checked: true, text: <CertificatePortText>Portfolio <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
             ],
@@ -162,9 +215,26 @@ const Pricing = () => {
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
-                { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
+                {
+                    checked: true,
+                    // text: <HighlightedText>Work on real customer projects</HighlightedText>
+                    text:
+                        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
+                            <HighlightedText>Work on real customer projects</HighlightedText>
+                            <Tooltip
+                                title="This is an info tooltip"
+                                arrow
+                                placement="top-start"
+                                enterTouchDelay={0}
+                                leaveTouchDelay={3000}
+                                disableInteractive
+                            >
+                                <InfoOutlinedIcon fontSize='14px' />
+                            </Tooltip>
+                        </Box>
+                },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+                { checked: true, text: <CertificateText>Internship Certificate <br />{/* <SubText>(Directly from verified companies)</SubText> */}</CertificateText> }
             ],
             title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> and . . . .</Title2Text>,
             internships: [
@@ -285,22 +355,53 @@ const Pricing = () => {
                                     {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
                                     Starts From
                                 </Typography> */}
-                                    <Box sx={{ display: 'flex', alignItems: 'end', mb: 1, letterSpacing: "1px", flexDirection: "row" }}>
-                                        <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
-                                            {card.originalPrice}
-                                        </Typography>
-                                        <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
-                                            {index === 1 || index === 2 ? (
-                                                <>
-                                                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "15px", fontSize: "13px", textAlign: "center" }}>
-                                                        Starts From
-                                                    </Typography>
-                                                    {card.discountedPrice}
-                                                </>
-                                            ) : (
-                                                card.discountedPrice
-                                            )}
-                                        </Typography>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, letterSpacing: "1px", flexDirection: "row", }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'end', letterSpacing: "1px", flexDirection: "row", }}>
+                                            <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
+                                                {card.originalPrice}
+                                            </Typography>
+                                            <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
+                                                {index === 1 || index === 2 ? (
+                                                    <>
+                                                        <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "15px", fontSize: "13px", textAlign: "center" }}>
+                                                            Starts From
+                                                        </Typography>
+                                                        {card.discountedPrice}
+                                                    </>
+                                                ) : (
+                                                    card.discountedPrice
+                                                )}
+                                            </Typography>
+                                        </Box>
+
+                                        {index == 0 && (
+                                            <Button variant="contained" sx={{
+                                                textTransform: 'uppercase',
+                                                background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)',
+                                                borderRadius: "6px",
+                                                fontSize: { xs: "9px", sm: "7px", lg: "10px" },
+                                                fontWeight: "500",
+                                                marginLeft: "10px",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                px: 1,
+                                                py: .2,
+                                            }}>
+                                                <span>
+                                                    LIMITED TIME OFFER
+                                                </span>
+                                                <Box
+                                                    component="img"
+                                                    src={timer}
+                                                    alt=""
+                                                    sx={{
+                                                        height: "100%",
+                                                        width: { xs: "25px", sm: "20px", lg: "25px" },
+                                                        marginLeft: "5px"
+                                                    }}
+                                                />
+                                            </Button>
+                                        )}
                                     </Box>
 
                                     <Typography variant="body2" sx={{ color: '#EEEEEE', mb: 3, fontSize: { xs: "12px", md: "12px", lg: "15px" }, fontWeight: "200" }}>
@@ -358,10 +459,10 @@ const Pricing = () => {
 
 const FeatureItem = ({ feature }) => (
     <Box sx={{ display: 'flex', alignItems: 'start', gap: 1, marginBottom: 1 }}>
-        <Typography variant='body2' sx={{ fontSize: "13px" }}>
+        <Typography variant='body2' component="span" sx={{ fontSize: "13px" }}>
             {feature.checked ? <VerifiedIcon sx={{ fontSize: { xs: "14px", lg: "16px" }, color: "#3ED37A" }} /> : <CloseIcon sx={{ color: 'red', fontSize: "18px" }} />}
         </Typography>
-        <Typography variant='body2' sx={{ fontSize: { xs: "11px", lg: "14px" }, fontWeight: 200 }}>
+        <Typography variant='body2' component="span" sx={{ fontSize: { xs: "11px", lg: "14px" }, fontWeight: 200 }}>
             {feature.text}
         </Typography>
     </Box>
