@@ -118,12 +118,38 @@ const Pricing = () => {
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
                             <HighlightedText>Job Simulation </HighlightedText>
                             <Tooltip
-                                title="This is an info tooltip"
+                                title={
+                                    <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+                                        {/* Gain hands-on experience with real-time projects, work on small modules, solve problem statements, and enhance creative thinking. */}
+                                        To work on simple modules of real time projects of the respective company
+                                    </span>
+                                }
                                 arrow
                                 placement="top-start"
                                 enterTouchDelay={0}
                                 leaveTouchDelay={3000}
                                 disableInteractive
+                                PopperProps={{
+                                    modifiers: [
+                                        {
+                                            name: "preventOverflow",
+                                            options: {
+                                                boundary: "window",
+                                            },
+                                        },
+                                    ],
+                                }}
+                                componentsProps={{
+                                    tooltip: {
+                                        sx: {
+                                            maxWidth: "150px", // ✅ Correctly applied width to Tooltip content
+                                            whiteSpace: "normal",
+                                            wordWrap: "break-word",
+                                            fontSize: "11px"
+
+                                        },
+                                    },
+                                }}
                             >
                                 <InfoOutlinedIcon fontSize='14px' />
                             </Tooltip>
@@ -167,14 +193,38 @@ const Pricing = () => {
                         < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
                             <Box>Weekly huddle with mentor </Box>
                             <Tooltip
-                                title="This is an info tooltip"
+                                title={
+                                    <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+                                      Provide feedback, assess code, discuss challenges, and gather insights to improve sessions and ensure continuous learning.
+                                    </span>
+                                }
                                 arrow
                                 placement="top"
                                 enterTouchDelay={0}
                                 leaveTouchDelay={3000}
                                 disableInteractive
+                                PopperProps={{
+                                    modifiers: [
+                                        {
+                                            name: "preventOverflow",
+                                            options: {
+                                                boundary: "window",
+                                            },
+                                        },
+                                    ],
+                                }}
+                                componentsProps={{
+                                    tooltip: {
+                                        sx: {
+                                            maxWidth: "150px", // ✅ Correctly applied width to Tooltip content
+                                            whiteSpace: "normal",
+                                            wordWrap: "break-word",
+                                            fontSize: "11px",
+                                        },
+                                    },
+                                }}
                             >
-                                <InfoOutlinedIcon fontSize="14px" />
+                                <InfoOutlinedIcon fontSize='14px' />
                             </Tooltip>
                         </Box >
                 },
@@ -185,12 +235,36 @@ const Pricing = () => {
                         < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
                             <Box>AI Codegen </Box>
                             <Tooltip
-                                title="This is an info tooltip"
+                                title={
+                                    <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+                                        AI code generation helps write code effectively and provides valuable feedback for improvement.
+                                    </span>
+                                }
                                 arrow
-                                placement="right-end"
+                                placement="right"
                                 enterTouchDelay={0}
                                 leaveTouchDelay={3000}
                                 disableInteractive
+                                PopperProps={{
+                                    modifiers: [
+                                        {
+                                            name: "preventOverflow",
+                                            options: {
+                                                boundary: "window",
+                                            },
+                                        },
+                                    ],
+                                }}
+                                componentsProps={{
+                                    tooltip: {
+                                        sx: {
+                                            maxWidth: "150px", // ✅ Correctly applied width to Tooltip content
+                                            whiteSpace: "normal",
+                                            wordWrap: "break-word",
+                                            fontSize: "11px"
+                                        },
+                                    },
+                                }}
                             >
                                 <InfoOutlinedIcon fontSize='14px' />
                             </Tooltip>
@@ -221,7 +295,7 @@ const Pricing = () => {
                     text:
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
                             <HighlightedText>Work on real customer projects</HighlightedText>
-                            <Tooltip
+                            {/* <Tooltip
                                 title="This is an info tooltip"
                                 arrow
                                 placement="top-start"
@@ -230,7 +304,7 @@ const Pricing = () => {
                                 disableInteractive
                             >
                                 <InfoOutlinedIcon fontSize='14px' />
-                            </Tooltip>
+                            </Tooltip> */}
                         </Box>
                 },
                 { checked: true, text: 'Stipend from companies' },
@@ -396,7 +470,7 @@ const Pricing = () => {
                                                     alt=""
                                                     sx={{
                                                         height: "100%",
-                                                        width: { xs: "25px", sm: "20px", lg: "25px" },
+                                                        width: { xs: "20px", sm: "15px", lg: "20px" },
                                                         marginLeft: "5px"
                                                     }}
                                                 />
