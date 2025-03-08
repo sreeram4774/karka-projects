@@ -358,6 +358,33 @@ const Courses = () => {
                                             }}
                                         >
                                             DOWNLOAD BROCHURE
+                                        </Button> 
+                                        <Button
+                                            variant="contained"
+                                            sx={{
+                                                borderRadius: "12px",
+                                                backgroundColor: "black",
+                                                // border: "1px solid transparet",
+                                                color: "white",
+                                                padding: "10px 22px",
+                                                fontWeight: 500,
+                                                fontSize: "14px", // Default font size
+                                                transition: "all 0.3s ease", // Smooth hover effect
+
+                                                "&:hover": {
+                                                    // backgroundColor: "#FFA800",
+                                                    color: "#FFA800",
+                                                    // border: "1px solid #FFA800"
+                                                    boxShadow :"2px 2px 3px black"
+                                                },
+
+                                                // Responsive styles for smaller screens
+                                                "@media (max-width: 425px)": {
+                                                    fontSize: "12px",
+                                                },
+                                            }}
+                                        >
+                                            DOWNLOAD BROCHURE
                                         </Button>
 
                                     </Box> */}

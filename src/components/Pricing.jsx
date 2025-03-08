@@ -107,11 +107,13 @@ const Pricing = () => {
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
-                // { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+                { checked: false, text: <CertificateText>Internship Certificate <br /></CertificateText> }
             ],
             internships: [
                 // { checked: true, text: 'Pre-assessment' },
                 { checked: true, text: 'Task practice' },
+                { checked: false, text: 'Weekly huddle with mentor' },
+
                 {
                     checked: true,
                     text:
@@ -195,7 +197,7 @@ const Pricing = () => {
                             <Tooltip
                                 title={
                                     <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-                                      Provide feedback, assess code, discuss challenges, and gather insights to improve sessions and ensure continuous learning.
+                                        Provide feedback, assess code, discuss challenges, and gather insights to improve sessions and ensure continuous learning.
                                     </span>
                                 }
                                 arrow
