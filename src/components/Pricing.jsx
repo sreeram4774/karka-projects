@@ -370,11 +370,11 @@ const Pricing = () => {
         let message = "";
 
         if (card.title === "Self") {
-            message = "Hello! I'm interested in enrolling for the InternTribe's internship program.";
+            message = "Hello Can I get more info ";
         } else if (card.title === "Pro") {
-            message = "Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.";
+            message = "Hello I would like to know the details?";
         } else if (card.title === "Prime") {
-            message = "Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.";
+            message = "Hello InternTribe May I Know the details of the program?";
         }
 
         const encodedMessage = encodeURIComponent(message);
