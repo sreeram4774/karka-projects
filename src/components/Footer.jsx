@@ -1,6 +1,14 @@
 import { Container, Grid, Typography, TextField, Box, Link, useTheme } from "@mui/material";
 import Logo from '../assets/images/Logo.png';
 import { FcPhone } from "react-icons/fc";
+// import { AiOutlineMail } from "react-icons/ai";
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import InstagramIcon from '@mui/icons-material/Instagram';
+import call from '../assets/footerimages/call.png'
+import email from '../assets/footerimages/email.png'
+import linkedin from '../assets/footerimages/linkedin.png'
+import instagram from '../assets/footerimages/instagram.png'
+
 import { useEffect, useState } from "react";
 import whatsappLogo from '../assets/footerimages/whatsapp.png'
 
@@ -42,11 +50,18 @@ const Footer = () => {
                                 </Typography>
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>
 
-                                    <Box component="li" sx={{ fontSize: { xs: "12px", sm: "14px" }, mb: 2, mt: 2 }}>
-                                        <Link href="https://www.linkedin.com" color="inherit" >
+                                    <Box component="li" sx={{ fontSize: { xs: "12px", sm: "14px" }, mb: 2, mt: 2, display: "flex", alignItems: "center", gap: "8px" }}>
+                                        <img src={linkedin} alt="" style={{ height: "25px", width: "25px" }} />
+                                        <Link
+                                            href="https://www.linkedin.com/company/interntribe/"
+                                            color="inherit"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             LinkedIn
                                         </Link>
                                     </Box>
+
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={6} md={6}>
@@ -54,8 +69,11 @@ const Footer = () => {
                                     Get More Updates
                                 </Typography>
                                 <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0, color: "rgba(255, 255, 255, 0.60)" }}>
-                                    <Box component="li" sx={{ fontSize: { xs: "12px", sm: "14px" }, mb: 2, mt: 2 }}>
-                                        <Link href="https://www.instagram.com/interntribe?igsh=YmgyMndjZXdham9o" color="inherit" >
+                                    <Box component="li" sx={{ fontSize: { xs: "12px", sm: "14px" }, mb: 2, mt: 2, display: "flex", alignItems: "center", gap: "8px" }}>
+                                        {/* <InstagramIcon /> */}
+                                        <img src={instagram} alt="" style={{ height: "25px", width: "25px" }} />
+                                        <Link href="https://www.instagram.com/interntribe?igsh=YmgyMndjZXdham9o" color="inherit" target="_blank"
+                                            rel="noopener noreferrer" >
                                             Instagram
                                         </Link>
                                     </Box>
@@ -69,7 +87,7 @@ const Footer = () => {
 
                     {/* Newsletter Section */}
                     <Grid item xs={12} sm={4} md={6} sx={{ display: "flex", justifyContent: { xs: "flex-start", sm: "flex-end" }, textAlign: { xs: "left", sm: "right" } }}>
-                        <Box sx={{display:"flex", alignItems:"flex-start", flexDirection:{xs:"row",sm:"column"}}}>
+                        <Box sx={{ display: "flex", alignItems: "flex-start", flexDirection: { xs: "row", sm: "column" } }}>
                             <Box>
                                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: "flex-start", sm: "flex-end" }, mb: 2 }}>
                                     <Box sx={{ width: { xs: "50%", sm: "80%", md: "30%" } }}>
@@ -84,11 +102,30 @@ const Footer = () => {
 
                                 <Typography
                                     variant="body2"
-                                    sx={{ color: "rgba(255, 255, 255, 0.60)", mb: 2, display: "flex", justifyContent: { xs: "flex-start", sm: 'flex-end' } }}
+                                    sx={{
+                                        color: "rgba(255, 255, 255, 0.60)",
+                                        mb: 2,
+                                        display: "flex",
+                                        justifyContent: { xs: "flex-start", sm: "flex-end" },
+                                        alignItems: "center", gap: "8px"
+                                    }}
                                 >
-                                    <FcPhone style={{ fontSize: "20px", marginRight: "8px", transform: "rotate(270deg)" }} />
+                                    <img src={email} alt="" style={{ height: "25px", width: "25px" }} />
+                                    {/* <AiOutlineMail style={{ fontSize: "20px", marginRight: "8px", color: "#D14836" }} /> */}
+                                    <a href="mailto:hr@interntribe.com" style={{ textDecoration: "underline", color: "inherit" }}>
+                                        hr@interntribe.com
+                                    </a>
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    sx={{
+                                        color: "rgba(255, 255, 255, 0.60)", mb: 2, display: "flex", justifyContent: { xs: "flex-start", sm: 'flex-end' }, alignItems: "center", gap: "8px"
+                                    }}
+                                >
+                                    {/* <FcPhone style={{ fontSize: "20px", marginRight: "8px", transform: "rotate(270deg)" }} /> */}
+                                    <img src={call} alt="" style={{ height: "25px", width: "25px" }} />
                                     <a href="tel:+919385647154" style={{ textDecoration: "underline", color: "inherit" }}>
-                                    93856 47154
+                                        +91 93856 47154
                                     </a>
                                 </Typography>
                             </Box>

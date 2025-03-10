@@ -123,11 +123,11 @@ const Pricing = () => {
                                 title={
                                     <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
                                         {/* Gain hands-on experience with real-time projects, work on small modules, solve problem statements, and enhance creative thinking. */}
-                                        To work on simple modules of real time projects of the respective company
+                                        Work on problem statements from real-time projects of the respective company
                                     </span>
                                 }
                                 arrow
-                                placement="top-start"
+                                placement="top"
                                 enterTouchDelay={0}
                                 leaveTouchDelay={3000}
                                 disableInteractive
@@ -144,10 +144,10 @@ const Pricing = () => {
                                 componentsProps={{
                                     tooltip: {
                                         sx: {
-                                            maxWidth: "150px", // ✅ Correctly applied width to Tooltip content
+                                            maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
                                             whiteSpace: "normal",
                                             wordWrap: "break-word",
-                                            fontSize: "11px"
+                                            fontSize: "10px"
 
                                         },
                                     },
@@ -184,7 +184,7 @@ const Pricing = () => {
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Internship Certificate <br />{/* <SubText>(Directly from verified companies)</SubText> */}</CertificateText> }
+                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
             ],
             title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
             internships: [
@@ -197,7 +197,7 @@ const Pricing = () => {
                             <Tooltip
                                 title={
                                     <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-                                        Provide feedback, assess code, discuss challenges, and gather insights to improve sessions and ensure continuous learning.
+                                        Receive feedback from your mentor, assess code, discuss challenges and gather insights to improve your skills and ensure your continuous learning.
                                     </span>
                                 }
                                 arrow
@@ -218,10 +218,10 @@ const Pricing = () => {
                                 componentsProps={{
                                     tooltip: {
                                         sx: {
-                                            maxWidth: "150px", // ✅ Correctly applied width to Tooltip content
+                                            maxWidth: "190px", // ✅ Correctly applied width to Tooltip content
                                             whiteSpace: "normal",
                                             wordWrap: "break-word",
-                                            fontSize: "11px",
+                                            fontSize: "10px",
                                         },
                                     },
                                 }}
@@ -239,7 +239,7 @@ const Pricing = () => {
                             <Tooltip
                                 title={
                                     <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-                                        AI code generation helps write code effectively and provides valuable feedback for improvement.
+                                        Learn to use AI tools effectively, optimize code and integrate AI into your workflow. Get expert guidance on choosing the right tools for smarter development.
                                     </span>
                                 }
                                 arrow
@@ -260,10 +260,10 @@ const Pricing = () => {
                                 componentsProps={{
                                     tooltip: {
                                         sx: {
-                                            maxWidth: "150px", // ✅ Correctly applied width to Tooltip content
+                                            maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
                                             whiteSpace: "normal",
                                             wordWrap: "break-word",
-                                            fontSize: "11px"
+                                            fontSize: "10px"
                                         },
                                     },
                                 }}
@@ -273,7 +273,7 @@ const Pricing = () => {
                         </Box >
                 },
                 { checked: true, text: 'Program switch' },/*  */
-                { checked: true, text: <CertificatePortText>Portfolio <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
+                { checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span> <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
             ],
             placements: [
                 { checked: true, text: 'Resume preparation' },
@@ -310,7 +310,7 @@ const Pricing = () => {
                         </Box>
                 },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Internship Certificate <br />{/* <SubText>(Directly from verified companies)</SubText> */}</CertificateText> }
+                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
             ],
             title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> and . . . .</Title2Text>,
             internships: [
