@@ -142,7 +142,6 @@ const Header = () => {
                             >
                                 Enroll Now
                             </Button>
-
                         </a>
                     </Box>
                 </Toolbar>

@@ -99,7 +99,7 @@ const Pricing = () => {
         {
             title: 'Self',
             originalPrice: '1000',
-            discountedPrice: '₹199',
+            discountedPrice: '₹499',
             description: 'Ideal for those who can learn things on their own and self-paced',
             applyText: `Secure Your ${currentMonth} Spot`,
             features: [
@@ -107,7 +107,7 @@ const Pricing = () => {
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: false, text: <CertificateText>Internship Certificate <br /></CertificateText> }
+                { checked: true, text: <CertificateText>Certificate from interntribe <br /><SubText>(for jobsimulation completion)</SubText></CertificateText> }
             ],
             internships: [
                 // { checked: true, text: 'Pre-assessment' },
@@ -232,7 +232,7 @@ const Pricing = () => {
                 },
                 {
                     checked: true,
-                    // text: 'AI Codegen' 
+                    // text: 'AI Codegen'
                     text:
                         < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
                             <Box>AI Codegen </Box>
