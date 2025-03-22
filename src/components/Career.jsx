@@ -114,7 +114,7 @@ const Career = () => {
 
     const handleClick = () => {
         const phoneNumber = "919385647154";
-        const message = encodeURIComponent("Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.");
+        const message = encodeURIComponent("I would like to know more about the refund process.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
@@ -293,7 +293,7 @@ const Career = () => {
 
                                             }}
                                         >
-                                            Apply for Sponsorship
+                                            With 100% Refund
                                         </Button>
                                     </Box>
 
@@ -441,9 +441,9 @@ const Career = () => {
                                         fontSize: "12px",
                                     },
                                     display: { xs: "block", sm: "none" },
-                                    width: "100%"
+                                    width: "fit-content"
                                 }}>
-                                    Apply for Sponsorship
+                                    With 100% Refund
                                 </Button>
                             </Box>
 

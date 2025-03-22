@@ -141,7 +141,7 @@ const Home = () => {
 
     const handleClick = () => {
         const phoneNumber = "919385647154";
-        const message = encodeURIComponent("Hi! I'm excited about the internship opportunity @ InterTribe! I'd like to inquire about applying for a scholarship to participate.");
+        const message = encodeURIComponent("I would like to know more about the refund process.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
@@ -223,8 +223,8 @@ const Home = () => {
                         <span></span>
                         {/* Apply for Sponsorship */}
                         <div style={{ display: "flex", gap: "6px" }}>
-                            <div>APPLY FOR</div>
-                            <div className='sponsorship'/*  style={{ color: "#FFA800" }} */>SPONSORSHIP</div>
+                            <div>With</div>
+                            <div className='sponsorship'/*  style={{ color: "#FFA800" }} */>100% Refund</div>
                         </div>
                     </a>
                 </Box>

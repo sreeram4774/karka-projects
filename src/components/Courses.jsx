@@ -104,7 +104,7 @@ const Courses = () => {
                                             backgroundColor: "#FFA800",
                                             color: "#000",
                                             borderColor: "#FFA800",
-                                            boxShadow:"2px 2px 3px #FFA800"
+                                            boxShadow: "2px 2px 3px #FFA800"
 
                                         },
 
@@ -163,147 +163,54 @@ const Courses = () => {
 
                     <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 4 }}>
                         <Grid container maxWidth="lg" spacing={4} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                            <Grid item xs={12} md={7} lg={8} sx={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: { xs: "column", sm: "row" } }}>
-                                {/* <Box sx={{ width: "180px", height: "180px", mx: 'auto', mb: isSmallScreen ? 2 : 0 }}>
-                                    <img src={Group} alt="group" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-                                </Box> */}
-                                <Grid item sm={5} md={4} >
-                                    <Box
-                                        component="img"
-                                        src={Group}
-                                        alt="group"
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'contain',
-                                            // display: 'block',
+                            <Grid item xs={12} /* md={7} lg={8} */ sx={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: { xs: "column", sm: "row" } }}>
+                                <Grid container sx={{ alignItems: "center", display: "flex" }}> {/* Ensure equal height */}
+                                    <Grid item xs={12} sm={6} md={6} sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+                                        <Box
+                                            component="img"
+                                            src={Group}
+                                            alt="group"
+                                            sx={{
+                                                width: '100%',
+                                                maxHeight: "250px", // Adjust this value based on text height
+                                                objectFit: 'contain',
+                                                // display: 'block',
+                                                flex: 1 // Ensures it stretches
 
-                                        }}
-                                    />
+                                            }}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={6} sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+                                        <Box ml={{ xs: 0, sm: 2 }} mt={{ xs: 2, sm: 0 }} sx={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                                            {services.map((service, index) => (
+                                                <Typography
+                                                    key={index}
+                                                    sx={{
+                                                        display: "flex",
+                                                        alignItems: "flex-start",
+                                                        gap: "8px",
+                                                        fontSize: { xs: "12px", sm: "12px", md: "13px", lg: "15px" },
+                                                        fontWeight: "500",
+                                                        lineHeight: '1.7',
+                                                        color: "#0D0E14",
+                                                        margin: 0,
+                                                        [theme.breakpoints.down(425)]: {
+                                                            fontSize: "11px",
+                                                        },
+                                                    }}
+                                                >
+                                                    <span style={{ minWidth: "20px", textAlign: "right" }}>{index + 1}.</span>
+                                                    <span>{service}</span>
+                                                </Typography>
+                                            ))}
+
+                                        </Box>
+                                    </Grid>
                                 </Grid>
-                                <Grid item sm={7} md={8}>
-                                    <Box ml={{ xs: 0, sm: 2 }} mt={{ xs: 2, sm: 0 }}  >
-                                        {services.map((service, index) => (
-                                            <Typography
-                                                key={index}
-                                                sx={{
-                                                    display: "flex",
-                                                    alignItems: "flex-start",
-                                                    gap: "8px",
-                                                    fontSize: { xs: "12px", sm: "12px", md: "13px", lg: "15px" },
-                                                    fontWeight: "500",
-                                                    lineHeight: '1.7',
-                                                    color: "#0D0E14",
-                                                    margin: 0,
-                                                    [theme.breakpoints.down(425)]: {
-                                                        fontSize: "11px",
-                                                    },
-                                                }}
-                                            >
-                                                <span style={{ minWidth: "20px", textAlign: "right" }}>{index + 1}.</span>
-                                                <span>{service}</span>
-                                            </Typography>
-                                        ))}
-
-                                    </Box>
-                                </Grid>
-
-
                             </Grid>
 
-                            <Grid item xs={12} md={5} lg={4} >
+                            {/* <Grid item xs={12} md={5} lg={4} >
                                 <Box sx={{ display: "flex", flexDirection: "column" }}>
-                                    {/* <TextField
-                                        fullWidth
-                                        placeholder="Your Name"
-                                        sx={{
-                                            input: {
-                                                color: "#000",
-                                                padding: { xs: "10px", sm: "13px", md: "10px", lg: "13px" },
-                                                "&::placeholder": {
-                                                    color: "#0D0E14", // Change placeholder color
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    opacity: 1, // Ensures visibility in some browsers
-                                                    [theme.breakpoints.down(425)]: {
-                                                        fontSize: "12px", // Apply when screen is xs (below sm)
-                                                    },
-                                                }
-                                            },
-                                            marginBottom: { xs: 1, md: 1, lg: 2 },
-                                            "& .MuiOutlinedInput-root": {
-                                                border: "2px solid #A1AEBF",
-                                                backgroundColor: "white",
-                                                borderRadius: "30px",
-                                            },
-                                            "& .MuiOutlinedInput-notchedOutline": {
-                                                border: "none",
-                                            },
-
-                                        }}
-                                    />
-                                    <TextField
-                                        fullWidth
-                                        placeholder="Your Mobile Number"
-                                        sx={{
-                                            input: {
-                                                color: "#000",
-                                                padding: { xs: "10px", sm: "13px", md: "10px", lg: "13px" },
-                                                "&::placeholder": {
-                                                    color: "#0D0E14", // Change placeholder color
-                                                    fontWeight: 400,
-                                                    fontSize: "14px",
-                                                    opacity: 1, // Ensures visibility in some browsers
-                                                    [theme.breakpoints.down(425)]: {
-                                                        fontSize: "12px", // Apply when screen is xs (below sm)
-                                                    },
-                                                }
-                                            },
-                                            marginBottom: { xs: 1, md: 1, lg: 2 },
-                                            "& .MuiOutlinedInput-root": {
-                                                border: "2px solid #A1AEBF",
-                                                backgroundColor: "white",
-                                                borderRadius: "30px",
-                                            },
-                                            "& .MuiOutlinedInput-notchedOutline": {
-                                                border: "none",
-                                            },
-                                        }}
-                                    />
-                                    <Box sx={{ display: "flex", flexDirection: "column" }}>
-                                        <FormControlLabel
-                                            control={<Checkbox />}
-                                            label={
-                                                <Typography
-                                                    sx={{
-                                                        fontSize: { xs: "13px", sm: "14px" },
-                                                        [theme.breakpoints.down(425)]: {
-                                                            fontSize: "10px", // Apply when screen is xs (below sm)
-                                                        },
-                                                    }}>
-                                                    I agree to <span style={{ textDecoration: "underline" }}>Terms & Conditions</span>
-                                                </Typography>}
-                                        />
-                                        <FormControlLabel
-                                            control={<Checkbox />}
-                                            label={
-                                                <Typography
-                                                    sx={{
-                                                        fontSize: { xs: "13px", sm: "14px" }, [theme.breakpoints.down(425)]: {
-                                                            fontSize: "10px", // Apply when screen is xs (below sm)
-                                                        },
-                                                    }}>
-                                                    Send Whatsapp updates
-                                                </Typography>}
-                                            sx={{ marginBottom: { xs: 1, lg: 2 }, marginTop: { xs: '-8px', lg: 0 } }}
-                                        />
-                                    </Box> */}
-                                    {/* <a
-                                        href="https://wa.me/8903003201?text=Hello!%20I'm%20interested%20in%20enrolling%20for%20the%20internship%20program."
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{ textDecoration: 'none' }}
-                                    > */}
                                     <Box mb={2} onClick={handleClick} sx={{ position: "relative", cursor: "pointer" }}>
                                         <img src={WhatsappLogo} alt="WhatsApp" style={{ width: "100%", height: "100%" }} />
                                         <Typography
@@ -327,70 +234,8 @@ const Courses = () => {
                                             ENROLL NOW
                                         </Typography>
                                     </Box>
-                                    {/* </a> */}
-
-
-                                    {/* <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                                 
-                                        <Button
-                                            variant="contained"
-                                            sx={{
-                                                borderRadius: "12px",
-                                                backgroundColor: "black",
-                                                // border: "1px solid transparet",
-                                                color: "white",
-                                                padding: "10px 22px",
-                                                fontWeight: 500,
-                                                fontSize: "14px", // Default font size
-                                                transition: "all 0.3s ease", // Smooth hover effect
-
-                                                "&:hover": {
-                                                    // backgroundColor: "#FFA800",
-                                                    color: "#FFA800",
-                                                    // border: "1px solid #FFA800"
-                                                    boxShadow :"2px 2px 3px black"
-                                                },
-
-                                                // Responsive styles for smaller screens
-                                                "@media (max-width: 425px)": {
-                                                    fontSize: "12px",
-                                                },
-                                            }}
-                                        >
-                                            DOWNLOAD BROCHURE
-                                        </Button> 
-                                        <Button
-                                            variant="contained"
-                                            sx={{
-                                                borderRadius: "12px",
-                                                backgroundColor: "black",
-                                                // border: "1px solid transparet",
-                                                color: "white",
-                                                padding: "10px 22px",
-                                                fontWeight: 500,
-                                                fontSize: "14px", // Default font size
-                                                transition: "all 0.3s ease", // Smooth hover effect
-
-                                                "&:hover": {
-                                                    // backgroundColor: "#FFA800",
-                                                    color: "#FFA800",
-                                                    // border: "1px solid #FFA800"
-                                                    boxShadow :"2px 2px 3px black"
-                                                },
-
-                                                // Responsive styles for smaller screens
-                                                "@media (max-width: 425px)": {
-                                                    fontSize: "12px",
-                                                },
-                                            }}
-                                        >
-                                            DOWNLOAD BROCHURE
-                                        </Button>
-
-                                    </Box> */}
-
                                 </Box>
-                            </Grid>
+                            </Grid> */}
                         </Grid>
                     </Box>
                 </CourseContainer>
@@ -414,7 +259,7 @@ const Courses = () => {
                                         backgroundColor: "#FFA800",
                                         color: "#000",
                                         borderColor: "#FFA800",
-                                        boxShadow:"2px 2px 3px #FFA800"
+                                        boxShadow: "2px 2px 3px #FFA800"
                                     },
 
                                     zIndex: 10, // Ensures it stays above other elements

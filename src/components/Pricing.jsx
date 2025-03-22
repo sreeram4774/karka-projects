@@ -1,5 +1,5 @@
-import { Box, Button, Chip, Container, Grid, Paper, Tooltip, Typography, keyframes, styled, useMediaQuery, useTheme } from '@mui/material'
-import React, { useEffect, useRef, useState } from 'react'
+import { Box, Button, Container, Paper, Tooltip, Typography, keyframes, styled, useMediaQuery, useTheme } from '@mui/material'
+import React, { useRef, useState } from 'react'
 import EastIcon from '@mui/icons-material/East';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import CloseIcon from '@mui/icons-material/Close';
@@ -14,12 +14,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import timer from '../assets/images/timer.png'
+import EmergencyIcon from '@mui/icons-material/Emergency';
 
 const glowEffect = keyframes`
-    0% { filter: blur(4px) opacity(0.7); }
-    50% { filter: blur(10px) opacity(1); }
-    100% { filter: blur(6px) opacity(0.8); }
-`;
+        0% { filter: blur(4px) opacity(0.7); }
+        50% { filter: blur(10px) opacity(1); }
+        100% { filter: blur(6px) opacity(0.8); }
+    `;
 
 const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper {...rest} />)(({ theme, index, isPreview, isMobile }) => ({
     textAlign: 'left',
@@ -88,17 +89,21 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
 
 
 
+
+
 const Pricing = () => {
 
     const [selectedCard, setSelectedCard] = useState(null);
     const currentMonth = new Date().toLocaleString('en-US', { month: 'long' });
+    const [hoveredOne, setHoveredOne] = useState(false);
+    const [hoveredTwo, setHoveredTwo] = useState(false);
 
 
 
     const pricingData = [
         {
             title: 'Self',
-            originalPrice: '1000',
+            originalPrice: '₹1000',
             discountedPrice: '₹499',
             description: 'Ideal for those who can learn things on their own and self-paced',
             applyText: `Secure Your ${currentMonth} Spot`,
@@ -107,7 +112,7 @@ const Pricing = () => {
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Certificate from interntribe <br /><SubText>(for jobsimulation completion)</SubText></CertificateText> }
+                { checked: true, text: <CertificateText>Certificate from interntribe <br /><SubText>(For Job Simulation Completion)</SubText></CertificateText> }
             ],
             internships: [
                 // { checked: true, text: 'Pre-assessment' },
@@ -147,8 +152,13 @@ const Pricing = () => {
                                             maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
                                             whiteSpace: "normal",
                                             wordWrap: "break-word",
-                                            fontSize: "10px"
-
+                                            fontSize: "10px",
+                                            background: "black"
+                                        },
+                                    },
+                                    arrow: {
+                                        sx: {
+                                            color: "black", // Sets the arrow color to match the tooltip background
                                         },
                                     },
                                 }}
@@ -178,13 +188,23 @@ const Pricing = () => {
             originalPrice: '₹4000',
             discountedPrice: '₹1,999',
             description: 'Ideal those who need a accountability partner to track & provide feedback on your progress',
-            applyText: 'Apply for Sponsorship',
+            applyText: (
+                <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
+            ),
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+                {
+                    checked: true,
+                    text: (
+                        <CertificateText>
+                            Internship Certificate <br />
+                            <SubText>(Directly From Verified Companies)</SubText>
+                        </CertificateText>
+                    ),
+                }
             ],
             title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
             internships: [
@@ -222,6 +242,12 @@ const Pricing = () => {
                                             whiteSpace: "normal",
                                             wordWrap: "break-word",
                                             fontSize: "10px",
+                                            background: "black"
+                                        },
+                                    },
+                                    arrow: {
+                                        sx: {
+                                            color: "black", // Sets the arrow color to match the tooltip background
                                         },
                                     },
                                 }}
@@ -263,7 +289,13 @@ const Pricing = () => {
                                             maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
                                             whiteSpace: "normal",
                                             wordWrap: "break-word",
-                                            fontSize: "10px"
+                                            fontSize: "10px",
+                                            background: "black"
+                                        },
+                                    },
+                                    arrow: {
+                                        sx: {
+                                            color: "black", // Sets the arrow color to match the tooltip background
                                         },
                                     },
                                 }}
@@ -277,7 +309,7 @@ const Pricing = () => {
             ],
             placements: [
                 { checked: true, text: 'Resume preparation' },
-                { checked: true, text: 'Placement assistance' },
+                // { checked: true, text: 'Placement assistance' },
                 { checked: true, text: 'Business English Training' },
                 { checked: true, text: 'Softskill Training' },
             ]
@@ -287,7 +319,9 @@ const Pricing = () => {
             originalPrice: '₹10000',
             discountedPrice: '₹4,999',
             description: 'Unlock your full potential and accelerate your career with expert guidance and placement assistance.',
-            applyText: 'Apply for Sponsorship',
+            applyText: (
+                <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
+            ),
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
@@ -298,30 +332,40 @@ const Pricing = () => {
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
                             <HighlightedText>Work on real customer projects</HighlightedText>
                             {/* <Tooltip
-                                title="This is an info tooltip"
-                                arrow
-                                placement="top-start"
-                                enterTouchDelay={0}
-                                leaveTouchDelay={3000}
-                                disableInteractive
-                            >
-                                <InfoOutlinedIcon fontSize='14px' />
-                            </Tooltip> */}
+                                    title="This is an info tooltip"
+                                    arrow
+                                    placement="top-start"
+                                    enterTouchDelay={0}
+                                    leaveTouchDelay={3000}
+                                    disableInteractive
+                                >
+                                    <InfoOutlinedIcon fontSize='14px' />
+                                </Tooltip> */}
                         </Box>
                 },
                 { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly from verified companies)</SubText></CertificateText> }
+                {
+                    checked: true,
+                    text: (
+                        <CertificateText>
+                            Internship Certificate <br />
+                            <SubText>(Directly From Verified Companies)</SubText>
+                        </CertificateText>
+                    ),
+                }
             ],
             title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> and . . . .</Title2Text>,
             internships: [
                 { checked: true, text: 'Project guidance' },
-                { checked: true, text: 'Product Design' },
+                // { checked: true, text: 'Product Design' },
                 { checked: true, text: 'Live support & Doubt clearance' },
                 { checked: true, text: <CertificateText>Code + Task review <SubText>(Github PR)</SubText></CertificateText> },
             ],
             placements: [
                 { checked: true, text: 'Mock Interview' },
-                { checked: true, text: 'Dedicated placement officer' },
+                // { checked: true, text: 'Dedicated placement officer' },
+                { checked: true, text: 'Placement assistance' },
+
             ]
         },
 
@@ -372,9 +416,9 @@ const Pricing = () => {
         if (card.title === "Self") {
             message = "Hello Can I get more info ";
         } else if (card.title === "Pro") {
-            message = "Hello I would like to know the details?";
+            message = "I would like to know more about the refund process.";
         } else if (card.title === "Prime") {
-            message = "Hello InternTribe May I Know the details of the program?";
+            message = "I would like to know more about the refund process.";
         }
 
         const encodedMessage = encodeURIComponent(message);
@@ -385,7 +429,6 @@ const Pricing = () => {
 
         window.open(whatsappURL, "_blank");
     };
-
 
 
     return (
@@ -422,16 +465,20 @@ const Pricing = () => {
                     <Slider ref={sliderRef} {...settings}>
                         {pricingData.map((card, index) => (
                             <Box key={index} sx={{ padding: "10px", width: "100%", marginTop: 5, display: "flex", justifyContent: "center", height: "100%", /* backgroundColor: "pink" */ }}>
-                                <PricingCardContainer elevation={3} index={index} isPreview={index !== activeIndex} isMobile={isMobile}>
-                                    <Box textAlign={"center"}>
+                                <PricingCardContainer elevation={3} index={index} isPreview={index !== activeIndex} isMobile={isMobile} sx={{overflow:"hidden"}} >
+                                    <Box></Box>
+                                    <Box textAlign={"center"} >
                                         <Typography variant="h4" sx={{ color: "#FFA800", textTransform: "uppercase", fontWeight: 600, marginBottom: "15px" }}>
                                             {card.title}
                                         </Typography>
                                     </Box>
+                                    {index === 1 || index === 2 ? <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', ml: 1, position: "absolute", top: '4%', left: '10%', background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)', color: "white", transform: ' translate(-50%,-50%) rotate(-39deg)', padding: "4px 30px", fontSize: "11px", height:"fit-content", width:"100%", textAlign:"center" }}>
+                                        15 Days Free Trial
+                                    </Typography> : ""}
                                     {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
-                                    Starts From
-                                </Typography> */}
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, letterSpacing: "1px", flexDirection: "row", }}>
+                                        Starts From
+                                    </Typography> */}
+                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, letterSpacing: "1px", flexDirection: "row" }}>
                                         <Box sx={{ display: 'flex', alignItems: 'end', letterSpacing: "1px", flexDirection: "row", }}>
                                             <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
                                                 {card.originalPrice}
@@ -448,6 +495,7 @@ const Pricing = () => {
                                                     card.discountedPrice
                                                 )}
                                             </Typography>
+
                                         </Box>
 
                                         {index == 0 && (
@@ -455,7 +503,7 @@ const Pricing = () => {
                                                 textTransform: 'uppercase',
                                                 background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)',
                                                 borderRadius: "6px",
-                                                fontSize: { xs: "9px", sm: "7px", lg: "10px" },
+                                                fontSize: { xs: "8px", sm: "7px", lg: "10px" },
                                                 fontWeight: "500",
                                                 marginLeft: "10px",
                                                 display: "flex",
@@ -484,22 +532,49 @@ const Pricing = () => {
                                         {card.description}
                                     </Typography>
 
-                                    <Button variant="contained" onClick={() => handleApplyClick(card)} sx={{
-                                        textTransform: 'uppercase',
-                                        // background: "linear-gradient(68deg, rgba(46, 51, 147, 0.6) -1.82%, rgba(28, 250, 252, 0.6) 106.59%)",
-                                        background: index === 0
-                                            ? 'linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)' // Gradient for index 0
-                                            : index === 1 || index === 2
-                                                ? 'linear-gradient(225.92deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)' // Gradient for index 1 and 2
-                                                : 'none',
+                                    <Button
+                                        variant="contained"
+                                        onClick={() => handleApplyClick(card)}
+                                        onMouseEnter={() => {
+                                            if (index === 1) setHoveredOne(true);
+                                            if (index === 2) setHoveredTwo(true);
+                                        }}
+                                        onMouseLeave={() => {
+                                            if (index === 1) setHoveredOne(false);
+                                            if (index === 2) setHoveredTwo(false);
+                                        }}
+                                        sx={{
+                                            textTransform: "uppercase",
+                                            position: "relative",
+                                            background:
+                                                index === 0
+                                                    ? "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)"
+                                                    : index === 1 || index === 2
+                                                        ? "linear-gradient(225.92deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)"
+                                                        : "none",
 
-                                        borderRadius: "6px", fontSize: { xs: "9px", sm: "9px", lg: "13px" },
-                                        fontWeight: "bold", width: { xs: "100%", sm: "80%" }, padding: { xs: '7px', sm: "auto" }
-                                    }}>
-                                        {card.applyText} <EastIcon sx={{ marginLeft: '8px' }} />
+                                            borderRadius: "6px",
+                                            fontSize: { xs: "9px", sm: "9px", lg: "13px" },
+                                            fontWeight: "bold",
+                                            width: {
+                                                xs: "100%", sm: (index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100%" : "80%",
+                                            }, // ✅ Fixed width to prevent layout shift
+                                            minWidth: "160px", // ✅ Ensures width remains stable
+                                            padding: { xs: "7px", sm: "auto" },
+                                            transition: "all 0.3s ease-in-out", // ✅ Smooth transition for text change
+                                            whiteSpace: "nowrap", // ✅ Prevents text wrapping
+                                            display: "flex", // ✅ Keeps text & icon aligned
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                        }}
+                                    >
+                                        {(index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100% Refund for first 500 people" : card.applyText}
+                                        <EastIcon sx={{ marginLeft: "8px", transition: "transform 0.3s ease-in-out" }} />
+                                        {(index === 1 || index === 2) ? <Typography sx={{ position: "absolute", bottom: -20, right: 0, fontSize: "9px" }}>Upon Successful Completion</Typography> : ""}
+
                                     </Button>
 
-                                    <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400' }}>
+                                    <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400', mt: 2 }}>
                                         {card.features && card.features.length > 0 && (
                                             <Box padding={{ xs: "5px 18px", md: '5px 24px' }}
                                             >
@@ -522,7 +597,10 @@ const Pricing = () => {
                                             <SectionBox index={index} title="Placement" items={card.placements} />
                                         )}
                                     </Box>
+
+
                                 </PricingCardContainer>
+
                             </Box>
                         ))
                         }
