@@ -9,6 +9,7 @@ import {
     useTheme,
 } from '@mui/material';
 import Searching from "../assets/images/searching.png"
+import FormSubmission from './FormSubmission';
 
 
 
@@ -34,6 +35,16 @@ const ChooseUs = () => {
 
         },
     }));
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
 
 
@@ -94,7 +105,9 @@ const ChooseUs = () => {
                             Join InternTribe's beginner-friendly internship program to kickstart your career with no prior coding knowledge required. Experience personalized learning paths, live classes with industry experts, real-world projects, and dedicated career guidance. Gain hands-on experience, deploy live projects, and earn a valuable completion certificate!
                         </Typography>
                         <Box sx={{ display: 'flex', justifyContent: 'left' }}>
-                            <EnrollButton variant="outlined" onClick={handleClick}>ENROLL NOW</EnrollButton>
+                            <EnrollButton variant="outlined" onClick={handleClickOpen}>ENROLL NOW</EnrollButton>
+
+                            <FormSubmission open={open} handleClose={handleClose} />
                         </Box>
                     </Grid>
                 </Grid>

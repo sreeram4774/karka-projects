@@ -5,6 +5,7 @@ import CheckBackground from '../assets/images/CheckBackground.png';
 import Shadow1 from '../assets/images/shadow1.png'
 import Shadow2 from '../assets/images/shadow2.png'
 import '../styles/Home.css'
+import FormSubmission from './FormSubmission';
 
 const Home = () => {
     const theme = useTheme();
@@ -146,6 +147,16 @@ const Home = () => {
         window.open(url, "_blank");
     };
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return (
         <Box sx={{ ...containerStyles, ...overlayStyles }}>
             <Container maxWidth="lg" sx={{ py: { xs: 4, sm: 6, md: 8, lg: 8 } }}>
@@ -216,7 +227,7 @@ const Home = () => {
 
                     </Box>
 
-                    <a onClick={handleClick} target="_blank" className="animation" style={{ marginTop: "20px", cursor: "pointer", fontSize: "14px" }}>
+                    <a onClick={handleClickOpen} target="_blank" className="animation" style={{ marginTop: "20px", cursor: "pointer", fontSize: "14px" }}>
                         <span></span>
                         <span></span>
                         <span></span>
@@ -227,6 +238,9 @@ const Home = () => {
                             <div className='sponsorship'/*  style={{ color: "#FFA800" }} */>100% Refund</div>
                         </div>
                     </a>
+
+                    <FormSubmission open={open} handleClose={handleClose} />
+
                 </Box>
             </Container>
         </Box>

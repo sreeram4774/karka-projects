@@ -17,6 +17,7 @@ import image4 from '../assets/logos/image4.png';
 import image5 from '../assets/logos/image5.png';
 import image6 from '../assets/logos/image6.png';
 import { useState } from 'react';
+import FormSubmission from './FormSubmission';
 
 
 const Career = () => {
@@ -117,6 +118,16 @@ const Career = () => {
         const message = encodeURIComponent("I would like to know more about the refund process.");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
+    };
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
     };
 
 
@@ -272,7 +283,7 @@ const Career = () => {
                                     <Box sx={{ mt: 2, display: { xs: "none", sm: "block" } }}>
                                         <Button
                                             variant="contained"
-                                            onClick={handleClick}
+                                            onClick={handleClickOpen}
                                             sx={{
                                                 borderRadius: "6px",
                                                 background: "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)",
@@ -295,6 +306,8 @@ const Career = () => {
                                         >
                                             With 100% Refund
                                         </Button>
+
+                                        <FormSubmission open={open} handleClose={handleClose} />
                                     </Box>
 
                                 </Typography>
