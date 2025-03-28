@@ -15,6 +15,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import timer from '../assets/images/timer.png'
 import EmergencyIcon from '@mui/icons-material/Emergency';
+import FormSubmission from './FormSubmission';
 
 const glowEffect = keyframes`
         0% { filter: blur(4px) opacity(0.7); }
@@ -97,8 +98,6 @@ const Pricing = () => {
     const currentMonth = new Date().toLocaleString('en-US', { month: 'long' });
     const [hoveredOne, setHoveredOne] = useState(false);
     const [hoveredTwo, setHoveredTwo] = useState(false);
-
-
 
     const pricingData = [
         {
@@ -186,7 +185,7 @@ const Pricing = () => {
         {
             title: 'Pro',
             originalPrice: '₹4000',
-            discountedPrice: '₹1,999',
+            discountedPrice: '₹2,999',
             description: 'Ideal those who need a accountability partner to track & provide feedback on your progress',
             applyText: (
                 <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
@@ -317,7 +316,7 @@ const Pricing = () => {
         {
             title: 'Prime',
             originalPrice: '₹10000',
-            discountedPrice: '₹4,999',
+            discountedPrice: '₹5,999',
             description: 'Unlock your full potential and accelerate your career with expert guidance and placement assistance.',
             applyText: (
                 <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
@@ -376,6 +375,24 @@ const Pricing = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [activeIndex, setActiveIndex] = useState(0);
     // const isPreviewMode = true; // Set this dynamically based on preview mode
+
+    const [open, setOpen] = React.useState(false);
+
+    // const handleClickOpen = () => {
+    //     setOpen(true);
+    // };
+
+    const handleClickOpen = (index) => {
+        console.log(index);
+
+        if (index === 0 || index === 1 || index === 2) {
+            setOpen(true);
+        }
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const settings = {
         dots: false,
@@ -465,14 +482,14 @@ const Pricing = () => {
                     <Slider ref={sliderRef} {...settings}>
                         {pricingData.map((card, index) => (
                             <Box key={index} sx={{ padding: "10px", width: "100%", marginTop: 5, display: "flex", justifyContent: "center", height: "100%", /* backgroundColor: "pink" */ }}>
-                                <PricingCardContainer elevation={3} index={index} isPreview={index !== activeIndex} isMobile={isMobile} sx={{overflow:"hidden"}} >
+                                <PricingCardContainer elevation={3} index={index} isPreview={index !== activeIndex} isMobile={isMobile} sx={{ overflow: "hidden" }} >
                                     <Box></Box>
                                     <Box textAlign={"center"} >
                                         <Typography variant="h4" sx={{ color: "#FFA800", textTransform: "uppercase", fontWeight: 600, marginBottom: "15px" }}>
                                             {card.title}
                                         </Typography>
                                     </Box>
-                                    {index === 1 || index === 2 ? <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', ml: 1, position: "absolute", top: '4%', left: '10%', background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)', color: "white", transform: ' translate(-50%,-50%) rotate(-39deg)', padding: "4px 30px", fontSize: "11px", height:"fit-content", width:"100%", textAlign:"center" }}>
+                                    {index === 1 || index === 2 ? <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', ml: 1, position: "absolute", top: '4%', left: '10%', background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)', color: "white", transform: ' translate(-50%,-50%) rotate(-39deg)', padding: "4px 30px", fontSize: "11px", height: "fit-content", width: "100%", textAlign: "center" }}>
                                         15 Days Free Trial
                                     </Typography> : ""}
                                     {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
@@ -534,7 +551,8 @@ const Pricing = () => {
 
                                     <Button
                                         variant="contained"
-                                        onClick={() => handleApplyClick(card)}
+                                        // onClick={() => handleApplyClick(card)}
+                                        onClick={() => handleClickOpen(index)}
                                         onMouseEnter={() => {
                                             if (index === 1) setHoveredOne(true);
                                             if (index === 2) setHoveredTwo(true);
@@ -573,6 +591,9 @@ const Pricing = () => {
                                         {(index === 1 || index === 2) ? <Typography sx={{ position: "absolute", bottom: -20, right: 0, fontSize: "9px" }}>Upon Successful Completion</Typography> : ""}
 
                                     </Button>
+
+                                    <FormSubmission open={open} handleClose={handleClose} />
+
 
                                     <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400', mt: 2 }}>
                                         {card.features && card.features.length > 0 && (

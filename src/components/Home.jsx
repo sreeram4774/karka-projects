@@ -222,7 +222,7 @@ const Home = () => {
                         px: { xs: 2, sm: 4, lg: 4 }
                     }}>
                         <Typography sx={subtitleStyles}>
-                            <BoldText>InternTribe</BoldText> is a <BoldText>Virtual Internship Platform</BoldText> where <BoldText>Interns</BoldText> meet <BoldText>Companies</BoldText>. Online / Hybrid
+                            <BoldText>InternTribe</BoldText> is a <BoldText>Remote Internship Platform</BoldText> where <BoldText>Interns</BoldText> meet <BoldText>Companies</BoldText>. Online / Hybrid
                         </Typography>
 
                     </Box>

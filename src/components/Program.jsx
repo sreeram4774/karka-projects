@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, Paper, Typography, styled, useTheme } fro
 import React from 'react'
 import coding from '../assets/programimages/coding.svg'
 import humanresources from '../assets/programimages/hr-human-resources.svg'
+import FormSubmission from './FormSubmission'
 
 
 
@@ -67,6 +68,16 @@ const Program = () => {
         window.open(url, "_blank");
     };
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return (
         <Box sx={{ backgroundColor: "#110f0f", color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 2, md: 8 } }}>
             <Container maxWidth="xl"  >
@@ -89,7 +100,7 @@ const Program = () => {
                                         lineHeight: "30px"
                                     },
                                 }}>
-                                How does our Virtual Internship Program work?
+                                How does our Remote Internship Program work?
                             </Typography>
 
                             <Typography variant="body1" sx={{
@@ -101,7 +112,7 @@ const Program = () => {
                                 letterSpacing: "0.02rem",
                                 lineHeight: "22px"
                             }}>
-                                Take your skills to the next level with a comprehensive virtual internship experience. Gain hands-on practice, expert mentorship, curated resources, and real-world projects to prepare for the industry.
+                                Take your skills to the next level with a comprehensive remote internship experience. Gain hands-on practice, expert mentorship, curated resources, and real-world projects to prepare for the industry.
                             </Typography>
 
                             {/* <Button variant="outlined" sx={{ borderColor: "#ffa800", color: "#ffa800", borderRadius: "50px", display: { xs: 'none', sm: "block" } }}>
@@ -110,7 +121,7 @@ const Program = () => {
 
                             <Button
                                 variant="outlined"
-                                onClick={handleClick}
+                                onClick={handleClickOpen}
                                 sx={{
                                     borderColor: "#FFA800",
                                     color: "#FFA800",
@@ -131,6 +142,9 @@ const Program = () => {
                             >
                                 Enroll Now
                             </Button>
+
+                            <FormSubmission open={open} handleClose={handleClose} />
+
 
                         </Grid>
                         <Grid item sm={4} m={0} p={0}>

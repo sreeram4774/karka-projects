@@ -128,15 +128,16 @@ const Footer = () => {
                                         +91 93856 47154
                                     </a>
                                 </Typography>
+                                <Box onClick={handleClick} sx={{ width: '100%', display: "flex", justifyContent: { xs: "flex-start", sm: "flex-end" }, boxSizing: "border-box" }}>
+                                    <img
+                                        src={whatsappLogo}
+                                        alt="Logo"
+                                        style={{ width: 60, height: 60, objectFit: "cover", marginRight: -9, marginLeft: { xs: -9, sm: 0 }, cursor: "pointer" }}
+                                    />
+                                </Box>
                             </Box>
 
-                            <Box onClick={handleClick} sx={{ width: '100%', display: "flex", justifyContent: { xs: "flex-start", sm: "flex-end" }, boxSizing: "border-box" }}>
-                                <img
-                                    src={whatsappLogo}
-                                    alt="Logo"
-                                    style={{ width: 60, height: 60, objectFit: "contain", marginRight: -9, cursor: "pointer" }}
-                                />
-                            </Box>
+
                         </Box>
 
                     </Grid>

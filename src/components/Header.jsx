@@ -57,18 +57,10 @@ const Header = () => {
     const handleClickOpen = () => {
         setOpen(true);
     };
-
     const handleClose = () => {
         setOpen(false);
-        // setFormData({
-        //     name: "",
-        //     email: "",
-        //     phone: "",
-        //     coupon: "",
-        //     message: "",
-        // });
-        // setErrors({});
     };
+
 
     React.useEffect(() => {
         const handleScroll = () => {
