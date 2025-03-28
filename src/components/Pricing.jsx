@@ -148,7 +148,7 @@ const Pricing = () => {
                                 componentsProps={{
                                     tooltip: {
                                         sx: {
-                                            maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
+                                            maxWidth: "180px", 
                                             whiteSpace: "normal",
                                             wordWrap: "break-word",
                                             fontSize: "10px",
