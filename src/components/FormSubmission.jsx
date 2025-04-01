@@ -21,6 +21,41 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 
 const FormSubmission = ({ open, handleClose }) => {
+    const formatDate = (dateString,two_digit = false) => {
+        if (!dateString) return '-';
+        
+        try {
+            const date = new Date(dateString);
+            
+            // Check if date is valid
+            if (isNaN(date.getTime())) {
+                return dateString;
+            }
+            const months = [
+                "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            ];
+    
+            // Get day, month and year
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = months[date.getMonth()];
+            const year = date.getFullYear();
+            const formattedYear = two_digit ? String(year).slice(-2) : year;
+    
+            // Return formatted date
+            return `${day} ${month} ${formattedYear}`;
+            
+        } catch (error) {
+            console.error('Error formatting date:', error);
+            return dateString;
+        }
+    }; 
+    const todayDate = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+    const today = formatDate(todayDate);
 
     // const [open, setOpen] = React.useState(false);
 
@@ -28,7 +63,7 @@ const FormSubmission = ({ open, handleClose }) => {
         name: "",
         email: "",
         phone: "",
-        coupon: "",
+        city: "",
         message: "",
     });
     const [errors, setErrors] = useState({});
@@ -70,6 +105,7 @@ const FormSubmission = ({ open, handleClose }) => {
     //         setErrors({ ...errors, email: value && !emailPattern.test(value) ? "Invalid email format" : "" });
     //     }
     // };
+    // console.log("date",formatDate(todayDate));
 
 
     const handleChange = (event) => {
@@ -102,16 +138,11 @@ const FormSubmission = ({ open, handleClose }) => {
         event.preventDefault();
         if (!validateForm()) return;
         setIsSubmitting(true);
-
-        // const formData = {
-        //     name: event.target.name.value,
-        //     email: event.target.email.value,
-        //     phone: event.target.phone.value,
-        //     coupon: event.target.coupon.value,
-        //     message: event.target.message.value,
-        // };
-
-        // console.log("Sending data:", formData);
+        const finalData ={
+            ...formData,
+            date:today
+        }
+        console.log(finalData);
 
         try {
             const response = await fetch("https://script.google.com/macros/s/AKfycbynYjvCdflW9mYlMWmtZklLvbDLUQAcVdkm5MyotGX0CP4GX3iFY0kbgp9dozo0Q7cg/exec", {
@@ -120,12 +151,12 @@ const FormSubmission = ({ open, handleClose }) => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(finalData)
             });
 
             if (response) {
                 toast.dismiss(); // Remove any existing toasts
-                setFormData({ name: "", email: "", phone: "", coupon: "", message: "" });
+                setFormData({ name: "", email: "", phone: "", city: "", message: "" });
                 handleClose();
 
                 // Delay the toast to prevent UI glitches
@@ -153,7 +184,7 @@ const FormSubmission = ({ open, handleClose }) => {
             name: "",
             email: "",
             phone: "",
-            coupon: "",
+            city: "",
             message: ""
         });
     }, []);
@@ -316,14 +347,14 @@ const FormSubmission = ({ open, handleClose }) => {
                                     <TextField
                                         margin="dense"
                                         size="small"
-                                        label="Coupon Code"
-                                        name="coupon"
+                                        label="City"
+                                        name="city"
                                         type="text"
                                         fullWidth
                                         variant="outlined"
-                                        value={formData.coupon}
+                                        value={formData.city}
                                         onChange={handleChange}
-                                        autoComplete="off"
+                                        // autoComplete="on"
                                         InputProps={{
                                             style: { color: "#fff" }, // White input text
                                         }}

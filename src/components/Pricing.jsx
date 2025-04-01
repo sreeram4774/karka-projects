@@ -586,7 +586,7 @@ const Pricing = () => {
                                             alignItems: "center",
                                         }}
                                     >
-                                        {(index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100% Refund for first 500 people" : card.applyText}
+                                        {(index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100% Refund for first 500 Interns" : card.applyText}
                                         <EastIcon sx={{ marginLeft: "8px", transition: "transform 0.3s ease-in-out" }} />
                                         {(index === 1 || index === 2) ? <Typography sx={{ position: "absolute", bottom: -20, right: 0, fontSize: "9px" }}>Upon Successful Completion</Typography> : ""}
 
