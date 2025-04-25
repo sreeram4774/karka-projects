@@ -30,6 +30,8 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
     padding: '20px',
     display: 'flex',
     flexDirection: 'column',
+    // width:"50%",
+    // bgcolor:"blue",
     minHeight: 'auto',
     position: 'relative',
 
@@ -84,7 +86,7 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
         height: index === 0 || index === 2 ? '850px' : 'auto',
     },
     [theme.breakpoints.up('lg')]: {
-        height: index === 0 || index === 2 ? '870px' : 'auto',
+        height: index === 0 || index === 2 ? '815px' : 'auto'
     },
 }));
 
@@ -106,6 +108,13 @@ const Pricing = () => {
             discountedPrice: '₹499',
             description: 'Ideal for those who can learn things on their own and self-paced',
             applyText: `Secure Your ${currentMonth} Spot`,
+            cardStyle: {
+                // width: '100px',
+                minHeight: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+            },
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
@@ -114,10 +123,8 @@ const Pricing = () => {
                 { checked: true, text: <CertificateText>Certificate from interntribe <br /><SubText>(For Job Simulation Completion)</SubText></CertificateText> }
             ],
             internships: [
-                // { checked: true, text: 'Pre-assessment' },
                 { checked: true, text: 'Task practice' },
                 { checked: false, text: 'Weekly huddle with mentor' },
-
                 {
                     checked: true,
                     text:
@@ -126,7 +133,6 @@ const Pricing = () => {
                             <Tooltip
                                 title={
                                     <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-                                        {/* Gain hands-on experience with real-time projects, work on small modules, solve problem statements, and enhance creative thinking. */}
                                         Work on problem statements from real-time projects of the respective company
                                     </span>
                                 }
@@ -157,7 +163,7 @@ const Pricing = () => {
                                     },
                                     arrow: {
                                         sx: {
-                                            color: "black", // Sets the arrow color to match the tooltip background
+                                            color: "black",
                                         },
                                     },
                                 }}
@@ -169,177 +175,163 @@ const Pricing = () => {
                 { checked: true, text: 'Free learning materials' },
                 { checked: true, text: 'Agile learning process' },
                 { checked: true, text: 'Task completion review' },
-                {
-                    checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span>
-                        <SubPortText>(
-                            <LinkedInIcon sx={{ fontSize: "16px", color: "#006eab", marginRight: .5 }} />
-                            {/* <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}> */}
-                            <span>LinkedIn</span>
-                            {/* </a> */}
-                            )</SubPortText>
-                    </CertificatePortText>
-                },
                 { checked: true, text: 'Deploy on Github' },
             ],
         },
-        {
-            title: 'Pro',
-            originalPrice: '₹4000',
-            discountedPrice: '₹2,999',
-            description: 'Ideal those who need a accountability partner to track & provide feedback on your progress',
-            applyText: (
-                <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
-            ),
-            features: [
-                { checked: true, text: 'Online Mode' },
-                { checked: true, text: 'Upto 360 hours in 3 months' },
-                { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
-                { checked: true, text: 'Stipend from companies' },
-                {
-                    checked: true,
-                    text: (
-                        <CertificateText>
-                            Internship Certificate <br />
-                            <SubText>(Directly From Verified Companies)</SubText>
-                        </CertificateText>
-                    ),
-                }
-            ],
-            title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
-            internships: [
-                {
-                    checked: true,
-                    //  text: 'Weekly huddle with mentor'
-                    text:
-                        < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
-                            <Box>Weekly huddle with mentor </Box>
-                            <Tooltip
-                                title={
-                                    <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-                                        Receive feedback from your mentor, assess code, discuss challenges and gather insights to improve your skills and ensure your continuous learning.
-                                    </span>
-                                }
-                                arrow
-                                placement="top"
-                                enterTouchDelay={0}
-                                leaveTouchDelay={3000}
-                                disableInteractive
-                                PopperProps={{
-                                    modifiers: [
-                                        {
-                                            name: "preventOverflow",
-                                            options: {
-                                                boundary: "window",
-                                            },
-                                        },
-                                    ],
-                                }}
-                                componentsProps={{
-                                    tooltip: {
-                                        sx: {
-                                            maxWidth: "190px", // ✅ Correctly applied width to Tooltip content
-                                            whiteSpace: "normal",
-                                            wordWrap: "break-word",
-                                            fontSize: "10px",
-                                            background: "black"
-                                        },
-                                    },
-                                    arrow: {
-                                        sx: {
-                                            color: "black", // Sets the arrow color to match the tooltip background
-                                        },
-                                    },
-                                }}
-                            >
-                                <InfoOutlinedIcon fontSize='14px' />
-                            </Tooltip>
-                        </Box >
-                },
-                {
-                    checked: true,
-                    // text: 'AI Codegen'
-                    text:
-                        < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
-                            <Box>AI Codegen </Box>
-                            <Tooltip
-                                title={
-                                    <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-                                        Learn to use AI tools effectively, optimize code and integrate AI into your workflow. Get expert guidance on choosing the right tools for smarter development.
-                                    </span>
-                                }
-                                arrow
-                                placement="right"
-                                enterTouchDelay={0}
-                                leaveTouchDelay={3000}
-                                disableInteractive
-                                PopperProps={{
-                                    modifiers: [
-                                        {
-                                            name: "preventOverflow",
-                                            options: {
-                                                boundary: "window",
-                                            },
-                                        },
-                                    ],
-                                }}
-                                componentsProps={{
-                                    tooltip: {
-                                        sx: {
-                                            maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
-                                            whiteSpace: "normal",
-                                            wordWrap: "break-word",
-                                            fontSize: "10px",
-                                            background: "black"
-                                        },
-                                    },
-                                    arrow: {
-                                        sx: {
-                                            color: "black", // Sets the arrow color to match the tooltip background
-                                        },
-                                    },
-                                }}
-                            >
-                                <InfoOutlinedIcon fontSize='14px' />
-                            </Tooltip>
-                        </Box >
-                },
-                { checked: true, text: 'Program switch' },/*  */
-                { checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span> <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
-            ],
-            placements: [
-                { checked: true, text: 'Resume preparation' },
-                // { checked: true, text: 'Placement assistance' },
-                { checked: true, text: 'Business English Training' },
-                { checked: true, text: 'Softskill Training' },
-            ]
-        },
+        // {
+        //     title: 'Pro',
+        //     originalPrice: '₹4000',
+        //     discountedPrice: '₹2,999',
+        //     description: 'Ideal those who need a accountability partner to track & provide feedback on your progress',
+        //     applyText: (
+        //         <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
+        //     ),
+        //     features: [
+        //         { checked: true, text: 'Online Mode' },
+        //         { checked: true, text: 'Upto 360 hours in 3 months' },
+        //         { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
+        //         { checked: true, text: 'Stipend from companies' },
+        //         {
+        //             checked: true,
+        //             text: (
+        //                 <CertificateText>
+        //                     Internship Certificate <br />
+        //                     <SubText>(Directly From Verified Companies)</SubText>
+        //                 </CertificateText>
+        //             ),
+        //         }
+        //     ],
+        //     title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
+        //     internships: [
+        //         {
+        //             checked: true,
+        //             //  text: 'Weekly huddle with mentor'
+        //             text:
+        //                 < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+        //                     <Box>Weekly huddle with mentor </Box>
+        //                     <Tooltip
+        //                         title={
+        //                             <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+        //                                 Receive feedback from your mentor, assess code, discuss challenges and gather insights to improve your skills and ensure your continuous learning.
+        //                             </span>
+        //                         }
+        //                         arrow
+        //                         placement="top"
+        //                         enterTouchDelay={0}
+        //                         leaveTouchDelay={3000}
+        //                         disableInteractive
+        //                         PopperProps={{
+        //                             modifiers: [
+        //                                 {
+        //                                     name: "preventOverflow",
+        //                                     options: {
+        //                                         boundary: "window",
+        //                                     },
+        //                                 },
+        //                             ],
+        //                         }}
+        //                         componentsProps={{
+        //                             tooltip: {
+        //                                 sx: {
+        //                                     maxWidth: "190px", // ✅ Correctly applied width to Tooltip content
+        //                                     whiteSpace: "normal",
+        //                                     wordWrap: "break-word",
+        //                                     fontSize: "10px",
+        //                                     background: "black"
+        //                                 },
+        //                             },
+        //                             arrow: {
+        //                                 sx: {
+        //                                     color: "black", // Sets the arrow color to match the tooltip background
+        //                                 },
+        //                             },
+        //                         }}
+        //                     >
+        //                         <InfoOutlinedIcon fontSize='14px' />
+        //                     </Tooltip>
+        //                 </Box >
+        //         },
+        //         {
+        //             checked: true,
+        //             // text: 'AI Codegen'
+        //             text:
+        //                 < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+        //                     <Box>AI Codegen </Box>
+        //                     <Tooltip
+        //                         title={
+        //                             <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+        //                                 Learn to use AI tools effectively, optimize code and integrate AI into your workflow. Get expert guidance on choosing the right tools for smarter development.
+        //                             </span>
+        //                         }
+        //                         arrow
+        //                         placement="right"
+        //                         enterTouchDelay={0}
+        //                         leaveTouchDelay={3000}
+        //                         disableInteractive
+        //                         PopperProps={{
+        //                             modifiers: [
+        //                                 {
+        //                                     name: "preventOverflow",
+        //                                     options: {
+        //                                         boundary: "window",
+        //                                     },
+        //                                 },
+        //                             ],
+        //                         }}
+        //                         componentsProps={{
+        //                             tooltip: {
+        //                                 sx: {
+        //                                     maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
+        //                                     whiteSpace: "normal",
+        //                                     wordWrap: "break-word",
+        //                                     fontSize: "10px",
+        //                                     background: "black"
+        //                                 },
+        //                             },
+        //                             arrow: {
+        //                                 sx: {
+        //                                     color: "black", // Sets the arrow color to match the tooltip background
+        //                                 },
+        //                             },
+        //                         }}
+        //                     >
+        //                         <InfoOutlinedIcon fontSize='14px' />
+        //                     </Tooltip>
+        //                 </Box >
+        //         },
+        //         { checked: true, text: 'Program switch' },/*  */
+        //         { checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span> <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
+        //     ],
+        //     placements: [
+        //         { checked: true, text: 'Resume preparation' },
+        //         // { checked: true, text: 'Placement assistance' },
+        //         { checked: true, text: 'Business English Training' },
+        //         { checked: true, text: 'Softskill Training' },
+        //     ]
+        // },
         {
             title: 'Prime',
             originalPrice: '₹10000',
-            discountedPrice: '₹5,999',
+            discountedPrice: '₹2,999',
             description: 'Unlock your full potential and accelerate your career with expert guidance and placement assistance.',
             applyText: (
                 <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
             ),
+            cardStyle: {
+                // width: '500px',
+                minHeight: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+            },
             features: [
                 { checked: true, text: 'Online Mode' },
                 { checked: true, text: 'Upto 360 hours in 3 months' },
                 {
                     checked: true,
-                    // text: <HighlightedText>Work on real customer projects</HighlightedText>
                     text:
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
                             <HighlightedText>Work on real customer projects</HighlightedText>
-                            {/* <Tooltip
-                                    title="This is an info tooltip"
-                                    arrow
-                                    placement="top-start"
-                                    enterTouchDelay={0}
-                                    leaveTouchDelay={3000}
-                                    disableInteractive
-                                >
-                                    <InfoOutlinedIcon fontSize='14px' />
-                                </Tooltip> */}
                         </Box>
                 },
                 { checked: true, text: 'Stipend from companies' },
@@ -356,18 +348,25 @@ const Pricing = () => {
             title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> and . . . .</Title2Text>,
             internships: [
                 { checked: true, text: 'Project guidance' },
-                // { checked: true, text: 'Product Design' },
+                { checked: true, text: 'Weekly Hurdle' },
+                { checked: true, text: 'AI codeger' },
+                {
+                    checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span>
+                        <SubPortText>(
+                            <LinkedInIcon sx={{ fontSize: "16px", color: "#006eab", marginRight: .5 }} />
+                            <span>LinkedIn</span>
+                            )</SubPortText>
+                    </CertificatePortText>
+                },
+                { checked: true, text: 'Team Project' },
                 { checked: true, text: 'Live support & Doubt clearance' },
                 { checked: true, text: <CertificateText>Code + Task review <SubText>(Github PR)</SubText></CertificateText> },
             ],
             placements: [
+                { checked: true, text: 'Resume Preparation' },
                 { checked: true, text: 'Mock Interview' },
-                // { checked: true, text: 'Dedicated placement officer' },
-                { checked: true, text: 'Placement assistance' },
-
             ]
         },
-
     ];
 
     const sliderRef = useRef(null);
@@ -454,9 +453,9 @@ const Pricing = () => {
                 backgroundColor: "#110f0f", minHeight: "100vh",
                 color: "#fff", py: { xs: 4, sm: 8 }, px: { xs: 0, sm: 2, md: 2 }
             }}>
-                <Container maxWidth="lg" align="center">
+                <Container maxWidth="lg" align="center" >
                     <Box>
-                        <Container maxWidth="lg">
+                        <Container maxWidth="lg"  >
                             <Typography
                                 variant="h4"
                                 mb={3}
@@ -478,155 +477,171 @@ const Pricing = () => {
                             </Typography>
                         </Container>
                     </Box>
-
-                    <Slider ref={sliderRef} {...settings}>
-                        {pricingData.map((card, index) => (
-                            <Box key={index} sx={{ padding: "10px", width: "100%", marginTop: 5, display: "flex", justifyContent: "center", height: "100%", /* backgroundColor: "pink" */ }}>
-                                <PricingCardContainer elevation={3} index={index} isPreview={index !== activeIndex} isMobile={isMobile} sx={{ overflow: "hidden" }} >
-                                    <Box></Box>
-                                    <Box textAlign={"center"} >
-                                        <Typography variant="h4" sx={{ color: "#FFA800", textTransform: "uppercase", fontWeight: 600, marginBottom: "15px" }}>
-                                            {card.title}
-                                        </Typography>
-                                    </Box>
-                                    {index === 1 || index === 2 ? <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', ml: 1, position: "absolute", top: '4%', left: '10%', background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)', color: "white", transform: ' translate(-50%,-50%) rotate(-39deg)', padding: "4px 30px", fontSize: "11px", height: "fit-content", width: "100%", textAlign: "center" }}>
-                                        15 Days Free Trial
-                                    </Typography> : ""}
-                                    {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
-                                        Starts From
-                                    </Typography> */}
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, letterSpacing: "1px", flexDirection: "row" }}>
-                                        <Box sx={{ display: 'flex', alignItems: 'end', letterSpacing: "1px", flexDirection: "row", }}>
-                                            <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
-                                                {card.originalPrice}
+                </Container >
+                <Box sx={{width:'100%',height:"auto",height:"1100px",marginTop:"70px"}}>
+                    <Slider ref={sliderRef} {...settings}  >
+                            {pricingData.map((card, index) => (
+                                <Box  key={index} sx={{display: "flex", justifyContent: "center", height: "1050px",marginTop: index === 1 ? 5 : 15,justifyContent:"space-around"}}>
+                                    <PricingCardContainer
+                                        elevation={3}
+                                        index={index}
+                                        isPreview={index !== activeIndex}
+                                        isMobile={isMobile}
+                                        sx={{
+                                            overflow: "hidden",
+                                            width: "95%",
+                                            ...(index === 1 && {
+                                            background: 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)',
+                                            boxShadow: "10px 0 30px 10px rgba(0, 78, 146, 0.6)", // Matches #004E92
+                                            border: "1px solid rgba(0, 78, 146, 0.4)",
+                                            transition: "all 0.3s ease-in-out",
+                                            })
+                                        }}
+                                        >
+                                        {/* <Box></Box> */}
+                                        <Box textAlign={"center"} >
+                                            <Typography variant="h4" sx={{ color: "#FFA800", textTransform: "uppercase", fontWeight: 700, marginBottom: "15px",marginTop:index===1?"50px":"30px",fontSize:index===1?"40px":"35px" }}>
+                                                {card.title}
                                             </Typography>
-                                            <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
-                                                {index === 1 || index === 2 ? (
-                                                    <>
-                                                        <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "15px", fontSize: "13px", textAlign: "center" }}>
-                                                            Starts From
-                                                        </Typography>
-                                                        {card.discountedPrice}
-                                                    </>
-                                                ) : (
-                                                    card.discountedPrice
-                                                )}
-                                            </Typography>
+                                        </Box>
+                                        {index === 1 || index === 2 ? <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', ml: 3, position: "absolute", top: '7%', left: '13%', background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)', color: "white", transform: ' translate(-50%,-50%) rotate(-39deg)', padding: "4px 30px", fontSize: "15px", height: "fit-content", width: "100%", textAlign: "center" }}>
+                                            15 Days Free Trial
+                                        </Typography> : ""}
+                                        {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
+                                            Starts From
+                                        </Typography> */}
+                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, letterSpacing: "1px", flexDirection: "row",marginTop:'50px' }}>
+                                            <Box sx={{ display: 'flex', alignItems: 'end', letterSpacing: "1px", flexDirection: "row", }}>
+                                                <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
+                                                    {card.originalPrice}
+                                                </Typography>
+                                                <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
+                                                    {index === 1 || index === 2 ? (
+                                                        <>
+                                                            <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "15px", fontSize: "13px", textAlign: "center" }}>
+                                                                Starts From
+                                                            </Typography>
+                                                            {card.discountedPrice}
+                                                        </>
+                                                    ) : (
+                                                        card.discountedPrice
+                                                    )}
+                                                </Typography>
 
+                                            </Box>
+
+                                            {index == 0 && (
+                                                <Button variant="contained" sx={{
+                                                    textTransform: 'uppercase',
+                                                    background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)',
+                                                    borderRadius: "6px",
+                                                    fontSize: { xs: "8px", sm: "7px", lg: "10px" },
+                                                    fontWeight: "500",
+                                                    marginLeft: "10px",
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                    px: 1,
+                                                    py: .2,
+                                                }}>
+                                                    <span>
+                                                        LIMITED TIME OFFER
+                                                    </span>
+                                                    <Box
+                                                        component="img"
+                                                        src={timer}
+                                                        alt=""
+                                                        sx={{
+                                                            height: "100%",
+                                                            width: { xs: "20px", sm: "15px", lg: "20px" },
+                                                            marginLeft: "5px"
+                                                        }}
+                                                    />
+                                                </Button>
+                                            )}
                                         </Box>
 
-                                        {index == 0 && (
-                                            <Button variant="contained" sx={{
-                                                textTransform: 'uppercase',
-                                                background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)',
+                                        <Typography variant="body2" sx={{ color: '#EEEEEE', mb: 3, fontSize: { xs: "12px", md: "12px", lg: "15px" }, fontWeight: "200" }}>
+                                            {card.description}
+                                        </Typography>
+
+                                        <Button
+                                            variant="contained"
+                                            // onClick={() => handleApplyClick(card)}
+                                            onClick={() => handleClickOpen(index)}
+                                            onMouseEnter={() => {
+                                                if (index === 1) setHoveredOne(true);
+                                                if (index === 2) setHoveredTwo(true);
+                                            }}
+                                            onMouseLeave={() => {
+                                                if (index === 1) setHoveredOne(false);
+                                                if (index === 2) setHoveredTwo(false);
+                                            }}
+                                            sx={{
+                                                textTransform: "uppercase",
+                                                position: "relative",
+                                                background:
+                                                    index === 0
+                                                        ? "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)"
+                                                        : index === 1 || index === 2
+                                                            ? "linear-gradient(225.92deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)"
+                                                            : "none",
+
                                                 borderRadius: "6px",
-                                                fontSize: { xs: "8px", sm: "7px", lg: "10px" },
-                                                fontWeight: "500",
-                                                marginLeft: "10px",
-                                                display: "flex",
+                                                fontSize: { xs: "9px", sm: "9px", lg: "13px" },
+                                                fontWeight: "bold",
+                                                width: {
+                                                    xs: "100%", sm: (index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100%" : "80%",
+                                                }, // ✅ Fixed width to prevent layout shift
+                                                minWidth: "160px", // ✅ Ensures width remains stable
+                                                padding: { xs: "7px", sm: "auto" },
+                                                transition: "all 0.3s ease-in-out", // ✅ Smooth transition for text change
+                                                whiteSpace: "nowrap", // ✅ Prevents text wrapping
+                                                display: "flex", // ✅ Keeps text & icon aligned
+                                                justifyContent: "center",
                                                 alignItems: "center",
-                                                px: 1,
-                                                py: .2,
-                                            }}>
-                                                <span>
-                                                    LIMITED TIME OFFER
-                                                </span>
-                                                <Box
-                                                    component="img"
-                                                    src={timer}
-                                                    alt=""
-                                                    sx={{
-                                                        height: "100%",
-                                                        width: { xs: "20px", sm: "15px", lg: "20px" },
-                                                        marginLeft: "5px"
-                                                    }}
-                                                />
-                                            </Button>
-                                        )}
-                                    </Box>
+                                            }}
+                                        >
+                                            {(index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100% Refund for first 500 Interns" : card.applyText}
+                                            <EastIcon sx={{ marginLeft: "8px", transition: "transform 0.3s ease-in-out" }} />
+                                            {(index === 1 || index === 2) ? <Typography sx={{ position: "absolute", bottom: -20, right: 0, fontSize: "9px" }}>Upon Successful Completion</Typography> : ""}
 
-                                    <Typography variant="body2" sx={{ color: '#EEEEEE', mb: 3, fontSize: { xs: "12px", md: "12px", lg: "15px" }, fontWeight: "200" }}>
-                                        {card.description}
-                                    </Typography>
+                                        </Button>
 
-                                    <Button
-                                        variant="contained"
-                                        // onClick={() => handleApplyClick(card)}
-                                        onClick={() => handleClickOpen(index)}
-                                        onMouseEnter={() => {
-                                            if (index === 1) setHoveredOne(true);
-                                            if (index === 2) setHoveredTwo(true);
-                                        }}
-                                        onMouseLeave={() => {
-                                            if (index === 1) setHoveredOne(false);
-                                            if (index === 2) setHoveredTwo(false);
-                                        }}
-                                        sx={{
-                                            textTransform: "uppercase",
-                                            position: "relative",
-                                            background:
-                                                index === 0
-                                                    ? "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)"
-                                                    : index === 1 || index === 2
-                                                        ? "linear-gradient(225.92deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)"
-                                                        : "none",
-
-                                            borderRadius: "6px",
-                                            fontSize: { xs: "9px", sm: "9px", lg: "13px" },
-                                            fontWeight: "bold",
-                                            width: {
-                                                xs: "100%", sm: (index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100%" : "80%",
-                                            }, // ✅ Fixed width to prevent layout shift
-                                            minWidth: "160px", // ✅ Ensures width remains stable
-                                            padding: { xs: "7px", sm: "auto" },
-                                            transition: "all 0.3s ease-in-out", // ✅ Smooth transition for text change
-                                            whiteSpace: "nowrap", // ✅ Prevents text wrapping
-                                            display: "flex", // ✅ Keeps text & icon aligned
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                        }}
-                                    >
-                                        {(index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100% Refund for first 500 Interns" : card.applyText}
-                                        <EastIcon sx={{ marginLeft: "8px", transition: "transform 0.3s ease-in-out" }} />
-                                        {(index === 1 || index === 2) ? <Typography sx={{ position: "absolute", bottom: -20, right: 0, fontSize: "9px" }}>Upon Successful Completion</Typography> : ""}
-
-                                    </Button>
-
-                                    <FormSubmission open={open} handleClose={handleClose} />
+                                        <FormSubmission open={open} handleClose={handleClose} />
 
 
-                                    <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400', mt: 2 }}>
-                                        {card.features && card.features.length > 0 && (
-                                            <Box padding={{ xs: "5px 18px", md: '5px 24px' }}
-                                            >
-                                                {
-                                                    card.features.map((feature, index) => (
-                                                        <FeatureItem key={index} feature={feature} />
-                                                    ))
-                                                }
-                                            </Box>
-                                        )}
-                                        {card.title2 && <Typography variant='h5' sx={{ fontSize: "16px", textAlign: "center" }}>
-                                            {card.title2}
-                                        </Typography>}
+                                        <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400', mt: 2 }}>
+                                            {card.features && card.features.length > 0 && (
+                                                <Box padding={{ xs: "5px 18px", md: '5px 24px' }}
+                                                >
+                                                    {
+                                                        card.features.map((feature, index) => (
+                                                            <FeatureItem key={index} feature={feature} />
+                                                        ))
+                                                    }
+                                                </Box>
+                                            )}
+                                            {card.title2 && <Typography variant='h5' sx={{ fontSize: "16px", textAlign: "center" }}>
+                                                {card.title2}
+                                            </Typography>}
 
-                                        {card.internships && card.internships.length > 0 && (
-                                            <SectionBox index={index} title="Internship" items={card.internships} />
-                                        )}
+                                            {card.internships && card.internships.length > 0 && (
+                                                <SectionBox index={index} title="Internship" items={card.internships} />
+                                            )}
 
-                                        {card.placements && card.placements.length > 0 && (
-                                            <SectionBox index={index} title="Placement" items={card.placements} />
-                                        )}
-                                    </Box>
+                                            {card.placements && card.placements.length > 0 && (
+                                                <SectionBox index={index} title="Placement" items={card.placements} />
+                                            )}
+                                        </Box>
 
 
-                                </PricingCardContainer>
+                                    </PricingCardContainer>
 
-                            </Box>
-                        ))
-                        }
+                                </Box>
+                            ))
+                            }
                     </Slider >
-                </Container >
+                </Box>
             </Box >
         </section >
     );
