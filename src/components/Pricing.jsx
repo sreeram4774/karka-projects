@@ -104,7 +104,7 @@ const Pricing = () => {
     const pricingData = [
         {
             title: 'Self',
-            originalPrice: '₹1000',
+            originalPrice: '₹2000',
             discountedPrice: '₹499',
             description: 'Ideal for those who can learn things on their own and self-paced',
             applyText: `Secure Your ${currentMonth} Spot`,
@@ -117,14 +117,14 @@ const Pricing = () => {
             },
             features: [
                 { checked: true, text: 'Online Mode' },
-                { checked: true, text: 'Upto 360 hours in 3 months' },
+                { checked: true, text: 'Upto 360 hours in 3 Months' },
                 { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
-                { checked: true, text: 'Stipend from companies' },
-                { checked: true, text: <CertificateText>Certificate from interntribe <br /><SubText>(For Job Simulation Completion)</SubText></CertificateText> }
+                { checked: true, text: 'Stipend from Companies' },
+                { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly From Verified Companies)</SubText></CertificateText> }
             ],
             internships: [
-                { checked: true, text: 'Task practice' },
-                { checked: false, text: 'Weekly huddle with mentor' },
+                // { checked: true, text: 'Task practice' },
+                { checked: false, text: 'Weekly Huddle with Mentor' },
                 {
                     checked: true,
                     text:
@@ -172,9 +172,9 @@ const Pricing = () => {
                             </Tooltip>
                         </Box>
                 },
-                { checked: true, text: 'Free learning materials' },
-                { checked: true, text: 'Agile learning process' },
-                { checked: true, text: 'Task completion review' },
+                { checked: true, text: 'Free Learning Materials' },
+                { checked: true, text: 'Agile Learning Process' },
+                { checked: true, text: 'Task Completion Review' },
                 { checked: true, text: 'Deploy on Github' },
             ],
         },
@@ -326,15 +326,15 @@ const Pricing = () => {
             },
             features: [
                 { checked: true, text: 'Online Mode' },
-                { checked: true, text: 'Upto 360 hours in 3 months' },
+                { checked: true, text: 'Upto 360 hours in 3 Months' },
                 {
                     checked: true,
                     text:
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
-                            <HighlightedText>Work on real customer projects</HighlightedText>
+                            <HighlightedText>Work on Real Customer Projects</HighlightedText>
                         </Box>
                 },
-                { checked: true, text: 'Stipend from companies' },
+                { checked: true, text: 'Stipend from Companies' },
                 {
                     checked: true,
                     text: (
@@ -345,11 +345,27 @@ const Pricing = () => {
                     ),
                 }
             ],
-            title2: <Title2Text>Everything from <HighlightedText2>Pro</HighlightedText2> and . . . .</Title2Text>,
+            title2: <Title2Text>Everything from <HighlightedText2>Self</HighlightedText2> and . . . .</Title2Text>,
             internships: [
-                { checked: true, text: 'Project guidance' },
-                { checked: true, text: 'Weekly Hurdle' },
-                { checked: true, text: 'AI codeger' },
+
+                { checked: true, text: 'Weekly Huddle' },
+                { checked: true, text: 'AI Codegen' },
+                // {
+                //     checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span>
+                //         <SubPortText>(
+                //             <LinkedInIcon sx={{ fontSize: "16px", color: "#006eab", marginRight: .5 }} />
+                //             <span>LinkedIn</span>
+                //             )</SubPortText>
+                //     </CertificatePortText>
+                // },
+
+                { checked: true, text: 'Live Support & Doubt Clearance' },
+                { checked: true, text: <CertificateText>Code + Task Review <SubText>(Github PR)</SubText></CertificateText> },
+                { checked: true, text: 'Team Project' },
+                { checked: true, text: 'Project Guidance' },
+            ],
+            placements: [
+                { checked: true, text: 'Resume Preparation' },
                 {
                     checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span>
                         <SubPortText>(
@@ -358,12 +374,8 @@ const Pricing = () => {
                             )</SubPortText>
                     </CertificatePortText>
                 },
-                { checked: true, text: 'Team Project' },
-                { checked: true, text: 'Live support & Doubt clearance' },
-                { checked: true, text: <CertificateText>Code + Task review <SubText>(Github PR)</SubText></CertificateText> },
-            ],
-            placements: [
-                { checked: true, text: 'Resume Preparation' },
+                // { checked: true, text: 'Team Project' },
+                // { checked: true, text: 'Project Guidance' },
                 { checked: true, text: 'Mock Interview' },
             ]
         },

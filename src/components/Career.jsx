@@ -201,6 +201,7 @@ const Career = () => {
                                                 `<span style="color: #00b4d8">Freelancer</span>`,
                                                 `<span style="color: #ffa800">Open Source Contributor</span>`,
                                                 `<span style="color: #00b4d8">Junior Engineer</span>`,
+                                                `<span style="color: #ffa800">Gig Worker</span>`,
                                             ],
                                             autoStart: true,
                                             loop: true,
