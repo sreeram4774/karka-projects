@@ -35,12 +35,10 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
     minHeight: 'auto',
     position: 'relative',
 
-    backgroundColor: index === 0 ? '#110f0f' : 'transparent',
-    backgroundImage: index === 1
-        ? 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)'
-        : index === 2
-            ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)'
-            : 'none',
+    backgroundColor: index === 0 || index === 1 ? '#110f0f' : 'transparent',
+    backgroundImage: index === 2
+        ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)'
+        : 'none',
 
     ...(isPreview && isMobile && {
         "&::before": {
@@ -56,42 +54,101 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
         },
     }),
 
-    border: index === 0 || index === 2 ? "1px solid #A1AEBF" : 'none',
+    border: index === 0 || index === 1 ? "1px solid #A1AEBF" : 'none',
+    
+    ...(index === 1 && {
+        boxShadow: `
+            inset 0 0 18px rgba(244, 14, 83, 0.6),
+            inset 0 0 5px rgba(28, 250, 252, 0.4),
+            inset 0 0 2px rgba(255, 255, 255, 0.2)
+        `,
+        "&::after": {
+            content: '""',
+            position: "absolute",
+            inset: "0",
+            borderRadius: '15px',
+            background: "linear-gradient(68deg, rgba(255, 15, 87, 0.1), rgba(28, 250, 252, 0.1))",
+            filter: "blur(8px)",
+            opacity: 0.6,
+            animation: `${glowEffect} 3s infinite alternate`,
+            pointerEvents: "none"
+        }
+    }),
 
     [theme.breakpoints.down(575)]: {
-        minHeight: index === 0 || index === 2 ? '850px' : 'auto',
+        minHeight: index === 0 || index === 1 ? '850px' : 'auto',
     },
     [theme.breakpoints.down(426)]: {
-        minHeight: index === 0 || index === 2 ? '830px' : 'auto',
+        minHeight: index === 0 || index === 1 ? '830px' : 'auto',
     },
     [theme.breakpoints.down(375)]: {
-        height: index === 0 || index === 2 ? '850px' : 'auto',
+        height: index === 0 || index === 1 ? '850px' : 'auto',
     },
     [theme.breakpoints.down(365)]: {
-        height: index === 0 || index === 2 ? '880px' : 'auto',
+        height: index === 0 || index === 1 ? '880px' : 'auto',
     },
     [theme.breakpoints.down(356)]: {
-        height: index === 0 || index === 2 ? '900px' : 'auto',
+        height: index === 0 || index === 1 ? '900px' : 'auto',
     },
     [theme.breakpoints.down(321)]: {
-        height: index === 0 || index === 2 ? '940px' : 'auto',
+        height: index === 0 || index === 1 ? '940px' : 'auto',
     },
     [theme.breakpoints.between(577, 600)]: {
-        height: index === 0 || index === 2 ? '930px' : 'auto',
+        height: index === 0 || index === 1 ? '930px' : 'auto',
     },
     [theme.breakpoints.up('sm')]: {
-        height: index === 0 || index === 2 ? '850px' : 'auto',
+        height: index === 0 || index === 1 ? '850px' : 'auto',
     },
     [theme.breakpoints.up('md')]: {
-        height: index === 0 || index === 2 ? '850px' : 'auto',
+        height: index === 0 || index === 1 ? '850px' : 'auto',
     },
     [theme.breakpoints.up('lg')]: {
-        height: index === 0 || index === 2 ? '815px' : 'auto'
+        height: index === 0 || index === 1 ? '815px' : 'auto'
     },
 }));
 
-
-
+const CustomTooltip = ({ title, children }) => (
+    <Tooltip
+        title={
+            <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+                {title}
+            </span>
+        }
+        arrow
+        placement="top"
+        enterTouchDelay={0}
+        leaveTouchDelay={3000}
+        disableInteractive
+        PopperProps={{
+            modifiers: [
+                {
+                    name: "preventOverflow",
+                    options: {
+                        boundary: "window",
+                    },
+                },
+            ],
+        }}
+        componentsProps={{
+            tooltip: {
+                sx: {
+                    maxWidth: "200px",
+                    whiteSpace: "normal",
+                    wordWrap: "break-word",
+                    fontSize: "12px",
+                    background: "black"
+                },
+            },
+            arrow: {
+                sx: {
+                    color: "black",
+                },
+            },
+        }}
+    >
+        {children}
+    </Tooltip>
+);
 
 
 const Pricing = () => {
@@ -103,10 +160,11 @@ const Pricing = () => {
 
     const pricingData = [
         {
-            title: 'Self',
-            originalPrice: '₹2000',
-            discountedPrice: '₹499',
-            description: 'Ideal for those who can learn things on their own and self-paced',
+            title: 'SPARK',
+            originalPrice: '₹3000',
+            currency: '₹',
+            discountedPrice: '1,500',
+            description: 'Perfect for curious minds who want a sneak peek before diving deep',
             applyText: `Secure Your ${currentMonth} Spot`,
             cardStyle: {
                 // width: '100px',
@@ -117,9 +175,12 @@ const Pricing = () => {
             },
             features: [
                 { checked: true, text: 'Online Mode' },
-                { checked: true, text: 'Upto 360 hours in 3 Months' },
-                { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
-                { checked: true, text: 'Stipend from Companies' },
+                { checked: true, text: 'Free Learning Materials' },
+                { checked: true, text: 'Less than 30 hrs/week' },
+                { checked: true, text: 'Agile Learning Process' },
+                // { checked: true, text: 'Upto 360 hours in 3 Months' },
+                // { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
+                // { checked: true, text: 'Stipend from Companies' },
                 { checked: true, text: <CertificateText>Internship Certificate <br /><SubText>(Directly From Verified Companies)</SubText></CertificateText> }
             ],
             internships: [
@@ -129,212 +190,58 @@ const Pricing = () => {
                     checked: true,
                     text:
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
-                            <HighlightedText>Job Simulation </HighlightedText>
-                            <Tooltip
-                                title={
-                                    <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-                                        Work on problem statements from real-time projects of the respective company
-                                    </span>
-                                }
-                                arrow
-                                placement="top"
-                                enterTouchDelay={0}
-                                leaveTouchDelay={3000}
-                                disableInteractive
-                                PopperProps={{
-                                    modifiers: [
-                                        {
-                                            name: "preventOverflow",
-                                            options: {
-                                                boundary: "window",
-                                            },
-                                        },
-                                    ],
-                                }}
-                                componentsProps={{
-                                    tooltip: {
-                                        sx: {
-                                            maxWidth: "180px",
-                                            whiteSpace: "normal",
-                                            wordWrap: "break-word",
-                                            fontSize: "10px",
-                                            background: "black"
-                                        },
-                                    },
-                                    arrow: {
-                                        sx: {
-                                            color: "black",
-                                        },
-                                    },
-                                }}
-                            >
+                            <HighlightedText>Job Simulation </HighlightedText> & <HighlightedText>Projects </HighlightedText>
+                            <CustomTooltip title="Work on problem statements from real-time projects">
                                 <InfoOutlinedIcon fontSize='14px' />
-                            </Tooltip>
+                            </CustomTooltip>
                         </Box>
                 },
-                { checked: true, text: 'Free Learning Materials' },
-                { checked: true, text: 'Agile Learning Process' },
-                { checked: true, text: 'Task Completion Review' },
-                { checked: true, text: 'Deploy on Github' },
-            ],
-        },
-        // {
-        //     title: 'Pro',
-        //     originalPrice: '₹4000',
-        //     discountedPrice: '₹2,999',
-        //     description: 'Ideal those who need a accountability partner to track & provide feedback on your progress',
-        //     applyText: (
-        //         <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
-        //     ),
-        //     features: [
-        //         { checked: true, text: 'Online Mode' },
-        //         { checked: true, text: 'Upto 360 hours in 3 months' },
-        //         { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
-        //         { checked: true, text: 'Stipend from companies' },
-        //         {
-        //             checked: true,
-        //             text: (
-        //                 <CertificateText>
-        //                     Internship Certificate <br />
-        //                     <SubText>(Directly From Verified Companies)</SubText>
-        //                 </CertificateText>
-        //             ),
-        //         }
-        //     ],
-        //     title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
-        //     internships: [
-        //         {
-        //             checked: true,
-        //             //  text: 'Weekly huddle with mentor'
-        //             text:
-        //                 < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
-        //                     <Box>Weekly huddle with mentor </Box>
-        //                     <Tooltip
-        //                         title={
-        //                             <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-        //                                 Receive feedback from your mentor, assess code, discuss challenges and gather insights to improve your skills and ensure your continuous learning.
-        //                             </span>
-        //                         }
-        //                         arrow
-        //                         placement="top"
-        //                         enterTouchDelay={0}
-        //                         leaveTouchDelay={3000}
-        //                         disableInteractive
-        //                         PopperProps={{
-        //                             modifiers: [
-        //                                 {
-        //                                     name: "preventOverflow",
-        //                                     options: {
-        //                                         boundary: "window",
-        //                                     },
-        //                                 },
-        //                             ],
-        //                         }}
-        //                         componentsProps={{
-        //                             tooltip: {
-        //                                 sx: {
-        //                                     maxWidth: "190px", // ✅ Correctly applied width to Tooltip content
-        //                                     whiteSpace: "normal",
-        //                                     wordWrap: "break-word",
-        //                                     fontSize: "10px",
-        //                                     background: "black"
-        //                                 },
-        //                             },
-        //                             arrow: {
-        //                                 sx: {
-        //                                     color: "black", // Sets the arrow color to match the tooltip background
-        //                                 },
-        //                             },
-        //                         }}
-        //                     >
-        //                         <InfoOutlinedIcon fontSize='14px' />
-        //                     </Tooltip>
-        //                 </Box >
-        //         },
-        //         {
-        //             checked: true,
-        //             // text: 'AI Codegen'
-        //             text:
-        //                 < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
-        //                     <Box>AI Codegen </Box>
-        //                     <Tooltip
-        //                         title={
-        //                             <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
-        //                                 Learn to use AI tools effectively, optimize code and integrate AI into your workflow. Get expert guidance on choosing the right tools for smarter development.
-        //                             </span>
-        //                         }
-        //                         arrow
-        //                         placement="right"
-        //                         enterTouchDelay={0}
-        //                         leaveTouchDelay={3000}
-        //                         disableInteractive
-        //                         PopperProps={{
-        //                             modifiers: [
-        //                                 {
-        //                                     name: "preventOverflow",
-        //                                     options: {
-        //                                         boundary: "window",
-        //                                     },
-        //                                 },
-        //                             ],
-        //                         }}
-        //                         componentsProps={{
-        //                             tooltip: {
-        //                                 sx: {
-        //                                     maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
-        //                                     whiteSpace: "normal",
-        //                                     wordWrap: "break-word",
-        //                                     fontSize: "10px",
-        //                                     background: "black"
-        //                                 },
-        //                             },
-        //                             arrow: {
-        //                                 sx: {
-        //                                     color: "black", // Sets the arrow color to match the tooltip background
-        //                                 },
-        //                             },
-        //                         }}
-        //                     >
-        //                         <InfoOutlinedIcon fontSize='14px' />
-        //                     </Tooltip>
-        //                 </Box >
-        //         },
-        //         { checked: true, text: 'Program switch' },/*  */
-        //         { checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span> <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
-        //     ],
-        //     placements: [
-        //         { checked: true, text: 'Resume preparation' },
-        //         // { checked: true, text: 'Placement assistance' },
-        //         { checked: true, text: 'Business English Training' },
-        //         { checked: true, text: 'Softskill Training' },
-        //     ]
-        // },
-        {
-            title: 'Prime',
-            originalPrice: '₹10000',
-            discountedPrice: '₹2,999',
-            description: 'Unlock your full potential and accelerate your career with expert guidance and placement assistance.',
-            applyText: (
-                <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
-            ),
-            cardStyle: {
-                // width: '500px',
-                minHeight: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between'
-            },
-            features: [
-                { checked: true, text: 'Online Mode' },
-                { checked: true, text: 'Upto 360 hours in 3 Months' },
                 {
                     checked: true,
                     text:
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
-                            <HighlightedText>Work on Real Customer Projects</HighlightedText>
+                            <HighlightedText>2 Sprints </HighlightedText>
+                            <CustomTooltip title={
+                                <span style={{ whiteSpace: "normal", wordBreak: "break-word",color: "rgba(255, 255, 255, 0.37)" }}>
+                                    Typically <span style={{ color: "white" }}>1 sprint</span> is equal to
+                                    <span style={{ color: "white" }}> 1 week</span>.
+                                </span>
+                            }>
+                                <InfoOutlinedIcon fontSize='14px' />
+                            </CustomTooltip>
                         </Box>
                 },
-                { checked: true, text: 'Stipend from Companies' },
+                // { checked: true, text: 'Agile Learning Process' },
+                { checked: true, text: 'Deploy on Github' },
+                {
+                    checked: true, text: <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>Unlock
+                        <HighlightedText3>STIPEND </HighlightedText3>
+                        <CustomTooltip title="Step towards STIPEND eligibility.">
+                            <InfoOutlinedIcon fontSize='14px' />
+                        </CustomTooltip>
+                    </Box>
+                },
+                { checked: true, text: 'Task Completion Review' },
+            ],
+        },
+        {
+            title: 'evolve',
+            originalPrice: '₹5000',
+            currency: '₹',
+            discountedPrice: '2,999',
+            description: 'Level up with more exposure and structured guidance',
+            // applyText: (
+            //     <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
+            // ),
+            applyText: `Secure Your ${currentMonth} Spot`,
+            features: [
+                { checked: true, text: 'Online Mode' },
+                { checked: true, text: 'Free Learning Materials' },
+                { checked: true, text: 'Less than 30 hrs/week' },
+                { checked: true, text: 'Agile Learning Process' },
+                // { checked: true, text: 'Upto 360 hours in 3 months' },
+                // { checked: true, text: <HighlightedText>Work on real customer projects</HighlightedText> },
+                // { checked: true, text: 'Stipend from companies' },
                 {
                     checked: true,
                     text: (
@@ -345,10 +252,196 @@ const Pricing = () => {
                     ),
                 }
             ],
-            title2: <Title2Text>Everything from <HighlightedText2>Self</HighlightedText2> and . . . .</Title2Text>,
+            // title2: <Title2Text>Everything from<HighlightedText2> Self</HighlightedText2> and . . . .</Title2Text>,
+            internships: [
+                { checked: false, text: 'Weekly Huddle with Mentor' },
+                {
+                    checked: true,
+                    text:
+                        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
+                            <HighlightedText>Job Simulation </HighlightedText> & <HighlightedText>Projects </HighlightedText>
+                            <CustomTooltip title="Work on problem statements from real-time projects">
+                                <InfoOutlinedIcon fontSize='14px' />
+                            </CustomTooltip>
+                        </Box>
+                },
+                {
+                    checked: true,
+                    text:
+                        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
+                            <HighlightedText>4 Sprints </HighlightedText>
+                            <CustomTooltip title={
+                                <span style={{ whiteSpace: "normal", wordBreak: "break-word",color: "rgba(255, 255, 255, 0.37)" }}>
+                                    Typically <span style={{ color: "white" }}>1 sprint</span> is equal to
+                                    <span style={{ color: "white" }}> 1 week</span>.
+                                </span>
+                            }>
+                                <InfoOutlinedIcon fontSize='14px' />
+                            </CustomTooltip>
+                        </Box>
+                },
+                // { checked: true, text: 'Agile Learning Process' },
+                { checked: true, text: 'Deploy on Github' },
+                {
+                    checked: true, text: <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>Unlock
+                        <HighlightedText3>STIPEND </HighlightedText3>
+                        <CustomTooltip title="Step towards STIPEND eligibility.">
+                            <InfoOutlinedIcon fontSize='14px' />
+                        </CustomTooltip>
+                    </Box>
+                },
+                { checked: true, text: 'Task Completion Review' },
+                // {
+                //     checked: true,
+                //     //  text: 'Weekly huddle with mentor'
+                //     text:
+                //         < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+                //             <Box>Weekly huddle with mentor </Box>
+                //             <Tooltip
+                //                 title={
+                //                     <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+                //                         Receive feedback from your mentor, assess code, discuss challenges and gather insights to improve your skills and ensure your continuous learning.
+                //                     </span>
+                //                 }
+                //                 arrow
+                //                 placement="top"
+                //                 enterTouchDelay={0}
+                //                 leaveTouchDelay={3000}
+                //                 disableInteractive
+                //                 PopperProps={{
+                //                     modifiers: [
+                //                         {
+                //                             name: "preventOverflow",
+                //                             options: {
+                //                                 boundary: "window",
+                //                             },
+                //                         },
+                //                     ],
+                //                 }}
+                //                 componentsProps={{
+                //                     tooltip: {
+                //                         sx: {
+                //                             maxWidth: "190px", // ✅ Correctly applied width to Tooltip content
+                //                             whiteSpace: "normal",
+                //                             wordWrap: "break-word",
+                //                             fontSize: "10px",
+                //                             background: "black"
+                //                         },
+                //                     },
+                //                     arrow: {
+                //                         sx: {
+                //                             color: "black", // Sets the arrow color to match the tooltip background
+                //                         },
+                //                     },
+                //                 }}
+                //             >
+                //                 <InfoOutlinedIcon fontSize='14px' />
+                //             </Tooltip>
+                //         </Box >
+                // },
+                // {
+                //     checked: true,
+                //     // text: 'AI Codegen'
+                //     text:
+                //         < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+                //             <Box>AI Codegen </Box>
+                //             <Tooltip
+                //                 title={
+                //                     <span style={{ whiteSpace: "normal", wordBreak: "break-word" }}>
+                //                         Learn to use AI tools effectively, optimize code and integrate AI into your workflow. Get expert guidance on choosing the right tools for smarter development.
+                //                     </span>
+                //                 }
+                //                 arrow
+                //                 placement="right"
+                //                 enterTouchDelay={0}
+                //                 leaveTouchDelay={3000}
+                //                 disableInteractive
+                //                 PopperProps={{
+                //                     modifiers: [
+                //                         {
+                //                             name: "preventOverflow",
+                //                             options: {
+                //                                 boundary: "window",
+                //                             },
+                //                         },
+                //                     ],
+                //                 }}
+                //                 componentsProps={{
+                //                     tooltip: {
+                //                         sx: {
+                //                             maxWidth: "180px", // ✅ Correctly applied width to Tooltip content
+                //                             whiteSpace: "normal",
+                //                             wordWrap: "break-word",
+                //                             fontSize: "10px",
+                //                             background: "black"
+                //                         },
+                //                     },
+                //                     arrow: {
+                //                         sx: {
+                //                             color: "black", // Sets the arrow color to match the tooltip background
+                //                         },
+                //                     },
+                //                 }}
+                //             >
+                //                 <InfoOutlinedIcon fontSize='14px' />
+                //             </Tooltip>
+                //         </Box >
+                // },
+                // { checked: true, text: 'Program switch' },/*  */
+                // { checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span> <SubPortText>( <GitHubIcon sx={{ fontSize: "16px"/* , color: "#006eab" */, marginRight: .5 }} /><span>Github</span>)</SubPortText></CertificatePortText> },
+            ],
+            // placements: [
+            //     { checked: true, text: 'Resume preparation' },
+            //     // { checked: true, text: 'Placement assistance' },
+            //     { checked: true, text: 'Business English Training' },
+            //     { checked: true, text: 'Softskill Training' },
+            // ]
+        },
+        {
+            title: 'mastery',
+            originalPrice: '₹20000',
+            currency: '₹',
+            discountedPrice: '9,999',
+            description: 'Your path to full job-readiness with real-world experience.',
+            // applyText: (
+            //     <>100% Refund <Typography component="span" color="white" sx={{ marginLeft: "3px" }}>*</Typography></>
+            // ),
+            applyText: `Secure Your ${currentMonth} Spot`,
+            cardStyle: {
+                // width: '500px',
+                minHeight: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+            },
+            features: [
+                { checked: true, text: 'Online Mode' },
+                // { checked: true, text: 'Upto 360 hours in 3 Months' },
+                { checked: true, text: 'Free Learning Materials' },
+                { checked: true, text: 'Less than 30 hrs/week' },
+                { checked: true, text: 'Agile Learning Process' },
+                // {
+                //     checked: true,
+                //     text:
+                //         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }}>
+                //             <HighlightedText>Work on Real Customer Projects</HighlightedText>
+                //         </Box>
+                // },
+                // { checked: true, text: 'Stipend from Companies' },
+                {
+                    checked: true,
+                    text: (
+                        <CertificateText>
+                            Internship Certificate <br />
+                            <SubText>(Directly From Verified Companies)</SubText>
+                        </CertificateText>
+                    ),
+                }
+            ],
+            title2: <Title2Text>Everything from <HighlightedText4>Spark</HighlightedText4>,<HighlightedText5> Evolve</HighlightedText5> and . . . .</Title2Text>,
             internships: [
 
-                { checked: true, text: 'Weekly Huddle' },
+                { checked: true, text: 'Weekly Huddle with Mentor' },
                 { checked: true, text: 'AI Codegen' },
                 // {
                 //     checked: true, text: <CertificatePortText>Portfolio <span style={{ marginRight: "4px" }}></span>
@@ -358,9 +451,33 @@ const Pricing = () => {
                 //             )</SubPortText>
                 //     </CertificatePortText>
                 // },
-
+                {
+                    checked: true, text:
+                        <HighlightedText>Work on Real Customer Projects</HighlightedText>
+                },
                 { checked: true, text: 'Live Support & Doubt Clearance' },
+                {
+                    checked: true, text: < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+                        <HighlightedText>Eligible for STIPEND</HighlightedText>
+                        <CustomTooltip title="Step towords STIPEND eligibility">
+                            <InfoOutlinedIcon fontSize='14px' />
+                        </CustomTooltip>
+                    </Box >
+                },
                 { checked: true, text: <CertificateText>Code + Task Review <SubText>(Github PR)</SubText></CertificateText> },
+                {
+                    checked: true, text: < Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5px" }} >
+                        <HighlightedText>16 Immersive Sprints</HighlightedText>
+                        <CustomTooltip title={
+                                <span style={{ whiteSpace: "normal", wordBreak: "break-word",color: "rgba(255, 255, 255, 0.37)" }}>
+                                    Typically <span style={{ color: "white" }}>1 sprint</span> is equal to
+                                    <span style={{ color: "white" }}> 1 week</span>.
+                                </span>
+                            }>
+                            <InfoOutlinedIcon fontSize='14px' />
+                        </CustomTooltip>
+                    </Box >
+                },
                 { checked: true, text: 'Team Project' },
                 { checked: true, text: 'Project Guidance' },
             ],
@@ -458,7 +575,6 @@ const Pricing = () => {
         window.open(whatsappURL, "_blank");
     };
 
-
     return (
         <section id="pricing">
             <Box sx={{
@@ -490,168 +606,196 @@ const Pricing = () => {
                         </Container>
                     </Box>
                 </Container >
-                <Box sx={{width:'100%',height:"auto",height:"1100px",marginTop:"70px"}}>
+                <Box sx={{ width: '100%', height: "auto", height: "1100px", marginTop: "70px" }}>
                     <Slider ref={sliderRef} {...settings}  >
-                            {pricingData.map((card, index) => (
-                                <Box  key={index} sx={{display: "flex", justifyContent: "center", height: "1050px",marginTop: index === 1 ? 5 : 15,justifyContent:"space-around"}}>
-                                    <PricingCardContainer
-                                        elevation={3}
-                                        index={index}
-                                        isPreview={index !== activeIndex}
-                                        isMobile={isMobile}
-                                        sx={{
-                                            overflow: "hidden",
-                                            width: "95%",
-                                            ...(index === 1 && {
+                        {pricingData.map((card, index) => (
+                            <Box key={index} sx={{ display: "flex", justifyContent: "center", height: "1050px", marginTop: index === 2 ? 5 : 15, justifyContent: "space-around" }}>
+                                <PricingCardContainer
+                                    elevation={3}
+                                    index={index}
+                                    isPreview={index !== activeIndex}
+                                    isMobile={isMobile}
+                                    sx={{
+                                        overflow: "hidden",
+                                        width: "95%",
+                                        ...(index === 2 && {
                                             background: 'linear-gradient(74deg, #000428 0%, #004E92 113.02%)',
                                             boxShadow: "10px 0 30px 10px rgba(0, 78, 146, 0.6)", // Matches #004E92
                                             border: "1px solid rgba(0, 78, 146, 0.4)",
                                             transition: "all 0.3s ease-in-out",
-                                            })
-                                        }}
-                                        >
-                                        {/* <Box></Box> */}
-                                        <Box textAlign={"center"} >
-                                            <Typography variant="h4" sx={{ color: "#FFA800", textTransform: "uppercase", fontWeight: 700, marginBottom: "15px",marginTop:index===1?"50px":"30px",fontSize:index===1?"40px":"35px" }}>
-                                                {card.title}
-                                            </Typography>
-                                        </Box>
-                                        {index === 1 || index === 2 ? <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', ml: 3, position: "absolute", top: '7%', left: '13%', background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)', color: "white", transform: ' translate(-50%,-50%) rotate(-39deg)', padding: "4px 30px", fontSize: "15px", height: "fit-content", width: "100%", textAlign: "center" }}>
-                                            15 Days Free Trial
-                                        </Typography> : ""}
-                                        {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
+                                        })
+                                    }}
+                                >
+                                    {/* <Box></Box> */}
+                                    <Box textAlign={"center"} >
+                                        <Typography variant="h4" sx={{
+                                            textTransform: "uppercase",
+                                            marginBottom: "15px",
+                                            marginTop: index === 2 ? "50px" : "30px",
+                                        }}>
+                                           <Box component="span" sx={{fontSize: "25px", fontWeight: 500, color: "rgba(255, 255, 255, 0.32)"}}>INTERN </Box> 
+                                           <Box component="span" sx={{
+                                               fontSize: "35px", 
+                                               fontWeight: 700,
+                                               background: index === 0
+                                                   ? "linear-gradient(to right, #2E3393, #1CFAFC)"
+                                                   : index === 1
+                                                       ? "linear-gradient(to right, #FFFFFF -1.82%, #FF155B)"
+                                                       : "linear-gradient(to right, #FFA800, #FFFFFF)",
+                                               WebkitBackgroundClip: "text",
+                                               WebkitTextFillColor: "transparent",
+                                               backgroundClip: "text"
+                                           }}>{card.title}</Box>
+                                        </Typography>
+                                    </Box>
+                                    {/* {index === 1 || index === 2 ? <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', ml: 3, position: "absolute", top: '7%', left: '13%', background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)', color: "white", transform: ' translate(-50%,-50%) rotate(-39deg)', padding: "4px 30px", fontSize: "15px", height: "fit-content", width: "100%", textAlign: "center" }}>
+                                        15 Days Free Trial
+                                    </Typography> : ""} */}
+                                    {/* <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "25px", fontSize: "15px", textAlign: "center" }}>
                                             Starts From
                                         </Typography> */}
-                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, letterSpacing: "1px", flexDirection: "row",marginTop:'50px' }}>
-                                            <Box sx={{ display: 'flex', alignItems: 'end', letterSpacing: "1px", flexDirection: "row", }}>
-                                                <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through' }}>
-                                                    {card.originalPrice}
-                                                </Typography>
-                                                <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
-                                                    {index === 1 || index === 2 ? (
-                                                        <>
-                                                            <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "15px", fontSize: "13px", textAlign: "center" }}>
-                                                                Starts From
-                                                            </Typography>
-                                                            {card.discountedPrice}
-                                                        </>
-                                                    ) : (
-                                                        card.discountedPrice
-                                                    )}
-                                                </Typography>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, letterSpacing: "1px", flexDirection: "row", marginTop: '50px' }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'end', letterSpacing: "1px", flexDirection: "row",position:"relative" }}>
+                                            <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 1, textDecoration: 'line-through',position:"absolute",top:"-25px" }}>
+                                                {card.originalPrice}
+                                            </Typography>
+                                            <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.32)', }}>
+                                                {card.currency}
+                                            </Typography>
+                                            <Typography variant="h4" fontWeight="bold" sx={{ color: '#FFFFFF', fontSize: { xs: "30px", sm: 'auto' } }}>
+                                                {index === 1 || index === 2 ? (
+                                                    <>
+                                                        {/* <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.32)', mr: 2, lineHeight: "15px", fontSize: "13px", textAlign: "center" }}>
+                                                            Starts From
+                                                        </Typography> */}
+                                                        {card.discountedPrice}
+                                                    </>
+                                                ) : (
 
-                                            </Box>
+                                                    card.discountedPrice
+                                                )}
+                                            </Typography>
 
-                                            {index == 0 && (
-                                                <Button variant="contained" sx={{
-                                                    textTransform: 'uppercase',
-                                                    background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)',
-                                                    borderRadius: "6px",
-                                                    fontSize: { xs: "8px", sm: "7px", lg: "10px" },
-                                                    fontWeight: "500",
-                                                    marginLeft: "10px",
-                                                    display: "flex",
-                                                    alignItems: "center",
-                                                    px: 1,
-                                                    py: .2,
-                                                }}>
-                                                    <span>
-                                                        LIMITED TIME OFFER
-                                                    </span>
-                                                    <Box
-                                                        component="img"
-                                                        src={timer}
-                                                        alt=""
-                                                        sx={{
-                                                            height: "100%",
-                                                            width: { xs: "20px", sm: "15px", lg: "20px" },
-                                                            marginLeft: "5px"
-                                                        }}
-                                                    />
-                                                </Button>
-                                            )}
                                         </Box>
 
-                                        <Typography variant="body2" sx={{ color: '#EEEEEE', mb: 3, fontSize: { xs: "12px", md: "12px", lg: "15px" }, fontWeight: "200" }}>
-                                            {card.description}
-                                        </Typography>
-
-                                        <Button
-                                            variant="contained"
-                                            // onClick={() => handleApplyClick(card)}
-                                            onClick={() => handleClickOpen(index)}
-                                            onMouseEnter={() => {
-                                                if (index === 1) setHoveredOne(true);
-                                                if (index === 2) setHoveredTwo(true);
-                                            }}
-                                            onMouseLeave={() => {
-                                                if (index === 1) setHoveredOne(false);
-                                                if (index === 2) setHoveredTwo(false);
-                                            }}
-                                            sx={{
-                                                textTransform: "uppercase",
-                                                position: "relative",
-                                                background:
-                                                    index === 0
-                                                        ? "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)"
-                                                        : index === 1 || index === 2
-                                                            ? "linear-gradient(225.92deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)"
-                                                            : "none",
-
+                                        {(index === 0 || index === 1) && (
+                                            <Button variant="contained" sx={{
+                                                textTransform: 'uppercase',
+                                                background: 'linear-gradient(69deg, #FF0A54 4.18%, #FAE0E4 145.93%)',
                                                 borderRadius: "6px",
-                                                fontSize: { xs: "9px", sm: "9px", lg: "13px" },
-                                                fontWeight: "bold",
-                                                width: {
-                                                    xs: "100%", sm: (index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100%" : "80%",
-                                                }, // ✅ Fixed width to prevent layout shift
-                                                minWidth: "160px", // ✅ Ensures width remains stable
-                                                padding: { xs: "7px", sm: "auto" },
-                                                transition: "all 0.3s ease-in-out", // ✅ Smooth transition for text change
-                                                whiteSpace: "nowrap", // ✅ Prevents text wrapping
-                                                display: "flex", // ✅ Keeps text & icon aligned
-                                                justifyContent: "center",
+                                                fontSize: { xs: "8px", sm: "7px", lg: "10px" },
+                                                fontWeight: "500",
+                                                marginLeft: "10px",
+                                                display: "flex",
                                                 alignItems: "center",
-                                            }}
-                                        >
-                                            {(index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100% Refund for first 500 Interns" : card.applyText}
-                                            <EastIcon sx={{ marginLeft: "8px", transition: "transform 0.3s ease-in-out" }} />
-                                            {(index === 1 || index === 2) ? <Typography sx={{ position: "absolute", bottom: -20, right: 0, fontSize: "9px" }}>Upon Successful Completion</Typography> : ""}
+                                                px: 1,
+                                                py: .2,
+                                            }}>
+                                                <span>
+                                                    LIMITED TIME OFFER
+                                                </span>
+                                                <Box
+                                                    component="img"
+                                                    src={timer}
+                                                    alt=""
+                                                    sx={{
+                                                        height: "100%",
+                                                        width: { xs: "20px", sm: "15px", lg: "20px" },
+                                                        marginLeft: "5px"
+                                                    }}
+                                                />
+                                            </Button>
+                                        )}
+                                    </Box>
 
-                                        </Button>
+                                    <Typography variant="body2" sx={{ 
+                                        color: '#EEEEEE', 
+                                        mb: 3, 
+                                        fontSize: { 
+                                            xs: index === 0 ? "10px" : "12px", 
+                                            md: index === 0 ? "10px" : "12px", 
+                                            lg: index === 0 ? "12px" : "14px" 
+                                        }, 
+                                        fontWeight: "200" 
+                                    }}>
+                                        {card.description}
+                                    </Typography>
 
-                                        <FormSubmission open={open} handleClose={handleClose} />
+                                    <Button
+                                        variant="contained"
+                                        // onClick={() => handleApplyClick(card)}
+                                        onClick={() => handleClickOpen(index)}
+                                        // onMouseEnter={() => {
+                                        //     if (index === 1) setHoveredOne(true);
+                                        //     if (index === 2) setHoveredTwo(true);
+                                        // }}
+                                        // onMouseLeave={() => {
+                                        //     if (index === 1) setHoveredOne(false);
+                                        //     if (index === 2) setHoveredTwo(false);
+                                        // }}
+                                        sx={{
+                                            textTransform: "uppercase",
+                                            position: "relative",
+                                            background:
+                                                index === 0
+                                                    ? "linear-gradient(68deg, #2E3393 -1.82%, #1CFAFC 106.59%)"
+                                                    : index === 2
+                                                        ? "linear-gradient(225.92deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)"
+                                                        : index === 1 ? "linear-gradient(to right, #FF0F57, #1CFAFC)" : "none",
+                                            borderRadius: "6px",
+                                            fontSize: { xs: "9px", sm: "9px", lg: "13px" },
+                                            fontWeight: "bold",
+                                            width: {
+                                                xs: "100%", sm: (index === 1 && hoveredOne) || (index === 2 && hoveredTwo) ? "100%" : "80%",
+                                            }, // ✅ Fixed width to prevent layout shift
+                                            minWidth: "160px", // ✅ Ensures width remains stable
+                                            padding: { xs: "7px", sm: "auto" },
+                                            transition: "all 0.3s ease-in-out", // ✅ Smooth transition for text change
+                                            whiteSpace: "nowrap", // ✅ Prevents text wrapping
+                                            display: "flex", // ✅ Keeps text & icon aligned
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                        }}
+                                    >
+                                        {/* {(index === 2 && hoveredTwo) ? "100% Refund for first 500 Interns" : card.applyText}
+                                        <EastIcon sx={{ marginLeft: "8px", transition: "transform 0.3s ease-in-out" }} /> */}
+                                        {/* {(index === 2) ? <Typography sx={{ position: "absolute", bottom: -20, right: 0, fontSize: "9px" }}>Upon Successful Completion</Typography> : ""} */}
+                                        {card.applyText}<EastIcon sx={{ marginLeft: "8px", transition: "transform 0.3s ease-in-out" }} />
+                                    </Button>
+
+                                    <FormSubmission open={open} handleClose={handleClose} />
 
 
-                                        <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400', mt: 2 }}>
-                                            {card.features && card.features.length > 0 && (
-                                                <Box padding={{ xs: "5px 18px", md: '5px 24px' }}
-                                                >
-                                                    {
-                                                        card.features.map((feature, index) => (
-                                                            <FeatureItem key={index} feature={feature} />
-                                                        ))
-                                                    }
-                                                </Box>
-                                            )}
-                                            {card.title2 && <Typography variant='h5' sx={{ fontSize: "16px", textAlign: "center" }}>
-                                                {card.title2}
-                                            </Typography>}
+                                    <Box padding='15px 0px' sx={{ color: "white", fontWeight: '400', mt: 2 }}>
+                                        {card.features && card.features.length > 0 && (
+                                            <Box padding={{ xs: "5px 18px", md: '5px 24px' }}
+                                            >
+                                                {
+                                                    card.features.map((feature, index) => (
+                                                        <FeatureItem key={index} feature={feature} />
+                                                    ))
+                                                }
+                                            </Box>
+                                        )}
+                                        {card.title2 && <Typography variant='h5' sx={{ fontSize: "16px", textAlign: "center" }}>
+                                            {card.title2}
+                                        </Typography>}
 
-                                            {card.internships && card.internships.length > 0 && (
-                                                <SectionBox index={index} title="Internship" items={card.internships} />
-                                            )}
+                                        {card.internships && card.internships.length > 0 && (
+                                            <SectionBox index={index} title="Internship" items={card.internships} />
+                                        )}
 
-                                            {card.placements && card.placements.length > 0 && (
-                                                <SectionBox index={index} title="Placement" items={card.placements} />
-                                            )}
-                                        </Box>
+                                        {card.placements && card.placements.length > 0 && (
+                                            <SectionBox index={index} title="Placement" items={card.placements} />
+                                        )}
+                                    </Box>
 
 
-                                    </PricingCardContainer>
+                                </PricingCardContainer>
 
-                                </Box>
-                            ))
-                            }
+                            </Box>
+                        ))
+                        }
                     </Slider >
                 </Box>
             </Box >
@@ -692,6 +836,15 @@ const HighlightedText = ({ children }) => (
 );
 const HighlightedText2 = ({ children }) => (
     <span style={{ color: "#FFA800", fontWeight: 600, textTransform: "uppercase" }}>{children}</span>
+);
+const HighlightedText3 = ({ children }) => (
+    <span style={{ color: "#ffffff", fontWeight: 600, textTransform: "uppercase" }}>{children}</span>
+);
+const HighlightedText4 = ({ children }) => (
+    <span style={{ background: "linear-gradient(to right, #2E3393, #1CFAFC)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 700, textTransform: "uppercase", }}>{children}</span>
+);
+const HighlightedText5 = ({ children }) => (
+    <span style={{ background: "linear-gradient(to right, #FFFFFF, #FF155B)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 700, textTransform: "uppercase", }}>{children}</span>
 );
 
 const CertificateText = ({ children }) => (

@@ -234,8 +234,8 @@ const Home = () => {
                         <span></span>
                         {/* Apply for Sponsorship */}
                         <div style={{ display: "flex", gap: "6px" }}>
-                            <div>With</div>
-                            <div className='sponsorship'/*  style={{ color: "#FFA800" }} */>100% Refund</div>
+                            {/* <div>With</div> */}
+                            <div className='sponsorship'/*  style={{ color: "#FFA800" }} */>Enroll Now</div>
                         </div>
                     </a>
 

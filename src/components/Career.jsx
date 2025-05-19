@@ -305,7 +305,7 @@ const Career = () => {
 
                                             }}
                                         >
-                                            With 100% Refund
+                                            Enroll Now
                                         </Button>
 
                                         <FormSubmission open={open} handleClose={handleClose} />
@@ -457,7 +457,7 @@ const Career = () => {
                                     display: { xs: "block", sm: "none" },
                                     width: "fit-content"
                                 }}>
-                                    With 100% Refund
+                                    Enroll Now
                                 </Button>
                             </Box>
 
