@@ -23,7 +23,7 @@ const glowEffect = keyframes`
         100% { filter: blur(6px) opacity(0.8); }
     `;
 
-const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper {...rest} />)(({ theme, index, isPreview, isMobile }) => ({
+const PricingCardContainer = styled(({ isPreview, isMobile, index, ...rest }) => <Paper {...rest} />)(({ theme, index, isPreview, isMobile }) => ({
     textAlign: 'left',
     color: '#FFFFFF',
     borderRadius: '15px',
@@ -34,7 +34,6 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
     // bgcolor:"blue",
     minHeight: 'auto',
     position: 'relative',
-
     backgroundColor: index === 0 || index === 1 ? '#110f0f' : 'transparent',
     backgroundImage: index === 2
         ? 'linear-gradient(180deg, #110F0F 0%, #212529 100%)'
@@ -76,34 +75,34 @@ const PricingCardContainer = styled(({ isPreview, isMobile, ...rest }) => <Paper
     }),
 
     [theme.breakpoints.down(575)]: {
-        minHeight: index === 0 || index === 1 ? '850px' : 'auto',
+        minHeight: index === 0 ? '850px' : index === 1 ? '880px' : 'auto',
     },
     [theme.breakpoints.down(426)]: {
-        minHeight: index === 0 || index === 1 ? '830px' : 'auto',
+        minHeight: index === 0 ? '830px' : index === 1 ? '860px' : 'auto',
     },
     [theme.breakpoints.down(375)]: {
-        height: index === 0 || index === 1 ? '850px' : 'auto',
+        height: index === 0 ? '850px' : index === 1 ? '880px' : 'auto',
     },
     [theme.breakpoints.down(365)]: {
-        height: index === 0 || index === 1 ? '880px' : 'auto',
+        height: index === 0 ? '880px' : index === 1 ? '900px' : 'auto',
     },
     [theme.breakpoints.down(356)]: {
-        height: index === 0 || index === 1 ? '900px' : 'auto',
+        height: index === 0 ? '900px' : index === 1 ? '920px' : 'auto',
     },
     [theme.breakpoints.down(321)]: {
-        height: index === 0 || index === 1 ? '940px' : 'auto',
+        height: index === 0 ? '940px' : index === 1 ? '960px' : 'auto',
     },
     [theme.breakpoints.between(577, 600)]: {
-        height: index === 0 || index === 1 ? '930px' : 'auto',
+        height: index === 0 ? '930px' : index === 1 ? '950px' : 'auto',
     },
     [theme.breakpoints.up('sm')]: {
-        height: index === 0 || index === 1 ? '850px' : 'auto',
+        height: index === 0 ? '850px' : index === 1 ? '830px' : 'auto',
     },
     [theme.breakpoints.up('md')]: {
-        height: index === 0 || index === 1 ? '850px' : 'auto',
+        height: index === 0 ? '850px' : index === 1 ? '830px' : 'auto',
     },
     [theme.breakpoints.up('lg')]: {
-        height: index === 0 || index === 1 ? '815px' : 'auto'
+        height: index === 0 ? '815px' : index === 1 ? '845px' : 'auto'
     },
 }));
 
@@ -609,7 +608,7 @@ const Pricing = () => {
                 <Box sx={{ width: '100%', height: "auto", height: "1100px", marginTop: "70px" }}>
                     <Slider ref={sliderRef} {...settings}  >
                         {pricingData.map((card, index) => (
-                            <Box key={index} sx={{ display: "flex", justifyContent: "center", height: "1050px", marginTop: index === 2 ? 5 : 15, justifyContent: "space-around" }}>
+                            <Box key={index} sx={{ display: "flex", justifyContent: "center", height: "1050px", marginTop: index === 2 ? 5  : index ===1 ? 13 : 20, justifyContent: "space-around" }}>
                                 <PricingCardContainer
                                     elevation={3}
                                     index={index}

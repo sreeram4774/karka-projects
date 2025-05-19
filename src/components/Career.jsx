@@ -12,7 +12,7 @@ import Cup from '../assets/images/Cup.png';
 import Star from '../assets/images/star.svg';
 import image1 from '../assets/logos/image1.png';
 import image2 from '../assets/logos/image2.png';
-import image3 from '../assets/logos/image3.png';
+// import image3 from '../assets/logos/image3.png';
 import image4 from '../assets/logos/image4.png';
 import image5 from '../assets/logos/image5.png';
 import image6 from '../assets/logos/image6.png';
@@ -103,11 +103,11 @@ const Career = () => {
         [theme.breakpoints.down('sm')]: {
             maxWidth: "160px",
             fontSize: "14px",
-            padding: "8px 16px"
+            padding: "16px 8px"
         }
     }));
 
-    const CompanyLogos = [image1, image2, image3, image4, image5, image6];
+    const CompanyLogos = [image2, image1, image4, image5, image6];
 
     if (isMobile) {
         [CompanyLogos[2], CompanyLogos[3]] = [CompanyLogos[3], CompanyLogos[2]];
@@ -415,7 +415,11 @@ const Career = () => {
                                 Companies offering Certificate & Stipend.
                             </Typography>
 
-                            <Grid container spacing={2} sx={{ justifyContent: "center", maxWidth: "100%", mx: "auto" }}>
+                            <Grid container spacing={2} sx={{ 
+                                justifyContent: "space-between", 
+                                maxWidth: "100%",
+                                padding: "0 !important"
+                            }}>
                                 {CompanyLogos.map((company, index) => (
                                     <Grid
                                         item
@@ -423,19 +427,27 @@ const Career = () => {
                                         data-aos-duration="1000"
                                         data-aos-delay={index * 200}
                                         data-aos-anchor-placement="top-bottom"
-
-                                        xs={6} sm={2} md={2} lg={2}
+                                        xs={6} 
+                                        sm={2.4} 
+                                        md={2.4} 
+                                        lg={2.4}
                                         key={index}
                                         sx={{
                                             width: "100%",
                                             display: 'flex',
-                                            justifyContent: 'center',
-                                            padding: { xs: "16px 16px 0 0!important", sm: "8px 0px 8px 0px!important" }
-                                            // padding: { xs: "16px 16px 0 0!important", sm: "16px 8px 16px 8px!important" }
-
+                                            justifyContent: "center",
+                                            padding: { 
+                                                xs: "8px 8px 0 0!important", 
+                                                sm: "8px 0px 8px 0px!important" 
+                                            }
                                         }}
                                     >
-                                        <CompanyButton>
+                                        <CompanyButton sx={{ 
+                                            width: "100%",
+                                            ...(index === 3 && {
+                                                marginRight: "20px"
+                                            })
+                                        }}>
                                             <img
                                                 src={company}
                                                 alt="Company Logo"
