@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <button>Submit</button>
+    <div class="on">
+        <h1>hi</h1>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+            $('div h1').load("text.txt",function(data,a,b){
+                console.log(data,a,b)
+
+            })
+            }
+            )})
+            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{
+    padding:0;
+    margin:0
+}
+
+
+
+@media only screen and (max-width:430px){
+    .karka{
+        width: 100% !important;
+
+    }
+    
+    
+}
+    
+@media only screen and (max-width:375px){
+    .karka{
+        width: 100% !important
+        
+    }
+
+   
+}

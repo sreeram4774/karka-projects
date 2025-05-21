@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Too Doo List </h1>
+    <input id="text" type="text">
+    <button onclick="submit()">Add</button>
+    <ul id="add">
+        <li>
+            Hello
+            <button onclick="item(event)">Delete</button>
+        </li>
+    </ul>
+    
+</body>
+<script>
+    var a=document.getElementById("add")
+    var b=document.getElementById("text")
+    function submit(){
+        var list=document.createElement("li")
+        list.innerHTML=b.value+"<button onclick='item(event)'>Delete</button>"
+        a.append(list)
+        b.value=""
+
+    }
+    function  item(event){
+        event.target.parentElement.remove()
+    }
+</script>
+</html>

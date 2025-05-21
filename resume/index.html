@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title><link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
+</head>
+<body>
+ <div class="box">
+        <h1>Resume Form</h1>
+      
+        <h3>Personal Information</h3>
+        <hr>
+        
+      
+        <!-- <img  src="../../../Downloads/person_black_24dp.svg"><h6>Paste Your Photo</h6> -->
+        <p><img src="../../Downloads/person_black_24dp.svg" alt=""><h6>Paste Your Photo</h6></p>
+
+    
+    <form class="row g-4">
+        <div class="col-md-2">
+          <!-- <div class="form-outline"> -->
+              <label class="form-label" for="form3Examplev2">First name :</label>
+            <input type="text" id="first" class="form-control" placeholder="First Name" name="First Name">
+          </div>
+          <div class="col-md-2">
+
+          <!-- <div class="form-outline"> -->
+            <label class="form-label" for="form3Examplev3">Last name :</label>
+            <input type="text" id="form3Examplev3" class="form-control " placeholder="Last Name" name="Last Name">
+          </div>
+          <div class="col-2">
+            <label for="inputAddress" class="form-label">Date Of Birth :</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="(DD\MM\YYYY)"name="DOB">
+          </div>
+           <div class="col-2">
+            <label for="inputAddress" class="form-label">Gender :</label>
+            <select id="inputstatus" class="form-select"name="Gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Others</option>
+            </select>
+           </div> 
+     
+         <div class="col-md-4">
+          <label for="inputEmail4" class="form-label">Email ID : </label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Example@gmail.com"name="Email ID">
+        </div> 
+      
+           <div class="col-2">
+            <label for="inputAddress" class="form-label">Material Status :</label>
+            <select id="inputstatus" class="form-select" name="Material Status">
+            <option selected>Choose...</option>
+            <option>Single</option>
+            <option>Married</option>
+            </select>
+           </div> 
+
+           <div class="col-2">
+            <label for="inputAddress" class="form-label">Language :</label>
+            <select id="inputstatus" class="form-select"name="Language">
+            <option selected>Choose...</option>
+            <option>Tamil</option>
+            <option>English</option>
+            <option>Others</option>
+            </select>
+           </div> 
+            
+
+        <div class="col-3">
+          <label for="inputAddress" class="form-label">Phone Number 1 :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Phone Number:1">
+        </div>
+         <div class="col-3">
+          <label for="inputAddress" class="form-label">Phone Number 2 :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Phone Number:2">
+        </div>
+        <div class="col-md-2">
+          <label for="inputState" class="form-label">Religion :</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>Hindu</option>
+            <option> Christian</option>
+            <option>Muslim</option>
+          </select>
+        </div>
+        <div class="col-5">
+          <label for="inputAddress" class="form-label">Address 1 :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Hose/No,St,Post">
+        </div>
+         
+        <div class="col-5">
+          <label for="inputAddress2" class="form-label">Address 2 :</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-2">
+            <label for="inputAddress" class="form-label">Hobbies :</label>
+            <input type="text" class="form-control" id="inputZip" placeholder="Hobbies">
+        </div>
+           <div class="col-md-2">
+            <label for="inputState" class="form-label">Country :</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option> India</option>
+              <option> Australia</option>
+              <option> Sri Lanka</option>
+              <option> America</option>
+              <option> Italy</option> 
+              </option>
+            </select>
+          </div>
+       
+        <div class="col-md-2">
+          <label for="inputState" class="form-label">State :</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option> Tamil Nadu</option>
+            <option> Andra Pradesh</option>
+            <option>  Mumbai</option>
+            <option>    Bangalore</option>
+            <option> Kerala</option> 
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+        <label for="inpuDistrict" class="form-label">District :</label>
+        <select id="inpuDistrict" class="form-select"> 
+          <option selected>Choose...</option>
+          <option>Kanyakumai</option>
+          <option>Coimbatore</option>
+          <option>Triuchy</option>
+          <option>Madurai</option>
+          <option>Tirunelveli</option> 
+          </option>
+        </select>    
+      </div>
+      <div class="col-md-2">
+        <label for="inputCity" class="form-label">City :</label>
+        <select id="inputCity" class="form-select"> 
+          <option selected>Choose...</option>
+          <option>Kanyakumai</option>
+          <option>Nagercoil</option>
+          <option>Kuzhithurai</option>
+          <option>Kolachal</option>
+          <option>Martandam</option> 
+          </option>
+        </select>       
+      </div>
+      <div class="col-md-2">
+        <label for="inputState" class="form-label">Talukas :</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>Agastheeswaram</option>
+          <option>Kalkulam</option>
+          <option> Thovala</option>
+          <option> America</option>
+          <option>Vilavancode</option> 
+          </option>
+        </select>
+      </div>
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Pin Code :</label>
+          <input type="text" class="form-control" id="inputZip" placeholder="Pin Code">
+        </div><br><br><br><br><br><br>
+        
+        
+        <h3>Education Deatils</h3>
+        
+        <h5>SSLC or HSS : </h5>
+      
+        
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">SSLC or HSS :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Please select">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label">School Name :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="School Name">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label"> Location :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Location">
+        </div>
+        
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Year Of Passing :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Year Of Passing">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Total Mark:</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Total Mark">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Percentage:</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Percentage">
+        </div>
+        
+        <h5>Degree or Diploma : </h5>
+        
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Degree or Diploma  :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Please select">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label">College Name :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="College Name">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label"> Location :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Location">
+        </div>
+       
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Year Of Passing :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Year Of Passing">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Final Year Project  :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Project Name">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Total Mark:</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Total Mark">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Percentage or CGPA:</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Percentage or CGPA">
+        </div>
+        
+        <h5>UG or PG (Degree)  : </h5>
+        
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">UG or PG (Degree)  :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Please select">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label">College Name :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="College Name">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label"> Location :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Location">
+        </div>
+        
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Year Of Passing :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Year Of Passing">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Final Year Project  :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Project Name">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">Total Mark:</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Total Mark">
+        </div>
+        <div class="col-2">
+          <label for="inputAddress" class="form-label">CGPA:</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="CGPA">
+        </div>
+        <h3>Experience</h3>
+        <hr>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label">Company Name :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Company Name">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label">Position :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Position">
+        </div>
+        
+        <div class="col-4">
+          <label for="inputAddress" class="form-label"> Location :</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Location">
+        </div>
+        <div class="col-md-2">
+          <label for="inputState" class="form-label">No of Years :</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option> 
+            </option>
+          </select>
+        </div>
+        
+        <div class="col-12">
+          <div class="form-check d-flex justify-content-center mt-5 mb-1 pb-1">
+            <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c"/>
+            <label for="Example">I do accept the <a href="#!"><u>Terms and Conditions</u></a> of your site.</label>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center ">
+          <button type="button" class="btn btn-primary" onclick="getvalue()">Sign in</button>
+        </div>
+        </div>  
+      </form>
+  </div>
+    <script>
+      function getvalue(){
+        const name=document.querySelectorAll("input");
+        // localStorage.setItem("name",JSON.stringify(name))
+        console.log(name)
+        }
+
+      
+    
+
+
+
+      
+    </script>
+</body>
+</html>

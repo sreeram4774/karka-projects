@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+
+</head>
+<body>
+    <div>
+
+        FirstName : <input type="text" class="first">
+        <br>
+        <br>
+        <br>
+        LastNmae : <input type="text" class="last">
+       <br>
+       <br>
+       <br>
+    </div>
+
+</body>
+<Script>
+    // $(document).ready(function(){
+    //     $(".first").focusin(function(){
+    //         $(this).css({"background-color":"green"})
+    //     })
+    //     $(".last").focusin(function(){
+    //         $(this).css({"background-color":"blue"})
+    //     })
+    // })
+    // $(document).ready(function(){
+    //     $("div").focusin(function(){
+    //         $(this).css({"background-color":"green"})
+    //     })
+    //     $("div").focusout(function(){
+    //         $(this).css({"background-color":"blue"})
+    //     })
+    // })
+    $(document).ready(function(){
+        $(".first").focusin(function(){
+            $(this).css({"background-color":"green"})
+        })
+        $(".first").focusout(function(){
+            $(this).css({"background-color":"blue"})
+        })
+    })
+</Script>
+</html>

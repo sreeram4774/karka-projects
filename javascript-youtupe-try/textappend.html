@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="submit()">Add</button>
+    <div id="result">
+
+    </div>
+
+    
+</body>
+<script>
+    var content=document.getElementById("result")
+    function submit(){
+        var tag=document.createElement("h1")
+        tag.textContent="Hello"
+        content.append(tag)
+    }
+</script>
+</html>

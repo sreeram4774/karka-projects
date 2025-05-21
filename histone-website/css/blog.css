@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.overall_img{
+    background-image: url("../image/bg_3.jpg.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: cover;
+    height: 100%;
+    background-attachment:fixed;
+    z-index:0;
+
+}
+.number-card{
+    display: flex;
+}
+
+ul{ 
+    display: flex;
+}
+span{
+    color: red;
+}
+li{
+    color: #999999;
+    font-size: 12px;
+    font-weight: 500;
+    
+}
+
+.btn{
+      border: none;    
+}
+h1{
+    font-size: 60px;
+    font-weight:bold;
+}
+h2{
+    font-size: 60px;
+    font-weight:bold;
+}
+
+.box7{
+    width: 90%;
+    height: 40%;
+
+}
+.top-section{
+    margin-top: 10%;
+}
+
+.overall-section{
+    margin-top: 15%;
+    background-color:#f0f4f7!important;
+
+}
+.card-section{
+    margin-top: -80px;
+}
+ 
+ .car2:hover{
+    background-color: red;
+    color: white !important;
+} 
+
+.car2 i{
+    color: red;
+}
+
+
+.fa-hotel{
+    color:white;
+    
+}
+.car2:hover i{
+    color: white;
+}
+
+.car1{
+    color: white;
+    background-color: red;
+}
+.spa{
+    background-color: white;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius:5px;
+
+}
+
+.car10{
+    position: relative;
+}
+.logo2{
+    position: absolute;
+    left: 61px;
+    top: 264px;
+    background-color: red;
+    color: white !important;
+    padding:28px 13px 28px 13px;
+    border-radius: 50%;
+}
+.card-body .logo2{
+    color:rgb(232, 5, 5);
+}
+.change-color{
+    background-color: red;
+    border: 2px solid black;
+    width: 5px;
+    height: 5px;
+}
+.sea{
+   width: 413px!important;
+}
+aside{
+    background-color:white ;
+    /* border: 1px solid black; */
+    width: 100%;
+    
+ }
+aside img{
+    height: 800px;
+    width: 480px;
+}
+.card-body i.fa-heart{
+    background-color: white;
+    padding : 12px 6px 10px 6px;
+    border-radius: 50%;
+}
+.icon-hover:hover{
+    color: red !important;
+    background:white !important;
+    border-radius: 50%;
+}
+.content-1{
+  font-size:45px;
+}
+.paragraph{
+    font-size: 20px;
+}
+.paragraph-1{
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+}
+.number{
+    background-color: #eaf0f4;
+    padding: 20px;
+    font-size: large;
+    color: red;
+    font-weight: 400;
+}
+.number-card span{
+    color: black;
+    font-weight: 500;
+}
+/* .carousel-width{
+    width:10% !important;
+} */
+.img-radius img{
+    border-radius:50%;
+    width: 100px;
+    height: 100px;
+}
+.cont-box{
+    border: 2px solid black;
+    border: none;
+    width: 67%;
+}
+
+.back{
+    background-image: url(../image/curls.png.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+.ifra-section{
+    margin-top: -200px;
+}
+.logo-hotel i{
+    background-color: red;
+    padding: 30px 15px;
+    border-radius: 50%;
+}
+.card-body-1 h5{
+    font-size: 28px;
+    font-weight: 400;
+}
+.card-body-1 p{
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+}
+.card-3:hover{
+    background-color: red;
+    color: white;
+}
+.card-3:hover p{
+    color: white!important;
+}
+
+
+.card-3:hover i {
+      color: red !important;
+      background-color: white;
+}
+
+.card-3{
+    background-color:#eaedf1;
+}
+.last p{
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 700;
+    color: #999999;
+}
+.last h4:hover{
+    color: red;
+
+}
+.foot{
+    background: #10151c;
+    height: 60%;
+}
+.foot p{
+    line-height: 1.8;
+    width: 250px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.listing h6{
+    line-height: 1.8;  
+}
+.foot span{
+    color: white;
+}
+.listings .h7{
+    line-height: 2.9;
+}
+.listing h6 span{
+    color: rgba(255, 255, 255, 0.7);
+}
+.listings h6 span{
+    color: rgba(255, 255, 255, 0.7);
+
+}
+.listing h6 i{
+    color: rgba(255, 255, 255, 0.7);
+}
+.foot-1{
+    background: #0c1016 !important;
+}
+.foot-1 p{
+    color: rgba(255, 255, 255, 0.7)!important;
+
+}
+
+
+/* responsive start css  */
+/* @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+      width: 100%;
+      height: 36rem;
+      margin-top: 22px;
+    }
+  } */
+  .logo-10 .fa-brands{
+    /* border:2px solid white; */
+    padding: 20px 10px;
+    border-radius: 50%;
+    background-color:red;
+
+  }
+  .search{
+    position: relative;
+    
+
+  }
+  .search-1{
+    position: absolute;
+    z-index: 1;
+    left: 115px;
+    top: 120px; 
+    color: red; 
+    background-color: white; 
+    padding: 16px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+   
+  
+  }
+  
+  .under1{
+    text-decoration: none;
+}
+.under2:hover{
+    color: red!important;
+}
+ 
+.under{
+    text-decoration: none;
+    font-size:larger;
+    font-weight: 500;
+}
+  .search-1:hover{
+    opacity:1;
+  }
+  
+  @media only screen and (max-width:425px){
+
+    .number-card{
+        display: flex;
+        flex-direction: column;
+    }
+    aside img{
+        height: 760px;
+        width: 300px;
+    }
+    .section2 img{
+        width: 310px!important;
+    }
+    }
+@media only screen and (max-width:320px){
+    aside img{
+        height: 760px;
+        width: 268px;
+    }
+
+.section2 img{
+    width: 280px!important;
+}
+.logo2{
+    position: absolute;
+    left: 42px;
+    top: 218px;
+    background-color: red;
+    color: white !important;
+    padding:28px 13px 28px 13px;
+    border-radius: 50%;
+}
+.overall-section{
+    margin-top: 35%;
+    background-color:#f0f4f7!important;
+
+}
+.card-section{
+    margin-top: -45px;
+}
+.car2{
+    width: 17rem !important;
+    height: 17rem !important;
+    margin-top: 61px !important; 
+    text-align: center;
+
+}
+.car1{
+    width: 17rem !important;
+    height: 17rem !important;
+    margin-top: 61px !important; 
+    text-align: center;
+
+}
+.top{
+    margin-top: 20px;
+}
+.logo8{
+    top: 195px;
+}
+.logo18{
+    top:200px;
+}
+.foot{
+    text-align: center;
+}
+}
+
+
+
+
+
+
+  
+    
+ 

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karka Academy</title>
+    <link rel="icon" type="image/png" href="images/karka-logo meddar.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<style>
+   
+</style>
+
+<body class="cont">
+    <div class="conts">
+        <div class="row m-0 navbar-content heading mx-3 my-auto" data-aos="fade-up" data-aos-offset="100" data-aos-delay="500" data-aos-duration="600">
+            <div class="col-lg-3 col-md-2 col-sm-3 col-4 my-auto" >
+                <img src="images/Mask group.png" alt="Logo" class="logo">
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-6 col-4 my-auto d-flex flex-column text m-auto">
+                <h1 style="margin: 0;color: #8F46DE;">KARKA</h1>
+                <span style="color: #8F46DE;font-weight: bold;">Software Academy</span>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-4 my-auto d-flex justify-content-end mx-auto">
+                <a class="google-review" target="_blank"
+                    href="https://www.google.com/search?q=karka+software+academy&oq=karka+&aqs=chrome.0.35i39i355j46i39i175i199j69i57j69i60l5.3688j0j9&sourceid=chrome&ie=UTF-8#lrd=0x3b04f15dde0aa367:0xd5eb331016b805d0,1,,,,"
+                    rel="tooltip" title="Karka Academy Reviews" data-placement="bottom">
+                    <img src="images/Google-reviews.jpg" alt="Google Reviews" class="rounded review-img"
+                        style="max-width:100%;">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-12 my-auto d-flex justify-content-end mb-3 phone">
+                <a href="tel:+91 9487530243" class="contact-buttons">
+                    <button type="button" class="btn btn-primary btn-sm p-2 icon-button">Contact <i
+                            class="fa-solid fa-phone mx-1 icon"></i></button>
+                </a>
+            </div>
+            <hr style="width: 100%; opacity: 0.2;" class="line mx-auto mt-3">
+        </div>
+        <div class="row" style=" width: 97%;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-end">
+                <button type="button" data-aos="fade-up" data-aos-offset="180" data-aos-delay="100" data-aos-duration="1000"  style="position:fixed ; bottom:118px;z-index: 2;"title='Phone_number' class=" btn btn-floating btn-lg d-block bg-primary rounded-circle phn "id="btn-review"><a href='tel:+91 9487530243'><i class="fa-solid fa-phone" style="color: #ebebef;"></i></a></button>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-end">
+                <button type="button" data-aos="fade-up" data-aos-offset="50" data-aos-delay="100" data-aos-duration="1000" class="btn btn-floating btn-lg rounded-circle wht" id="btn-whatsapp"title='Whatsapp'onClick = "whatsapp()" style="background: #4FCE5D !important ;position:fixed ; bottom:55px;z-index: 2;"><i class="fa-brands fa-whatsapp" style="color: #FFF;font-weight: 600;"></i></button>
+            </div>
+        </div>    
+        <div class="row m-0 mx-3 top4  mx-3" data-aos="fade-up" data-aos-offset="100" data-aos-delay="500" data-aos-duration="1000">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-10 col-12  mt-5 pay d-flex flex-column gap-2">
+                <div class="design-box"
+                    style="width:250px;background-color:#8F46DE;color:white;position: relative;height: 40px;">
+                    <p class="mx-2" style="font-size: medium; padding: 7px;font-weight: 700;">Pay After Placement</p>
+                    <div
+                        style="width: 36px;height: 36px;background-color:white;position: absolute; left: 92%; transform: rotate(45deg);top:3.7%;">
+                    </div>
+                </div>
+                <div class="content">
+                    <h2 style="font-size: 38px;">Bootcamp in Full Stack</h2>
+                    <h2 style="display: inline-block;font-size: 38px;">Web Development</h2>
+                    <div class="mx-2"
+                        style="display:inline-block; border-radius: 50%;background-color:#8F46DE;width:19px;height: 19px;box-shadow:3px -3px 0px #D9D9D9;">
+                    </div>
+                </div>
+                <div class="date" style="width:fit-content;">
+                    <p id="calendar-icon"
+                        style="font-size: 14px;font-weight: bolder;color: #F00037;background-color: #f0003849;padding: 8px 15px;border-radius: 6px;cursor: pointer;">
+                        <span style="cursor: pointer;"><i class="fas fa-calendar fa-lg mx-1"></i></span><span> Next
+                            batch will start on <span style="color: black;">"<span id="date"></span> th <span id="month"></span>"</span></span>
+                    </p>
+                </div>
+                <div class="perday col-12">
+                    <p class="mx-1" style="font-weight: bolder;">6 hours pratical learning per day</p>
+                    <img style="display: inline-block; width: 20px;" src="images/Time.png" width="4%" alt="">
+                    <P class="mx-1" style="display: inline-block;font-weight: bolder;">4 Months (Full Time Bootcamp)</p>
+                </div>
+                <div class="apply col-12">
+                    <!-- <a href="https://www.karka.academy/apply/index.html" class="contact-buttons" target="_blank"><button class="btn" style="padding: 7px 15px 7px 15px;background-color: #8F46DE;color: white;border: none;border-radius: 7px;">Apply Now</button>
+                            </a> -->
+                    <a class="width-button" href="https://www.karka.academy/apply/index.html" class="contact-buttons">
+                        <button type="button" class="btn btn-primary btn-sm p-2 icon-button">Apply Now</button>
+                    </a>
+                    <a class="width-button1 w-100" href="https://www.karka.academy/apply/index.html"
+                        class="contact-buttons">
+                        <button type="button" class="btn btn-primary btn-sm p-2 icon-button">Apply Now</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12  col-12  group-img d-flex justify-content-end">
+                <img class="" src="images/Group 8 (1).png" alt="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 ten mt-5" style="position: relative;z-index: 999;" data-aos="fade-up" data-aos-offset="500" data-aos-delay="700" data-aos-duration="1000">
+            <div class="rose" data-aos="fade-up" data-aos-offset="500" data-aos-delay="100" data-aos-duration="1000"  style="width:85%;background-color: #FFE8EE;position: absolute;z-index:1000;left: 7.4%; border-radius: 15px;box-shadow: 0px 16px 10px -15px #111;padding: 15px;">
+                <h4 class="mt-2 mb-4" style="text-align: center;">Learn <span style="color: #F00037;">TEN</span>
+                    Technologies in <Span style="color: #F00037;">ONE</Span> Course</h4>
+                <div class="row m-0 mx-auto logo-row">
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 p-1 my-auto mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100" src="images/html-html5-logo-0.png" alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 p-1 my-auto mx-auto " data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100" src="images/css-logo 1.png" alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-1 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100" src="images/pngwing 20.png" alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-1 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <div class="boot_img" style="width: 100%; height: 100%;">
+                            <img class="w-100" src="images/bootstrap-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-1 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100" src="images/pngwing 23.png" alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-2 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100" src="images/Group 536.png" alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-1 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100"
+                            src="images/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text.png"
+                            alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-1 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100" src="images/mysql2.com - mysql_PNG22.png" alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-1 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                        <img class="w-100" src="images/pngwing 27.png" alt="">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-2 my-auto p-1 mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000" style="width: 14%;">
+                        <img src="images/Group 537.png" style="width:-webkit-fill-available" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0" data-aos="fade-up" data-aos-offset="500" data-aos-delay="300" data-aos-duration="1000">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 blue logo-space" data-aos="fade-up" data-aos-offset="600" data-aos-delay="300" data-aos-duration="1000"
+                style="position: relative;;margin-top: 80px!important;">
+                <img src="images/Group 387.png" width="100%" height="auto" alt="">
+            </div>
+        </div>
+        <div class="col-12 mt-5 highlights"
+            style="background-color: #EBEFF5;position: relative;overflow: hidden;margin-top: 60px!important;" data-aos="fade-up" data-aos-offset="500" data-aos-delay="300" data-aos-duration="1000">
+            <div class="design-line" >
+                <hr class="w-25" style="transform: rotate(140deg);margin-left:-43px;margin-top: 180px;color: #FFB7CA;">
+                <hr class="w-25" style="transform: rotate(140deg);margin-left:-43px;margin-top: 20px;color: #FFB7CA;">
+                <hr class="w-25" style="transform: rotate(140deg);margin-left:-43px;margin-top: 20px;color: #FFB7CA;">
+                <h4 style="margin-top: -55px;" class="mx-3">Highlights</h4>
+                <div class="row mt-3 m-0 p-0 ">
+                    <div class="row mb-3 p-0 m-0">
+                        <div class="col-2" style="display: flex; justify-content: end; align-items: center;">
+                            <i class="fa-solid fa-circle-check  fa-lg" style="color:#1b9d76"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="m-auto">100% Job Assured Program</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3 p-0 m-0">
+                        <div class="col-2" style="display: flex; justify-content:end; align-items: center;">
+                            <i class="fa-solid fa-circle-check  fa-lg" style="color:#1b9d76"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="m-auto">Complete Practice Oriented</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3 p-0 m-0">
+                        <div class="col-2" style="display: flex; justify-content: end ;align-items: center;">
+                            <i class="fa-solid fa-circle-check  fa-lg" style="color:#1b9d76"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="m-auto">Industry Based Curriculum</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3 p-0 m-0">
+                        <div class="col-2" style="display: flex; justify-content: end ;align-items: center;">
+                            <i class="fa-solid fa-circle-check  fa-lg" style="color:#1b9d76"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="m-auto">No Coding Experience Required</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3 p-0 m-0">
+                        <div class="col-2" style="display: flex; justify-content: end ;align-items: center;">
+                            <i class="fa-solid fa-circle-check  fa-lg" style="color:#1b9d76"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="m-auto">Task Based Learning</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3 p-0 m-0 mb-5">
+                        <div class="col-2" style="display: flex; justify-content: end ;align-items: center;">
+                            <i class="fa-solid fa-circle-check  fa-lg" style="color:#1b9d76"></i>
+                        </div>
+                        <div class="col-10 ">
+                            <p class="m-auto">Expert Trainers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blue">
+            <div class="row m-0  mx-auto container" data-aos="fade-up" data-aos-offset="500" data-aos-delay="500" data-aos-duration="1000"> 
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-5">
+                    <div class="gallery mb-5 rounded" style="width:200px">
+                        <!-- <a target="_blank" href="img_5terre.jpg"> -->
+                          <img src="images/WhatsApp Image 2024-04-17 at 11.04.27 AM.jpeg" alt="Cinque Terre" width="600" height="400">
+                        <!-- </a>/ -->
+                        <div class="desc">
+                            <h3>S.JEMIL</h3>
+                            <p>Bethlahem Institute Of Engineering
+                                B.E (CIVIL) - 2017</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-5">
+                    <div class="gallery mb-5" style="width: 200px;">
+                        <!-- <a target="_blank" href="img_5terre.jpg"> -->
+                          <img src="images/WhatsApp Image 2024-04-17 at 11.04.31 AM.jpeg" alt="Cinque Terre" width="600" height="400">
+                        <!-- </a>/ -->
+                        <div class="desc"> <h3>A.ARUN</h3>
+                            <p> C.S.I Institute of Technology
+                                B.E (ECE) - 2017</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-5">
+                    <div class="gallery mb-5" style="width: 200px;">
+                        <!-- <a target="_blank" href="img_5terre.jpg"> -->
+                          <img src="images/IMG_20240418_094254.jpg" alt="Cinque Terre" width="600" height="400">
+                        <!-- </a>/ -->
+                        <div class="desc">
+                           <h3>A.JAMES WATT</h3> 
+                            <p>St.Xavier’s College Of Engineering
+                                CSE - 2015.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-5">
+                    <div class="gallery mb-5" style="width:200px;">
+                        <!-- <a target="_blank" href="img_5terre.jpg"> -->
+                          <img src="images/WhatsApp Image 2024-04-17 at 11.04.31 AM.jpeg" alt="Cinque Terre" width="600" height="400">
+                        <!-- </a>/ -->
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-5">
+                    <div class="gallery mb-5" style="width:200px">
+                        <!-- <a target="_blank" href="img_5terre.jpg"> -->
+                          <img src="images/WhatsApp Image 2024-04-17 at 11.04.27 AM.jpeg" alt="Cinque Terre" width="600" height="400">
+                        <!-- </a>/ -->
+                        <div class="desc">
+                            <p>J.Jemil</p>
+                            <p>Muthuswamy College</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-5">
+                    <div class="gallery mb-5" style="width:200px;height: 300px;">
+                        <!-- <a target="_blank" href="img_5terre.jpg"> -->
+                          <img src="images/WhatsApp Image 2024-04-17 at 11.04.31 AM.jpeg" alt="Cinque Terre" width="600" height="400">
+                        <!-- </a>/ -->
+                        <div class="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carouseal_container" data-aos="fade-up" data-aos-offset="600" data-aos-delay="500" data-aos-duration="1000">
+            <div class="row m-0  mx-auto carouseal blue  container1" data-aos="fade-up" data-aos-offset="500" data-aos-delay="400" data-aos-duration="1000">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 blue" data-aos="fade-up" data-aos-offset="600" data-aos-delay="400" data-aos-duration="1000">
+                    <h2 class="text-center">What Our Students Say</h2>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mb-5 small-carousel mt-5" data-aos="fade-up" data-aos-offset="500" data-aos-delay="600" data-aos-duration="1000">
+                    <div class="youtube-video-container mx-4">
+                        <iframe width="100%" height="350px"
+                            src="https://www.youtube.com/embed/GebkhdyfYtc?modestbranding=1&controls=0&showinfo=0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mb-3 small-carousel mt-5" data-aos="fade-up" data-aos-offset="500" data-aos-delay="800" data-aos-duration="1000">
+                    <div class="youtube-video-container mx-4">
+                        <iframe width="100%" height="350px"
+                            src="https://www.youtube.com/embed/t541Ju_-L2U?si=8-SD4SRWSK3Xeu5q?modestbranding=1&controls=0&showinfo=0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 co-md-6 col-sm-12 col-12 blue large-carousel mt-1" data-aos="fade-up" data-aos-offset="600" data-aos-delay="300" data-aos-duration="1000">
+                    <div style="width:100%;" id="carouselExampleIndicators"
+                        class="carousel slide mt-5 mb-5 container carousel-bottom " data-bs-ride="true">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                class="active" aria-current="true" aria-label="Slide 2" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <iframe width="100%" height="350px" src="https://www.youtube.com/embed/GebkhdyfYtc"
+                                    title="Dhanush - React Developer - Comorin Consulting Services - Turning Dreams into Offer"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="carousel-item">
+                                <iframe width="100%" height="350px"
+                                    src="https://www.youtube.com/embed/t541Ju_-L2U?si=8-SD4SRWSK3Xeu5q"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 mx-auto blue mb-5 image-change" data-aos="fade-up" data-aos-offset="500" data-aos-delay="500" data-aos-duration="1000">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-5 image-change">
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider-item">
+                            <img src="images/IMG_20230621_103641 (1) 1.png" alt="Image 1">
+                        </div>
+                        <div class="slider-item">
+                            <img src="images/IMG_20240212_111254 1.png" alt="Image 2">
+                        </div>
+                        <div class="slider-item">
+                            <img src="images/IMG_20240220_143816 1.png" alt="Image 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 container mx-auto mt-5 p-0"
+            style="background-color: #D2B3F5;width:85%;border-radius: 10px;" data-aos="fade-up" data-aos-offset="500" data-aos-delay="500" data-aos-duration="1000">
+            <div class="col-lg-7 col-md-7 col-sm-6 mt-4 mb-2" data-aos="fade-up" data-aos-offset="600" data-aos-delay="300" data-aos-duration="1000">
+                <h4 class="mx-4">I am interested</h4>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-4 mb-4 small-form" style="width:65%;">
+                    <script charset="utf-8" type="text/javascript" id="apply-form"
+                        src="//js.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                        hbspt.forms.create({
+                            region: "na1",
+                            portalId: "44636233",
+                            formId: "f78df94b-e7d2-4461-b083-850c523b5711"
+                        });
+
+                    </script>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-6 large-form" data-aos="fade-up" data-aos-offset="600" data-aos-delay="300" data-aos-duration="1000"
+                style="background-color: #DDDDDD;position: relative;border-top-right-radius: 10px;border-bottom-right-radius: 10px;">
+                <div class="or-round row m-0" id="animatedDiv"
+                    style="position: absolute;left:-28.5px;top:55%;padding: 13px;border-radius: 50%;background:linear-gradient(90deg, white 50%,#D2B3F5 50%);">
+                    <h4 style="text-align: center;" class="p-0 m-0">OR</h4>
+                </div>
+                <div class="contact1-web mt-4 p-0">
+                    <h4 class="mx-4">Contact Us</h4>
+                    <div class="row m-0 mt-4">
+                        <div class="col-lg-2 col-md-2 col-sm-2 my-auto">
+                            <a style="color: black;text-decoration: none;" href="tel:+91 9487530243">
+                                <i class="fa-solid fa-phone fa-lg fs-4 d-flex justify-content-end"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-10 col-md-8 col-sm-8">
+                            <a style="color: black;text-decoration: none;" href="tel:+91 9487530243">
+                                <p class="my-auto" style="font-weight: 600;">Call<br>94875 30243</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row m-0 mt-4">
+                        <div class="col-lg-2 col-md-2 col-sm-2 my-auto" id="btn-whatsapp" onclick="whatsapp()">
+                            <i class="fa-brands fa-whatsapp fa-lg fs-4 d-flex justify-content-end icon"
+                                style="color:#04b459; cursor: pointer;"></i>
+                        </div>
+                        <div class="col-lg-10 col-md-8 col-sm-8" id="btn-whatsapp" onclick="whatsapp()">
+                            <p class="my-auto" style="font-weight: 600; cursor: pointer; text-decoration: none;">
+                                Whatsapp<br>94875 30243</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 mt-4">
+                        <div class="col-lg-2 col-md-2 col-sm-2 my-auto">
+                            <a style="text-decoration: none; color: black;" target="_blank"
+                                href="https://www.google.com/maps/dir/8.1985536,77.3521408/karka.academy+google+location/@8.208829,77.3085504,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3b04f15dde0aa367:0xd5eb331016b805d0!2m2!1d77.4317415!2d8.2200297?entry=ttu">
+                                <i class="fa-solid fa-location-dot fa-lg fs-4 d-flex justify-content-end icon"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-10 col-md-8 col-sm-10 text-start">
+                            <a style="text-decoration: none; color: black;" target="_blank"
+                                href="https://www.google.com/maps/dir/8.1985536,77.3521408/karka.academy+google+location/@8.208829,77.3085504,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3b04f15dde0aa367:0xd5eb331016b805d0!2m2!1d77.4317415!2d8.2200297?entry=ttu">
+                                <p class="my-auto" style="font-weight: 600;">Location <br>Mela Putheri,<br
+                                        class="break"> Nagercoil,629001</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row m-0 mt-4 mb-5">
+                        <div class="col-lg-2 col-md-2 col-sm-2 my-auto">
+                            <i class="fa-solid fa-school-lock fa-lg fs-5 d-flex justify-content-end"></i>
+                        </div>
+                        <div class="col-lg-10 col-md-8 col-sm-8">
+                            <p class="my-auto" style="font-weight: 600;">Open Hours <br>9.30 AM - 5.00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 mt-5 container mx-auto" data-aos="fade-up" data-aos-offset="500" data-aos-delay="500" data-aos-duration="1000">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center mt-3">
+                <h4>Our Courses</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
+                <div class="swiper mySwiper1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="height: fit-content;">
+                            <img src="images/image 10.png" alt="">
+                            <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                    <h5 class="card-title">Full Stack <br>Web Development</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 3 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="height: fit-content;">
+                            <img src="images/the-complete-guide-to-mobile-app-development-2021 1.png" alt="">
+                            <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                    <h5 class="card-title">Full Stack <br>Mobile Development</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 3 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/The Complete Front-End Web Development Course best Udemy course 1.png"
+                                alt="">
+                            <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;">
+                                    <h5 class="card-title">Frontend Development</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 2 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/64664e9cd07202af8bcdc5e4_5757453 1.png" alt="">
+                            <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;">
+                                    <h5 class="card-title">UI/UX Designing</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 2 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="height: fit-content;">
+                            <img src="images/image 10.png" alt="">
+                            <div class="card" style="height: auto;background-color:#D9D9D9;border-radius: 15px;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;">
+                                    <h5 class="card-title">Full Stack <br>Web Development</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 3 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="height: fit-content;">
+                            <img src="images/the-complete-guide-to-mobile-app-development-2021 1.png" alt="">
+                            <div class="card" style="height: auto;background-color:#D9D9D9;border-radius: 15px;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;">
+                                    <h5 class="card-title card-title-1">Full Stack <br>Mobile Development</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 3 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/The Complete Front-End Web Development Course best Udemy course 1.png"
+                                alt="">
+                            <div class="card" style="height: auto;background-color: #D9D9D9;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;">
+                                    <h5 class="card-title">Frontend Development</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 2 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/64664e9cd07202af8bcdc5e4_5757453 1.png" alt="">
+                            <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                <div class="card-body mx-2" style="height:auto;text-align: start;">
+                                    <h5 class="card-title">UI/UX Designing</h5>
+                                    <p class="card-text"><i class="fa-solid fa-clock-rotate-left"></i> 2 Months</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row m-0 mt-5 say">
+                    <div class="col-sm-12 col-12">
+                        <h3 style="text-align: center;">What Our Students Say <br>About US</h3>
+                    </div>     
+                </div>
+                <div class="row m-0 mt-5 say1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h3 style="text-align: center;">What Our Students Say <span style="color: #6E07DD;">About US</span></h3>
+                    </div>     
+                </div>
+                <div class="row m-0 mt-5 container mx-auto">
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-0">
+                        <div class="arrow" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -24px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-2">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Jemil, B.E., Bethlahem Institute of Engineering </span><br>Karka Software Academy is good place to improve your career skills, I have learn full stack web development course, Good teaching, Easy to learn, Friendly staff , Good environment.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-5">
+                        <div class="arrow mt-5 mx-3" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;transform:rotate(180deg);">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -20px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-5">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Dhanush Kannan, B.Com, Scott Christian College</span><br>Karka software academy is the best place to kickstart your career to software development . I had 4 years of career gap , but they are trained me the way i can understand . The tasks and practices were very helpful for me.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: -45px;">
+                        <div class="arrow" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -24px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-2">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Ajay Kumar, B.E., Ponjesly College of Engeneering</span><br>“Karka Software Academy is good place to improve your career skills. Faculties are having deep knowledge towards the courses and lab arrangements are awesome.The way of teaching those technical stuffs were awesome.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-3">
+                        <div class="arrow mt-5 mx-3" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;transform:rotate(180deg);">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -20px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-5">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Nathan B.E., University College of Engineering </span><br>It's a wonderful place to grow your knowledge as a fullstack developer.Their teaching methods are very good.Staffs are very friendly and they are not determine he is a slow learner or fast learner they treat all as same.Thank you Karaka Acadamy.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: -45px;">
+                        <div class="arrow" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -24px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-2">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Anu Devi</span><br>It is a great place to learn full stack web development. Very good skilled instructors, friendly handling. They clear all the doubts. Good environment to learn and skill up your knowledge.I can recommend Karka Academy for people who are looking for their upgrade in Technical Knowledge.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-3">
+                        <div class="arrow mt-5 mx-3" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;transform:rotate(180deg);">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -20px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-5">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Vasanth Krishnan</span><br>I was really very satisfied to study the karka academy...the faculty members are very friendly guide and guiding me any time...one of the best acadamy I studied ever is karka...this acadamy not based for the certificate ...it's based on future career.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 mt-5 container mx-auto line-round">
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-0">
+                        <div class="arrow" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -24px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-2">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Jemil, B.E., Bethlahem Institute of Engineering </span><br>Karka Software Academy is good place to improve your career skills, I have learn full stack web development course, Good teaching, Easy to learn, Friendly staff , Good environment.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-5">
+                        <div class="arrow mt-5 mx-3" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;transform:rotate(180deg);">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -20px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-5">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Dhanush Kannan, B.Com, Scott Christian College</span><br>Karka software academy is the best place to kickstart your career to software development . I had 4 years of career gap , but they are trained me the way i can understand . The tasks and practices were very helpful for me.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: -45px;">
+                        <div class="arrow" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -24px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-2">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Ajay Kumar, B.E., Ponjesly College of Engeneering</span><br>“Karka Software Academy is good place to improve your career skills. Faculties are having deep knowledge towards the courses and lab arrangements are awesome.The way of teaching those technical stuffs were awesome.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-3">
+                        <div class="arrow mt-5 mx-3" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;transform:rotate(180deg);">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -20px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-5">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Nathan B.E., University College of Engineering </span><br>It's a wonderful place to grow your knowledge as a fullstack developer.Their teaching methods are very good.Staffs are very friendly and they are not determine he is a slow learner or fast learner they treat all as same.Thank you Karaka Acadamy.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: -45px;">
+                        <div class="arrow" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -24px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-2">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Anu Devi</span><br>It is a great place to learn full stack web development. Very good skilled instructors, friendly handling. They clear all the doubts. Good environment to learn and skill up your knowledge.I can recommend Karka Academy for people who are looking for their upgrade in Technical Knowledge.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-3">
+                        <div class="arrow mt-5 mx-3" style="width: 90%;padding: 8px; position: relative; background-color: #8F46DE;transform:rotate(180deg);">
+                            <div class="arrow-right" style="position: absolute;top:-10px;left: 96%;">
+                            </div>
+                            <div class="circle" style="width:60px;height: 60px;border-radius: 50%;position: absolute;background-color:#D9D9D9;border: 1px solid #8F46DE;top: -20px;left:77%;">
+                            </div>
+                        </div>
+                        <div class="text mt-5 mx-5">
+                            <p style="line-height: 1.5;"><span style="color: #8F46DE;">Vasanth Krishnan</span><br>I was really very satisfied to study the karka academy...the faculty members are very friendly guide and guiding me any time...one of the best acadamy I studied ever is karka...this acadamy not based for the certificate ...it's based on future career.</p>
+                        </div>
+                    </div>
+                </div> -->
+        <!-- <div class="row m-0 mt-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+                        <h3 style="position: relative;">
+                            FULL STACK BOOTCAMP FOR GRADUATION
+                            <img style="position: absolute; right: 97%; top: -1px;z-index: -1;" width="5%" src="images/Group 513.png" alt="">
+                        </h3>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+                        <h3 style="position: relative;">Pay After Job Placement <img style="position: absolute;z-index: -1;top:-4px4px;left: 94%;" width="10%" src="images/Group 546.png" alt=""></h3>
+                    </div>
+                </div>
+                <div class="row m-0 container mx-auto">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
+                        <div class="swiper mySwiper1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" style="height: fit-content;">
+                                    <p>DAY 0</p>
+                                    <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                        <div class="card-body mx-2" style="height:auto;text-align: center;border-radius: 15px;">
+                                            <h5>Enroll</h5>
+                                            <h6>www.karka.academy</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" style="height: fit-content;">
+                                    <div class="d-flex flex-column mt-3">
+                                        <p class="m-0">DAY 0 to 5</p>
+                                        <h5>Learn Basic</h5>
+                                        <img src="images/Group 551.png" alt="">
+                                    </div>
+                                    <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                        <div class="card-body mx-2" style="height:auto;text-align: center;border-radius: 15px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" style="height: fit-content;">
+                                    <p>DAY 0</p>
+                                    <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                        <div class="card-body mx-2" style="height:auto;text-align: center;border-radius: 15px;">
+                                            <h5>Enroll</h5>
+                                            <h6>www.karka.academy</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" style="height: fit-content;">
+                                    <p>DAY 0</p>
+                                    <div class="card" style="height: auto;background-color:#D9D9D9;">
+                                        <div class="card-body mx-2" style="height:auto;text-align: center;border-radius: 15px;">
+                                            <h5>Enroll</h5>
+                                            <h6>www.karka.academy</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>   
+                    </div>
+                </div> -->
+        <div class="contact-us form mt-5" style="background-color:#FFE8EE;">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+
+            <div class="row m-0 contactlast">
+                <div class="col-12 mt-5">
+                    <div class="text-center">
+                        <h4 class="text-center">Contact Us</h4>
+                    </div>
+                </div>
+                <div class="col-12 d-flex mt-3">
+                    <div class="col-6 d-flex justify-content-center">
+                        <p class="" style="font-weight:500;font-size: 20px;"><i
+                                class="fa-solid fa-phone fa-lg fs-4"></i> Call<br>94875 30243</p>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                        <p class="" style="font-weight:500;font-size: 20px;"><i
+                                class="fa-brands fa-whatsapp fa-lg fs-4 " style="color:#04b459;"></i> Whatsapp<br>94875
+                            30243</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0 mt-2 contactlast">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="my-auto" style="font-weight:500;font-size: 20px;"><i
+                            class="fa-solid fa-location-dot fa-lg fs-4"></i> Location</p>
+                </div>
+                <!-- <div class="row m-0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
+                               <div class="swiper mySwiper2">
+                                   <div class="swiper-wrapper">
+                                       <div class="swiper-slides">
+                                           <img src="images/Group 547.png" alt="">
+                                       </div>
+                                       <div class="swiper-slides">
+                                           <img src="images/Group 548.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="swiper-slides">
+                                           <img src="images/Group 501.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="swiper-slides" style="height: fit-content;">
+                                           <img src="images/Group 547.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="swiper-slides" style="height: fit-content;">
+                                           <img src="images/Group 502.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="swiper-slides" style="height: fit-content;">
+                                           <img src="images/Group 505.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="swiper-slides" style="height: fit-content;">
+                                           <img src="images/Group 506.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                      <div class="swiper-slides" style="height: fit-content;">
+                                           <img src="images/Group 507.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="swiper-slides" style="height: fit-content;">
+                                           <img src="images/Group 508.png" alt="">
+                                           <div class="card" style="height: auto;">
+                                               <div class="card-body mx-2" style="height:auto;text-align: start;border-radius: 15px;">
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="swiper-button-next"></div>
+                                   <div class="swiper-button-prev"></div>
+                               </div>   
+                           </div>
+                       </div> -->
+                <div class="col-12 d-flex justify-content-center mt-2">
+                    <p class="my-auto" style="font-weight:500;font-size: 20px;" class="break">4/5A, Basement, Balmore
+                        Road, near GKV School, Kurinji Nagar, Mela Putheri, Nagercoil, Tamil Nadu 629001</p>
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-3">
+                    <p class="my-auto" style="font-weight:500;font-size: 20px;"><i
+                            class="fa-solid fa-school-lock fa-lg fs-5"></i><span class="mx-3"
+                            style="font-size: large;font-weight:500;">Open Hours</span><span>9.30 AM - 5.00 PM</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 contactlast">
+                <div class="col-12 mt-3">
+                    <h1 style="margin-bottom: 0;font-size: 25px;font-weight: bold;">KARKA</h1>
+                    <h6 style="font-size: medium;">Software Academy</h6>
+                </div>
+                <div class="col-12">
+                    <a href="https://www.instagram.com/karka_software_academy/" target="_blank"><img
+                            src="images/Instagram (1).png" alt=""></a>
+                    <a href="https://www.facebook.com/karkasoftwareacademy/" target="_blank"><img
+                            src="images/Facebook (1).png" alt=""></a>
+                    <a href="https://in.linkedin.com/company/karka-academy" target="_blank"><img
+                            src="images/LinkedIn (1).png" alt=""></a>
+                    <a href="https://www.youtube.com/@KarkaAcademy" target="_blank"><img src="images/YouTube (1).png"
+                            alt=""></a>
+                </div>
+            </div>
+            <div class="row m-0 lastcontact">
+                <div class="col-lg-12 mt-5 mb-5">
+                    <h4 style="font-size:x-large;font-weight: 500;">Contact Us</h4>
+                </div>
+            </div>
+            <div class="row m-0 lastcontact">
+                <div class="col-lg-2 col-md-3 col-sm-3 mb-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h1 style="margin-bottom: 0;font-size: 40px;font-weight: 400;">KARKA</h1>
+                        <h6 style="font-size: medium;">Software Academy</h6>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
+                        <a href="https://www.instagram.com/karka_software_academy/" target="_blank"><img
+                                src="images/Instagram (1).png" alt=""></a>
+                        <a href="https://www.facebook.com/karkasoftwareacademy/" target="_blank"><img
+                                src="images/Facebook (1).png" alt=""></a>
+                        <a href="https://in.linkedin.com/company/karka-academy" target="_blank"><img
+                                src="images/LinkedIn (1).png" alt=""></a>
+                        <a href="https://www.youtube.com/@KarkaAcademy" target="_blank"><img
+                                src="images/YouTube (1).png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-2">
+                    <a style="color: black;text-decoration: none;" href="tel:+91 9487530243">
+                        <p class="mt-2" style="font-weight:500;font-size: 20px;"><i class="fa-solid fa-phone fa-lg fs-4"
+                                style="color: #04539C;"></i> Call<br>94875 30243</p>
+                    </a>
+                    <p class="mt-3" style="font-weight:500;font-size: 20px;"><i
+                            class="fa-solid fa-school-lock fa-lg fs-5" style="color: #04539C;"></i><span class="mx-3"
+                            style="font-size: larger;font-weight:500; ">Open Hours</span><span
+                            style="font-size:17px;">9.30 AM - 5.00 PM</span></p>
+                </div>
+                <div id="btn-whatsapp" onclick="whatsapp()" class="col-lg-3 col-md-3 col-sm-2">
+                    <p style="font-weight:500;font-size: 20px;cursor: pointer;"><i
+                            class="fa-brands fa-whatsapp fa-lg fs-4" style="color:#04b459;"></i> Whatsapp<br>94875 30243
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-2">
+                    <a style="color: black;text-decoration: none;" target="_blank"
+                        href="https://www.google.com/maps/dir/8.1985536,77.3521408/karka.academy+google+location/@8.208829,77.3085504,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3b04f15dde0aa367:0xd5eb331016b805d0!2m2!1d77.4317415!2d8.2200297?entry=ttu">
+                        <p style="font-weight:500;font-size: 20px;"><i class="fa-solid fa-location-dot fa-lg fs-4"
+                                style="color: #04539C;"></i> Location <br>4/5A, Basement, Balmore Road, near GKV School,
+                            Kurinji Nagar, Mela Putheri, Nagercoil, Tamil Nadu 629001.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        $(document).ready(function () {
+            var today = new Date();
+            var dayOfWeek = today.getDay();
+            var daysToAdd = 1;
+
+            if (dayOfWeek >= 0 && dayOfWeek <= 4) {
+                daysToAdd = 1 - dayOfWeek;
+            } else if (dayOfWeek >= 4 && dayOfWeek <= 6) {
+                daysToAdd = 1 - (dayOfWeek - 7);
+            }
+
+            var nextMondayDate = new Date(today);
+            nextMondayDate.setDate(today.getDate() + daysToAdd);
+
+            if (dayOfWeek !== 1) {
+                nextMondayDate.setDate(nextMondayDate.getDate() + 7);
+            }
+
+            var date = nextMondayDate.toLocaleDateString('en-US', { day: '2-digit' });
+            var month = nextMondayDate.toLocaleDateString('en-US', { month: 'long' });
+
+            $('#date').text(date);
+            $('#month').text(month);
+
+            if (month.toLowerCase() === 'april' && date === '08') {
+                nextMondayDate.setDate(nextMondayDate.getDate() + 7);
+                date = nextMondayDate.toLocaleDateString('en-US', { day: '2-digit' });
+                month = nextMondayDate.toLocaleDateString('en-US', { month: 'long' });
+                $('#date').text(date);
+                $('#month').text(month);
+            }
+        });
+        function whatsapp() {
+            window.open('https://api.whatsapp.com/send/?phone=9487530243&text=Hi%2C%0AI+am+interested+&type=phone_number&app_absent=0', '_blank');
+        }
+
+        function call_karka() {
+            window.open('tel:+91 9487530243')
+        }
+
+    </script>
+</body>
+
+</html>

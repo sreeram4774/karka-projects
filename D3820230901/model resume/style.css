@@ -1,0 +1,11 @@
+body{
+    border: solid black;
+    
+    width: 90%;
+    /* padding: 0px 50px; */
+
+}
+body h1{
+    vertical-align: top;
+    text-align: center;
+}

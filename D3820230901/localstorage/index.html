@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button type="button"onclick="get()">submit</button>
+    <script>
+        name="sreeram"
+        localStorage.setItem("name",name)
+        var n=localStorage.getItem("name")
+        console.log(n)
+        const a={
+            name:"sree",
+            degre:"B.E"
+        }
+        var c=JSON.stringify(a)
+        localStorage.setItem("data1",c)
+        var ans=localStorage.getItem("data")
+        console.log("df",ans)
+
+        var c=JSON.parse(localStorage.getItem("date"))
+        console.log(c)
+
+        localStorage.removeItem("data")
+    </script>
+
+    
+</body>
+</html>

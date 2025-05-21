@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="box">
+        <div class="d-grid gap-20 d-md-block ">
+            <button onclick="sub()"class="btn btn-primary" type="button" id="text1">-</button>
+            <button id="number"></button>
+            <button onclick="add()"class="btn btn-primary p-10 " type="button" id="text2">+</button>
+
+          </div>
+    </div>
+    <!-- <h1 id="number"style=""></h1> -->
+    
+</body>
+        
+ <script>
+    var total =0;
+    function add(){
+        alert("add")
+       
+    }
+    // function add(){
+    //     var add=document.getElementById("text2").value
+    //     var list=document.getElementById("order")
+    //     list.innerHTML += `<li>${total}</li>`
+    //     total++
+
+    //     // console.log(total)
+
+    // }
+    // function sub(){
+    //     var sub=document.getElementById("text1").value
+    //     var list=document.getElementById("order")
+    //     list.innerHTML += `<li>${total}</li>`
+    //     total--
+    //     // console.log(total)
+    // }
+    
+        function add(){
+        var add=document.getElementById("text2").value
+        var list=document.getElementById("number")
+        list.innerHTML = total
+        total++
+
+
+
+    }
+    function sub(){
+        var sub=document.getElementById("text1").value
+        var list=document.getElementById("number")
+        list.innerHTML = total
+        total--
+        
+    }
+    
+    
+ </script>
+</html>

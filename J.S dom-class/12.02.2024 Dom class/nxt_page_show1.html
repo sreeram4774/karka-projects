@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text1">
+
+    </div>
+</body>
+<script>
+  var detail=document.getElementById("text1")
+  var show_details1=JSON.parse(localStorage.getItem('myArr'))
+  show_details1.forEach((data) =>{
+      for(let key in data){
+        var result=document.createElement("p")
+      result.textContent=`${key}:${data[key]}`
+      detail.appendChild(result)
+
+      }
+  })
+ 
+</script>
+</html>

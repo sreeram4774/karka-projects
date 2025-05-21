@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.box{
+    border: 2px solid black;
+    width: 100%;
+    height: 70vh;
+}
+.width{
+    width: 24.7%;
+    height: 70vh;
+    display: inline-block;
+}
+.one{
+    background-color: blue;
+
+
+}
+.two{
+    background-color: red;
+    
+
+}
+
+.three{
+    background-color: greenyellow;
+    
+
+}
+.four{
+    background-color: pink;
+    
+
+}
+@media only screen and  (max-width:992px){
+    .width{
+        width: 33%;
+        height: 70vh;
+        display: inline-block;
+    }
+
+}
+@media only screen and  (max-width:776px){
+
+    .width{
+        width: 49.5%;
+        height: 70vh;
+        display: inline-block;
+    }
+
+}
+@media only screen and  (max-width:556px){
+
+    .width{
+        width: 100%;
+        height: 70vh;
+        display: inline-block;
+    }
+
+}
+

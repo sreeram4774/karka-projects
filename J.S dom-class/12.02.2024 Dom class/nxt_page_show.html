@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       select option{
+            font-size: medium;
+            font-weight: 500;
+       }
+    
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">Email : <input name="Email :" type="email" placeholder="Email" class="text"></label><br><br>
+        <label for="">Password : <input type="password" placeholder="Password" class="text" id="text1" name="Password :"></label><br><br><input onclick="handle_click1()"
+            type="checkbox" name="" id=""> <Label>Show Password</Label><br><br>
+        <label for="" name="gender" >Gender : </label>
+        <input type="radio" name="gender" class="text" value="Male"> <label for="">Male</label>
+        <input type="radio" name="gender" class="text" value="Female"> <label for="">Female</label>
+        <input type="radio" name="gender" class="text" value="Other"> <label for="">Other</label><br><br>
+        <label for="">Skills : 
+        <input type="checkbox" value="HTML" class="text" name="skills"> <label for="">HTML</label>
+        <input type="checkbox" value="CSS" class="text" name="skills"> <label for="">CSS</label>
+        <input type="checkbox" value="JAVASCRIPT" class="text" name="skills"> <label for="">JAVASCRIPT</label>
+        <input type="checkbox" value="REACT" class="text" name="skills"> <label for="">REACT</label></label>  
+        <br><br>
+        <select style="padding: 7px;" name="district" id="text" class="text">
+            <option value="">--Select Your District--</option>
+            <option value="KannyaKumari">KannyaKumari</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Tiruchy">Tiruchy</option>
+        </select>
+        <br>
+        <br>
+        <button style="background-color: aqua;padding: 5px; cursor: pointer;" onclick="handle_click(event)">Submit</button>
+    </form>
+</body>
+<script>
+    function handle_click(e) {
+        e.preventDefault()
+        var formData={}
+        var result = document.querySelectorAll(".text")
+        result.forEach((data) => {
+            // console.log(data)
+            if (data.type === "checkbox" || data.type === "radio") {
+                if (data.checked == true) {
+                    formData[data.value]=data.value
+                }
+            }
+            else {  
+                formData[data.name]=data.value
+            }
+        })
+        var result=localStorage.getItem('myArr')?JSON.parse(localStorage.getItem('myArr')):[]
+
+        result.push(formData)
+        localStorage.setItem('myArr',JSON.stringify(result))
+        window.location = "nxt_page_show1.html"
+    }
+    function handle_click1() {
+        var a = document.getElementById("text1")
+        if (a.type === "password"){
+            a.type = "text"
+        }
+        else{
+            a.type = "password"
+        }
+    }
+
+
+
+</script>
+
+</html> 
+
+

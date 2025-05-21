@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="sree">
+    <button onclick="submit()">click</button>
+    <ol id="list"></ol>
+    
+</body>
+<script>
+    let arr=[]
+    function submit(){
+
+        let a=document.getElementById("sree").value
+        arr.push(a)
+        console.log(arr)
+        document.getElementById("sree").value=""
+        localStorage.setItem("names",JSON.stringify(arr))
+        let b=document.createElement("li")
+        b.innerHTML=a
+        let c=document.getElementById("list")
+        c.appendChild(b)
+
+    }
+    
+</script>
+</html>

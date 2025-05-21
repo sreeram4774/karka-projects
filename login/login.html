@@ -1,0 +1,121 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./login.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fontawesome.com/">
+
+</head>
+<body>
+<form action="./web.html"method="post" 
+style="background-image: url(https://wallpaperaccess.com/full/43868.jpg);background-repeat: no-repeat;background-position: center;height: 100vh;background-size: cover;">
+         <div class="container 1">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-xl-5"  >
+              <div class="card rounded-2 text-black"style="margin-top:74px">
+                <div class="row-s-0 ">
+                  <div class="col-lg-13 "> 
+                    <div class="card-body p-md-5 mx-md-4 "style=height:480px !imbortant>
+                      <div class="text-center">
+                        <!-- <img src="https://images.freeimages.com/clg/istock/previews/8010/80105769-user-login-or-access-authentication-icon.jpg" -->
+                        <img src="../../Downloads/6681204.png" alt=""
+                          style="width: 80px;height: 80px;margin-top: -40px" alt="logo">
+                      </div>
+                      <form>
+                        <p>Please login your account</p><br>
+                        <div class="form-outline mb-2">
+                          <label class="form-label"  for="form2Example11">Username</label>
+                        <div class="image">  
+                                <div class="d-flex flex-row align-items-center mb-3">
+                                <i><img src="../../Downloads/account_circle_black_24dp.svg" alt=""></i>
+                                <div class="form-outline flex-fill mb-0">
+                                <input type="email" id="username" class="form-control"placeholder ="Enter Your Username">
+                                </div>
+                                </div>
+                        </div>
+                        </div>
+                        <div class="form-outline mb-3">
+                          <label class="form-label" for="form2Example22">Password</label>
+                          <div class="d-flex flex-row align-items-center mb-3">
+                          <i><img src="../../Downloads/lock_black_24dp.svg" alt=""></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="password" id="password" class="form-control" placeholder="Enter Your Password"/>
+                          
+                          
+                        </div>
+                        </div>
+                        
+                        <div class="reminder ">
+                          <div class="text">
+                            <a href="###">Forgot password?</a>
+                          </div> 
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="checked" id="form1Example3" />
+                            <label class="form-check-label " for="form1Example3"> Remember me </label>
+                          </div>
+                        </div>
+                        <div class="text-center pt-1 mb-1 pb-0">
+                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-1 submit" type="button" onclick="getvalue()">Login</button>
+                        </div>
+                   
+                      <div class="d-flex align-items-center justify-content-center pb-7">
+
+                        <a href="###"><p class="text mb-64 me-4 pb-2">Don't have an account?</p></a> 
+                        <button type="button" class="btn btn-primary gradient-custom-3 ">Sign Up</button>  
+                      </div>
+                      </div>
+                        
+                      </form>
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <script>
+        function getvalue(){
+
+            var username=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            // console.log("username",username,"/npassword",password);
+            var actusername="sreeram47@gmail.com";
+            var actpassword="sree1234";
+            if (username==actusername && password==actpassword)
+            {     
+
+                alert("succesfully logged in")
+                window.location ="/home/sree/karka/Dashboard/index.html"
+            }
+            else{
+                alert("your username & password is wrong")
+            }
+          
+            // obj1["username"]=username
+            // obj1["password"]=password
+            // console.log(obj1)
+        }
+      //   var obj1={"username":"sreeram47@gmail.com","password":"sree1234","name":"sreeram.G"};
+      //   var username="sreeram47@gmail.com";
+      //   if(username==obj1.username){
+      //       console.log(obj1)}
+      //  else{
+      //   console.log(No)
+      //  }
+       
+       
+       
+        
+    
+    </script> 
+  
+  </form> 
+
+   
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style>
+        .box1{
+            /* border: 2px solid black; */
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            display: inline-block;
+            margin-left: 450px;
+            margin-top: 30px;
+            
+            
+        }
+        .box2{
+            /* border: 2px solid black; */
+            width: 120px;
+            height: 120px;
+            background-color:green;
+            display: inline-block;
+        }
+        .box3{
+            /* border: 2px solid black; */
+            width: 120px;
+            height: 120px;
+            background-color:blue;
+            display: inline-block;
+        }
+
+
+
+    </style>
+   
+</head>
+<body>
+    <div id="one"class="box1">
+
+
+    </div>
+    <div id="two" class="box2">
+
+    </div>
+    <div id="three" class="box3"> 
+
+    </div>
+    <button>Click</button>
+
+    
+</body>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#one").delay(1000).fadeOut();
+            $("#two").delay(3000).fadeOut();
+            $("#three").delay(5000).fadeOut();
+
+    })
+})
+        
+
+
+
+
+
+
+
+
+
+</script>
+</html>

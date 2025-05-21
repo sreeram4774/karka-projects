@@ -1,0 +1,335 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    
+    background-image:url("../image/bg_3.jpg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-attachment: fixed;
+}
+.active{
+    color: red;
+}
+.free{
+    color: red;
+    font-size: smaller;
+}
+.number{
+    color: white;
+    font-size: smaller;
+}
+
+ul{
+    display: flex;
+    font-size: smaller;
+        
+}
+.feature{
+    margin-left: 200px;
+}
+.section1{
+    font-size: large;
+    color: white;
+    
+    
+}
+.directone{
+    margin-left: 65px;
+    color: white !important;
+    
+}
+ .section1 li a{
+    color: white !important;
+}
+.heading{
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+.button{
+    background-color: red;
+    color: white !important;
+    margin-left: 40px;
+}
+.option{
+    padding: 10px;
+   
+
+}
+.section2{
+
+    display: inline-block;
+   
+}
+.section3{
+    display: inline-block;
+    
+}
+.submit{
+   background-color: red !important;
+   color: white !important;
+  
+}
+.center{
+    margin-left: 270px;
+    margin-top: 80px;
+}
+.background{
+    background-color: rgb(241, 239, 239);
+    
+    margin-top: 250px;
+}
+.main{
+    margin-left: 95px;
+    margin-right: 95px;
+   
+}
+.main2{
+    margin-left: 95px;
+    margin-right: 95px;
+    margin-top:20px;
+}
+.list{
+    text-align: center;
+    margin-top: 100px;
+}
+.our{
+    color: red;
+}
+.gray{
+    color: gray;
+}
+.main3{
+    margin-left: 95px;
+    margin-right: 95px;
+    margin-top: 100px;
+}
+.specialoffer{
+    background-color: rgb(243, 73, 73);
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.img{
+    display: inline-block
+}
+.special{
+    display: inline-block;
+    width: 350px;
+    margin-left: 50px;
+}
+.showbutton{
+    background-color: black !important;
+    color: white;
+    border: 0px !important;
+    padding: 15px 20px 15px 20px !important;
+    display: inline-block;
+}
+.buttonshow{
+    display: inline-block;
+    margin-left: 100px;
+}
+.main4{
+    margin-left: 95px;
+    margin-right: 95px;
+    margin-top: 100px;
+}
+.main4{
+    margin-left: 95px;
+    margin-right: 95px;
+    margin-top: 30px;
+}
+.background2{
+    background-color: white;
+    margin-top: 150px;
+}
+.eiffel{
+    margin-left: 95px;
+}
+.welcometo{
+    margin-left: 150px;
+    margin-top: 100px;
+}
+.para{
+    width: 600px;
+    color: gray;
+    margin-top: 40px;
+}
+.box1{
+   
+    background-color: rgb(218, 218, 218);
+    height: 130px;
+    width: 140px;
+    display: inline-block;
+    margin-top: 80px;
+}
+.box2{
+   
+    background-color: rgb(218, 218, 218);
+    height: 130px;
+    width: 140px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 80px;
+    margin-left: 8px;
+   
+}
+.box3{
+    
+    background-color:  rgb(218, 218, 218);
+    height: 130px;
+    width: 140px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 80px;
+    margin-left: 8px;
+}
+.box4{
+   
+    background-color: rgb(218, 218, 218);
+    height: 130px;
+    width: 140px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 80px;
+    margin-left: 8px;
+}
+
+.letsfind{
+    text-align: center;
+    margin-top: 120px;
+}
+.backgroundblack{
+    border: 2px solid black;
+    background-color: black;
+    height: 145vh;
+    width: 197.5vh;
+    margin-top: 120px;
+}
+.blog:hover{
+    color: orangered;
+}
+.backgroundblog{
+    border: 2px solid rgb(224, 223, 223);
+    background-color: rgb(224, 223, 223);
+    margin-top: 120px;
+    height: 950px;
+}
+.lastbackground{
+    
+    height: 550px;
+    background-color: rgb(18, 18, 26);
+}
+.logos{
+    margin-left: 100px;
+    margin-top: 115px;
+}
+.explorelist{
+
+    list-style: none;
+    margin-top: 30px;
+    font-size: 15.4px;
+    
+}
+.explorelist1:hover{
+    
+    color: red !important;
+}
+.explorelist1:hover .explorelist2{
+    color: red !important;
+}
+.explore{
+    margin-top: 125px;
+    
+}
+.quicklinks{
+    margin-top: 125px;
+}
+.Categories{
+    margin-top: 125px;
+}
+.haveaquestion{
+    margin-top:125px ;
+}
+.usa{
+    list-style: none;
+}
+.copy{
+    background-color: black;
+    color: gray;
+    padding: 40px;
+    text-align: center;
+}
+.colorlib{
+    color: red;
+    
+}
+
+.whitebox:hover{
+    background-color: red ;
+    color: white ;
+}
+/* 
+.icon:hover{
+   
+    color: white !important;
+} */
+.whitebox:hover .icon{
+    color: white !important;
+}
+.whitebox:hover .red{
+    color: white;
+}
+
+
+.graybox:hover{
+    background-color: red !important;
+    color: white !important;
+}
+.graybox:hover .content{
+    color: white !important;
+}
+.graybox:hover .choose{
+    color: white !important;
+}
+.graybox:hover .icon2{
+    color: white !important;
+}
+.address2{
+    display: inline-block;
+   
+}
+.email{
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.phone{
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.input2{
+    outline: 0;
+    border-width: 0 0 1px;
+    color: rgb(178, 174, 174);
+    width: 550px;
+   
+}
+.input2:focus{
+    border-color: red;
+}
+textarea{
+    height: 100px !important;
+}
+.sendmessage{
+  background-color: rgb(255, 50, 50) !important;
+  padding: 10px !important;
+   
+}
+
+
+        
+

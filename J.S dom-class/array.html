@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text1">
+    <button id="btn" onclick="submit()">Add</button>
+    <!-- <p id="text2"></p> -->
+    
+</body>
+<script>
+    var array=[]
+    function submit(){
+        let a=document.getElementById("text1").value
+        array.push(a)
+        console.log(array)
+        document.getElementById("text1").value=""
+    }
+   
+</script>
+</html>

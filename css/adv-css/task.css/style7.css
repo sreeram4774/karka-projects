@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.box{
+
+    border: 5px solid black;
+}
+header{
+    background-color:rgb(244, 200, 250) ;
+    padding: 40px 10px;
+    text-align: center;
+
+}
+nav{
+    background-color:rgb(130, 9, 141) ;
+    padding: 20px 10px;
+    text-align: center;
+
+}
+section{
+    background-color:rgb(242, 247, 248) ;
+    padding: 150px 10px;
+    text-align: center;
+
+}
+footer{ 
+    background-color:rgb(5, 182, 241) ;
+    padding: 40px 10px;
+    text-align: center; 
+
+ }

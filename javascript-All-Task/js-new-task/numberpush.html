@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="submit()">Click</button>
+    
+</body>
+<script>
+    var a=[1,2,3,4,5,2]
+    var b=2
+    var c=[]
+    var d=[]
+    function submit(){
+        for(let i=0;i<a.length;i++){
+            if(a[i]!=b){
+                c.push(a[i])
+                // d.push(a[i])
+            }
+            // else if(a[i]==b){
+            //     d.push("*")
+            // }
+        }
+        console.log(c)
+        // console.log(d)
+
+
+        const d=a.length-c.length
+        for(let i=0;i<d;i++){
+            c.push("*")
+        }
+        console.log(c)
+    }
+  
+
+</script>
+</html>

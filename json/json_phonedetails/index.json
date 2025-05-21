@@ -1,0 +1,36 @@
+{
+    "product":[
+        {   "image":"https://i.gadgets360cdn.com/products/large/samsung-galaxy-a54-5g-db-623x800-1680082358.jpg?downsize=*:360",
+            "name":"samsung",
+            "price":"Rs.20,000",
+            "description":"Samsung, South Korean company that is one of the world's largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.",
+            "button":"Add to Cart"
+
+        },
+        {   "image":"https://www.maplestore.in/cdn/shop/files/iPhone_15_Pro_Blue_Titanium_PDP_Image_Position-1__en-IN_b566cedb-ec09-4afd-9899-b726c06d3add_1445x.jpg?v=1701825864",
+        "name":"i phone",
+        "price":"Rs.70,000",
+        "description":"i phone, South Korean company that is one of the world's largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.",
+        "button":"Add to Cart"
+
+
+    },
+    {   "image":"https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1703155786129/235fc4fbe0277e6fc5f25fc84fabdd7f.png",
+    "name":"vivo",
+    "price":"Rs.40,000",
+    "description":"Vivo, South Korean company that is one of the world's largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.",
+    "button":"Add to Cart"
+
+
+},
+{   "image":"https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/reno11-5g-en/listpage/reno11-427-600-green.png",
+"name":"oppo",
+"price":"Rs.30,000",
+"description":"oppo, South Korean company that is one of the world's largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.",
+"button":"Add to Cart"
+
+
+}
+
+    ]
+}

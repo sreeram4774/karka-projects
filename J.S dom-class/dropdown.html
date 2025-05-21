@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="Country" id="country" onchange="submit()">
+        <option value="India">India</option>
+        <option value="America">America</option>
+        <option value="Singapore">Singapore</option>
+        <option value="England">England</option>
+    </select>
+    <button onclick="submit()">Click</button>
+    <div id="output">
+    </div>
+    
+</body>
+<script>
+    let country_date = {
+        India: {
+            Country: "India",
+            Population: "140.76 crores",
+            Capital: "Delhi",
+            Currency: "INR",
+        },
+        America: {
+            Country: "America",
+            Population: "33.19 crores",
+            Capital: "Washington",
+            Currency: "U.S Dollar",
+        },
+        Singapore: {
+            Country: "Singapore",
+            Population: "54.5 lakhs",
+            Capital: "Singapore City",
+            Currency: "Singapore Dollar",
+        },
+        England: {
+            Country: "England",
+            Population: "5.6 lakhs",
+            Capital: "London",
+            Currency: "Pound Sterling",
+        }
+    }
+    function submit(){
+        let selectedCountry = document.getElementById("country").value;
+        let country = country_date[selectedCountry];
+        let outputDiv = document.getElementById("output");
+        // Clear the previous content
+        outputDiv.innerHTML = "";
+        // Create and append the new content
+        let content = `
+            <p><strong>Country:</strong> ${country.Country}</p>
+            <p><strong>Population:</strong> ${country.Population}</p>
+            <p><strong>Capital:</strong> ${country.Capital}</p>
+            <p><strong>Currency:</strong> ${country.Currency}</p>
+        `;
+        outputDiv.innerHTML = content;
+    }
+</script>
+</html>

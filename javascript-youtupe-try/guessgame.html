@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess Number Game</h1>
+    <input type="text" id="one">
+    <button onclick="submit()">Click</button>
+    <p id="two">Score:10</p>
+<script>
+    var a=document.getElementById("one")
+    var b=document.getElementById("two")
+    var random=Math.floor(Math.random()*10)+1
+    var totalscore=10
+    function submit(){
+        var number=a.value
+        if(random==number){
+            alert("you won")
+            
+        }
+        else{
+            totalscore=totalscore-1
+            b.innerHTML="Score:"+totalscore
+            alert("you lose")
+        }
+    }
+
+</script>
+    
+
+
+    
+</body>
+</html>

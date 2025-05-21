@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table td th{
+       border: 2px solid black;
+    }
+</style>
+<body>
+    <h1>STUDENT FORM</h1>
+            <h4>Name :  <input class="name" id="name" type="text"></h4>
+            <h4>Age :  <input class="age" id="name" type="text"></h4>
+            <h4>Gender : <input  id="" type="radio" name="Gender" value="Male"><label for="Male">Male</label><input id="" type="radio" name="Gender" value="Female"><label for="Female">Female</label>
+            <h4>Course :  <select name="Course" id="name">
+                            <option value="javascript">Javascript</option>
+                            <option value="Python">Python</option> 
+                            <option value="Html">Html</option>
+                            <option value="Css">Css</option>
+                          </select></h4>
+            <h4>E-mail :  <input class="email" id="name" type="email"></h4>
+            <button onclick="submit()" type="button" style="width: 7%; background-color: aqua; padding: 4px; ">Save</button><br>
+
+                          
+          <table style="width: 50%; margin-top: 50px;">
+          <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="text1" >
+            <tr>
+            </tr>
+          </tbody>
+
+       
+          </table>
+          
+</body>
+<script>
+    function submit(){
+
+        var name=document.getElementsByClassName("name")
+        var age=document.getElementsByClassName("age")
+        var gender=document.querySelector('input[name="Gender"]:checked').value;
+        var course=document.getElementsByClassName("course")
+        var email=document.getElementsByClassName("email")
+
+      
+    }
+    
+  
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin-top: 50px;
+    }
+    table, th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+<body>
+    <h1>STUDENT FORM</h1>
+    <h4>Name :  <input class="name" type="text"></h4>
+    <h4>Age :  <input class="age" type="text"></h4>
+    <h4>Gender : 
+        <input type="radio" name="Gender" value="Male"><label for="Male">Male</label>
+        <input type="radio" name="Gender" value="Female"><label for="Female">Female</label>
+    </h4>
+    <h4>Course :  
+        <select class="course">
+            <option value="Javascript">Javascript</option>
+            <option value="Python">Python</option> 
+            <option value="Html">Html</option>
+            <option value="Css">Css</option>
+        </select>
+    </h4>
+    <h4>E-mail :  <input class="email" type="email"></h4>
+    <button onclick="submit()" type="button" style="width: 7%; background-color: aqua; padding: 4px;">Save</button><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="text1">
+
+        </tbody>
+    </table>
+
+    <script>
+        function submit() {
+            var name = document.querySelector('.name').value;
+            var age = document.querySelector('.age').value;
+            var gender = document.querySelector('input[name="Gender"]:checked');
+            var course = document.querySelector('.course').value;
+            var email = document.querySelector('.email').value;
+            
+
+            // Check if gender is selected
+            if (gender) {
+                gender = gender.value;
+            } else {
+                return alert("Please select gender");
+                // return; 
+            }
+
+            var tableBody = document.getElementById('text1');
+            var newRow = tableBody.insertRow();
+
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+            var cell6 = newRow.insertCell(5);
+
+            cell1.innerHTML = name;
+            cell2.innerHTML = age;
+            cell3.innerHTML = gender;
+            cell4.innerHTML = course;
+            cell5.innerHTML = email;
+            cell6.innerHTML="<button onclick='item(event)'>Delete</button>"
+
+            document.querySelector('.name').value =""
+            document.querySelector('.age').value ="" 
+            document.querySelector('input[name="Gender"]:checked').checked=false;
+            document.querySelector('.course').value =""
+            document.querySelector('.email').value =""
+
+        }
+        function item(event){
+            event.target.parentElement.parentElement.remove()
+        }
+
+        
+    </script>
+</body>
+</html>

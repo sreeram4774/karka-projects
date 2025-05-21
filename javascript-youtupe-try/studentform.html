@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table td th{
+       border: 2px solid black;
+    }
+</style>
+<body>
+    <h1>STUDENT FORM</h1>
+            <h4>Name :  <input id="name" type="text"></h4>
+            <h4>Age :  <input id="name" type="text"></h4>
+            <h4>Gender : <input id="" type="radio" name="Gender" value="Male"><label for="Male">Male</label><input id="" type="radio" name="Gender" value="Female"><label for="Female">Female</label>
+            <h4>Course :  <select name="Course" id="name">
+                            <option value="javascript">Javascript</option>
+                            <option value="Python">Python</option> 
+                            <option value="Html">Html</option>
+                            <option value="Css">Css</option>
+                          </select></h4>
+            <h4>E-mail :  <input id="name" type="email"></h4>
+            <button onclick="submit()" type="button" style="width: 7%; background-color: aqua; padding: 4px; ">Save</button><br>
+
+                          
+          <table style="width: 50%; margin-top: 50px;">
+          <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="text1" >
+            <tr>
+            </tr>
+          </tbody>
+
+       
+          </table>
+          
+</body>
+<script>
+    
+    function submit(){
+        var a=document.querySelectorAll("#name")
+        a.forEach(function(input){
+            var b=document.getElementById("text1")
+           var c=document.createElement("td")
+           c.innerHTML=input.value
+           b.append(c)
+           input.value=""
+        
+        })
+   
+      
+
+    }
+
+</script>
+</html>

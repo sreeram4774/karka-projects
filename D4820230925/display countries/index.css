@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* .mainbox{
+    border: 2px solid black;
+} */
+.container{
+    border: 3px solid black;
+    background-color: rgba(128, 128, 128, 0.589);
+    /* background: none; */
+    /* border: none; */
+    /* background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fsunset-sandy-beach-sparkling-waves-ultra-hd-4k-resolution-wallpapers-3840%25C3%25972160-wallpaper-bnvxk&psig=AOvVaw120IfsNxyRMwTrydbcmhIL&ust=1695789719837000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCPC83pS7x4EDFQAAAAAdAAAAABAw"); */
+    /* background-image: url("../../../Downloads/blackboard-inscribed-with-scientific-formulas-calculations_1150-19413.avif"); */
+    /* padding: 20px; */
+    /* margin: 50px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 39px;
+    /* /* padding-top: 20px;  */
+    margin-top: 50px;
+    border-radius: 30px;
+
+}
+.row{
+    /* text-align: center; */
+     gap: 20px;
+    
+}
+.col{
+    border: 2px solid black;
+    padding:85px;
+    padding-bottom: 200px;
+    background-color: rgba(0, 255, 255, 0.822);
+    border-radius: 20px;
+    position: relative;
+    
+    
+
+}
+.dropdown{
+    position: absolute;
+    top:15px;
+}
+/* .dropdown{
+    margin-left: 20px;
+} */

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" class="number1" id="">
+    <input type="numner" class="number2" id="">
+    <input type="numner" class="total" id="">
+    <button class="btn1">+</button>
+    <button class="btn2">-</button>
+    <button class="btn3">*</button>
+    <button class="btn4">/</button>
+
+
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    
+    $(document).ready(function(){
+        $(".btn1").click(function(){
+            var num1=parseInt($(".number1").val())
+            var num2=parseInt($(".number2").val())
+            $(".total").val(num1+num2)
+
+        })
+        $(".btn2").click(function(){
+            var num1=parseInt($(".number1").val())
+            var num2=parseInt($(".number2").val())
+            $(".total").val(num1-num2)
+
+        })
+        $(".btn3").click(function(){
+            var num1=parseInt($(".number1").val())
+            var num2=parseInt($(".number2").val())
+            $(".total").val(num1*num2)
+
+        })
+        $(".btn4").click(function(){
+            var num1=parseInt($(".number1").val())
+            var num2=parseInt($(".number2").val())
+            $(".total").val(num1/num2)
+
+        })
+    })
+</script>
+</html>

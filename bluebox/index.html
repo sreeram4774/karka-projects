@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 100%;
+        }
+
+        .box1 {
+            width: 100%;
+            background-color: blue;
+            height: 200px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box2 {
+            background-color: red;
+            height: 100px;
+            position: absolute;
+            width: 25%;
+            height: 190px;
+            top: 140px;
+        }
+        .first{
+            left: 50px;
+        }
+        .second{
+            left: 35%;
+        }  
+        .third{
+           right: 50px;
+        }
+     
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+            <div class="box2 first"></div>
+            <div class="box2 second"></div>
+            <div class="box2 third"></div>
+        </div>
+    </div>
+</body>
+</html>

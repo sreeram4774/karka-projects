@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+
+</head>
+<body>
+   <div>
+    <h1>This Is Fade in</h1>
+    <h2>This Is Fade Out</h2>
+    <p>This Program is Fade in  And Fade Out  Program</p>
+   </div>
+   <button id="btn1" >Fade Out</button>
+   <button id="btn2">Fade In</button>
+
+   
+
+</body>
+<Script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("div").fadeOut(3000);
+        })
+        $("#btn2").click(function(){
+            $("div").fadeIn(3000);
+        })
+       
+    })
+</Script>
+</html>

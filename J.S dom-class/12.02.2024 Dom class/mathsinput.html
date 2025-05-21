@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="submit()">Click</button>
+    <input id="text1" type="text">
+    <input id="text2" type="text">
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <p id="para4"></p>
+
+    
+</body>
+<script>
+    function submit(){
+        var a=Number(document.getElementById("text1").value);
+        var b=Number(document.getElementById("text2").value);
+        var c=document.getElementById("para1");
+        var d=document.getElementById("para2");
+        var e=document.getElementById("para3");
+        var f=document.getElementById("para4");
+        c.innerHTML=a+b
+        d.innerHTML=a-b
+        e.innerHTML=a*b
+        f.innerHTML=a/b
+    }
+</script>
+</html>

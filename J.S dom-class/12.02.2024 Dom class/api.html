@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    async function fetchAllUsers() {
+    const url = 'http://192.168.0.169:7001/api/users/allUsers'; // Adjust URL as needed
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data); // Or handle the data as needed
+    } catch (error) {
+        console.error('Error fetching the users:', error);
+    }
+}
+
+// Call the function to fetch the users
+fetchAllUsers();
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="one" placeholder="text1">
+    <input type="text" id="two"placeholder="text2">
+    <p id="text3"></p>
+    <button onclick="submit()">click</button>
+
+    
+</body>
+<script>
+    function submit(){
+        var a=document.getElementById("one")
+        var b=document.getElementById("two")  
+        text3.textContent=a.value+b.value
+        
+    } 
+</script>
+</html>

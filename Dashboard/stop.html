@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        *{
+           margin: 0px;
+           padding: 0px;
+        }
+        .box{
+            border: 3px solid black;
+            /* height: 100vh; */
+        }
+        .container{
+            display: inline-block;
+        }
+        header{
+            border: 2px solid black;
+            padding: 0px 15px 0px;
+            height:100px;
+            background-color: rgba(250, 235, 215, 0.863);
+        }
+        img{
+
+            margin-top: 15px;
+            margin-left: 20px;
+
+
+        }
+        aside{
+            /* margin-left: 10px; */
+            /* margin-top: 10px; */
+            /* width: 100px; */
+            /* height: 480px; */
+            /* display: inline-block; */
+            /* display: flex; */
+            position: absolute;
+            z-index: 1;
+        }
+        .container2{
+            display: inline-block;
+            /* margin-left: 225px; */
+            vertical-align: middle;
+            margin-left: 95px;
+            margin-bottom: 27px;
+        }
+
+         h1{
+            display: inline-block;
+            /* margin-left: 610px; */
+            /* margin-bottom: 50px; */
+            margin-top: 30px;
+
+
+        }
+        .container3{
+            /* display: inline-block; */
+            /* margin-left: 77px; */
+            border: 2px solid white;
+            width: 135px;
+            height: 460px;
+            /* background-color: rgba(0, 255, 255, 0.288); */
+            /* background-color: rgba(255, 255, 255, 0.842); */
+            background-color: black;
+            color: white;
+            float: left;
+
+        }
+      .container3 i{
+        margin-left: 15px;
+        margin-top: 10px;
+
+       }
+        h4{
+            display: inline-block;
+            color: black;
+            margin-left: 5px;
+            color: white;
+        }
+
+        section{
+            /* /* display: inline-block; */
+            display: flex;
+            justify-content: center;
+            /* background-color: rgba(128, 128, 128, 0.219); */
+            background-image: url(../../../Documents/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg);
+            /* background-image: url(../../../Documents/pngtree-neon-double-color-futuristic-frame-colorful-background-picture-image_1178693.jpg); */
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: relative;
+            /* padding-bottom: 10px; */
+            padding-bottom: 200px;
+
+
+
+        }
+        h2{
+            margin-top: 7px;
+            margin-left: 120px;
+            font-weight: 800;
+            font-size: xx-large;
+            /* text-decoration: underline; */
+            /* color: white; */
+            border: 1px solid black;
+            background-color: white;
+            padding: 5px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        
+
+       .form .name{
+        display: flex;
+        font-size: larger;
+        font-weight: 700;
+        
+        /* justify-content: center; */
+        /* align-items: center; */
+       }
+       
+        label .name{
+            display: inline-block;
+        }
+        .cont{
+           /* background-color: rgba(0, 0, 0, 0.685); */
+           background-color: white;
+           color: black;
+           border: 2px solid;
+           border-color: black;
+           padding: 3px;
+            
+        }
+       input{
+              padding: 6px;
+              width: 300px;
+              
+               
+       }
+       input:hover{
+             transform: scale(1.1);
+             /* color:lightblue; */
+             border-color:red;
+            
+       }
+      .btn1{
+            
+             display: inline-block;
+             margin-left: 900px;
+             padding: 5px;
+             width: 70px;
+            border-radius: 6px;
+            background-color: rgba(21, 234, 241, 0.979);
+            font-weight: bold;
+            font-size: smaller;
+
+
+            
+             
+      }
+      .btn2{
+            margin-left: 35px;
+            padding: 3px;
+            width: 70px;
+            border-radius: 6px;
+            background-color: rgba(21, 234, 241, 0.979);
+            font-weight: bolder;
+            font-size: medium;
+
+
+
+
+      }
+      p{
+        
+    justify-content: center;
+    display: flex;
+    border: 3px solid rgb(250, 248, 248);
+    /* justify-content: space-between; */
+    color: white;
+    font-size: 55px;
+    margin-top: 150px;
+    padding: 16px;
+    background-color: rgba(5, 5, 5, 0.979);
+    /* background-color: rgba(255, 255, 255, 0.596); */
+    border-radius: 30px;
+   }
+   
+.function {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    /* border: 2px solid black; */
+    /* justify-content: space-around; */
+    gap: 50px;
+    
+}
+.function1{
+    border-radius: 10px;
+    padding: 6px;
+    width: 70px;
+    background-color:rgba(39, 243, 39, 0.979);
+    font-size: large;
+    border: 5px solid;
+    border-color: white;
+    /* border-color: black; */
+    
+}
+.function2{
+    border-radius: 10px;
+    padding: 6px;
+    width: 70px;
+    background-color:rgba(255, 0, 0, 0.973);
+    font-size: large;
+    border: 5px solid;
+    border-color: white;
+
+
+
+
+}
+.function3{
+    border-radius: 10px;
+    padding: 6px;
+    width: 73px;
+    background-color:yellow;
+    font-size: large;
+    border-color: white;
+    border: 5px solid white;
+
+
+
+
+}
+form h2{
+    margin-right: 10px;
+}
+.head{
+    margin-right: 130px;
+}
+.fa-lg {
+    font-size: 1.15em;
+    line-height: 0.05em;
+    vertical-align: -0.075em;
+    /* width: 18px; */
+    height: 0px;
+    margin-right: 5px;
+
+}
+
+
+   
+
+   
+
+   
+      
+    </style>
+</head>
+<body>
+<div class="box">
+    <header>
+        <div class="container">
+            <img src="../images.jpeg"width="65%"height="" alt="">
+        </div>
+
+        <div class="container2">
+            <h1>Dash Board</h1>
+       
+        
+        <button onclick="clic()" class="btn1">Sign Out</button>
+        <!-- <button onclick="cli()"  class="btn2"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 fa-lg" ></i>Exit</button> -->
+        
+
+
+       </div>
+
+
+    </header>
+    
+
+
+     <aside>
+        <button class="cont"><i class="fa-solid fa-bars fa-xl "></i></button>
+
+         <div class="container3">
+            <i class="fa-solid fa-house"></i><a target="_blank" href="./index.html"><h4>Home</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-rectangle-list"></i><a  target="_blank"href="./forms.html"><h4>Forms</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-stopwatch"></i> <a href="./stop.html"><h4>Stopwatch</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-calculator"></i> <a target="_blank" href="./calculator.html"><h4>Calculator</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-envelope"></i><a href="###"><h4>Email</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-table"></i><a href="###"><h4>Tables</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-phone"></i><a href="###"> <h4>Contact</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-comment"></i><a href="###"><h4>Chat</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-user-group"></i><a href="###"><h4>Group</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-user"></i><a href="###"><h4>User</h4></a>            
+
+
+
+        </div> 
+
+    </aside>
+<section>
+    
+        <div class="form">
+            <div class="head">
+                
+               <h2>StopWatch</h2>
+            </div>
+
+            
+                <p id="display" class="number">00:00:00</p>
+                <div class="function">
+                <button class="function1" id="start">Start</button>
+                <button class="function2" id="stop">Stop</button>
+                <button class="function3" id="reset">Reset</button>
+             
+           
+        </div>
+            
+
+
+
+        
+           
+        </div>
+    
+
+
+
+    </section>
+
+
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".cont").click(function(){
+        $(".container3").animate({
+            width:"toggle"
+        })
+        })
+    
+        // Variables to track the stopwatch state
+        let isRunning = false;
+        let startTime = 0;
+        let interval;
+
+        // Function to format time as HH:MM:SS
+        function formatTime(milliseconds) {
+            const date = new Date(milliseconds);
+            return date.toISOString().substr(11, 8);
+        }
+
+        // Update the stopwatch display
+        function updateDisplay() {
+            const currentTime = isRunning ? Date.now() - startTime : startTime;
+            $('#display').text(formatTime(currentTime));
+        }
+
+        // Event handler for the Start button
+        $('#start').click(function() {
+            if (!isRunning) {
+                isRunning = true;
+                startTime = Date.now() - startTime;
+                interval = setInterval(updateDisplay, 1000);
+            }
+        });
+
+        // Event handler for the Stop button
+        $('#stop').click(function() {
+            if (isRunning) {
+                isRunning = false;
+                clearInterval(interval);
+            }
+        });
+
+        // Event handler for the Reset button
+        $('#reset').click(function() {
+            isRunning = false;
+            startTime = 0;
+            clearInterval(interval);
+            updateDisplay();
+        });
+
+        // Initial display
+        updateDisplay();
+
+
+    })
+    function clic(){
+            window.location.href='/home/sree/karka/login/login.html'
+        }
+    function cli(){
+        window.location.href="https://www.google.com/"
+    }
+     
+
+
+
+</script>
+</html>

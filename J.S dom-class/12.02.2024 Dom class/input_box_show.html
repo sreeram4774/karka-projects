@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="text">
+    <p id="show"></p>
+    <button onclick="handle_click()">Submit</button>
+    
+</body>
+<script>
+    function handle_click(){
+        var getvalue=document.getElementById("text").value
+        localStorage.setItem("inputValue", getvalue);
+        window.location="input_box_show1.html"
+
+    }
+
+</script>
+</html>

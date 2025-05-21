@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="handle()">Click</button>  -->
+    <table id="table1" border="3">
+
+    </table>  
+</body>
+<script>
+    function handle(){
+        var output=document.getElementById("table1")
+        output.style.width="40%"
+        var list=document.createElement("tr")
+        list.style.backgroundColor="blue"
+        list.style.color="white"
+        output.style.textAlign="center"
+        var list1=document.createElement("th")
+        var list2=document.createElement("th")
+        var list3=document.createElement("th")
+        list1.innerHTML="ID"
+        list2.innerHTML="Name"
+        list3.innerHTML="Age"
+        list.appendChild(list1)
+        list.appendChild(list2)
+        list.appendChild(list3)
+        output.appendChild(list)
+
+
+        var output=document.getElementById("table1")
+        var list=document.createElement("tr")
+        list.style.backgroundColor="red"
+        list.style.color="black"
+        var list1=document.createElement("td")
+        var list2=document.createElement("td")
+        var list3=document.createElement("td")
+        list1.innerHTML="1"
+        list2.innerHTML="Kumar"
+        list3.innerHTML="12"
+        list.appendChild(list1)
+        list.appendChild(list2)
+        list.appendChild(list3)
+        output.appendChild(list)
+
+
+
+        var output=document.getElementById("table1")
+        var list=document.createElement("tr")
+        list.style.backgroundColor="yellow"
+        list.style.color="black"
+        var list1=document.createElement("td")
+        var list2=document.createElement("td")
+        var list3=document.createElement("td")
+        list1.innerHTML="2"
+        list2.innerHTML="Ajay"
+        list3.innerHTML="13"
+        list.appendChild(list1)
+        list.appendChild(list2)
+        list.appendChild(list3)
+        output.appendChild(list)
+
+
+
+
+        var output=document.getElementById("table1")
+        var list=document.createElement("tr")
+        list.style.backgroundColor="green"
+        list.style.color="white"
+        var list1=document.createElement("td")
+        var list2=document.createElement("td")
+        var list3=document.createElement("td")
+        list1.innerHTML="3"
+        list2.innerHTML="Sajin"
+        list3.innerHTML="25"
+        list.appendChild(list1)
+        list.appendChild(list2)
+        list.appendChild(list3)
+        output.appendChild(list)
+
+
+
+
+
+
+
+    }
+    handle()
+
+    
+
+
+</script>
+</html>

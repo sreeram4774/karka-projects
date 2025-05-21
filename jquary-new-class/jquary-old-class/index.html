@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- <p id="text1"class="text">hello</p>
+    <p id="text1"class="text">welcome</p>
+    <h1 class="p">hiiiiii</h1>
+     <button onclick="give()">submit</button> -->
+    <!-- <button>click</button> -->
+    <!-- <p>sree</p> -->
+    <!-- <p>ram</p>  -->
+    <!-- <table>
+    <tr>
+        <td>sree</td>
+    </tr>
+    <tr>
+        <td>ram</td>
+    </tr>
+    <tr>
+        <td>123456</td>
+    </tr>
+</table>
+ -->
+  </body>
+  <script>
+    document.getElementById("text1").innerText = "hi";
+    document.getElementById("text1").innerText = "hi";
+    document.getElementsByClassName("text")[1].innerText = "how are you";
+    $("p").text("bad");
+    function give() {
+      $(".text").toggle();
+    }
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("p").hide();
+      }),
+        $("button").click(function () {
+          $(".p").hide();
+        });
+      $("button").click(function () {
+        $("*").hide();
+      });
+      $("p").click(function () {
+        $(this).hide();
+      });
+
+      $("button").click(function () {
+        $(".text").fadeOut(1000);
+      });
+      $("button").click(function () {
+        $("p:first").hide();
+      });
+
+      $("tr:odd").css("background", "red");
+      $("p").dblclick(function () {
+        $(this).hide();
+      });
+      $("p").mouseenter(function () {
+        alert("hiii");
+      });
+      $("p").mouseleave(function () {
+        alert("hiii");
+      });
+    });
+  </script>
+</html>

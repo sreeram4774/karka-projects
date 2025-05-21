@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    height: 50px !important;
+    width: 10%;
+    background-color: red !important;
+    /* border: 1px solid red; */
+    margin: auto;
+
+}
+.collapse{
+    margin-left: 40%;
+}
+.header{
+    /* padding: 0px 100px; */
+    background-color: blue;
+
+}
+/* .navbar{
+    padding: 30px 100px;
+} */
+
+
+@media only  screen and (max-width:769px){
+    .collapse{
+        margin: 0;
+    }
+    .btn2{
+        margin-left: 0;
+    }
+    .logo{
+        width: 10% !important ;
+    }
+    /* .navbar{
+        padding: 30px 90px !important;
+    }
+     */
+} 
+@media only  screen and (max-width:426px){
+    .logo{
+      width: 50px !important ;
+    }
+    .btn_group{
+       flex-direction: column;
+       width: 200px !important;
+    }
+    /* .firstDiv{
+        padding: 20px 40px !important;
+    } */
+    .form{
+        padding: 30px 20px !important;
+    }
+    /* .navbar{
+        padding: 30px 30px !important;
+    } */
+   
+} 
+
+.btn_group{
+    /* border: 1px solid black; */
+    width: 400px;
+    gap: 10px;
+}
+/* .firstDiv{
+    padding: 20px 100px;
+    margin-top: 30px ; */
+    /* background-color: red; */
+    /* border: 1px solid red; */
+/* } */
+.form{
+    padding: 30px 60px;
+}
+input{
+    border-radius: 30px !important;
+}
+.text_area{
+    height: 100px;
+}
+.btn2{
+    width: 40%;
+}
+.img{
+    width: 100%;
+    height: 500px;
+    background-color: rgb(201, 201, 201);
+    
+}
+.slider{
+    /* border: 1px solid red; */
+}
+.card{
+    /* width: 27.3rem; */
+    /* width: 32.3%; */
+    /* height: 200px; */
+}

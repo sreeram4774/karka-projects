@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+           
+        }
+        /* .outerbox{
+            border: 2px solid black;
+            background-color: aqua;
+        
+        
+        } */
+        body{
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            width:100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            background-size: cover;
+            background-image: url(https://e0.pxfuel.com/wallpapers/845/796/desktop-wallpaper-awesome-amazing-civil-engineering-amazing.jpg);
+
+        
+        
+        }
+        form{
+            width: 60vh;
+            height: 25rem;
+            display: flex;
+            flex-direction: column;
+            background-color:rgba(245, 245, 245, 0.76);
+            align-items: center;
+            margin-top: 150px;
+
+        }
+        form h1{
+            padding:20px 10px;
+            
+        }
+            
+        
+
+        .box button {
+            width: 47%;
+            border-radius:5px;
+            border: none;
+            background-color: yellow;
+            
+
+        }
+        .google{
+            display: inline-block;
+            border: none;
+            
+            
+            
+        
+        }
+        .facebook {
+            display: inline-block;
+            margin-left: 120px;
+            border:none;
+        
+            
+        }
+
+        .box2{
+            /* display: block; */
+            margin-top: 25px;
+    
+        }
+        
+        
+      
+        .box3{
+            width: 200%;
+            height: 100%;
+            display: flex;
+            border: 5px;
+            justify-content: center;
+        }     
+         
+        .box button{
+            text-align: center;
+            padding: 8px;
+            
+         }   
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="outerbox">
+        <form>
+            <h1>Log in with</h1>
+            <div class="lable">
+                <button class="google">
+                    <!-- <span><img src="./images.png" width="50px"></span> -->
+                </button>
+                <button class="facebook">
+                    <!-- <span><img src="./download.png" width="50px"></span> -->
+                </button>
+            <div class="box2"></div>         
+                <label for="text">Username</label><br>
+                <input type="text" placeholder="Enter Your User name" id="username"><br>
+                <br>
+                <label for="nnn">password</label><br>
+                <input type="password" placeholder="Enter your password" id="password"><br><br>  
+                <a href="***">Forget Password?</a><br><br> 
+               
+            <div class="box">
+                <button type="button" onclick="getvalue()">login</button><br><br>
+            </div> 
+            </div>
+            </div>
+        </form>  
+    </div>
+        <script>
+            function getvalue(){
+                var username=document.getElementById("username").value;
+                var password=document.getElementById("password").value;
+                console.log("username",username,"/npassword",password);
+                var actusername="sreeram47";
+                var actpassword="1234";
+                if (username==actusername && password==actpassword)
+                {     
+
+                    alert("succesfully logged in")
+                }
+                else{
+                    alert("your username & password is wrong")
+                }
+                Obj["username"]=username
+                obj["password"]=password
+                console.log(obj)
+            }
+            var obj1={"username":"sreeram47@gmail.com","password":"sree1234","name":"sreeram.G"}
+            var username="sreeram47@gmail.com";
+            if(username==obj1.username){
+                console.log(obj1.name)}
+           else{
+            consel.log(No)
+           }     
+            
+        
+        </script>     
+</body>
+</html>     

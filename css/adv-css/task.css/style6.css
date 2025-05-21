@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+header{
+    background-color: orange;
+    text-align: center;
+    padding: 22px;
+
+}
+
+section{
+    width: 100%;
+
+}
+aside{
+    background-color:darkblue;
+    text-align: center;
+    display: inline-block;
+    width:25%;
+    padding: 27px 22px;
+
+}
+.box{
+    background-color:green;
+    text-align: center;
+    display: inline-block;
+    width: 66%;
+    padding: 26px 34px;
+
+}
+footer{
+    background-color: brown;
+    text-align: center;
+    padding: 22px;
+
+}

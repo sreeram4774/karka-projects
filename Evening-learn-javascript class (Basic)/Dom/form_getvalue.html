@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="submit" method="post">
+        <p style="margin-bottom: 30px;">Name : <input class="val" type="name" id="one"></p>
+        <p style="margin-bottom: 30px;">Date Of Birth : <input class="val" type="date"></p>
+        <p style="margin-bottom: 30px;">Password : <input class="val" type="password"></p>
+        <div class="checkbox" style="display: flex;justify-content: space-between;width: 17%;">
+            <p>Skills : <input class="val" type="checkbox"> HTML</p>
+            <p><input class="val" type="checkbox"> CSS</p>
+            <p><input class="val" type="checkbox"> JS</p>
+            <p><input class="val" type="checkbox"> NODE</p>
+        </div>
+        <div class="checkbox" style="display: flex;justify-content: space-between;width: 15%;">
+            <p>Gender : <input class="val" type="radio"> Male</p>
+            <p><input class="val" type="radio"> Female</p>
+            <p><input class="val" type="radio"> Others</p>
+        </div>
+        <div class="option">
+            <p>Select The City :
+            <select name="City" id="City" class="val">
+                <option value="Chennai">Chennai</option>
+                <option value="Nagercoil">Nagercoil</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Salem">Salem</option>
+                <option value="Tiruchy">Tiruchy</option>
+            </select>
+            </p>
+        </div>
+        <div class="button">
+            <button style="padding: 4px;background-color: aqua;width: 80px;" onclick="handle_click(event)">Submit</button>
+        </div>
+    </form>  
+</body>
+<script>
+
+    function handle_click(event){
+        event.preventDefault();
+        let name=document.getElementsByClassName("val")
+        let radio=document.getElementsByTagName("radio")
+        let result=[]
+        for(let i=0;i<name.length;i++){
+            result.push(name[i].value)
+        }
+        for(let j=0;j<radio.length;i++){
+            if(radio==true){
+                result.push(radio)
+            }
+        }
+        console.log(result)
+
+       
+    }
+
+   
+</script>
+</html>

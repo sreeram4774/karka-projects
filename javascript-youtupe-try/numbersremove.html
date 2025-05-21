@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>One<button onclick="submit(event)">remove</button></h1>
+    <h1>Two<button onclick="submit(event)">remove</button></h1>
+    <h1>Three<button onclick="submit(event)">remove</button></h1>
+    <h1>Four<button onclick="submit(event)">remove</button></h1>
+    <h1>Five<button onclick="submit(event)">remove</button></h1>
+    <h1>Six<button onclick="submit(event)">remove</button></h1>
+    <h1>Seven<button onclick="submit(event)">remove</button></h1>
+    <h1>Eight<button onclick="submit(event)">remove</button></h1>
+    <h1>Nine<button onclick="submit(event)">remove</button></h1>
+    <h1>Ten<button onclick="submit(event)">remove</button></h1>  
+</body>
+<script>
+    function submit(event){
+        event.target.parentElement.remove()
+    }
+</script>
+</html>

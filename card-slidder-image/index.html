@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slider</title>
+<style>
+  .slider-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    transform: translateX(-100%);
+  }
+
+  .slider-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .text-container {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  /* Optional styling for images */
+  .slider-item img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider-wrapper">
+    <div class="slider-item">
+      <img src="../../Downloads/1-2301141PH5557.jpg" alt="Image 1">
+      <div class="text-container">Engagement</div>
+    </div>
+    <div class="slider-item">
+      <img src="../../Downloads/102479967-calculator-paper-1440.jpg" alt="Image 2">
+      <div class="text-container">Wedding</div>
+    </div>
+    <div class="slider-item">
+      <img src="../../Downloads/1296237-h-5662015305e4.webp" alt="Image 3">
+      <div class="text-container">Baby Shower</div>
+    </div>
+    <div class="slider-item">
+      <img src="../../Downloads/178831-200.png" alt="Image 4">
+      <div class="text-container">Birthday</div>
+    </div>
+    <div class="slider-item">
+      <img src="../../Downloads/wibits_dwd.png" alt="Image 5">
+      <div class="text-container">Private Parties</div>
+    </div>
+    <div class="slider-item">
+      <img src="../../Downloads/295128.png" alt="Image 6">
+      <div class="text-container">Corporate Events</div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const wrapper = document.querySelector('.slider-wrapper');
+    const slides = document.querySelectorAll('.slider-item');
+    let counter = 0;
+    const slideWidth = slides[0].clientWidth;
+  
+    function moveSlide() {
+      wrapper.style.transform = `translateX(-${slideWidth * counter}px)`;
+    }
+  
+    // Function to handle next slide
+    function nextSlide() {
+      counter++;
+      if (counter === slides.length) {
+        counter = 0;
+      }
+      moveSlide();
+    }
+  
+    // Function to handle previous slide
+    function prevSlide() {
+      counter--;
+      if (counter < 0) {
+        counter = slides.length - 1;
+      }
+      moveSlide();
+    }
+  
+    // Optional: Automatic sliding
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+  
+    // Optional: Add event listeners for navigation buttons
+    document.querySelector('.next-btn').addEventListener('click', nextSlide);
+    document.querySelector('.prev-btn').addEventListener('click', prevSlide);
+  </script>
+  
+</body>
+</html>

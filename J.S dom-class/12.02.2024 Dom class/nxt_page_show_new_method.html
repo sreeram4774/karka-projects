@@ -1,0 +1,81 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select option {
+            font-size: medium;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label>Email : <input type="email" placeholder="Email" class="text" id="email"></label><br><br>
+        <label>Password : <input type="password" placeholder="Password" class="text" id="password"></label><br><br>
+        <input onclick="handle_click1()" type="checkbox" id="showPassword"> <label for="showPassword">Show Password</label><br><br>
+        
+        <label>Gender : </label>
+        <input type="radio" name="gender" class="text" value="Male"> <label for="male">Male</label>
+        <input type="radio" name="gender" class="text" value="Female"> <label for="female">Female</label>
+        <input type="radio" name="gender" class="text" value="Other"> <label for="other">Other</label><br><br>
+        
+        <label>Skills : </label>
+        <input type="checkbox" value="HTML" class="text"> <label for="html">HTML</label>
+        <input type="checkbox" value="CSS" class="text"> <label for="css">CSS</label>
+        <input type="checkbox" value="JavaScript" class="text"> <label for="javascript">JavaScript</label>
+        <input type="checkbox" value="React" class="text"> <label for="react">React</label>
+        <br><br>
+        
+        <label>District :</label>
+        <select style="padding: 7px;" name="district" id="district" class="text">
+            <option value="">--Select Your District--</option>
+            <option value="KannyaKumari">KannyaKumari</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Tiruchy">Tiruchy</option>
+        </select>
+        <br><br>
+        
+        <button style="background-color: aqua; padding: 5px; cursor: pointer;" onclick="handle_click(event)">Submit</button>
+    </form>
+
+</body>
+
+<script>
+    function handle_click(e) {
+        e.preventDefault();
+        
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
+        var skills = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(el => el.value);
+        var district = document.getElementById('district').value;
+        
+        var formData = {
+            Email: email,
+            Password: password,
+            Gender: gender,
+            Skills: skills,
+            District: district
+        };
+
+        localStorage.setItem("formData", JSON.stringify(formData));
+        window.location = "nxt_page_show1.html";
+    }
+
+    function handle_click1() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+</script>
+
+</html> -->

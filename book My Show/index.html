@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book My Show</title><link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+</head>
+<body>
+   
+    <header>
+      <div class="header-content">
+        <div class="logo">
+            <img class="img1" src="./images/logo.svg"alt="">
+        </div>
+        <div class="search">
+            <nav class="navbar navbar-light ">
+                <form class="form-inline">
+                  <div class="search1">
+                    <i class="fa-solid fa-magnifying-glass fa-lg "></i>
+                    <input   class="form-control"type="search" placeholder="Search For Movies,Events,Plays,Sports and Activities" aria-label="Search">
+                 
+                   
+                
+                </div>
+                </form>
+              </nav>
+        </div>
+       
+        <div class="form-group   ">
+        <select id="inputDistrict " class="form" >
+          
+        <option selected>Location</option>
+        <option style="color: white;">Chennai</option>
+        <option  style="color: white;"   >Kanyakumari</option>
+        <option  style="color: white;"   >Madurai</option>
+        <option style="color: white;"   >Tiruchy</option>
+        <option  style="color: white;"  >Coimbathore</option>
+        
+      </select>
+      </div>
+      <div class="sign  ">
+        <button style="padding: 0px 10px 4px;border-radius:8px;">Sign in</button>
+      </div>
+      <div class="menu ">
+      
+          <button class="btn"><i class=" fa fa-bars fa-xl "></i></button>
+   
+      </div>
+    </div>
+      </div>
+  </div>
+    </header>
+  <nav>
+    <div class="nav-bar">
+      <div class="content">
+        <h6>Movies</h6>
+        <h6>Stream</h6>
+        <h6>Events</h6>
+        <h6>Plays</h6>
+        <h6>Sports</h6>
+        <h6>Activities</h6>
+        <h6>Buzz</h6>
+      </div>
+      <span><img src="./images/cwc23.avif" alt=""></span> 
+      <div class="last"> 
+        <h6>ListYourShow</h6>
+      <h6>Corporates</h6>
+      <h6>Offers</h6>
+      <h6>Gift Cards</h6>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./images/1694509970066_revisedbarbiedesktop.avif" class="d-block w-110 mt-3 mx-5 " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/1694001640639_playcardwebbannerv2.avif" class="d-block w-110 mt-3 mx-5 " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/1693472198837_iccdesktop.avif" class="d-block w-110 mt-3 mx-5 " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/1694432878534_lollapaloozarevisedsepdesktop.avif" class="d-block w-110 mt-3 mx-5 " alt="...">
+        </div>
+        
+      </div>
+      <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-dark"></span>
+      </button>
+      <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators " data-bs-slide="next">
+        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+        <span class="visually-dark"></span>
+      </button>
+    </div>
+    <br>
+    <br>
+    <div class="box-add">
+      <img src="./images/icc-cwc-banner-collection-202308220156.avif"class="banner"width="95%" alt="">
+    </div>
+    <br>
+  <h4>Recommended Movies</h4>
+  <br>
+  <div class="movies">
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images2/et00330424-dsjgfvfgyu-portrait.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00367366-edhelbccrs-portrait.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00338629-tqrvnwzbgb-portrait.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00350981-bjdpdblyyy-portrait (1).avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00340111-bucsngjtyp-portrait.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00350981-bjdpdblyyy-portrait (1).avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00354867-mnqhqzyexs-portrait.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00363853-bwfdazkzuj-portrait.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00365493-yvlcuvfzbh-portrait.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/et00361712-uvgjhlhgxl-portrait.avif" alt=""></div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="box-add">
+    <img src="./images/stream-leadin-web-collection-202210241242.avif"class="banner"width="95%" alt="">
+  </div>
+  <br>
+  <br> 
+    <div class="box-add">
+      <img src="./images/icc-cwc-banner-collection-202308220156.avif"class="banner"width="95%" alt="">
+    </div>
+    <br>
+    <h4>Recommended Movies</h4>
+    <br>
+    <div class="movies">
+      <div class="swiper mySwiper1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./images2/et00330424-dsjgfvfgyu-portrait.avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00367366-edhelbccrs-portrait.avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00338629-tqrvnwzbgb-portrait.avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00350981-bjdpdblyyy-portrait (1).avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00340111-bucsngjtyp-portrait.avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00350981-bjdpdblyyy-portrait (1).avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00354867-mnqhqzyexs-portrait.avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00363853-bwfdazkzuj-portrait.avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00365493-yvlcuvfzbh-portrait.avif"alt=""></div>
+          <div class="swiper-slide"><img src="./images2/et00361712-uvgjhlhgxl-portrait.avif"alt=""></div>
+  
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>   
+    </div>
+    <br>
+    <br>
+    <div class="box-add">
+      <img src="./images/stream-leadin-web-collection-202210241242.avif"class="banner"width="95%" alt="">
+    </div>
+    <br>
+    <br>
+    <h4>The Best Of Live Events</h4>
+    <br>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/music-shows-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/adventure-fun-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/arts-crafts-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/comedy-shows-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/esports-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/interactive-games-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/kids-zone-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/theatre-shows-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/upskill-collection-202211140440.avif" alt=""></div>
+        <div class="swiper-slide"><img src="./images2/workshop-and-more-web-collection-202211140440 (1).avif" alt=""></div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    
+  <br>
+  <br>
+  <br>
+  <div class="play">
+    <div class="red">
+    <!-- <i class="fa-sharp fa-solid fa-play fa-2xl" style="color: red;"></i> -->
+    <img src="./images/premiere-banner-web-collection-202208191200.avif"class="banner"alt="">
+    </div>
+    <!-- <h3>PREMIERE</h3>
+    <H6>Watch new movies at home,every Friday</H6> -->
+    <br>
+    <div class="name">
+    <h5>Premieres</h5>
+    <p>Brand new releases every Friday</p>
+    </div>
+  <aside>
+    <div  class="swiper mySwiper10">     
+      <div class="swiper-wrapper">
+        <div style="background-color: rgb(43, 49, 72)"  class="swiper-slide"><img src="./images/et00368257-ryuujnuwyr-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)"  class="swiper-slide"><img src="./images/et00369136-xmmbepauyp-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00145296-vhwmvbmwwj-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00368257-ryuujnuwyr-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00369136-xmmbepauyp-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00145296-vhwmvbmwwj-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00368257-ryuujnuwyr-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00369136-xmmbepauyp-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00145296-vhwmvbmwwj-portrait.avif"alt=""></div>
+        <div style="background-color: rgb(43, 49, 72)" class="swiper-slide"><img src="./images/et00145296-vhwmvbmwwj-portrait.avif"alt=""></div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>     
+    
+  </div>
+  </div>
+  </div>  
+</aside> 
+  <br>
+  <br>
+
+  <h4>Online Streaming Events</h4>
+  <div class="swiper mySwiper3">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./icc's mens/et00341740-zwfvzrgdrv-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00341771-jvkbnkwlyc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00342539-ddvyhkxmkc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00342542-qfndmnqnuw-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./online/et00362655-dmbacjymrn-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00349868-fmcbvauxkw-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00359941-fsbugkehec-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00361456-rsenguvlfp-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00366074-mhzugxzkkv-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00366947-zflfgsyuqr-portrait.avif" alt=""></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>    
+  <br>
+  <br>
+  <br>
+  <h4>Outdoor Events</h4>
+  <div class="swiper mySwiper4">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./outdoor/et00353018-alavulklmu-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00363548-xdcxuwtbwh-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00364831-fdjvpngcjq-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00365003-ckdatyevrp-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00366850-udkwlsfunv-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00367354-bwzknazktb-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00367572-zwknczsthy-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00367589-vpthvcfkqe-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00368277-ekctzfrkks-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./outdoor/et00369049-ldaqwckwqh-portrait.avif" alt=""></div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>      
+  <br>
+  <br>
+  <br>
+  <h4>Laughter Therapy</h4>
+  <div class="swiper mySwiper5">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./laughter/et00327409-vcfafxhnla-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00347268-dxygkhnwjk-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00354491-fluscqjmme-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00363079-gxgyeetpka-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00363953-hrtskzllwr-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00364659-fsmynbyrkc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00366850-udkwlsfunv-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00366997-rtfkymlbry-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00368890-ppatpytzzv-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./laughter/et00368990-bygzxyffyu-portrait.avif" alt=""></div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>      
+  <br>
+  <br>
+  <br>
+  <h4>Popular Events</h4>
+  <div class="swiper mySwiper6">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./popular/et00363544-amyrlsfrnj-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00364997-uyptjnecpk-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00365464-uctsjmndpc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00366780-lrpqdlgfdw-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00367112-ckubufqqfb-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00367126-myvexjpppn-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00367300-qtackspewt-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00367330-hlehkhnrew-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00368786-ykyxutrtpj-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./popular/et00369175-daxcktaxjh-portrait.avif" alt=""></div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>      
+  <br>
+  <br>
+  <br>
+  <h4>The Latest Plays</h4>
+  <div class="swiper mySwiper7">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./the latest play/et00082282-palgunwvsn-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00324029-cxyvhngpcm-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00338953-zpdptbmrlc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00354941-eaqlcdnyhc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00357799-rntllmwalc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00360006-uwxmezlzel-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00362576-rslvuaxzwl-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00364523-nkssfxdlxq-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00366497-zeskcpphef-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./the latest play/et00367354-bwzknazktb-portrait.avif" alt=""></div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>      
+  <br>
+  <br>
+  <br>
+  <h4>ICC'S MEN'S CWC & Other Sports</h4>
+  <div class="swiper mySwiper8">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./icc's mens/et00341740-zwfvzrgdrv-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00341771-jvkbnkwlyc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00342539-ddvyhkxmkc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00342542-qfndmnqnuw-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00343705-nmjfmywpzk-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00349868-fmcbvauxkw-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00359941-fsbugkehec-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00361456-rsenguvlfp-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00366074-mhzugxzkkv-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./icc's mens/et00366947-zflfgsyuqr-portrait.avif" alt=""></div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div> 
+  <br>
+  <br>
+  <!-- <h4>Trending Searches Right Now </h4>   -->
+  <div class="sc-133848s-3 sc-133848s-5 gXVNQI"><div class="sc-133848s-3 sc-133848s-10 dOuCBq" style="padding: 0px 0px 24px;"><div class="sc-133848s-3 cZuToi" style="margin: 0px 0px 8px; padding: 0px;"><div class="sc-133848s-2 sc-291x3n-0 VWWsY"><div class="sc-133848s-2 sc-291x3n-1 jZYART"><h2 class="sc-7o7nez-0 sc-7o7nez-1 hpMgIh">Trending Searches Right Now</h2></div></div></div><div class="sc-1ljcxl3-0 fSGrOw" style="justify-content: left; display: flex; flex-wrap: wrap; padding: 0px;"><a href="https://in.bookmyshow.com/mumbai/movies/jawan/ET00330424" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU "><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">Jawan</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Movies</div></div></div></div></a><a href="https://in.bookmyshow.com/events/king-new-life-india-tour-by-ti-live/ET00369287" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">KING New Life India Tour By TI LIVE</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Events</div></div></div></div></a><a href="https://in.bookmyshow.com/mumbai/movies/the-nun-ii/ET00363916" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">The Nun II</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Movies</div></div></div></div></a><a href="https://in.bookmyshow.com/sports/mumbai-city-fc-vs-fc-nassaji-mazandaran/ET00369049" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">Mumbai City FC vs FC Nassaji Mazandaran</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Sports</div></div></div></div></a><a href="https://in.bookmyshow.com/events/youtube-fanfest-india-2023/ET00367129" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">YouTube Fanfest India 2023</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Events</div></div></div></div></a><a href="https://in.bookmyshow.com/mumbai/movies/a-haunting-in-venice/ET00363853" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">A Haunting in Venice</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Movies</div></div></div></div></a><a href="https://in.bookmyshow.com/activities/navratri-utsav-with-falguni-pathak-2023/ET00368277" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">Navratri Utsav with Falguni Pathak 2023</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Activities</div></div></div></div></a><a href="https://in.bookmyshow.com/mumbai/movies/tiger-3/ET00313411" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">Tiger 3</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Movies</div></div></div></div></a><a href="https://in.bookmyshow.com/mumbai/movies/gadar-2-the-katha-continues/ET00338629" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">Gadar 2: The Katha Continues</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Movies</div></div></div></div></a><a href="https://in.bookmyshow.com/mumbai/movies/oppenheimer/ET00347867" class="sc-133848s-11 sc-1ljcxl3-1 cSoVKU"><div class="sc-dv5ht7-0 hOhWOq"><div class="sc-133848s-2 sc-5afure-0 fOKmoV"></div><div class="sc-133848s-3 cZuToi" style="padding: 14px 45px 12px 16px;"><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 iBbazD">Oppenheimer</div></div><div class="sc-133848s-2 sc-133848s-12 hxPdAO"><div class="sc-7o7nez-0 dlASWj">Movies</div></div></div></div></a></div></div></div> 
+  <br>
+  <br>
+  <h4>Explore Fun Activities</h4>
+  <div class="swiper mySwiper11">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./FUN/et00014607-jfxvjxhbck-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00022344-qlfhclsxae-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00076445-wdyavzgdre-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00305112-jgwtjwpgby-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00310275-nrwpwjdwsz-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00315217-kvurdnxupc-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00318079-puqwfzndpp-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00325467-ffxzjzwpce-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00361621-ajsccwtyxg-portrait.avif" alt=""></div>
+      <div class="swiper-slide"><img src="./FUN/et00369515-uzgbwfeqkq-portrait.avif" alt=""></div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>      
+</section> 
+<br><br><br><br><br>
+<footer>
+   <div wrap="wrap" class="bwc__sc-1iuy4bj-0 bwc__sc-au4qa5-1 jnnqYA"><div wrap="wrap" class="bwc__sc-1iuy4bj-0 bwc__sc-au4qa5-2 gatsMW"><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Movies Now Showing in Mumbai</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/movies/jawan/ET00330424" class="bwc__sc-1jgpgcm-4 jgzpRM">Jawan</a><a href="/movies/the-nun-ii/ET00363916" class="bwc__sc-1jgpgcm-4 jgzpRM">The Nun II</a><a href="/movies/a-haunting-in-venice/ET00363853" class="bwc__sc-1jgpgcm-4 jgzpRM">A Haunting in Venice</a><a href="/movies/gadar-2-the-katha-continues/ET00338629" class="bwc__sc-1jgpgcm-4 jgzpRM">Gadar 2: The Katha Continues</a><a href="/movies/dream-girl-2/ET00340111" class="bwc__sc-1jgpgcm-4 jgzpRM">Dream Girl 2</a><a href="/movies/hu-ane-tu/ET00365493" class="bwc__sc-1jgpgcm-4 jgzpRM">Hu ane Tu</a><a href="/movies/mark-antony/ET00367366" class="bwc__sc-1jgpgcm-4 jgzpRM">Mark Antony</a><a href="/movies/3-ekka/ET00350981" class="bwc__sc-1jgpgcm-4 jgzpRM">3 EKKA</a><a href="/movies/trailers-screening-show/ET00357595" class="bwc__sc-1jgpgcm-4 jgzpRM">Trailers Screening Show</a><a href="/movies/omg-2/ET00361712" class="bwc__sc-1jgpgcm-4 jgzpRM">OMG 2</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Upcoming Movies in Mumbai</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/movies/13-part-1/ET00364837" class="bwc__sc-1jgpgcm-4 jgzpRM">13 Part 1</a><a href="/movies/aanmeega-azhaippu/ET00369807" class="bwc__sc-1jgpgcm-4 jgzpRM">Aanmeega Azhaippu</a><a href="/movies/praavu/ET00368928" class="bwc__sc-1jgpgcm-4 jgzpRM">Praavu</a><a href="/movies/sodara-sodarimanulara/ET00369413" class="bwc__sc-1jgpgcm-4 jgzpRM">Sodara Sodarimanulara</a><a href="/movies/changure-bangaru-raja/ET00365844" class="bwc__sc-1jgpgcm-4 jgzpRM">Changure Bangaru Raja</a><a href="/movies/parimala-dsouza/ET00367622" class="bwc__sc-1jgpgcm-4 jgzpRM">Parimala D'souza</a><a href="/movies/tales-of-mahanagara/ET00368818" class="bwc__sc-1jgpgcm-4 jgzpRM">Tales Of Mahanagara</a><a href="/movies/anu-telugu/ET00369710" class="bwc__sc-1jgpgcm-4 jgzpRM">Anu (Telugu)</a><a href="/movies/osmitay/ET00369128" class="bwc__sc-1jgpgcm-4 jgzpRM">Osmitay</a><a href="/movies/tatsama-tadbhava/ET00365526" class="bwc__sc-1jgpgcm-4 jgzpRM">Tatsama Tadbhava</a><a href="/movies/ramanna-youth/ET00355060" class="bwc__sc-1jgpgcm-4 jgzpRM">Ramanna Youth</a><a href="/movies/nadhikalil-sundari-yamuna/ET00369468" class="bwc__sc-1jgpgcm-4 jgzpRM">Nadhikalil Sundari Yamuna</a><a href="/movies/kasturi/ET00369811" class="bwc__sc-1jgpgcm-4 jgzpRM">Kasturi</a><a href="/movies/en-6-vaathiyaar-kaalpanthatta-kuzhu/ET00369397" class="bwc__sc-1jgpgcm-4 jgzpRM">En 6 Vaathiyaar Kaalpanthatta Kuzhu</a><a href="/movies/pushkara/ET00368691" class="bwc__sc-1jgpgcm-4 jgzpRM">Pushkara</a><a href="/movies/chaaver/ET00362719" class="bwc__sc-1jgpgcm-4 jgzpRM">Chaaver</a><a href="/movies/parishuddam/ET00337075" class="bwc__sc-1jgpgcm-4 jgzpRM">Parishuddam</a><a href="/movies/cheater-2023/ET00369289" class="bwc__sc-1jgpgcm-4 jgzpRM">Cheater (2023)</a><a href="/movies/expend4bles/ET00361629" class="bwc__sc-1jgpgcm-4 jgzpRM">Expend4bles</a><a href="/movies/the-purvanchal-files/ET00369457" class="bwc__sc-1jgpgcm-4 jgzpRM">The Purvanchal Files</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Movies By Genre</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/drama-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Drama Movies</a><a href="/explore/action-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Action Movies</a><a href="/explore/comedy-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Comedy Movies</a><a href="/explore/romantic-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Romantic Movies</a><a href="/explore/thriller-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Thriller Movies</a><a href="/explore/crime-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Crime Movies</a><a href="/explore/historical-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Historical Movies</a><a href="/explore/horror-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Horror Movies</a><a href="/explore/mystery-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Mystery Movies</a><a href="/explore/biography-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Biography Movies</a><a href="/explore/adaptation-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Adaptation Movies</a><a href="/explore/mythological-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Mythological Movies</a><a href="/explore/noir-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Noir Movies</a><a href="/explore/political-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Political Movies</a><a href="/explore/supernatural-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Supernatural Movies</a><a href="/explore/sports-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Sports Movies</a><a href="/explore/heist-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Heist Movies</a><a href="/explore/tragedy-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Tragedy Movies</a><a href="/explore/animation-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Animation Movies</a><a href="/explore/anime-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Anime Movies</a><a href="/explore/psychological-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Psychological Movies</a><a href="/explore/war-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">War Movies</a><a href="/explore/period-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Period Movies</a><a href="/explore/classic-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Classic Movies</a><a href="/explore/adventure-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Adventure Movies</a><a href="/explore/musical-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Musical Movies</a><a href="/explore/adult-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Adult Movies</a><a href="/explore/Screening-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Screening Movies</a><a href="/explore/fantasy-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Fantasy Movies</a><a href="/explore/sci-fi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Sci-Fi Movies</a><a href="/explore/devotional-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Devotional Movies</a><a href="/explore/suspense-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Suspense Movies</a><a href="/explore/bollywood-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Bollywood Movies</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Movies By Language</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/hindi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Hindi</a><a href="/explore/english-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in English</a><a href="/explore/gujarati-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Gujarati</a><a href="/explore/marathi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Marathi</a><a href="/explore/tamil-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Tamil</a><a href="/explore/telugu-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Telugu</a><a href="/explore/chattisgarhi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Chattisgarhi</a><a href="/explore/khasi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Khasi</a><a href="/explore/english-7d-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in English 7D</a><a href="/explore/nepali-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Nepali</a><a href="/explore/french-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in French</a><a href="/explore/tulu-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Tulu</a><a href="/explore/japanese-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Japanese</a><a href="/explore/bhojpuri-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Bhojpuri</a><a href="/explore/haryanavi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Haryanavi</a><a href="/explore/assamese-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Assamese</a><a href="/explore/oriya-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Odia</a><a href="/explore/portuguese-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Portuguese</a><a href="/explore/urdu-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Urdu</a><a href="/explore/rajasthani-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Rajasthani</a><a href="/explore/konkani-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Konkani</a><a href="/explore/bengali-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Bengali</a><a href="/explore/kannada-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Kannada</a><a href="/explore/sindhi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Sindhi</a><a href="/explore/punjabi-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Punjabi</a><a href="/explore/malayalam-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Malayalam</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Plays By Genre in Mumbai</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/drama-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Drama Plays</a><a href="/explore/comedy-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Comedy Plays</a><a href="/explore/musical-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Musical Plays</a><a href="/explore/romantic-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Romantic Plays</a><a href="/explore/fantasy-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Fantasy Plays</a><a href="/explore/thriller-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Thriller Plays</a><a href="/explore/suspense-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Suspense Plays</a><a href="/explore/mythological-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Mythological Plays</a><a href="/explore/adult-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Adult Plays</a><a href="/explore/adaptation-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Adaptation Plays</a><a href="/explore/noir-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Noir Plays</a><a href="/explore/online-streaming-plays-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Online Streaming Plays Plays</a><a href="/explore/political-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Political Plays</a><a href="/explore/tribute-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Tribute Plays</a><a href="/explore/historical-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Historical Plays</a><a href="/explore/tragedy-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Tragedy Plays</a><a href="/explore/horror-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Horror Plays</a><a href="/explore/psychological-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Psychological Plays</a><a href="/explore/mystery-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Mystery Plays</a><a href="/explore/war-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">War Plays</a><a href="/explore/period-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Period Plays</a><a href="/explore/adventure-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Adventure Plays</a><a href="/explore/classic-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Classic Plays</a><a href="/explore/action-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Action Plays</a><a href="/explore/sci-fi-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Sci-Fi Plays</a><a href="/explore/contemporary-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Contemporary Plays</a><a href="/explore/regional-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Regional Plays</a><a href="/explore/biography-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Biography Plays</a><a href="/explore/broadway-plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Broadway Plays</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Movie Reviews And Trending Articles</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/entertainment" class="bwc__sc-1jgpgcm-4 jgzpRM">Trending Articles</a><a href="/entertainment-news/" class="bwc__sc-1jgpgcm-4 jgzpRM">Latest News on Movies, Events, Plays and Sports</a><a href="/person" class="bwc__sc-1jgpgcm-4 jgzpRM">Movie Celebrities</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Movie Updates and Celebrities</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/upcoming-movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Upcoming Movies</a><a href="/explore/movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies Now Showing</a><a href="/person" class="bwc__sc-1jgpgcm-4 jgzpRM">Movie Celebrities</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Things to do in Mumbai</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/adventure-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Adventure</a><a href="/explore/amusement-parks-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Amusement Parks</a><a href="/explore/festivals-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Festivals</a><a href="/explore/food-and-drinks-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Food and Drinks</a><a href="/explore/holi-parties-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Holi Parties</a><a href="/explore/antiques-heritage-museums-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Antiques, Heritage, Museums</a><a href="/explore/christmas-celebrations-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Christmas Celebrations</a><a href="/explore/hilsa-festival-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Hilsa Festival</a><a href="/explore/Gaming-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Gaming</a><a href="/explore/hospitals-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Hospitals</a><a href="/explore/poila-baishakh-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Poila Baishakh Festival </a><a href="/explore/parties-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Parties</a><a href="/explore/unique-tours-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Unique Tours</a><a href="/explore/quizzes-and-competitions-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Quizzes and Competitions</a><a href="/explore/shops-and-malls-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Shops and Malls</a><a href="/explore/tourist-attractions-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Tourist Attractions</a><a href="/explore/monuments-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Monuments</a><a href="/explore/nightlife-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Nightlife</a><a href="/explore/valentines-day-celebrations-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Valentine's Day Celebrations</a><a href="/explore/durga-puja-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Durga Puja Festival</a><a href="/explore/navratri-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Navratri Celebration</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Sports Events in Mumbai</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/cricket-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Cricket</a><a href="/explore/online-games-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Online Games</a><a href="/explore/chess-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Chess</a><a href="/explore/e-sports-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">E Sports</a><a href="/explore/running-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Running</a><a href="/explore/cycling-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Cycling</a><a href="/explore/football-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Football</a><a href="/explore/athletics-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Athletics</a><a href="/explore/archery-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Archery</a><a href="/explore/baseball-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Baseball</a><a href="/explore/badminton-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Badminton</a><a href="/explore/golf-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Golf</a><a href="/explore/kickboxing-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Kickboxing</a><a href="/explore/boat-race-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Boat Race</a><a href="/explore/boxing-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Boxing</a><a href="/explore/card-games-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Card Games</a><a href="/explore/derby-horse-race-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Derby Horse Race</a><a href="/explore/kabaddi-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Kabaddi</a><a href="/explore/mixed-martial-arts-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Mixed Martial Arts</a><a href="/explore/online-sports-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Online Sports</a><a href="/explore/muay-thai-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Muay Thai</a><a href="/explore/swimming-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Swimming</a><a href="/explore/pool-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Pool</a><a href="/explore/rugby-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Rugby</a><a href="/explore/hockey-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Hockey</a><a href="/explore/ice-skating-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Ice Skating</a><a href="/explore/judo-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Judo</a><a href="/explore/triathlon-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Triathlon</a><a href="/explore/motorsports-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Motorsports</a><a href="/explore/walking-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Walking</a><a href="/explore/shooting-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Shooting</a><a href="/explore/tennis-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Tennis</a><a href="/explore/wrestling-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Wrestling</a><a href="/explore/sailing-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Sailing</a><a href="/explore/snooker-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Snooker</a><a href="/explore/basketball-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Basketball</a><a href="/explore/bowling-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Bowling</a><a href="/explore/polo-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Polo</a><a href="/explore/volleyball-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Volleyball</a><a href="/explore/table-tennis-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Table Tennis</a><a href="/explore/weight-lifting-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Weight Lifting</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Events in Mumbai</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/comedy-shows-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Comedy Shows</a><a href="/explore/music-shows-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Music Shows</a><a href="/explore/workshops-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Workshops</a><a href="/explore/kids-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Kids</a><a href="/explore/screening-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Screening</a><a href="/explore/exhibitions-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Exhibitions</a><a href="/explore/meetups-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Meetups</a><a href="/explore/online-streaming-events-1-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Online Streaming Events</a><a href="/explore/spirituality-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Spirituality</a><a href="/explore/conferences-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Conferences</a><a href="/explore/beer-festival-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Beer Festival</a><a href="/explore/celebrity-wishes-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Celebrity Wishes</a><a href="/explore/award-shows-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Award shows</a><a href="/explore/vaccination-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Vaccination</a><a href="/explore/talks-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Talks</a><a href="/explore/new-year-parties-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">New Year Parties</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Cinemas in Top Cities</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/mumbai/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Mumbai</a><a href="/national-capital-region-ncr/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Delhi-NCR</a><a href="/chennai/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Chennai</a><a href="/bengaluru/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Bengaluru</a><a href="/hyderabad/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Hyderabad</a><a href="/pune/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Pune</a><a href="/ahmedabad/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Ahmedabad</a><a href="/kolkata/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Kolkata</a><a href="/kochi/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Kochi</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Events in Top Cities</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/events-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Mumbai</a><a href="/explore/events-national-capital-region-ncr" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Delhi-NCR</a><a href="/explore/events-chennai" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Chennai</a><a href="/explore/events-bengaluru" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Bengaluru</a><a href="/explore/events-hyderabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Hyderabad</a><a href="/explore/events-pune" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Pune</a><a href="/explore/events-ahmedabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Ahmedabad</a><a href="/explore/events-kolkata" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Kolkata</a><a href="/explore/events-kochi" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Kochi</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Plays in Top Cities</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Mumbai</a><a href="/explore/plays-national-capital-region-ncr" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Delhi-NCR</a><a href="/explore/plays-chennai" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Chennai</a><a href="/explore/plays-bengaluru" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Bengaluru</a><a href="/explore/plays-hyderabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Hyderabad</a><a href="/explore/plays-pune" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Pune</a><a href="/explore/plays-ahmedabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Ahmedabad</a><a href="/explore/plays-kolkata" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Kolkata</a><a href="/explore/plays-kochi" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Kochi</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Activities in Top Cities</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/activities-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Mumbai</a><a href="/explore/activities-national-capital-region-ncr" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Delhi-NCR</a><a href="/explore/activities-chennai" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Chennai</a><a href="/explore/activities-bengaluru" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Bengaluru</a><a href="/explore/activities-hyderabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Hyderabad</a><a href="/explore/activities-pune" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Pune</a><a href="/explore/activities-ahmedabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Ahmedabad</a><a href="/explore/activities-kolkata" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Kolkata</a><a href="/explore/activities-kochi" class="bwc__sc-1jgpgcm-4 jgzpRM">Things to do in Kochi</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">Movies in Top Cities</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/movies-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Mumbai</a><a href="/explore/movies-national-capital-region-ncr" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Delhi-NCR</a><a href="/explore/movies-chennai" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Chennai</a><a href="/explore/movies-bengaluru" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Bengaluru</a><a href="/explore/movies-hyderabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Hyderabad</a><a href="/explore/movies-pune" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Pune</a><a href="/explore/movies-ahmedabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Ahmedabad</a><a href="/explore/movies-kolkata" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Kolkata</a><a href="/explore/movies-kochi" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Kochi</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">COUNTRIES</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="https://id.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Indonesia</a><a href="https://sg.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Singapore</a><a href="https://ae.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">UAE</a><a href="https://lk.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Sri Lanka</a><a href="https://wi.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">West Indies</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">HELP</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/aboutus" class="bwc__sc-1jgpgcm-4 jgzpRM">About Us</a><a href="/contactus" class="bwc__sc-1jgpgcm-4 jgzpRM">Contact Us</a><a href="/careers/" class="bwc__sc-1jgpgcm-4 jgzpRM">Current Opening</a><a href="/press-release" class="bwc__sc-1jgpgcm-4 jgzpRM">Press Release</a><a href="/press-coverage" class="bwc__sc-1jgpgcm-4 jgzpRM">Press Coverage</a><a href="/static/sitemap" class="bwc__sc-1jgpgcm-4 jgzpRM">Sitemap</a><a href="/faq" class="bwc__sc-1jgpgcm-4 jgzpRM">FAQs</a><a href="/terms-and-conditions" class="bwc__sc-1jgpgcm-4 jgzpRM">Terms and Conditions</a><a href="/privacy" class="bwc__sc-1jgpgcm-4 jgzpRM">Privacy Policy</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">BOOKMYSHOW EXCLUSIVES</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="https://lollaindia.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Lollapalooza India</a><a href="/superstar" class="bwc__sc-1jgpgcm-4 jgzpRM">Superstar</a><a href="/donation" class="bwc__sc-1jgpgcm-4 jgzpRM">BookASmile</a><a href="/voucher" class="bwc__sc-1jgpgcm-4 jgzpRM">Corporate Vouchers</a><a href="/giftcards" class="bwc__sc-1jgpgcm-4 jgzpRM">Gift Cards</a><a href="/s/list-your-show/" class="bwc__sc-1jgpgcm-4 jgzpRM">List My Show</a><a href="/offers" class="bwc__sc-1jgpgcm-4 jgzpRM">Offers</a><a href="/explore/c/stream" class="bwc__sc-1jgpgcm-4 jgzpRM">Stream</a><a href="/buzz" class="bwc__sc-1jgpgcm-4 jgzpRM">Buzz</a><a href="/explore/movie-trailers" class="bwc__sc-1jgpgcm-4 jgzpRM">Movie Trailers</a><a href="/explore/c/summer-activities" class="bwc__sc-1jgpgcm-4 jgzpRM">Summer Activities</a></div></div><div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">ICC Cricket World Cup 2023</div><div class="bwc__sc-1jgpgcm-3 dVivmv"><a href="/explore/c/icc-cricket-world-cup" class="bwc__sc-1jgpgcm-4 jgzpRM">ICC Men's Cricket World Cup</a><a href="/sports/india-icc-mens-cwc-2023/ET00367219" class="bwc__sc-1jgpgcm-4 jgzpRM">India Cricket Matches</a><a href="/sports/afghanistan-icc-mens-cwc-2023/ET00367215" class="bwc__sc-1jgpgcm-4 jgzpRM">Afghanistan Cricket Matches</a><a href="/sports/australia-icc-mens-cwc-2023/ET00367216" class="bwc__sc-1jgpgcm-4 jgzpRM">Australia Cricket Matches</a><a href="/sports/bangladesh-icc-mens-cwc-2023/ET00367217" class="bwc__sc-1jgpgcm-4 jgzpRM">Bangladesh Cricket Matches </a><a href="/sports/england-icc-mens-cwc-2023/ET00367218" class="bwc__sc-1jgpgcm-4 jgzpRM">England Cricket Matches</a><a href="/sports/netherlands-icc-mens-cwc-2023/ET00367220" class="bwc__sc-1jgpgcm-4 jgzpRM">Netherlands Cricket Matches</a><a href="/sports/new-zealand-icc-mens-cwc-2023/ET00367221" class="bwc__sc-1jgpgcm-4 jgzpRM">New Zealand Cricket Matches</a><a href="/sports/pakistan-icc-mens-cwc-2023/ET00367222" class="bwc__sc-1jgpgcm-4 jgzpRM">Pakistan Cricket Matches</a><a href="/sports/south-africa-icc-mens-cwc-2023/ET00367223" class="bwc__sc-1jgpgcm-4 jgzpRM">South Africa Cricket Matches</a><a href="/sports/sri-lanka-icc-mens-cwc-2023/ET00367224" class="bwc__sc-1jgpgcm-4 jgzpRM">Sri Lanka Cricket Matches</a></div></div></div></div>  
+<footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+<script>
+   var swiper = new Swiper(".mySwiper",{
+        slidesPerView:6,
+        spaceBetween: 10,
+        slidesPerGroup:6,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper1",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper2",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper3",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper4",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper5",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper6",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper7",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper8",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper9",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper10",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper11",{
+        slidesPerView:5,
+        spaceBetween: 10,
+        slidesPerGroup:5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+ </script>
+
+</html>
+
+
+        

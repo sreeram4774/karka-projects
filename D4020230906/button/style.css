@@ -1,0 +1,20 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+} */
+.box{
+    border: 5px solid black;
+     /* width: 1000px; */
+     height: 50%;
+    display: flex; 
+    padding: 120px;
+
+}
+.box1{
+    border: 3px solid black;
+    /* display: flex; */
+    padding: 50px;
+}
+.d-grid{
+    margin-inline: 10px;
+}

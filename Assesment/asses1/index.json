@@ -1,0 +1,20 @@
+{   
+    "persons" :[
+    {
+        "name":"sreeram",
+        "age":23,
+        "place":"ngl"   
+   
+},
+{
+   "name":"Achu",
+   "age":"19",
+   "place":"ngl"
+},
+{
+    "name":"Sooraj",
+    "age":"25",
+    "place":"ngl"
+}
+    ]
+}

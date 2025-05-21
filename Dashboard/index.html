@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        *{
+           margin: 0px;
+           padding: 0px;
+        }
+        .box{
+            border: 3px solid black;
+        }
+        .container{
+            display: inline-block;
+        }
+        header{
+            border: 2px solid black;
+            padding: 0px 15px 0px;
+            height:100px;
+            background-color: antiquewhite;
+        }
+        img{
+
+            margin-top: 15px;
+            margin-left: 20px;
+
+
+        }
+        aside{
+           
+            /* width: 100px;
+            height: 480px;
+            /* display: inline-block; */
+             position: absolute;
+            z-index: 1; 
+        }
+        .container2{
+            display: inline-block;
+            /* margin-left: 225px; */
+            vertical-align: middle;
+            margin-left: 95px;
+            margin-bottom: 27px;
+        }
+
+         h1{
+            display: inline-block;
+            /* margin-left: 610px; */
+            /* margin-bottom: 50px; */
+            margin-top: 30px;
+
+
+        }
+        .container3{
+            /* display: inline-block; */
+            /* margin-left: 77px; */
+            border: 2px solid black;
+            /* position: absolute; */
+            /* z-index: 1;  */
+            width: 135px;
+            height: 460px;
+            background-color: rgba(0, 255, 255, 0.233);
+            float:left;
+
+        }
+      .container3 i{
+        margin-left: 15px;
+        margin-top: 10px;
+
+       }
+        h4{
+            display: inline-block;
+            color: black;
+            margin-left: 5px;
+        }
+
+        section{
+            /* /* display: inline-block; */
+            /* display: flex; */
+            /* justify-content: center; */
+            background-color: rgba(41, 38, 38, 0.219);
+            /* border: 2px solid black; */
+
+            position: relative;
+            height: 600px;
+            /* padding-bottom: 10px; */
+
+
+        }
+         h2{
+            /* margin-top: 7px;
+            margin-left: 47px; */
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            /* display: inline-block; */
+            font-size: xx-large;
+            text-decoration: underline;
+
+        }
+
+       
+        label .name{
+            display: inline-block;
+        }
+        .cont{
+           background-color: rgba(0, 0, 0, 0.685);
+           color: white;
+           padding: 3px;
+
+            
+        }
+        p{
+            width: 87%;
+            margin-left: 149px;
+            margin-top: 25px;
+        }
+        .btn1{
+            
+            display: inline-block;
+            margin-left: 900px;
+            padding: 5px;
+            width: 70px;
+           border-radius: 6px;
+           background-color: rgba(21, 234, 241, 0.979);
+           font-weight: bold;
+           font-size: smaller;
+
+           
+            
+     }
+     .btn2{
+           margin-left: 35px;
+           padding: 3px;
+           width: 70px;
+           border-radius: 6px;
+           background-color: rgba(21, 234, 241, 0.979);
+           font-weight: bolder;
+           font-size: medium;
+
+
+
+     }
+     .fa-lg {
+    font-size: 1.15em;
+    line-height: 0.05em;
+    vertical-align: -0.075em;
+    /* width: 18px; */
+    height: 0px;
+    margin-right: 5px;
+
+}
+        
+       
+    </style>
+</head>
+<body>
+<div class="box">
+    <header>
+        <div class="container">
+            <img src="../images.jpeg"width="65%"height="" alt="">
+        </div>
+
+        <div class="container2">
+            <h1>Dash Board</h1>
+            <button onclick="clic()" class="btn1" >Sign Out</button>
+            <!-- <button onclick="cli()" class="btn2"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 fa-lg" ></i>Exit</button> -->
+       </div>
+
+
+    </header>
+    
+
+
+     <aside>
+        <button class="cont"><i class="fa-solid fa-bars fa-xl "></i></button>
+
+
+         <div class="container3">
+            <i class="fa-solid fa-house"></i><a  href="./index.html"><h4>Home</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-rectangle-list"></i><a target="_blank" href="forms.html"><h4>Forms</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-stopwatch"></i> <a target="_blank" href="./stop.html"><h4>Stopwatch</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-calculator"></i><a target="_blank" href="./calculator.html"><h4>Calculator</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-envelope"></i><a href="###"><h4>Email</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-table"></i><a href="###"><h4>Tables</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-phone"></i><a href="###"> <h4>Contact</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-comment"></i><a href="###"><h4>Chat</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-user-group"></i><a href="###"><h4>Group</h4></a>
+            <br>
+            <br>
+            <i class="fa-solid fa-user"></i><a href="###"><h4>User</h4></a>            
+
+
+
+        </div> 
+
+    </aside>
+
+<section>
+
+
+         <div class="form"> 
+
+            <h2>Home Page</h2>
+            
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, doloribus iusto reprehenderit animi magnam quaerat, nisi, possimus laborum recusandae nesciunt asperiores quae voluptates dolores tenetur accusantium earum rerum officia temporibus velit sed sapiente? Obcaecati culpa debitis aperiam nobis incidunt ullam numquam harum quod dolorum exercitationem magni cupiditate, rerum commodi quisquam nostrum quis deleniti. Ipsum earum debitis impedit perspiciatis exercitationem deleniti molestiae alias quia fugiat sequi modi, sed, dolorem, animi odit! Unde, modi aspernatur ullam dolorum autem corrupti blanditiis laboriosam neque sapiente quo eaque quasi cumque ratione doloribus laudantium, cupiditate atque sed rerum aperiam exercitationem esse? Mollitia, quisquam architecto amet iusto dolor fugiat voluptatibus ut porro dolores expedita officia consequatur alias illo dignissimos eos eum in ipsam nulla. Exercitationem esse, quos vel ad illo impedit voluptatum rerum suscipit officia tenetur unde animi obcaecati iusto saepe deserunt eum recusandae natus autem in cumque, quia qui ex dolorum temporibus. Natus officiis ratione repellat cupiditate eum ullam accusantium blanditiis, voluptas, fugit optio veritatis ipsa debitis. Fugit vel eum ducimus, consequatur totam molestiae dolor, voluptatem perferendis inventore facere doloribus voluptatibus, perspiciatis fugiat ea architecto laudantium exercitationem illo sed aut. Saepe eum illum adipisci minima minus fuga maxime, architecto, laboriosam possimus perspiciatis laudantium error sunt alias pariatur veritatis quo a sit. Ab molestias eum accusantium, ex veritatis quaerat. Ab debitis a ad, possimus excepturi atque est ratione, vero et exercitationem, quia expedita eaque ipsum nam pariatur sint sit beatae voluptatibus! Repudiandae sint, vitae, porro adipisci, ratione nihil nam in ad autem enim neque vel magnam voluptatum dolor illo! Expedita consequatur enim at asperiores officiis corporis iusto minus odit? Officiis minima voluptatibus cupiditate inventore quod, quas animi soluta neque nemo dolore velit ex voluptatum quis enim iure consectetur accusantium commodi maiores at expedita! Eligendi, nobis minima? Optio, accusantium. Praesentium voluptatibus possimus iure ducimus officiis velit! Architecto deserunt eum incidunt commodi dignissimos ipsa quos laboriosam sint, et soluta praesentium aut fugit eveniet minus eos aspernatur provident quod! Autem, iure eius. Quae laboriosam ad cumque temporibus pariatur, rem esse distinctio, consequuntur labore eius magni blanditiis! Porro, iste nemo voluptates doloremque molestias vel fuga, hic similique vitae aut eligendi aliquam.</p>
+           
+        </div>
+    
+
+
+
+    </section>
+
+
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".cont").click(function(){
+        $(".container3").animate({
+            width:"toggle"
+        })
+        })
+        
+    })
+        function clic(){
+            window.location.href='/home/sree/karka/login/login.html'
+        }
+        function cli(){
+            window.location.href="https://www.google.com/"
+        }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

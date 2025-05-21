@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.overall_img{
+    background-image: url("../image/new-york-city-5oaa14h4mw6w3o71.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: cover;
+    height: 100%;
+    background-attachment:fixed;
+    z-index:0;
+
+}
+.number-card{
+    display: flex;
+}
+
+ul{ 
+    display: flex;
+}
+span{
+    color: red;
+}
+li{
+    color: #999999;
+    font-size: 12px;
+    font-weight: 500;
+    
+}
+
+.btn{
+      border: none;    
+}
+h1{
+    font-size: 50px;
+    font-weight:900;
+}
+h2{
+    font-size: 50px;
+    font-weight:900;
+}
+
+.box7{
+    width: 90%;
+    height: 40%;
+
+}
+.top-section{
+    margin-top: 10%;
+}
+
+.overall-section{
+    margin-top: 15%;
+    background-color:#f0f4f7!important;
+
+}
+.card-section{
+    margin-top: -80px;
+}
+ 
+ .car2:hover{
+    background-color: red;
+    color: white !important;
+} 
+
+.car2 i{
+    color: red;
+}
+
+
+.fa-hotel{
+    color:white;
+    
+}
+.car2:hover i{
+    color: white;
+}
+
+.car1{
+    color: white;
+    background-color: red;
+}
+.spa{
+    background-color: white;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius:5px;
+
+}
+
+.car10{
+    position: relative;
+}
+.logo2{
+    background-color: red;
+    color: white !important;
+    padding:28px 13px 28px 13px;
+    border-radius: 50%;
+}
+.card-body .logo2{
+    color:rgb(232, 5, 5);
+}
+.change-color{
+    background-color: red;
+    border: 2px solid black;
+    width: 5px;
+    height: 5px;
+}
+.sea{
+   width: 107%;
+}
+aside{
+    background-color:white ;
+    /* border: 1px solid black; */
+    width: 100%;
+
+    
+ }
+aside img{
+    height: 100%;
+    width:100%;
+}
+.card-body i.fa-heart{
+    background-color: white;
+    padding : 12px 6px 10px 6px;
+    border-radius: 50%;
+}
+.icon-hover:hover{
+    color: red !important;
+    background:white !important;
+    border-radius: 50%;
+}
+.content-1{
+  font-size:28px;
+  font-weight: 900;
+}
+.paragraph{
+    font-size: 20px;
+}
+.paragraph-1{
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+}
+.number{
+    background-color: #eaf0f4;
+    padding: 15px;
+    font-size: large;
+    color: red;
+    font-weight: 400;
+}
+.number-card span{
+    color: black;
+    font-weight: 500;
+}
+/* .carousel-width{
+    width:10% !important;
+} */
+.img-radius img{
+    border-radius:50%;
+    width: 100px;
+    height: 100px;
+}
+.cont-box{
+    border: 2px solid black;
+    border: none;
+    width: 67%;
+}
+
+.back{
+    background-image: url(../image/curls.png.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+.ifra-section{
+    margin-top: -200px;
+}
+.logo-hotel i{
+    background-color: red;
+    padding: 30px 15px;
+    border-radius: 50%;
+}
+.card-body-1 h5{
+    font-size: 30px;
+    font-weight: 400;
+}
+.card-body-1 p{
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+}
+.card-3:hover{
+    background-color: red;
+    color: white;
+}
+.card-3:hover p{
+    color: white!important;
+}
+
+
+.card-3:hover i {
+      color: red !important;
+      background-color: white;
+}
+
+.card-3{
+    background-color:#eaedf1;
+}
+.last p{
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 700;
+    color: #999999;
+}
+.last h4:hover{
+    color: red;
+
+}
+.foot{
+    background: #10151c;
+    height: 60%;
+}
+.foot p{
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+}
+.listing h6{
+    line-height: 1.8;  
+}
+.foot span{
+    color: white;
+}
+.listings .h7{
+    line-height: 2.9;
+}
+.listing h6 span{
+    color: rgba(255, 255, 255, 0.7);
+}
+.listings h6 span{
+    color: rgba(255, 255, 255, 0.7);
+
+}
+.listing h6 i{
+    color: rgba(255, 255, 255, 0.7);
+}
+.foot-1{
+    background: #0c1016 !important;
+}
+.foot-1 p{
+    color: rgba(255, 255, 255, 0.7)!important;
+
+}
+
+  .logo-10 .fa-brands{
+    padding: 20px 10px;
+    border-radius: 50%;
+    background-color:red;
+
+  }
+  .search{
+    position: relative;
+    
+  }
+  .search-1{
+    position: absolute;
+    z-index: 1;
+    left: 115px;
+    top: 120px; 
+    color: red; 
+    background-color: white; 
+    padding: 16px;
+    border-radius: 50%;
+     opacity: 0; 
+    /* display: none !important ; */
+    /* transition: all 0.3s ease; */
+   
+  
+  }
+  
+  .search-1:hover{
+    opacity: 1;
+    
+}  
+
+.under{
+    text-decoration: none;
+    font-size:larger;
+    font-weight: 500;
+}
+.number1{
+    padding: 10px 6px;
+}
+.number2{
+    padding: 10px 30px;
+}.number3{
+    padding: 10px 21px;
+}.number4{
+    padding: 10px 30px;
+}
+.logo-center{
+    position: relative;
+    margin-top: -50px;
+}
+@media only screen and (min-width:150px),(max-width:991px){
+
+    .listing{
+        text-align: center;
+    }
+}
+@media only screen and (max-width:1000px){
+    .response{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and  (max-width:1326px){
+    .response-1{
+        text-align:center;
+
+        }
+  
+}
+
+@media only screen and (min-width: 1214px){
+    .navbar-nav {
+        flex-direction: row !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+ 

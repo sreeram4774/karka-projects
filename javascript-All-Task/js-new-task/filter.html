@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="submit()">click</button>
+    
+</body>
+<script>
+
+    function submit(){
+        var a=[1,2,8,4,13,47,74,4]
+        var b=a.filter(x=>x%2==0)
+        var c=a.filter(y=>y%2!=0)
+        console.log(c)
+        console.log(b)
+    }
+    
+</script>
+</html>

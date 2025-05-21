@@ -1,0 +1,119 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    padding: 6px 23px;
+    border-radius: 10px;
+    }
+.name{
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    margin: 0rem;
+}
+    
+    
+
+form p{ 
+    text-align: center ;
+    text-decoration: underline;
+    margin-top: 10px;
+    
+    
+
+
+}
+.text{
+    vertical-align:top;
+    margin-left: 20px;
+    /* margin-top: 5px; */
+}
+.gradient-custom-3{
+    background: #fccb90;
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    border-radius: 7px;
+    padding: 2px 5px;
+    
+}
+
+
+
+.form-label{
+    margin-left: 25px;
+
+
+}
+body .img{
+    width: 100% ;
+    
+    
+}
+/* div p{
+    margin-bottom: 4px;
+} */
+
+.form-check{
+      
+      /* margin-left: 100px; */
+      /* margin-top: 11px; */
+}
+.reminder{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    
+    
+    
+}
+.text-center button{
+    margin-top: 20px;
+}
+.account{
+    margin-bottom: 5px;
+}
+/* .form-control:hover{
+    transform: scale(1.18);
+} */
+/* .btn:hover{
+    transform: scale(1.18);
+}
+.text:hover{
+    transform: scale(1.18);
+} */
+.rounded-2{
+    margin-left: 7px;
+    margin-right: 6px;
+}
+.form-control{
+    border: 1.8px solid black;
+}
+.form-check-input{
+    border: 2px solid rgb(2, 2, 2);
+}
+.form-outline{
+    margin-bottom: 10px;
+}
+.rounded-2 {
+    border-radius: 1.5rem!important;
+    border: 2px solid black;
+}
+/* @media (min-width: 1200px) */
+.col-xl-5 {
+    flex: 0 0 auto;
+    width: 41%;
+}
+.row {
+    --bs-gutter-x: 0rem!important;
+    --bs-gutter-y: 0;
+}

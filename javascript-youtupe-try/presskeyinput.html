@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Hello</h4>
+    <input type="text"id="inputbox" onkeyup="submit()">
+    <h1 id="content"></h1>
+    
+</body>
+<script>
+    var box1=document.getElementById("inputbox")
+    var box2=document.getElementById("content")
+    function submit(){
+        box2.textContent=box1.value
+    }
+</script>
+</html>

@@ -1,0 +1,17 @@
+<input type="text" id="one">
+<input type="text" id="two">
+<button onclick="submit()">click</button>
+<p id="three">Result</p>
+<script>
+    var a=document.getElementById("one");
+    var b=document.getElementById("two");
+    var Result=document.getElementById("three");
+  function submit(){
+    var one=Number(a.value)
+    var two=Number(b.value)
+    var total=one+two
+    // Result.textContent=total
+    console.log(total)
+
+  }
+</script>    

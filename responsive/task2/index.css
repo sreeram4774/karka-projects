@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.box{
+    border: 2px solid black;
+    height: 70vh;
+    /* display: flex; */
+    
+}
+.one{
+    border: 1px solid black;
+    height: 70vh;
+    width: 225vh;
+    background-color: red;
+    color: white;
+    /* display: inline-block; */
+}
+.two{
+    border: 1px solid black;
+    height: 70vh;
+    width: 225vh;
+    background-color:blue;
+    color: white;
+
+
+
+}
+.three{
+    border: 1px solid black;
+    height: 70vh;
+    width: 225vh;
+    background-color:greenyellow;
+    color: white;
+
+
+
+}
+.four{
+    border: 1px solid black;
+    height: 70vh;
+    width: 225vh;
+    background-color:orange;
+    color: white;
+
+
+
+
+
+}

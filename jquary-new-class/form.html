@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="h4">
+        <h3>Name : <input type="text" class="name" id=""></h3>
+        <h3>Age : <input  type="text" class="age" id=""></h3>
+        <h3>DOB : <input  type="text" class="dob" id=""></h3>
+        <h3>Email : <input  type="text" class="email" id=""></h3>
+        <h3>Degree :<input  type="text" class="degree" id=""></h3>
+    <button>Submit</button> 
+    </div>
+    <div class="h3">
+        <h3>Name : <input type="text" name="" id="name1"></h3>
+        <h3>Age : <input type="text" name="" id="age1"></h3>
+        <h3>DOB : <input type="text" name="" id="dob1"></h3>
+        <h3>Email : <input type="text" name="" id="email1"></h3>
+        <h3>Degree : <input type="text" name="" id="degree"></h3>
+    </div>  
+
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    
+    $(document).ready(function(){
+        $(".h3").hide();
+        $("button").click(function(){
+            $(".h4,button").hide();
+            $(".h3").show();
+            var num1=$(".name").val()
+            var num2=parseInt($(".age").val())
+            var num3=parseInt($(".dob").val())
+            var num4=($(".email").val())
+            var num5=($(".degree").val())
+            $("#name1").val(num1)
+            $("#age1").val(num2)
+            $("#dob1").val(num3)
+            $("#email1").val(num4)
+            $("#degree").val(num5)
+
+
+        })
+    })
+</script>
+</html>

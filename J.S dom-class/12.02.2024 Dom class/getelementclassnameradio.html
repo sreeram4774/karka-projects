@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="text1" action="">
+        <label for="Skills">Skills :</label>
+        <label for="HTML">HTML</label><input name="skill" class="text" value="HTML" type="radio">
+        <label for="CSS">CSS</label><input name="skill" class="text" value="CSS"  type="radio">
+        <label for="JS">JS</label><input name="skill" class="text" value="JS" type="radio">
+        <label for="REACT">REACT</label><input name="skill" class="text" value="REACT" type="radio">
+        <p id="output"></p>
+        <button onclick="handle_click(event)">Submit</button>
+    </form>
+   
+</body>
+<script>
+    function handle_click(e){
+        e.preventDefault()
+        var a=document.getElementsByClassName("text")
+        var para=document.getElementById("output")
+        for(let i=0;i<a.length;i++){
+            if(a[i].checked==true){
+                var b=a[i].value
+                console.log(b)
+            }
+        }
+        var tag=document.createElement("p")
+        tag.innerHTML=b
+        para.appendChild(tag)
+
+
+    }
+</script>
+</html>

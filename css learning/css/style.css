@@ -1,0 +1,33 @@
+/* h1{
+    color:greenyellow;
+
+
+
+} */
+/* 
+.div_2 {
+    color: red;
+}
+
+.div_2 h1 {
+    color: rgb(0, 255, 64);
+}
+
+.div_2 p {
+    color: rgb(22, 6, 255); */
+/* } */
+
+
+h1::first-letter{
+    color:rgb(4, 255, 4);
+
+    }
+
+/* h1 [--nth-letter="2"] { background: orange; }     */
+
+/* h1::{
+    color:rgb(4, 255, 4); */
+
+    /* } */
+
+    

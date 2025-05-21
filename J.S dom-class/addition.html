@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="submit()">click</button>
+    <input type="text"id="one" placeholder="number1">
+    <input type="text"id="two" placeholder="number2">
+    <p id="text3"></p>
+
+    
+</body>
+<script>
+    function submit(){
+        var a =Number(document.getElementById("one").value);
+        var b =Number(document.getElementById("two").value);
+        // var c =parseInt(a) + parseInt(b);
+        var c=document.getElementById("text3");
+        c.innerHTML=a*b
+
+
+
+    }
+</script>
+</html>

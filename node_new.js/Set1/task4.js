@@ -1,0 +1,6 @@
+let name=typeof("sree")
+let age=typeof(24)
+let married=typeof(true)
+console.log(name)
+console.log(age)
+console.log(married)

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="text1" action="">
+        <label for="Skills">Skills :</label>
+        <label for="HTML">HTML</label><input name="HTML" class="text" value="HTML" type="checkbox">
+        <label for="CSS">CSS</label><input name="CSS" class="text" value="CSS"  type="checkbox">
+        <label for="JS">JS</label><input name="JS" class="text" value="JS" type="checkbox">
+        <label for="REACT">REACT</label><input name="REACT" class="text" value="REACT" type="checkbox">
+        <p id="output"></p>
+        <button onclick="handle_click(event)">Submit</button>
+    </form>
+    
+</body>
+<script>
+    function handle_click(e){
+        e.preventDefault()
+        var result=[]
+        var para=document.getElementById("output")
+        var check=document.getElementsByClassName("text")
+        for(let i=0;i<check.length;i++){
+            if(check[i].checked==true){
+                let genders=check[i].value
+                result.push(genders)
+            }
+
+        }
+        var tag=document.createElement("p")
+        tag.innerHTML=result
+        para.appendChild(tag)
+        console.log(result)
+        document.getElementById("text1").reset()
+    }
+</script>
+</html>

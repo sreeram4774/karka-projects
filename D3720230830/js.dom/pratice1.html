@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: yellow;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <label for="nnnn">gender :</label>
+    <input type="radio" name="gender" value="male" onClick="getinfo()" ><label>male</label>
+    <input type="radio" name="gender" value="female" onClick="getinfo()"><label>female</label>
+    <input type="radio" name="gender" value="other" onClick="getinfo()"><label>other</label><br><br>
+    <button>submit</button>
+    <script>
+        function getinfo(){
+               console.log("hi")
+               var ele=document.getElementsByName("gender");
+               console.log(ele);
+        }
+    </script>
+
+</body>
+</html>

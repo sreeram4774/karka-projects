@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouse Hover and Shake Image</title>
+<style>
+    .image-container {
+        position: relative;
+        width: 300px; /* Adjust as needed */
+        height: 300px; /* Adjust as needed */
+        overflow: hidden;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+  
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        50% { transform: translateX(5px); }
+        75% { transform: translateX(-5px); }
+        100% { transform: translateX(0); }
+    }
+
+    .shake-image:hover {
+        animation: shake 0.5s ease-in-out;
+    }
+</style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="image/captain-america-marvel-heroes-2016-iron-man-superhero-logo-png-favpng-XjQgPvmyjVKPHi8BFG37G6YhM.jpg" alt="Image" class="shake-image">
+    </div>
+
+    <!-- Include the JavaScript code if needed -->
+    <!-- <script>
+        // JavaScript code goes here if additional functionality is required
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor Animation</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+    }
+    
+    .cursor {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 50%;
+        background-color: blue;
+        pointer-events: none;
+        z-index: 9999; 
+        transform: translate(-50%, -50%); 
+        transition: transform 0.1s ease; 
+    }
+</style>
+</head>
+<body>
+<div class="cursor"></div>
+<div>
+    <p class="mouse" id="mouses">hcdnejkncwjkenciejknciejwniewjnd2ijqwndjwenerhjkfbherjbnjhkne</p>
+    <div class="logo">
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+</div>
+
+<script>
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+    });
+
+</script>
+</body>
+</html>

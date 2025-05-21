@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+ .box{
+    background-color: steelblue;
+    border-style: dotted;
+ }
+ header{
+    background-color: linen;
+    text-align: center;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+
+ }
+ aside{
+    background-color: linen;
+    text-align: center;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+ }
+ section h1{
+    background-color: linen;
+    text-align: center;
+    /* padding: 10px 10px; */
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-left: 200px;
+    
+
+
+ }

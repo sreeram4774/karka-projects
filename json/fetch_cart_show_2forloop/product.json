@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWxiyeQ5WkfxCQGb1D9D6PIGZYkFVY_lBXw&s",
+            "name": " Hispano Suiza",
+            "price": "$1.9 Million",
+            "details": "To call the Hispano Suiza Carmen Boulogne beautiful would be... a stretch. But this interesting-looking supercar made its US debut at this year's Amelia Island Concours d'Elegance boasting a 1,114-horsepower electric powertrain and a 0-60 time of 2.6 seconds. The Boulogne version pictured here – the lighter and more powerful of the two—costs close to $1.9 million."
+        },
+        {
+            "image": "https://cdn.motor1.com/images/mgl/g440ng/s4/rimac-nevera.webp",
+            "name": " Rimac Nevera",
+            "price": "$2.4 Million",
+            "details": "The Rimac Nevera takes the title of most expensive EV with its $2.4 million price tag—but only by a few hundred thousand dollars over the next priciest electric supercar. Packing 1,914 horsepower and 1,740 pound-feet of torque, the Nevera can hit 60 in under 2.0 seconds and will continue on to a top speed of 258 miles per hour. Those lucky enough to order one should see it in their driveway before the end of 2024."
+
+        },
+        {
+            "image": "https://cdn.motor1.com/images/mgl/2NNOJp/s4/bugatti-bolide.webp",
+            "name": " Bugatti Bolide",
+            "price": "$4.7 Million",
+            "details": "Produced in extremely limited numbers atop the body of a Chiron, it's no wonder Bugatti's one-of-40 Bolide track car is this pricey. At $4.7 million, the 1,824-horsepower hypercar has more power than the Chiron Super Sport 300+, and more extreme bodywork that allow it to lap tracks like the Nurburgring in record time (in theory). Bugatti says the Bolide would be able to conquer the ‘Ring in record time."
+
+        },
+        {
+            "image": "https://cdn.motor1.com/images/mgl/VzeyVG/s1/mclaren-senna-gtr.jpg",
+            "name": " McLaren Senna GTR",
+            "price": "$1.7 Million",
+            "details": "The McLaren Senna GTR costs nearly $2 million, and you can’t even drive it on the road. The track-only supercar is much more aggressive than the road-going version, featuring a big splitter and diffuser that helps generate 2,200 pounds of downforce. It only weighs 2,619 lbs while making 813 horsepower from its twin-turbocharged 4.0-liter V-8 engine, so it’s no surprise owners have to keep them on the track."
+
+        }
+    ]
+}

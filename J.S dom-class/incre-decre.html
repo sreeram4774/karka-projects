@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="dele()">Delete</button>
+    <p id="count">0</p>
+</body>
+<script>
+    // function increment(){
+    //     let a=document.getElementById("count");
+    //     let b=Number(a.innerText,10);
+    //     a.innerText=b + 1;
+    // }
+    // function decrement(){
+    //     let a=document.getElementById("count");
+    //     let b=Number(a.innerText,10);
+    //     if(b >0){
+    //         a.innerText=b - 1;
+    //     }  
+    // }
+    count=0
+    function increment(){
+        let a=document.getElementById("count");
+        count++
+        a.innerHTML=count;
+        
+    }
+    function decrement(){
+        let a=document.getElementById("count");
+        count--
+        a.innerHTML=count;
+        
+    }
+    function dele(){
+        let a=document.getElementById("count");
+        a.innerText="";
+
+    }
+</script>
+</html>

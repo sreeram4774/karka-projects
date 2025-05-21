@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     h1{
+        color: red;
+    }
+    @media print{
+        h1{
+            color: blue;
+        }
+    }
+
+
+    @media print and (orientation:landscape){
+        h1{
+            color:brown;
+        }
+    }
+    
+
+    @media screen and (max-width:800px) {
+
+        h1{
+            color: green;
+        }
+    }
+    @media screen and (max-width:600px) {
+        h1{
+            color: yellow;
+        }
+      
+        
+    }
+    @media only screen and (max-width:400px) {
+        h1{
+            color:blue;
+        }
+      
+        
+    }
+
+
+
+</style>
+<body>
+    <h1>
+        Hello Guys
+    </h1>
+
+    
+</body>
+</html>

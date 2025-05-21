@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <button onclick="handle_click()">Submit</button>
+    
+</body>
+<script>
+
+    function handle_click(){
+        var array=localStorage.getItem('myArr')?JSON.parse(localStorage.getItem('myArr')):[]
+        var result=document.getElementById("text").value
+        array.push(result)
+        localStorage.setItem('myArr',JSON.stringify(array))
+        // console.log(array)
+
+    }
+   
+    
+</script>
+</html>

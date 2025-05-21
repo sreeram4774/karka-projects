@@ -1,0 +1,40 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.box{
+    border: 3px solid black;
+}
+header{
+    background-color:lightpink ;
+    text-align: center;
+    padding: 10px;
+}
+nav{
+    background-color: blueviolet;
+    text-align: center;
+    padding: 10px;
+}
+section{
+    
+}
+section aside{
+    background-color: wheat;
+    text-align: center;
+    padding: 150px 85px;
+    display: inline-block;
+    vertical-align: top;
+
+}
+section .box1{
+    background-color:rgb(146, 245, 252);
+    text-align: center;
+    padding: 147px 436px;
+    display: inline-block;
+}
+footer{
+    background-color: violet;
+    text-align: center;
+    padding: 10px;
+
+}

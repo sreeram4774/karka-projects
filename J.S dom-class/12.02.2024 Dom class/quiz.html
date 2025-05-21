@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span{
+        margin-left: 10px;
+    }
+</style>
+<body>
+    <div class="main" style="display: flex; justify-content: center;">
+        <div class="first">
+            <h1>1. How many days are there in a week?</h1>
+            <label for="">Choose the Correct Answer : </label>
+            <span>A :</span>
+            <input type="radio" class="weeks" name="days" value="5 Weeks">
+            <label for="">5 Weeks</label>
+            <span>B :</span>
+            <input type="radio" class="weeks" name="days" value="6 Weeks">
+            <label for="">6 Weeks</label>
+            <span>C :</span>
+            <input type="radio"  class="weeks" name="days"  value="7 Weeks">
+            <label for="">7 Weeks</label>
+            <span>D :</span>
+            <input type="radio"  class="weeks" name="days" value="4 Weeks">
+            <label for="">4 Weeks</label><br><br><br>
+            <button onclick="handleclick()" style="padding: 5px; background-color: aqua;">Sumbit</button>
+        </div>
+    </div>   
+</body>
+<script>
+    let answer
+    function handleclick(){
+        var a=document.getElementsByClassName("weeks")
+        for(let i=0;a.length;i++){
+
+        }
+
+    }
+</script>
+</html>
